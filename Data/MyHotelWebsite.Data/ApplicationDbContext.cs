@@ -26,6 +26,24 @@
 
         public DbSet<Setting> Settings { get; set; }
 
+        public DbSet<Blog> Blogs { get; set; }
+
+        public DbSet<Dish> Dishes { get; set; }
+
+        public DbSet<DishOrder> DishOrders { get; set; }
+
+        public DbSet<Guest> Guests { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<Reservation> Reservations { get; set; }
+
+        public DbSet<Room> Rooms { get; set; }
+
+        public DbSet<RoomReservation> RoomReservations { get; set; }
+
+        public DbSet<Staff> Staff { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
@@ -47,6 +65,12 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<RoomReservation>()
+                .HasKey(k => new { k.RoomId, k.ReservationId });
+
+            builder.Entity<DishOrder>()
+                .HasKey(k => new { k.DishId, k.OrderId });
+
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
 

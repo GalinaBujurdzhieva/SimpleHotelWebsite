@@ -4,9 +4,8 @@ namespace MyHotelWebsite.Data.Models
     using System;
     using System.Collections.Generic;
 
-    using MyHotelWebsite.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
+    using MyHotelWebsite.Data.Common.Models;
 
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {
@@ -33,5 +32,13 @@ namespace MyHotelWebsite.Data.Models
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
+
+        public string GuestId { get; set; }
+
+        public virtual Guest Guest { get; set; }
+
+        public string StaffId { get; set; }
+
+        public virtual Staff Staff { get; set; }
     }
 }
