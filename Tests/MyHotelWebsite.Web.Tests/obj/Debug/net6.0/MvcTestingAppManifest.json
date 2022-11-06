@@ -1,0 +1,13 @@
+{
+  "MyHotelWebsite.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\MyHotelWebsite.Common",
+  "MyHotelWebsite.Data.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Data\\MyHotelWebsite.Data.Common",
+  "MyHotelWebsite.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Data\\MyHotelWebsite.Data",
+  "MyHotelWebsite.Data.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Data\\MyHotelWebsite.Data.Models",
+  "MyHotelWebsite.Services.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Services\\MyHotelWebsite.Services.Data",
+  "MyHotelWebsite.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Services\\MyHotelWebsite.Services",
+  "MyHotelWebsite.Services.Mapping, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Services\\MyHotelWebsite.Services.Mapping",
+  "MyHotelWebsite.Services.Messaging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Services\\MyHotelWebsite.Services.Messaging",
+  "MyHotelWebsite.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web",
+  "MyHotelWebsite.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web.Infrastructure",
+  "MyHotelWebsite.Web.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web.ViewModels"
+}

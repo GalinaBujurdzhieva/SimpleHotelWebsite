@@ -1,0 +1,12 @@
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\bin\Debug\net6.0\MyHotelWebsite.Services.deps.json
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\bin\Debug\net6.0\MyHotelWebsite.Services.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\bin\Debug\net6.0\MyHotelWebsite.Services.pdb
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\obj\Debug\net6.0\MyHotelWebsite.Services.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\obj\Debug\net6.0\MyHotelWebsite.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\obj\Debug\net6.0\MyHotelWebsite.Services.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\obj\Debug\net6.0\MyHotelWebsite.Services.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\obj\Debug\net6.0\MyHotelWebsite.Services.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\obj\Debug\net6.0\MyHotelWebsite.Services.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\obj\Debug\net6.0\refint\MyHotelWebsite.Services.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\obj\Debug\net6.0\MyHotelWebsite.Services.pdb
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services\obj\Debug\net6.0\ref\MyHotelWebsite.Services.dll
