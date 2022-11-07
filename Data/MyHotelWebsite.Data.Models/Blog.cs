@@ -21,6 +21,7 @@ namespace MyHotelWebsite.Data.Models
 
         public string BlogImageUrl { get; set; }
 
+        [Required]
         public string StaffId { get; set; }
 
         public virtual Staff Staff { get; set; }

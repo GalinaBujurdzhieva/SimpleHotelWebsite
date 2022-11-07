@@ -71,6 +71,16 @@
             builder.Entity<DishOrder>()
                 .HasKey(k => new { k.DishId, k.OrderId });
 
+            builder.Entity<ApplicationUser>()
+           .HasOne(x => x.Guest)
+           .WithOne(x => x.ApplicationUser)
+           .HasForeignKey<Guest>(x => x.ApplicationUserId);
+
+            builder.Entity<ApplicationUser>()
+            .HasOne(x => x.Staff)
+            .WithOne(x => x.ApplicationUser)
+            .HasForeignKey<Staff>(x => x.ApplicationUserId);
+
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
 

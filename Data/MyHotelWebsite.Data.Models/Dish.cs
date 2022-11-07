@@ -36,8 +36,11 @@
 
         public ICollection<DishOrder> DishOrders { get; set; }
 
+        [Required]
         public string StaffId { get; set; }
 
         public virtual Staff Staff { get; set; }
+
+        public bool IsReady { get; set; }
     }
 }

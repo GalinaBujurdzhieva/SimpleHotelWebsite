@@ -195,7 +195,7 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("GuestId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -230,7 +230,7 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StaffId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
@@ -241,8 +241,6 @@ namespace MyHotelWebsite.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GuestId");
-
                     b.HasIndex("IsDeleted");
 
                     b.HasIndex("NormalizedEmail")
@@ -252,8 +250,6 @@ namespace MyHotelWebsite.Data.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("StaffId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -287,6 +283,7 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StaffId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
@@ -326,6 +323,9 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsReady")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
@@ -344,6 +344,7 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("StaffId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -387,6 +388,10 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -418,6 +423,9 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId")
+                        .IsUnique();
 
                     b.HasIndex("IsDeleted");
 
@@ -457,6 +465,7 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("StaffId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -503,6 +512,7 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StaffId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -539,6 +549,9 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsCleaned")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -561,6 +574,7 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("StaffId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -625,6 +639,10 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -656,6 +674,9 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId")
+                        .IsUnique();
 
                     b.HasIndex("IsDeleted");
 
@@ -713,26 +734,13 @@ namespace MyHotelWebsite.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MyHotelWebsite.Data.Models.ApplicationUser", b =>
-                {
-                    b.HasOne("MyHotelWebsite.Data.Models.Guest", "Guest")
-                        .WithMany()
-                        .HasForeignKey("GuestId");
-
-                    b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
-                        .WithMany()
-                        .HasForeignKey("StaffId");
-
-                    b.Navigation("Guest");
-
-                    b.Navigation("Staff");
-                });
-
             modelBuilder.Entity("MyHotelWebsite.Data.Models.Blog", b =>
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
                         .WithMany("Blogs")
-                        .HasForeignKey("StaffId");
+                        .HasForeignKey("StaffId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Staff");
                 });
@@ -741,7 +749,9 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
                         .WithMany("Dishes")
-                        .HasForeignKey("StaffId");
+                        .HasForeignKey("StaffId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Staff");
                 });
@@ -767,11 +777,19 @@ namespace MyHotelWebsite.Data.Migrations
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.Guest", b =>
                 {
+                    b.HasOne("MyHotelWebsite.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithOne("Guest")
+                        .HasForeignKey("MyHotelWebsite.Data.Models.Guest", "ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("MyHotelWebsite.Data.Models.Room", "Room")
                         .WithMany()
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("ApplicationUser");
 
                     b.Navigation("Room");
                 });
@@ -784,7 +802,9 @@ namespace MyHotelWebsite.Data.Migrations
 
                     b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
                         .WithMany("Orders")
-                        .HasForeignKey("StaffId");
+                        .HasForeignKey("StaffId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Guest");
 
@@ -799,7 +819,9 @@ namespace MyHotelWebsite.Data.Migrations
 
                     b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
                         .WithMany("Reservations")
-                        .HasForeignKey("StaffId");
+                        .HasForeignKey("StaffId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Guest");
 
@@ -810,7 +832,9 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
                         .WithMany("Rooms")
-                        .HasForeignKey("StaffId");
+                        .HasForeignKey("StaffId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Staff");
                 });
@@ -834,13 +858,28 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Navigation("Room");
                 });
 
+            modelBuilder.Entity("MyHotelWebsite.Data.Models.Staff", b =>
+                {
+                    b.HasOne("MyHotelWebsite.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithOne("Staff")
+                        .HasForeignKey("MyHotelWebsite.Data.Models.Staff", "ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
             modelBuilder.Entity("MyHotelWebsite.Data.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Claims");
 
+                    b.Navigation("Guest");
+
                     b.Navigation("Logins");
 
                     b.Navigation("Roles");
+
+                    b.Navigation("Staff");
                 });
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.Dish", b =>

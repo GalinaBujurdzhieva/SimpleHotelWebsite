@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
     using System.Text;
@@ -35,10 +36,13 @@
 
         public bool IsOccupied { get; set; }
 
+        [Required]
         public string StaffId { get; set; }
 
         public virtual Staff Staff { get; set; }
 
         public virtual ICollection<RoomReservation> RoomReservations { get; set; }
+
+        public bool IsCleaned { get; set; }
     }
 }

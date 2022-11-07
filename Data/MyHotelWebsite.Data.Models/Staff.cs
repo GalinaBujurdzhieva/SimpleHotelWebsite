@@ -49,5 +49,10 @@
         public virtual ICollection<Blog> Blogs { get; set; }
 
         public virtual ICollection<Dish> Dishes { get; set; }
+
+        [Required]
+        public string ApplicationUserId { get; set; }
+
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }
