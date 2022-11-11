@@ -8,14 +8,12 @@
 
     public enum RoomType
     {
-        SingleBed = 1,
+        SingleRoom = 1,
 
-        DoubleBed = 2,
+        DoubleRoom = 2,
 
         Studio = 3,
 
         Apartment = 4,
-
-        Penthouse = 5,
     }
 }
