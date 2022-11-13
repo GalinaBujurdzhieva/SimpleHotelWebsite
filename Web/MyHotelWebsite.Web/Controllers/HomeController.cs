@@ -1,11 +1,10 @@
-﻿namespace MyHotelWebsite.Web.Controllers
+﻿using System.Diagnostics;
+
+using Microsoft.AspNetCore.Mvc;
+using MyHotelWebsite.Web.ViewModels;
+
+namespace MyHotelWebsite.Web.Controllers
 {
-    using System.Diagnostics;
-
-    using MyHotelWebsite.Web.ViewModels;
-
-    using Microsoft.AspNetCore.Mvc;
-
     public class HomeController : BaseController
     {
         public IActionResult Index()
@@ -13,7 +12,12 @@
             return this.View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
+        {
+            return this.View();
+        }
+
+        public IActionResult Gallery()
         {
             return this.View();
         }

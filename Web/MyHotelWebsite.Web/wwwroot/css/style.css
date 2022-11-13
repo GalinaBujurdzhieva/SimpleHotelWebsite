@@ -307,7 +307,7 @@ ul{
     transition: all 0.2s ease-in-out 0s;
 }
 .gallery-image a.info:hover, .gallery-image a.info > i:hover{
-    color: #fff;
+    color: #e01931;
 }
 .overlay p {
     bottom: 0;
@@ -860,13 +860,18 @@ footer a{
     height: 450px;
     position: relative;
 }
-.inner-wrapper {
+.image-head-wrapper-about {
+    background: rgba(0, 0, 0, 0) url("../images/Home-about-main.png") no-repeat scroll center top;
+    height: 450px;
+    position: relative;
+}
+    .inner-wrapper {
     color: #fff;
-    left: 70%;
+    left: 38%;
     position: relative;
     text-align: right;
     text-transform: uppercase;
-    top: 50%;
+    top: 93%;
     transform: translate(-70%, -70%);
     width: 60%;
 }
