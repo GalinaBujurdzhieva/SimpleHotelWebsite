@@ -865,6 +865,11 @@ footer a{
     height: 450px;
     position: relative;
 }
+.image-head-wrapper-gallery {
+    background: rgba(0, 0, 0, 0) url("../images/Gallery-main.png") no-repeat scroll center top;
+    height: 450px;
+    position: relative;
+}
     .inner-wrapper {
     color: #fff;
     left: 38%;
