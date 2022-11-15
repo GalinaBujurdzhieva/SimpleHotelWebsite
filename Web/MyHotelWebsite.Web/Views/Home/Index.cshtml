@@ -68,8 +68,8 @@ License URI: http://www.themevault.net/license/-->
                 </div>
 
             </div>
-            <a class="left carousel-control" href="#myCarousel1" data-slide="prev"> <img src="images/icons/left-arrow.png" onmouseover="this.src = 'images/icons/left-arrow-hover.png'" onmouseout="this.src = 'images/icons/left-arrow.png'" alt="left"></a>
-            <a class="right carousel-control" href="#myCarousel1" data-slide="next"><img src="images/icons/right-arrow.png" onmouseover="this.src = 'images/icons/right-arrow-hover.png'" onmouseout="this.src = 'images/icons/right-arrow.png'" alt="left"></a>
+            <a class="left carousel-control" href="#myCarousel1" data-slide="prev"> <img src="~/images/icons/left-arrow.png" onmouseover="this.src = 'images/icons/left-arrow-hover.png'" onmouseout="this.src = 'images/icons/left-arrow.png'" alt="left"></a>
+            <a class="right carousel-control" href="#myCarousel1" data-slide="next"><img src="~/images/icons/right-arrow.png" onmouseover="this.src = 'images/icons/right-arrow-hover.png'" onmouseout="this.src = 'images/icons/right-arrow.png'" alt="left"></a>
         </div>
 
         <div class="clearfix"></div>
@@ -81,7 +81,7 @@ License URI: http://www.themevault.net/license/-->
                     <div class="col-md-3 col-sm-3 col-xs-6 width-50">
                         <div class="service-details text-center">
                             <div class="service-image">
-                                <img alt="image" class="img-responsive" src="images/icons/wifi.png">
+                                <img alt="image" class="img-responsive" src="~/images/icons/wifi.png">
                             </div>
                             <h4>free wifi</h4>
                         </div>
@@ -89,7 +89,7 @@ License URI: http://www.themevault.net/license/-->
                     <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
                         <div class="service-details text-center">
                             <div class="service-image">
-                                <img alt="image" class="img-responsive" src="images/icons/car.png">
+                                <img alt="image" class="img-responsive" src="~/images/icons/car.png">
                             </div>
                             <h4>free parking</h4>
                         </div>
@@ -97,7 +97,7 @@ License URI: http://www.themevault.net/license/-->
                     <div class="col-md-3 col-sm-3 col-xs-6 width-50">
                         <div class="service-details text-center">
                             <div class="service-image">
-                                <img alt="image" class="img-responsive" src="images/icons/key.png">
+                                <img alt="image" class="img-responsive" src="~/images/icons/key.png">
                             </div>
                             <h4><a>room service</a></h4>
                         </div>
@@ -105,7 +105,7 @@ License URI: http://www.themevault.net/license/-->
                     <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
                         <div class="service-details text-center">
                             <div class="service-image">
-                                <img alt="image" class="img-responsive" src="images/icons/user.png">
+                                <img alt="image" class="img-responsive" src="~/images/icons/user.png">
                             </div>
                             <h4><a>customer support</a></h4>
                         </div>
@@ -120,10 +120,12 @@ License URI: http://www.themevault.net/license/-->
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5 col-sm-6 col-xs-12">
-                            <div class="vacation-offer-details">
-                                <h1>Your vacation Awaits</h1>
-                                <h4>Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit.</h4>
-                                <button type="button" class="btn btn-default">Choose a package</button>
+                            <div class="vacation-offer-details text-center">
+                                <h1>Тhe most delicious and healthy food</h1>
+                                <h4>Unique culinary delights 1 click away</h4>
+                                <form method="post" asp-controller="Dishes" asp-action="Index">
+                                    <button type="submit" class="btn btn-default">Take a look</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -135,6 +137,7 @@ License URI: http://www.themevault.net/license/-->
         <section class="resort-overview-block">
             <div class="container">
                 <div class="row">
+                    
                     <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-right">
                         <div class="side-A">
                             <div class="product-thumb">

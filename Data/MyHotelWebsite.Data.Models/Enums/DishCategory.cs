@@ -10,9 +10,9 @@
     {
         Drink = 1,
 
-        Srarter = 2,
+        Appetizer = 2,
 
-        Appetizer = 3,
+        Gourmet = 3,
 
         Dessert = 4,
     }
