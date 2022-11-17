@@ -28,14 +28,6 @@
 
         [Required]
         [StringLength(20)]
-        public string FirstName { get; set; }
-
-        [Required]
-        [StringLength(20)]
-        public string LastName { get; set; }
-
-        [Required]
-        [StringLength(20)]
         public string JobTitle { get; set; }
 
         public string JobTitleImageUrl { get; set; }

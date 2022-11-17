@@ -24,8 +24,6 @@
 
         public RoomType RoomType { get; set; }
 
-        public string RoomImageUrl { get; set; }
-
         [Column(TypeName = "decimal(18, 2)")]
         public decimal AdultPrice { get; set; }
 
