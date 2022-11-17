@@ -14,6 +14,10 @@
 
         Gourmet = 3,
 
-        Dessert = 4,
+        Salad = 4,
+
+        MainCourse = 5,
+
+        Dessert = 6,
     }
 }

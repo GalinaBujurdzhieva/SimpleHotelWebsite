@@ -6,7 +6,12 @@ namespace MyHotelWebsite.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return this.View();
+        }
+
+        public IActionResult All()
+        {
+            return this.View();
         }
     }
 }
