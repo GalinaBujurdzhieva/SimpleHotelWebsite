@@ -99,7 +99,7 @@ License URI: http://www.themevault.net/license/-->
                             <div class="service-image">
                                 <img alt="image" class="img-responsive" src="~/images/icons/key.png">
                             </div>
-                            <h4><a>room service</a></h4>
+                            <h4>room service</h4>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
@@ -107,14 +107,34 @@ License URI: http://www.themevault.net/license/-->
                             <div class="service-image">
                                 <img alt="image" class="img-responsive" src="~/images/icons/user.png">
                             </div>
-                            <h4><a>customer support</a></h4>
+                            <h4><a href="/Home/Contacts">customer support</a></h4>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!--offer block-->
+        <!--rooms block-->
+        <section class="vacation-offer-block">
+            <div class="vacation-offer-bgbanner-rooms">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                            <div class="vacation-offer-details text-center">
+                                <h1>Clean, cosy and tidy rooms</h1>
+                                <h4>Take the one that suits you most</h4>
+                                <form method="post" asp-controller="Rooms" asp-action="Index">
+                                    <button type="submit" class="btn btn-default">Choose an option</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End-->
+
+        <!--dishes block-->
         <section class="vacation-offer-block">
             <div class="vacation-offer-bgbanner">
                 <div class="container">
@@ -134,8 +154,29 @@ License URI: http://www.themevault.net/license/-->
         </section>
         <!--End-->
 
+        <!--blogs block-->
+        <section class="vacation-offer-block">
+            <div class="vacation-offer-bgbanner-blog">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                            <div class="vacation-offer-details text-center">
+                                <h1>The latest news from the hotel</h1>
+                                <h4>If you are looking for specific events or tips about what’s going on, take a look at our blog</h4>
+                                <form method="post" asp-controller="Blog" asp-action="Index">
+                                    <button type="submit" class="btn btn-default">Be informed</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End-->
+
         <!-----blog slider----->
-        <!--blog trainer block-->
+
+       @* <!--blog trainer block-->
         <section class="blog-block-slider">
             <div class="blog-block-slider-fix-image">
                 <div id="myCarousel2" class="carousel slide" data-ride="carousel">
@@ -200,7 +241,7 @@ License URI: http://www.themevault.net/license/-->
                 </div>
             </div>
             <div class="clearfix"></div>
-        </section>
+        </section>*@
 
 
         <!--back to top--->

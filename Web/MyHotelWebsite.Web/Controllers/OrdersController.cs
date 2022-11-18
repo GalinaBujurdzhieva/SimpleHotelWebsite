@@ -2,7 +2,7 @@
 
 namespace MyHotelWebsite.Web.Controllers
 {
-    public class OrdersController : Controller
+    public class OrdersController : BaseController
     {
         public IActionResult Index()
         {

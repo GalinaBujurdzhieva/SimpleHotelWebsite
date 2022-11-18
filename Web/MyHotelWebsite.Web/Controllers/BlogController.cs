@@ -2,7 +2,7 @@
 
 namespace MyHotelWebsite.Web.Controllers
 {
-    public class BlogController : Controller
+    public class BlogController : BaseController
     {
         public IActionResult Index()
         {

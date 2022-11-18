@@ -149,13 +149,13 @@ ul{
 .top-row{
     padding: 35px 0;
 }
-#logo > a {
+#logo > p {
     color: #ff4157;
     font-size: 32px;
     font-weight: 700;
     letter-spacing: -5px;
 }
-#logo > a span {
+#logo > p span {
     color: #000;
     font-size: 50px;
 }
@@ -325,12 +325,48 @@ ul{
 .overlay p a:hover{
     color: #ff4157;
 }
-.vacation-offer-bgbanner {
-    background: rgba(0, 0, 0, 0) url("../images/Dishes-banner.png") no-repeat scroll center center / cover ;
+.vacation-offer-bgbanner-rooms {
+    background: rgba(0, 0, 0, 0) url("../images/Rooms-banner.png") no-repeat scroll center center / cover ;
     color: #fff;
     position: relative;
     padding: 65px;
 }
+.vacation-offer-bgbanner-rooms::before {
+    background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+    content: "";
+    display: block;
+    height: 100%;
+    left: -50%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-30deg);
+    width: 100%;
+}
+.vacation-offer-bgbanner-blog {
+    background: rgba(0, 0, 0, 0) url("../images/Blog-banner.png") no-repeat scroll center center / cover;
+    color: #fff;
+    position: relative;
+    padding: 65px;
+}
+
+.vacation-offer-bgbanner-blog::before {
+    background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+    content: "";
+    display: block;
+    height: 100%;
+    left: -50%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-30deg);
+    width: 100%;
+}
+.vacation-offer-bgbanner {
+    background: rgba(0, 0, 0, 0) url("../images/Dishes-banner.png") no-repeat scroll center center / cover;
+    color: #fff;
+    position: relative;
+    padding: 65px;
+}
+
 .vacation-offer-bgbanner::before {
     background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
     content: "";
@@ -877,6 +913,11 @@ footer a{
 }
 .image-head-wrapper-blog {
     background: rgba(0, 0, 0, 0) url("../images/Blog-main2.png") no-repeat scroll center top;
+    height: 450px;
+    position: relative;
+}
+.image-head-wrapper-contact {
+    background: rgba(0, 0, 0, 0) url("../images/ContactUs-main.png") no-repeat scroll center top;
     height: 450px;
     position: relative;
 }
