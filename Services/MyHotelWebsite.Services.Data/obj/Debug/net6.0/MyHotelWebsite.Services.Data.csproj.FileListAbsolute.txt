@@ -17,3 +17,5 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWe
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services.Data\obj\Debug\net6.0\refint\MyHotelWebsite.Services.Data.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services.Data\obj\Debug\net6.0\MyHotelWebsite.Services.Data.pdb
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services.Data\obj\Debug\net6.0\ref\MyHotelWebsite.Services.Data.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services.Data\bin\Debug\net6.0\MyHotelWebsite.Web.ViewModels.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Services\MyHotelWebsite.Services.Data\bin\Debug\net6.0\MyHotelWebsite.Web.ViewModels.pdb

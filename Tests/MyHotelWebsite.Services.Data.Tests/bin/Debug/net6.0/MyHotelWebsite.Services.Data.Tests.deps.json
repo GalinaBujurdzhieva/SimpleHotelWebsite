@@ -1752,7 +1752,8 @@
         "dependencies": {
           "MyHotelWebsite.Data.Common": "1.0.0",
           "MyHotelWebsite.Data.Models": "1.0.0",
-          "MyHotelWebsite.Services.Mapping": "1.0.0"
+          "MyHotelWebsite.Services.Mapping": "1.0.0",
+          "MyHotelWebsite.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "MyHotelWebsite.Services.Data.dll": {}
@@ -1764,6 +1765,15 @@
         },
         "runtime": {
           "MyHotelWebsite.Services.Mapping.dll": {}
+        }
+      },
+      "MyHotelWebsite.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "MyHotelWebsite.Data.Models": "1.0.0",
+          "MyHotelWebsite.Services.Mapping": "1.0.0"
+        },
+        "runtime": {
+          "MyHotelWebsite.Web.ViewModels.dll": {}
         }
       }
     }
@@ -2843,6 +2853,11 @@
       "sha512": ""
     },
     "MyHotelWebsite.Services.Mapping/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyHotelWebsite.Web.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

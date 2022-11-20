@@ -1308,7 +1308,8 @@
         "dependencies": {
           "MyHotelWebsite.Data.Common": "1.0.0",
           "MyHotelWebsite.Data.Models": "1.0.0",
-          "MyHotelWebsite.Services.Mapping": "1.0.0"
+          "MyHotelWebsite.Services.Mapping": "1.0.0",
+          "MyHotelWebsite.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/MyHotelWebsite.Services.Data.dll": {}
@@ -1341,6 +1342,20 @@
         },
         "runtime": {
           "bin/placeholder/MyHotelWebsite.Services.Messaging.dll": {}
+        }
+      },
+      "MyHotelWebsite.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MyHotelWebsite.Data.Models": "1.0.0",
+          "MyHotelWebsite.Services.Mapping": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyHotelWebsite.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyHotelWebsite.Web.ViewModels.dll": {}
         }
       }
     }
@@ -3342,6 +3357,11 @@
       "type": "project",
       "path": "../../Services/MyHotelWebsite.Services.Messaging/MyHotelWebsite.Services.Messaging.csproj",
       "msbuildProject": "../../Services/MyHotelWebsite.Services.Messaging/MyHotelWebsite.Services.Messaging.csproj"
+    },
+    "MyHotelWebsite.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../Web/MyHotelWebsite.Web.ViewModels/MyHotelWebsite.Web.ViewModels.csproj",
+      "msbuildProject": "../../Web/MyHotelWebsite.Web.ViewModels/MyHotelWebsite.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -78,3 +78,5 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\Sandbox\obj\
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\Sandbox\obj\Debug\net6.0\Sandbox.pdb
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\Sandbox\obj\Debug\net6.0\Sandbox.genruntimeconfig.cache
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\Sandbox\obj\Debug\net6.0\ref\Sandbox.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\Sandbox\bin\Debug\net6.0\MyHotelWebsite.Web.ViewModels.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\Sandbox\bin\Debug\net6.0\MyHotelWebsite.Web.ViewModels.pdb

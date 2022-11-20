@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\MyHotelWebsite.Data.Common\MyHotelWebsite.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\MyHotelWebsite.Data.Models\MyHotelWebsite.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\MyHotelWebsite.Web.ViewModels\MyHotelWebsite.Web.ViewModels.csproj" />
     <ProjectReference Include="..\MyHotelWebsite.Services.Mapping\MyHotelWebsite.Services.Mapping.csproj" />
   </ItemGroup>
 

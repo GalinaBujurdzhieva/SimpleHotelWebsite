@@ -445,6 +445,20 @@
         "runtime": {
           "bin/placeholder/MyHotelWebsite.Services.Mapping.dll": {}
         }
+      },
+      "MyHotelWebsite.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MyHotelWebsite.Data.Models": "1.0.0",
+          "MyHotelWebsite.Services.Mapping": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyHotelWebsite.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyHotelWebsite.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -1122,6 +1136,11 @@
       "type": "project",
       "path": "../MyHotelWebsite.Services.Mapping/MyHotelWebsite.Services.Mapping.csproj",
       "msbuildProject": "../MyHotelWebsite.Services.Mapping/MyHotelWebsite.Services.Mapping.csproj"
+    },
+    "MyHotelWebsite.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../Web/MyHotelWebsite.Web.ViewModels/MyHotelWebsite.Web.ViewModels.csproj",
+      "msbuildProject": "../../Web/MyHotelWebsite.Web.ViewModels/MyHotelWebsite.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1129,6 +1148,7 @@
       "MyHotelWebsite.Data.Common >= 1.0.0",
       "MyHotelWebsite.Data.Models >= 1.0.0",
       "MyHotelWebsite.Services.Mapping >= 1.0.0",
+      "MyHotelWebsite.Web.ViewModels >= 1.0.0",
       "StyleCop.Analyzers >= 1.2.0-beta.435"
     ]
   },
@@ -1167,6 +1187,9 @@
             },
             "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj": {
               "projectPath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj"
+            },
+            "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj"
             }
           }
         }

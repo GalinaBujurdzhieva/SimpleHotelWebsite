@@ -60,7 +60,6 @@
                 }).AddRazorRuntimeCompilation();
             services.AddRazorPages();
             services.AddDatabaseDeveloperPageExceptionFilter();
-          
             services.AddSingleton(configuration);
 
             // Data repositories
@@ -71,6 +70,7 @@
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
+            services.AddTransient<IBlogsService, BlogsService>();
         }
 
         private static void Configure(WebApplication app)
