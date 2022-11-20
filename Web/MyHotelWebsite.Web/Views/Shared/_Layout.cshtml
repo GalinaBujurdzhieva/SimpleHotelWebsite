@@ -1,4 +1,8 @@
 ﻿@using MyHotelWebsite.Common
+@using Microsoft.AspNetCore.Identity
+@using MyHotelWebsite.Data.Models
+
+@inject SignInManager<ApplicationUser> signInManager
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,20 +77,32 @@
                             </div>
                         </nav>
                     </div>
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                            <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                                <div class="btn-group mr-2" role="group" aria-label="First group">
+                                    <form method="post" asp-controller="User" asp-action="Logout">
+                                        <div class="text-center"><button type="submit" class="book-now-btn">Logout</button></div>
+                                    </form>
+                                </div>
+                            </div>
 
-                    <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="btn-group mr-2" role="group" aria-label="First group">
-                            <form method="post" asp-controller="User" asp-action="Register">
-                                <div class="text-center"><button type="submit" class="book-now-btn">Register</button></div>
-                            </form>
+                    }
+                    else
+                    {
+                        <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                <form method="post" asp-controller="User" asp-action="Register">
+                                    <div class="text-center"><button type="submit" class="book-now-btn">Register</button></div>
+                                </form>
+                            </div>
+                            <div class="btn-group mr-2" role="group" aria-label="Second group">
+                                <form method="post" asp-controller="User" asp-action="Login">
+                                    <div class="text-center"><button type="submit" class="book-now-btn">Log in</button></div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="btn-group mr-2" role="group" aria-label="Second group">
-                            <form method="post" asp-controller="User" asp-action="Login">
-                                <div class="text-center"><button type="submit" class="book-now-btn">Log in</button></div>
-                            </form>
-                        </div>
-                    </div>
-
+                    }
                 </div>
             </div>
         </div>
@@ -106,72 +122,20 @@
     </footer>*@
 
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12 width-set-50">
-                    <div class="footer-details">
-                        <h4>Get in touch</h4>
-                        <ul class="list-unstyled footer-contact-list">
-                            <li>
-                                <i class="fa fa-map-marker fa-lg"></i>
-                                <p>701 Old York Drive Richmond USA.</p>
-                            </li>
-                            <li>
-                                <i class="fa fa-phone fa-lg"></i>
-                                <p><a href="tel:+1-202-555-0100"> +1-202-555-0100</a></p>
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope-o fa-lg"></i>
-                                <p><a href="mailto:demo@info.com"> demo@info.com</a></p>
-                            </li>
-                        </ul>
-                        <div class="footer-social-icon">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                        <div class="input-group" id="subscribe">
-                            <input type="text" class="form-control subscribe-box" value="" name="subscribe" placeholder="EMAIL ID">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn subscribe-button"><i class="fa fa-paper-plane fa-lg"></i></button>
-                            </span>
-                        </div>
+            <div class="btn-toolbar justify-content-center">
+                <div class="btn-group mr-1">
+                    <div class="contact-form">
+                    <h3><span>Administration Area</span></h3>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12 width-50 width-set-50">
-                    <div class="footer-details">
-                        <h4>explore</h4>
-                        <ul class="list-unstyled footer-links">
-                            <li class="active"><a>Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="rooms.html">Rooms</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="#">Dinning</a></li>
-                            <li> <a href="news.html">News</a></li>
-                            <li> <a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="footer-details">
-                        <h4>Now On Instagram</h4>
-                        <div class="row">
-                            <div class="instagram-images">
-                                <div id="instafeed"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <form method="post" asp-controller="Administration" asp-area="Administration" asp-action="Login">
+                        <div class="text-center"><button type="submit" class="book-now-btn">Log in</button></div>
+                    </form>
                 </div>
             </div>
-
             <div class="copyright">
                 <!--Do not remove Backlink from footer of the template. To remove it you can purchase the Backlink !-->
                 &copy; 2017 All right reserved. Designed by <a href="http://www.themevault.net/" target="_blank">ThemeVault.</a>
             </div>
-
-        </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>

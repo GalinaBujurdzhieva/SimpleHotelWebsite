@@ -12,8 +12,8 @@ using MyHotelWebsite.Data;
 namespace MyHotelWebsite.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221117140831_ApplicationUserCorrection")]
-    partial class ApplicationUserCorrection
+    [Migration("20221120125616_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -295,7 +295,6 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StaffId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
@@ -727,9 +726,7 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
                         .WithMany("Blogs")
-                        .HasForeignKey("StaffId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("StaffId");
 
                     b.Navigation("Staff");
                 });

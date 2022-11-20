@@ -2,11 +2,11 @@
 
 namespace MyHotelWebsite.Web.Controllers
 {
-    public class GuestController : BaseController
+    public class BlogsController : BaseController
     {
         public IActionResult Index()
         {
-            return View();
+            return this.View();
         }
     }
 }

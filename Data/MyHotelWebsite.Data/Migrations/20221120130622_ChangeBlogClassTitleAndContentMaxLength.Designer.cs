@@ -12,8 +12,8 @@ using MyHotelWebsite.Data;
 namespace MyHotelWebsite.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221107073706_CorrectionsOnDbModels")]
-    partial class CorrectionsOnDbModels
+    [Migration("20221120130622_ChangeBlogClassTitleAndContentMaxLength")]
+    partial class ChangeBlogClassTitleAndContentMaxLength
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -196,11 +196,21 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
                     b.Property<string>("GuestId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -269,7 +279,7 @@ namespace MyHotelWebsite.Data.Migrations
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasMaxLength(10000)
+                        .HasMaxLength(20000)
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedOn")
@@ -285,13 +295,12 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StaffId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
@@ -400,18 +409,8 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -566,9 +565,6 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("RoomImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("RoomNumber")
                         .HasColumnType("int");
 
@@ -651,11 +647,6 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -666,11 +657,6 @@ namespace MyHotelWebsite.Data.Migrations
 
                     b.Property<string>("JobTitleImageUrl")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -740,9 +726,7 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
                         .WithMany("Blogs")
-                        .HasForeignKey("StaffId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("StaffId");
 
                     b.Navigation("Staff");
                 });

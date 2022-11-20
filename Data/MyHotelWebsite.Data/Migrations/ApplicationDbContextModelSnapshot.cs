@@ -277,7 +277,7 @@ namespace MyHotelWebsite.Data.Migrations
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasMaxLength(10000)
+                        .HasMaxLength(20000)
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedOn")
@@ -293,13 +293,12 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StaffId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
@@ -725,9 +724,7 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
                         .WithMany("Blogs")
-                        .HasForeignKey("StaffId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("StaffId");
 
                     b.Navigation("Staff");
                 });

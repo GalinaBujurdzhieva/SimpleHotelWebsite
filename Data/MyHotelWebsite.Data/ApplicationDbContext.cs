@@ -11,6 +11,7 @@
 
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using System.Reflection.Emit;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -138,6 +139,11 @@
                     entity.ModifiedOn = DateTime.UtcNow;
                 }
             }
+        }
+
+        internal bool Any()
+        {
+            throw new NotImplementedException();
         }
     }
 }

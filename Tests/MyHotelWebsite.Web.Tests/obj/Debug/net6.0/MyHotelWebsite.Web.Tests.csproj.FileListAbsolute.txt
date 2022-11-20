@@ -666,7 +666,6 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsi
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.AssemblyInfoInputs.cache
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.AssemblyInfo.cs
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.csproj.CoreCompileInputs.cache
-C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\staticwebassets.development.json
@@ -677,3 +676,4 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsi
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.pdb
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.genruntimeconfig.cache
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\ref\MyHotelWebsite.Web.Tests.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.MvcApplicationPartsAssemblyInfo.cs
