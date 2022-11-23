@@ -9,6 +9,10 @@
   <PropertyGroup>
     <CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Blogs\_OneBlogPartial.cshtml" />
+  </ItemGroup>
 	<ItemGroup>
 		<AdditionalFiles Include="..\..\stylecop.json" />
 	</ItemGroup>
@@ -43,5 +47,17 @@
     <ProjectReference Include="..\..\Services\MyHotelWebsite.Services\MyHotelWebsite.Services.csproj" />
     <ProjectReference Include="..\MyHotelWebsite.Web.Infrastructure\MyHotelWebsite.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\MyHotelWebsite.Web.ViewModels\MyHotelWebsite.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Blogs\_OneBlogPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Blogs\_OneBlogPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Blogs\_OneBlogPartial.cshtml" />
   </ItemGroup>
 </Project>

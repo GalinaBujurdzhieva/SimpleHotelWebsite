@@ -26,56 +26,36 @@
 </head>
 <body>
     <div id="page">
-
         <section class="image-head-wrapper-blog">
             <div class="inner-wrapper">
                 <h1>Blog</h1>
             </div>
         </section>
         <div class="clearfix"></div>
-
-       
-        @foreach (var blog in Model.Blogs)
-        {
-            <section class="blog-block">
-                <div class="container">
-                    <div class="row offspace-45">
-                        <div class="view-set-block">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <div class="event-blog-image">
-                                    <img alt="image" class="img-responsive" src="@("https://localhost:44319/" + @blog.BlogImageUrl)">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
-                                <div class="event-blog-details">
-                                    <h4><a href="single-blog.html">@blog.Title</a></h4>
-                                    <p>@blog.BlogImageUrl</p>
-                                    <p>@blog.Content</p>
-                                    <a class="btn btn-default" href="single-blog.html">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        }
-        <hr />
-        <section>
-            <div class="container justify-content-center">
-                <div class="h-100 d-flex align-items-center justify-content-center">
-                    <form method="post" asp-controller="Blogs" asp-action="All">
-                        <div class="text-center"><button type="submit" class="book-now-btn">See all</button></div>
-                    </form>
-                </div>
+    <hr />
+    <div class="btn-toolbar justify-content-center">
+        <div class="btn-group mr-1">
+            <div class="contact-form">
+                <h3>Take a look at the <span>newest blog articles</span></h3>
             </div>
-        </section>
-
+        </div>
+    </div>
+        <partial name="_OneBlogPartial" />
+    <hr />
+    <section>
+        <div class="container justify-content-center">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <form method="post" asp-controller="Blogs" asp-action="All">
+                    <div class="text-center"><button type="submit" class="book-now-btn">See all</button></div>
+                </form>
+            </div>
+        </div>
+    </section>
         <!--back to top--->
         <a style="display: none;" href="javascript:void(0);" class="scrollTop back-to-top" id="back-to-top">
             <span><i aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span>
             <span>Top</span>
         </a>
-
     </div>
 </body>
 </html>
