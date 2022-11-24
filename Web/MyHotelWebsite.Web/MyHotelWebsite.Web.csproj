@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Blogs\_OneBlogPartial.cshtml" />
+    <Content Remove="Views\Blogs\_SingleBlogPartial.cshtml" />
   </ItemGroup>
 	<ItemGroup>
 		<AdditionalFiles Include="..\..\stylecop.json" />
@@ -50,14 +50,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Views\Blogs\_OneBlogPartial.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Views\Blogs\_OneBlogPartial.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Views\Blogs\_OneBlogPartial.cshtml" />
+    <None Include="Views\Blogs\_SingleBlogPartial.cshtml" />
   </ItemGroup>
 </Project>

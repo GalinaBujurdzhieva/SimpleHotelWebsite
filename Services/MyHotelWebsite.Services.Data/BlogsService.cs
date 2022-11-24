@@ -18,26 +18,40 @@ namespace MyHotelWebsite.Services.Data
     {
         private readonly IDeletableEntityRepository<Blog> blogRepo;
 
-        public BlogsService(IDeletableEntityRepository<Blog> blogRepo, IHostingEnvironment hostingEnvironment)
+        public BlogsService(IDeletableEntityRepository<Blog> blogRepo)
         {
             this.blogRepo = blogRepo;
         }
 
-        public IEnumerable<T> GetAllBlogs<T>(int page, int itemsPerPage = 4)
+        public async Task<T> BlogDetailsByIdAsync<T>(int id)
         {
-            var blogs = this.blogRepo.AllAsNoTracking()
+            var currentBlog = await this.blogRepo.AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>()
+                .FirstOrDefaultAsync();
+            return currentBlog;
+        }
+
+        public async Task<bool> DoesBlogExistsAsync(int id)
+        {
+            return await this.blogRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
+        }
+
+        public async Task<IEnumerable<T>> GetAllBlogsAsync<T>(int page, int itemsPerPage = 4)
+        {
+            var blogs = await this.blogRepo.AllAsNoTracking()
                 .OrderByDescending(x => x.CreatedOn)
                 .Skip((page - 1) * itemsPerPage)
-                .Take(itemsPerPage).To<T>().ToList();
+                .Take(itemsPerPage).To<T>().ToListAsync();
 
             return blogs;
         }
 
-        public IEnumerable<T> GetLastBlogs<T>(int count)
+        public async Task<IEnumerable<T>> GetLastBlogsAsync<T>(int count)
         {
-            var lastBlogs = this.blogRepo.AllAsNoTracking()
+            var lastBlogs = await this.blogRepo.AllAsNoTracking()
                 .OrderByDescending(x => x.CreatedOn)
-                .Take(count).To<T>().ToList();
+                .Take(count).To<T>().ToListAsync();
 
             return lastBlogs;
         }

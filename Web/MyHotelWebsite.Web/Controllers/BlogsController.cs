@@ -5,6 +5,7 @@
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Blogs;
     using System.IO;
+    using System.Threading.Tasks;
 
     public class BlogsController : BaseController
     {
@@ -15,22 +16,33 @@
             this.blogService = blogService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var model = new BlogAllViewModel
             {
-                Blogs = this.blogService.GetLastBlogs<SingleBlogViewModel>(2),
+                Blogs = await this.blogService.GetLastBlogsAsync<SingleBlogViewModel>(2),
             };
             return this.View(model);
         }
 
-        public IActionResult All(int id = 1)
+        public async Task<IActionResult> All(int id = 1)
         {
             var model = new BlogAllViewModel
             {
-                Blogs = this.blogService.GetAllBlogs<SingleBlogViewModel>(id, 4),
+                Blogs = await this.blogService.GetAllBlogsAsync<SingleBlogViewModel>(id, 4),
                 PageNumber = id,
             };
+            return this.View(model);
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            if (!await this.blogService.DoesBlogExistsAsync(id))
+            {
+                return this.RedirectToAction(nameof(this.All));
+            }
+
+            var model = await this.blogService.BlogDetailsByIdAsync<SingleBlogViewModel>(id);
             return this.View(model);
         }
     }

@@ -10,8 +10,12 @@
 
     public interface IBlogsService
     {
-        IEnumerable<T> GetAllBlogs<T>(int page, int itemsPerPage = 4);
+        Task<IEnumerable<T>> GetAllBlogsAsync<T>(int page, int itemsPerPage = 4);
 
-        IEnumerable<T> GetLastBlogs<T>(int count);
+        Task<IEnumerable<T>> GetLastBlogsAsync<T>(int count);
+
+        Task<T> BlogDetailsByIdAsync<T>(int id);
+
+        Task<bool> DoesBlogExistsAsync(int id);
     }
 }

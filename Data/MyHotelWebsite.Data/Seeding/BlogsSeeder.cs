@@ -91,6 +91,38 @@
                 BlogImageUrl = "images/blogs/9.png",
             });
 
+            // 10
+            blogs.Add(new Blog
+            {
+                Title = "Kräuterhof - a fascinating gem for our guests\r\nin one of the most beautiful places in the Stubai Valley",
+                Content = "Unlike every other herb farm in Austria, the building was of course erected in the style of the farmhouses of the Stubai Valley, with which we have a very strong connection. The farm shop, the show kitchen, the tasting room as well as the smoking chamber inside provide an impressive experience for the senses. The herb-strewn hills which surround the farm create yet more opportunities for encounters, shared activities, fun and space to reflect. The nature and herb garden is a place for almost unlimited freedom and peace. There is a small chapel on the hill dedicated to St. Francis, which is perfect for contemplation and reflection.",
+                BlogImageUrl = "images/blogs/10.png",
+            });
+
+            // 11
+            blogs.Add(new Blog
+            {
+                Title = "Tasting evening every week\r\nas well as meeting point for lovers of nature, herbs and cooking",
+                Content = "The region offers a variety of hearty specialties which we hope you get to know a little bit better as our guest here. At the same time, we adhere to the R50 principle. A simple philosophy lies behind it. We regularly prepare food and other agricultural products or special specialities for you, which have been produced within a radius of 50 kilometres around our hotel in Neustift in the Stubai Valley and are typical for our region. Therefore, we are pleased to invite you to weekly tasting sessions in our herb farm, depending on the season. We combine homemade specialities with other tasty delights from the Stubai Valley. You will experience an amazing variety of pleasures which will always lead you to new discoveries – unique for a herb farm in Austria.\r\nThe kitchen in our Kräuterhof is not only a place to see how the regional and herb specialities are made, it has also been a place where you can take part from its very beginnings. It was meant from the outset to be a place of hands-on involvement. Throughout the year, Nina hosts seasonable events, such as herb tours with plenty of interesting facts and traditional knowledge about ointment, salt, oil, vinegar and tea production, bread baking and much more. Of course, with ingredients from our herb garden and with regional products. You are therefore able to take the knowledge of how these specialities are produced back home with you and can magic yourself up a small piece of holiday heaven anytime you want in your everyday life.",
+                BlogImageUrl = "images/blogs/11.png",
+            });
+
+            // 12
+            blogs.Add(new Blog
+            {
+                Title = "Hotel chapel\r\nnear God higher and higher in the mountain",
+                Content = "We were looking for a suitable place with plenty of energy and radiance for our very own chapel. We found this on the herb hill next to the herb farm. Our guests will find a place to reflect, contemplate and develop their spirituality here. In terms of the architecture, the chapel is based on the classic yet simple style of the Tyrolean Stubai Valley. The simplicity is down to its namesake: St. Francis. His abandonment of material wealth, his great social commitment and his love of animals and nature are still captivating to this date and are the source of inspiration for our family. You will not find this on any other herb farm in Austria!",
+                BlogImageUrl = "images/blogs/12.png",
+            });
+
+            // 13
+            blogs.Add(new Blog
+            {
+                Title = "Exhibition stable and fallow deer enclosure",
+                Content = "Anyone who loves mother nature surely also loves her creatures. And of course, you will find many of them on our Kräuterhof in Austria. The stable next to the herb farm is a comfortable home to our brown Tyrolean mountain sheep. You are just as welcome to stroke their brown wool as you are our bunnies. The smallest of our guests just love to nose around.\r\nClearly visible from the herb farm and only approx. 12 minutes from the hotel, the inhabitants of our fallow deer enclosure are ready to provide our guests with many memorable animal moments. It is usually the case that you hear them before you even see the first allow deer bucks. One thing is for sure, it is very hard to escape these charming animals with such pleasant personalities. Feeding is definitely allowed!",
+                BlogImageUrl = "images/blogs/13.png",
+            });
+
             await dbContext.Blogs.AddRangeAsync(blogs);
             await dbContext.SaveChangesAsync();
         }
