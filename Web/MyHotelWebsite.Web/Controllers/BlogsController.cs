@@ -27,9 +27,17 @@
 
         public async Task<IActionResult> All(int id = 1)
         {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int BlogsPerPage = 4;
             var model = new BlogAllViewModel
             {
-                Blogs = await this.blogService.GetAllBlogsAsync<SingleBlogViewModel>(id, 4),
+                ItemsPerPage = BlogsPerPage,
+                AllEntitiesCount = await this.blogService.GetCountAsync(),
+                Blogs = await this.blogService.GetAllBlogsAsync<SingleBlogViewModel>(id, BlogsPerPage),
                 PageNumber = id,
             };
             return this.View(model);

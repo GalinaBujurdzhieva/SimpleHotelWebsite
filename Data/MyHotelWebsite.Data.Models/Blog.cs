@@ -13,7 +13,7 @@
     public class Blog : BaseDeletableModel<int>
     {
         [Required]
-        [StringLength(200)]
+        [StringLength(500)]
         public string Title { get; set; }
 
         [Required]

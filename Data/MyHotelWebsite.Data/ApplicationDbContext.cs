@@ -12,6 +12,7 @@
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using System.Reflection.Emit;
+    using Microsoft.AspNetCore.Identity;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -107,6 +108,25 @@
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            const string MANAGER_ID = "7918eb35-b80b-4f3d-9c05-34a854158ffd";
+            const string ROLE_ID = "06457dc0-41f8-42df-b463-046cf2bfa778";
+
+            var hasher = new PasswordHasher<ApplicationUser>();
+            builder.Entity<ApplicationUser>().HasData(new ApplicationUser
+            {
+                Id = MANAGER_ID,
+                UserName = "Admin",
+                FirstName = "AdminFirstName",
+                LastName = "AdminLastName",
+                PasswordHash = hasher.HashPassword(null, "BestAdminEver"),
+            });
+
+            builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            {
+                RoleId = ROLE_ID,
+                UserId = MANAGER_ID,
+            });
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)

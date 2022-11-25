@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using MyHotelWebsite.Common;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Web.ViewModels.User;
     using System.Threading.Tasks;
@@ -72,13 +73,22 @@
             if (user != null)
             {
                 var result = await this.signInManager.PasswordSignInAsync(model.UserName, model.Password, false, false);
+                var userIsInRoleAdmin = await this.userManager.IsInRoleAsync(user, GlobalConstants.HotelAdministratorRoleName);
+
                 if (result.Succeeded)
                 {
-                    return this.RedirectToAction("Contacts", "Home");
+                    if (userIsInRoleAdmin)
+                    {
+                        return this.RedirectToAction("Index", "Dashboard", new { area = "Administration" });
+                    }
+                    else
+                    {
+                        return this.RedirectToAction("Index", "Home");
+                    }
                 }
             }
 
-            this.ModelState.AddModelError("", "Invalid Username or Passwprd");
+            this.ModelState.AddModelError("", "Invalid Username or Password");
             return this.View(model);
         }
 

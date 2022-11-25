@@ -47,6 +47,11 @@ namespace MyHotelWebsite.Services.Data
             return blogs;
         }
 
+        public async Task<int> GetCountAsync()
+        {
+            return await this.blogRepo.AllAsNoTracking().CountAsync();
+        }
+
         public async Task<IEnumerable<T>> GetLastBlogsAsync<T>(int count)
         {
             var lastBlogs = await this.blogRepo.AllAsNoTracking()

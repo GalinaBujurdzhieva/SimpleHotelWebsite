@@ -107,6 +107,13 @@ namespace MyHotelWebsite.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "7918eb35-b80b-4f3d-9c05-34a854158ffd",
+                            RoleId = "06457dc0-41f8-42df-b463-046cf2bfa778"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -262,6 +269,25 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "7918eb35-b80b-4f3d-9c05-34a854158ffd",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c4c9466e-94ba-4259-a67d-172ce5c32749",
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmailConfirmed = false,
+                            FirstName = "AdminFirstName",
+                            IsDeleted = false,
+                            LastName = "AdminLastName",
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAEAACcQAAAAENw8dHArYIk4I4hDyNm0cv0BaIs5wNDyqQb8hRgQTEuASZ6Ll8XroXyRvtWa0iarsA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "e98666f7-39c2-4847-8a86-f6b81ade1794",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.Blog", b =>
@@ -297,8 +323,8 @@ namespace MyHotelWebsite.Data.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.HasKey("Id");
 

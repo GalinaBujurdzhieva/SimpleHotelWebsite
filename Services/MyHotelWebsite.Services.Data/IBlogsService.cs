@@ -10,6 +10,8 @@
 
     public interface IBlogsService
     {
+        Task<int> GetCountAsync();
+
         Task<IEnumerable<T>> GetAllBlogsAsync<T>(int page, int itemsPerPage = 4);
 
         Task<IEnumerable<T>> GetLastBlogsAsync<T>(int count);

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace MyHotelWebsite.Web.ViewModels.Blogs
 {
-    public class BlogAllViewModel
+    public class BlogAllViewModel : PagingViewModel
     {
         public IEnumerable<SingleBlogViewModel> Blogs { get; set; } = new List<SingleBlogViewModel>();
-
-        public int? PageNumber { get; set; }
     }
 }
