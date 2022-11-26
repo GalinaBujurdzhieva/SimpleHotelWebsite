@@ -929,6 +929,11 @@ footer a{
     height: 450px;
     position: relative;
 }
+.image-head-wrapper-blog-all {
+    background: rgba(0, 0, 0, 0) url("../images/Blog-All.png") no-repeat scroll center top;
+    height: 450px;
+    position: relative;
+}
 .image-head-wrapper-contact {
     background: rgba(0, 0, 0, 0) url("../images/ContactUs-main.png") no-repeat scroll center top;
     height: 450px;
@@ -986,4 +991,17 @@ footer a{
 }
 #instafeed > div:nth-last-child(-n+3) {
     margin-top: 15px;
+}
+.pagination > li > a, .pagination > li > span {
+    color: #ff4157;
+}
+.pagination > .active, .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    background-color: #ff4157;
+    border-color: #ff4157;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #ff4157;
+    border-color: #ff4157;
 }

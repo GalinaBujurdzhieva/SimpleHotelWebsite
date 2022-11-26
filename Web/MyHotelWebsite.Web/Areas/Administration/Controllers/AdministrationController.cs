@@ -10,7 +10,7 @@
     using Microsoft.AspNetCore.Identity;
     using MyHotelWebsite.Data.Models;
 
-    [Authorize(Roles = GlobalConstants.WebsiteAdministratorRoleName)]
+    // [Authorize(Roles = GlobalConstants.WebsiteAdministratorRoleName)]
     [Area("Administration")]
     public class AdministrationController : BaseController
     {

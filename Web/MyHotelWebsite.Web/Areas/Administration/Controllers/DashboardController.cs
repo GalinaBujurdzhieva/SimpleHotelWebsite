@@ -12,7 +12,7 @@
     using MyHotelWebsite.Common;
     using System.Data;
 
-    [Authorize(Roles = GlobalConstants.HotelAdministratorRoleName)]
+    // [Authorize(Roles = GlobalConstants.HotelAdministratorRoleName)]
     [Area("Administration")]
     public class DashboardController : AdministrationController
     {
