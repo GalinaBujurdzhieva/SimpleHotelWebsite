@@ -55,9 +55,21 @@ namespace MyHotelWebsite.Services.Data
             return currentBlog;
         }
 
+        public async Task DeleteBlogAsync(int id)
+        {
+            var currentBlog = await this.blogRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            this.blogRepo.Delete(currentBlog);
+            await this.blogRepo.SaveChangesAsync();
+        }
+
         public async Task<bool> DoesBlogExistsAsync(int id)
         {
             return await this.blogRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
+        }
+
+        public Task EditBlogAsync(CreateBlogViewModel model, int id)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<T>> GetAllBlogsAsync<T>(int page, int itemsPerPage = 4)

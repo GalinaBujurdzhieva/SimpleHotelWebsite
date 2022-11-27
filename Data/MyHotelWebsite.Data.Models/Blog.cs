@@ -22,6 +22,10 @@
 
         public string BlogImageUrl { get; set; }
 
+        public int BlogImageId { get; set; }
+
+        public virtual BlogImage BlogImage { get; set; }
+
         public string StaffId { get; set; }
 
         public virtual Staff Staff { get; set; }

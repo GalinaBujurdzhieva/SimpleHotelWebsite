@@ -107,13 +107,6 @@ namespace MyHotelWebsite.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "7918eb35-b80b-4f3d-9c05-34a854158ffd",
-                            RoleId = "06457dc0-41f8-42df-b463-046cf2bfa778"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -269,25 +262,6 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "7918eb35-b80b-4f3d-9c05-34a854158ffd",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4c9466e-94ba-4259-a67d-172ce5c32749",
-                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EmailConfirmed = false,
-                            FirstName = "AdminFirstName",
-                            IsDeleted = false,
-                            LastName = "AdminLastName",
-                            LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAENw8dHArYIk4I4hDyNm0cv0BaIs5wNDyqQb8hRgQTEuASZ6Ll8XroXyRvtWa0iarsA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "e98666f7-39c2-4847-8a86-f6b81ade1794",
-                            TwoFactorEnabled = false,
-                            UserName = "Admin"
-                        });
                 });
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.Blog", b =>
@@ -297,6 +271,9 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BlogImageId")
+                        .HasColumnType("int");
 
                     b.Property<string>("BlogImageUrl")
                         .HasColumnType("nvarchar(max)");
@@ -332,7 +309,48 @@ namespace MyHotelWebsite.Data.Migrations
 
                     b.HasIndex("StaffId");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Blog");
+                });
+
+            modelBuilder.Entity("MyHotelWebsite.Data.Models.BlogImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Extension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("StaffId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId")
+                        .IsUnique();
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("StaffId");
+
+                    b.ToTable("BlogImage");
                 });
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.Dish", b =>
@@ -755,6 +773,23 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Navigation("Staff");
                 });
 
+            modelBuilder.Entity("MyHotelWebsite.Data.Models.BlogImage", b =>
+                {
+                    b.HasOne("MyHotelWebsite.Data.Models.Blog", "Blog")
+                        .WithOne("BlogImage")
+                        .HasForeignKey("MyHotelWebsite.Data.Models.BlogImage", "BlogId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
+                        .WithMany()
+                        .HasForeignKey("StaffId");
+
+                    b.Navigation("Blog");
+
+                    b.Navigation("Staff");
+                });
+
             modelBuilder.Entity("MyHotelWebsite.Data.Models.Dish", b =>
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.Staff", "Staff")
@@ -890,6 +925,11 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Navigation("Roles");
 
                     b.Navigation("Staff");
+                });
+
+            modelBuilder.Entity("MyHotelWebsite.Data.Models.Blog", b =>
+                {
+                    b.Navigation("BlogImage");
                 });
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.Dish", b =>

@@ -21,5 +21,9 @@
         Task<bool> DoesBlogExistsAsync(int id);
 
         Task AddBlogAsync(CreateBlogViewModel model, string staffId, string imagePath);
+
+        Task EditBlogAsync(CreateBlogViewModel model, int id);
+
+        Task DeleteBlogAsync(int id);
     }
 }
