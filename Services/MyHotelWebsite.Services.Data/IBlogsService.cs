@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-
+    using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
     using MyHotelWebsite.Web.ViewModels.Blogs;
 
     public interface IBlogsService
@@ -19,5 +19,7 @@
         Task<T> BlogDetailsByIdAsync<T>(int id);
 
         Task<bool> DoesBlogExistsAsync(int id);
+
+        Task AddBlogAsync(CreateBlogViewModel model, string staffId, string imagePath);
     }
 }

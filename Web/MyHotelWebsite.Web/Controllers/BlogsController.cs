@@ -11,7 +11,7 @@
     {
         private readonly IBlogsService blogService;
 
-        public BlogsController(IBlogsService blogService, IWebHostEnvironment hostingEnvironment)
+        public BlogsController(IBlogsService blogService)
         {
             this.blogService = blogService;
         }

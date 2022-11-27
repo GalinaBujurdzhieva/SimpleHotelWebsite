@@ -47,7 +47,7 @@ html, html a {
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 6;  number of lines to show 
+    -webkit-line-clamp: 6;  
     line-clamp: 6;
     -webkit-box-orient: vertical;
 }
@@ -210,7 +210,7 @@ ul{
     transform: translateX(0%);
 }
 .cl-effect-10 a.active{
-    color: #ff;
+    color: #fff;
 }
 .cl-effect-10 {
     position: relative;

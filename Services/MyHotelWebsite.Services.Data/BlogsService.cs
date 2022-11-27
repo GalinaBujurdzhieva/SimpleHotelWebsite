@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MyHotelWebsite.Data.Common.Repositories;
 using MyHotelWebsite.Data.Models;
 using MyHotelWebsite.Services.Mapping;
+using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
 using MyHotelWebsite.Web.ViewModels.Blogs;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,32 @@ namespace MyHotelWebsite.Services.Data
     public class BlogsService : IBlogsService
     {
         private readonly IDeletableEntityRepository<Blog> blogRepo;
+        private readonly string[] allowedExtensions = new[] { "jpg", "png", "gif" };
 
         public BlogsService(IDeletableEntityRepository<Blog> blogRepo)
         {
             this.blogRepo = blogRepo;
+        }
+
+        public async Task AddBlogAsync(CreateBlogViewModel model, string staffId, string imagePath)
+        {
+            var blog = new Blog
+            {
+                Title = model.Title,
+                Content = model.Content,
+                StaffId = staffId,
+            };
+
+            // Directory.CreateDirectory($"{imagePath}/blogs/");
+            var blogImageExtension = Path.GetExtension(imagePath).TrimStart('.');
+
+            if (this.allowedExtensions.Contains(blogImageExtension))
+            {
+                blog.BlogImageUrl = imagePath;
+            }
+
+            await this.blogRepo.AddAsync(blog);
+            await this.blogRepo.SaveChangesAsync();
         }
 
         public async Task<T> BlogDetailsByIdAsync<T>(int id)
