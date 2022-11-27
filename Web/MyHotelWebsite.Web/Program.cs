@@ -71,6 +71,11 @@
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
             services.AddTransient<IBlogsService, BlogsService>();
+            services.AddTransient<IDishesService, DishesService>();
+            services.AddTransient<IOrdersService, OrdersService>();
+            services.AddTransient<IRoomsService, RoomsService>();
+            services.AddTransient<IGuestsService, GuestsService>();
+            services.AddTransient<IReservationsService, ReservationsService>();
         }
 
         private static void Configure(WebApplication app)

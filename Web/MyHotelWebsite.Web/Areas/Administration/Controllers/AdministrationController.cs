@@ -5,7 +5,7 @@
     using MyHotelWebsite.Common;
     using MyHotelWebsite.Web.Controllers;
 
-    [Authorize(Roles = GlobalConstants.WebsiteAdministratorRoleName)]
+    [Authorize(Roles = GlobalConstants.HotelAdministratorRoleName)]
     [Area("Administration")]
     public class AdministrationController : BaseController
     {
