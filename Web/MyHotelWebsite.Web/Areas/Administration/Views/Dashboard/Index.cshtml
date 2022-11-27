@@ -3,8 +3,10 @@
     this.ViewData["Title"] = "Admin dashboard";
 }
 
+<div class="container justify-content-center">
 <h1>@this.ViewData["Title"]</h1>
-Settings: @this.Model.SettingsCount
+</div>
+
 <span>
 <vc:dashboard-statistics title="Statistics:" />
 </span>
