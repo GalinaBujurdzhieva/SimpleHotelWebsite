@@ -522,6 +522,19 @@
           }
         }
       },
+      "MyHotelWebsite.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0"
+        },
+        "compile": {
+          "bin/placeholder/MyHotelWebsite.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyHotelWebsite.Common.dll": {}
+        }
+      },
       "MyHotelWebsite.Data.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -567,6 +580,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "MyHotelWebsite.Common": "1.0.0",
           "MyHotelWebsite.Data.Models": "1.0.0",
           "MyHotelWebsite.Services.Mapping": "1.0.0"
         },
@@ -1335,6 +1349,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "MyHotelWebsite.Common/1.0.0": {
+      "type": "project",
+      "path": "../../MyHotelWebsite.Common/MyHotelWebsite.Common.csproj",
+      "msbuildProject": "../../MyHotelWebsite.Common/MyHotelWebsite.Common.csproj"
     },
     "MyHotelWebsite.Data.Common/1.0.0": {
       "type": "project",

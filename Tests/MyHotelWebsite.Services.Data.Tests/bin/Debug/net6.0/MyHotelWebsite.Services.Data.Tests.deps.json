@@ -1776,6 +1776,9 @@
       },
       "xunit.runner.visualstudio/2.4.5": {},
       "MyHotelWebsite.Common/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0"
+        },
         "runtime": {
           "MyHotelWebsite.Common.dll": {}
         }
@@ -1833,6 +1836,7 @@
       "MyHotelWebsite.Web.ViewModels/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "MyHotelWebsite.Common": "1.0.0",
           "MyHotelWebsite.Data.Models": "1.0.0",
           "MyHotelWebsite.Services.Mapping": "1.0.0"
         },

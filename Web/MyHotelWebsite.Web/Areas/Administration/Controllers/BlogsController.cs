@@ -44,7 +44,7 @@ namespace MyHotelWebsite.Web.Areas.Administration.Controllers
             }
             catch (Exception)
             {
-                this.ModelState.AddModelError("", "Could not add this blog");
+                this.ModelState.AddModelError(string.Empty, "Could not add this blog");
                 return this.View(model);
             }
 

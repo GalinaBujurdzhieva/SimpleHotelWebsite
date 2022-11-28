@@ -275,6 +275,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
@@ -717,6 +721,9 @@
             "projectReferences": {
               "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
                 "projectPath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj"
+              },
+              "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj"
               },
               "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj"

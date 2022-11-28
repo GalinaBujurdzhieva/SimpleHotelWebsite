@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "yulRW1SlPZEkVS5B9IvXoo2g/N2y0NEKAAiTLK04WVjG8hiPhnjVCQoK34etkk5TlJC11f16OPmoJRvH6TOLEA==",
+  "dgSpecHash": "xa0XqqV7IkA4HF1qbkwLIfxt7SDSBkpOUcditOOWJKA2PciLZo2Yf3S2EA42kTXms3eLwA8BgUwF7vYpj6SBrQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
+    "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
   ],
   "logs": []
 }

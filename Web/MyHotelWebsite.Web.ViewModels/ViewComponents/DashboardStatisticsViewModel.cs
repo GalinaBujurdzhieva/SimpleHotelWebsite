@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyHotelWebsite.Web.ViewModels.ViewComponents
+﻿namespace MyHotelWebsite.Web.ViewModels.ViewComponents
 {
     public class DashboardStatisticsViewModel
     {

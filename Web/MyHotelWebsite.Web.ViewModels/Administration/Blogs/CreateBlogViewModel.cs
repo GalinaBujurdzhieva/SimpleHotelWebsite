@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using MyHotelWebsite.Common.CustomValidationAttributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -18,8 +19,7 @@ namespace MyHotelWebsite.Web.ViewModels.Administration.Blogs
         [StringLength(20000, MinimumLength = 50, ErrorMessage = "{0} must be between {2} and {1} characters long")]
         public string Content { get; set; }
 
-        public string BlogImageUrl { get; set; }
-
+        [AllowedExtensions(new string[] { ".jpg", ".png" }, ErrorMessage = "Selected file is not an image.")]
         public IFormFile Image { get; set; }
     }
 }

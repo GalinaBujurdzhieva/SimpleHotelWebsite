@@ -20,7 +20,6 @@ namespace MyHotelWebsite.Services.Data
     public class BlogsService : IBlogsService
     {
         private readonly IDeletableEntityRepository<Blog> blogsRepo;
-        private readonly string[] allowedExtensions = new[] { "jpg", "png", "gif" };
 
         public BlogsService(IDeletableEntityRepository<Blog> blogRepo)
         {
@@ -33,22 +32,22 @@ namespace MyHotelWebsite.Services.Data
             {
                 Title = model.Title,
                 Content = model.Content,
-                StaffId = staffId,
+                // StaffId = staffId,
             };
 
-            // Directory.CreateDirectory($"{imagePath}/blogs/");
-            var blogImageExtension = Path.GetExtension(imagePath).TrimStart('.');
-
-            if (this.allowedExtensions.Contains(blogImageExtension))
-            {
-                blog.BlogImageUrl = imagePath;
-            }
+            Directory.CreateDirectory($"{imagePath}/blogs/");
+            var blogImageExtension = Path.GetExtension(model.Image.FileName).TrimStart('.');
 
             blog.BlogImage = new BlogImage
             {
                 Extension = blogImageExtension,
-                StaffId = staffId,
+                // StaffId = staffId,
             };
+
+            blog.BlogImageUrl = $"images/blogs/{blog.Id}.{blogImageExtension}";
+            var physicalPath = $"{imagePath}/blogs/{blog.Id}.{blogImageExtension}";
+            using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
+            await model.Image.CopyToAsync(fileStream);
 
             await this.blogsRepo.AddAsync(blog);
             await this.blogsRepo.SaveChangesAsync();
