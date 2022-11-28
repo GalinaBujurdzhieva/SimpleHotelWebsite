@@ -272,8 +272,8 @@ namespace MyHotelWebsite.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("BlogImageId")
-                        .HasColumnType("int");
+                    b.Property<string>("BlogImageId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BlogImageUrl")
                         .HasColumnType("nvarchar(max)");
@@ -314,11 +314,8 @@ namespace MyHotelWebsite.Data.Migrations
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.BlogImage", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");

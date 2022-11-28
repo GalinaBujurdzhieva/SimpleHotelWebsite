@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1zbvCr1t1pdcobhIIf5CUQ/UFYIN4Sb069eovVkJE4k=",
+  "Hash": "PiPKTsYLAzIqNRRr2vxJb47+1juTYdnRm4fzidhOYOc=",
   "Source": "MyHotelWebsite.Web.Tests",
   "BasePath": "_content/MyHotelWebsite.Web.Tests",
   "Mode": "Default",
@@ -505,6 +505,23 @@
       "OriginalItemSpec": "wwwroot\\images\\Blog-main2.png"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\0.png",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/blogs/0.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blogs\\0.png"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\1.png",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Project",
@@ -605,6 +622,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\blogs\\2.png"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\20.png",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/blogs/20.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blogs\\20.png"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\3.png",

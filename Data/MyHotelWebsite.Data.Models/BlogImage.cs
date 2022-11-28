@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace MyHotelWebsite.Data.Models
 {
-    public class BlogImage : BaseDeletableModel<int>
+    public class BlogImage : BaseDeletableModel<string>
     {
+        public BlogImage()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
         public int BlogId { get; set; }
 
         public virtual Blog Blog { get; set; }

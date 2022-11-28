@@ -16,7 +16,7 @@
 
         public string BlogImageUrl { get; set; }
 
-        public int BlogImageId { get; set; }
+        public string BlogImageId { get; set; }
 
         public virtual BlogImage BlogImage { get; set; }
 

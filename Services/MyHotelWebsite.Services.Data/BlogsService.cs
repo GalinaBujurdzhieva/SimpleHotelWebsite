@@ -38,14 +38,16 @@ namespace MyHotelWebsite.Services.Data
             Directory.CreateDirectory($"{imagePath}/blogs/");
             var blogImageExtension = Path.GetExtension(model.Image.FileName).TrimStart('.');
 
-            blog.BlogImage = new BlogImage
+            var blogImage = new BlogImage
             {
                 Extension = blogImageExtension,
                 // StaffId = staffId,
             };
 
-            blog.BlogImageUrl = $"images/blogs/{blog.Id}.{blogImageExtension}";
-            var physicalPath = $"{imagePath}/blogs/{blog.Id}.{blogImageExtension}";
+            blog.BlogImage = blogImage;
+
+            blog.BlogImageUrl = $"images/blogs/{blogImage.Id}.{blogImageExtension}";
+            var physicalPath = $"{imagePath}/blogs/{blogImage.Id}.{blogImageExtension}";
             using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
             await model.Image.CopyToAsync(fileStream);
 
