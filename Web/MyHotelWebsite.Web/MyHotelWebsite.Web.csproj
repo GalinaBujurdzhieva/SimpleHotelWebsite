@@ -50,6 +50,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Blogs\_SingleBlogPartial.cshtml" />
+    <None Include="Views\Shared\_SingleBlogPartial.cshtml" />
   </ItemGroup>
 </Project>
