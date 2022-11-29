@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IsGHz7jD5hhfe8CV4dWM8Ovu+RZWr/KwBYN7whhbH8E=",
+  "Hash": "FyYiUnIMOshH+QaHcSi4wVzMIllKeTXaTZCtSyn9Y1Q=",
   "Source": "MyHotelWebsite.Web.Tests",
   "BasePath": "_content/MyHotelWebsite.Web.Tests",
   "Mode": "Default",
@@ -1404,6 +1404,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Dining-salads.png"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\Coffee.png",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/dishes/Coffee.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\Coffee.png"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dishes-banner.png",

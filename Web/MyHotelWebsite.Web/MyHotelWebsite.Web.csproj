@@ -52,4 +52,8 @@
   <ItemGroup>
     <None Include="Views\Shared\_SingleBlogPartial.cshtml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\dishes\" />
+  </ItemGroup>
 </Project>
