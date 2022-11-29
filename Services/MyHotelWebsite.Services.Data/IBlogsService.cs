@@ -22,7 +22,7 @@
 
         Task AddBlogAsync(CreateBlogViewModel model, string staffId, string imagePath);
 
-        Task EditBlogAsync(CreateBlogViewModel model, int id);
+        Task EditBlogAsync(EditBlogViewModel model, int id, string staffId, string imagePath);
 
         Task DeleteBlogAsync(int id);
     }

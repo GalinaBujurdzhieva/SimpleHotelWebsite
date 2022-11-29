@@ -59,7 +59,7 @@
                     options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
                 }).AddRazorRuntimeCompilation();
             services.AddRazorPages();
-            services.AddDatabaseDeveloperPageExceptionFilter(); 
+            services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddSingleton(configuration);
 
             // Data repositories

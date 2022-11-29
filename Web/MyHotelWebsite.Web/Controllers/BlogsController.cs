@@ -1,11 +1,10 @@
 ﻿namespace MyHotelWebsite.Web.Controllers
 {
-    using Microsoft.AspNetCore.Hosting;
+    using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Blogs;
-    using System.IO;
-    using System.Threading.Tasks;
 
     public class BlogsController : BaseController
     {

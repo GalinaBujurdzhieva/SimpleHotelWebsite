@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using System.Reflection.Metadata;
 
 
 namespace MyHotelWebsite.Services.Data
@@ -76,9 +77,29 @@ namespace MyHotelWebsite.Services.Data
             return await this.blogsRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
         }
 
-        public Task EditBlogAsync(CreateBlogViewModel model, int id)
+        public async Task EditBlogAsync(EditBlogViewModel model, int id, string staffId, string imagePath)
         {
-            throw new NotImplementedException();
+            var currentBlog = await this.blogsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            currentBlog.Title = model.Title;
+            currentBlog.Content = model.Content;
+            // currentBlog.StaffId = staffId;
+
+            Directory.CreateDirectory($"{imagePath}/blogs/");
+            var blogImageExtension = Path.GetExtension(model.Image.FileName).TrimStart('.');
+
+            var blogImage = new BlogImage
+            {
+                Extension = blogImageExtension,
+                // StaffId = staffId,
+            };
+
+            currentBlog.BlogImage = blogImage;
+            currentBlog.BlogImageUrl = $"images/blogs/{blogImage.Id}.{blogImageExtension}";
+            var physicalPath = $"{imagePath}/blogs/{blogImage.Id}.{blogImageExtension}";
+            using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
+            await model.Image.CopyToAsync(fileStream);
+
+            await this.blogsRepo.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<T>> GetAllBlogsAsync<T>(int page, int itemsPerPage = 4)

@@ -584,4 +584,3 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\ref\MyHotelWebsite.Web.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.MvcApplicationPartsAssemblyInfo.cs
