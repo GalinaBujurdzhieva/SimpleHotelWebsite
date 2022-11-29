@@ -676,3 +676,4 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsi
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.pdb
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.genruntimeconfig.cache
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\ref\MyHotelWebsite.Web.Tests.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.MvcApplicationPartsAssemblyInfo.cs
