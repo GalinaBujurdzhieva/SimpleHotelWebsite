@@ -27,7 +27,7 @@
 
         public virtual Guest Guest { get; set; }
 
-        [Required]
+        //[Required]
         public string StaffId { get; set; }
 
         public virtual Staff Staff { get; set; }

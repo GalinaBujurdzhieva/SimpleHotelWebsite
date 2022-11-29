@@ -1,30 +1,25 @@
-﻿using AutoMapper.QueryableExtensions;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
-using MyHotelWebsite.Data.Common.Repositories;
-using MyHotelWebsite.Data.Models;
-using MyHotelWebsite.Services.Mapping;
-using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
-using MyHotelWebsite.Web.ViewModels.Blogs;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using System.Reflection.Metadata;
-
-
-namespace MyHotelWebsite.Services.Data
+﻿namespace MyHotelWebsite.Services.Data
 {
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using Microsoft.EntityFrameworkCore;
+    using MyHotelWebsite.Data.Common.Repositories;
+    using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Services.Mapping;
+    using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
+
     public class BlogsService : IBlogsService
     {
         private readonly IDeletableEntityRepository<Blog> blogsRepo;
+        private readonly IDeletableEntityRepository<BlogImage> blogImagesRepo;
 
-        public BlogsService(IDeletableEntityRepository<Blog> blogRepo)
+        public BlogsService(IDeletableEntityRepository<Blog> blogRepo, IDeletableEntityRepository<BlogImage> blogImagesRepo)
         {
             this.blogsRepo = blogRepo;
+            this.blogImagesRepo = blogImagesRepo;
         }
 
         public async Task AddBlogAsync(CreateBlogViewModel model, string staffId, string imagePath)
@@ -46,7 +41,7 @@ namespace MyHotelWebsite.Services.Data
             };
 
             blog.BlogImage = blogImage;
-
+            blog.BlogImageId = blogImage.Id;
             blog.BlogImageUrl = $"images/blogs/{blogImage.Id}.{blogImageExtension}";
             var physicalPath = $"{imagePath}/blogs/{blogImage.Id}.{blogImageExtension}";
             using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
@@ -82,6 +77,9 @@ namespace MyHotelWebsite.Services.Data
             var currentBlog = await this.blogsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
             currentBlog.Title = model.Title;
             currentBlog.Content = model.Content;
+
+            var currentBlogImage = await this.blogImagesRepo.All().FirstOrDefaultAsync(x => x.BlogId == currentBlog.Id);
+            this.blogImagesRepo.HardDelete(currentBlogImage);
             // currentBlog.StaffId = staffId;
 
             Directory.CreateDirectory($"{imagePath}/blogs/");
@@ -92,13 +90,12 @@ namespace MyHotelWebsite.Services.Data
                 Extension = blogImageExtension,
                 // StaffId = staffId,
             };
-
             currentBlog.BlogImage = blogImage;
+            currentBlog.BlogImageId = blogImage.Id;
             currentBlog.BlogImageUrl = $"images/blogs/{blogImage.Id}.{blogImageExtension}";
             var physicalPath = $"{imagePath}/blogs/{blogImage.Id}.{blogImageExtension}";
             using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
             await model.Image.CopyToAsync(fileStream);
-
             await this.blogsRepo.SaveChangesAsync();
         }
 

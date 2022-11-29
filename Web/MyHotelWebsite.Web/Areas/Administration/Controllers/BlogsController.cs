@@ -99,15 +99,16 @@
             }
 
             var staffId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            try
-            {
-                await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
-            }
-            catch (Exception)
-            {
-                this.ModelState.AddModelError(string.Empty, "Could not edit this blog");
-                return this.View(model);
-            }
+            await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
+            //try
+            //{
+            //    await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
+            //}
+            //catch (Exception)
+            //{
+            //    this.ModelState.AddModelError(string.Empty, "Could not edit this blog");
+            //    return this.View(model);
+            //}
 
             this.TempData["Message"] = "Blog edited successfully.";
             return this.RedirectToAction(nameof(this.All));

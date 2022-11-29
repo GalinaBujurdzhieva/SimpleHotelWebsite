@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace MyHotelWebsite.Web.Controllers
+﻿namespace MyHotelWebsite.Web.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+
     public class ReservationsController : BaseController
     {
         public IActionResult Index()

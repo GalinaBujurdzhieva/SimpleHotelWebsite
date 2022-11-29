@@ -6,13 +6,10 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using MyHotelWebsite.Data.Common.Models;
-    using MyHotelWebsite.Data.Models;
-
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
-    using System.Reflection.Emit;
-    using Microsoft.AspNetCore.Identity;
+    using MyHotelWebsite.Data.Common.Models;
+    using MyHotelWebsite.Data.Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -30,9 +27,11 @@
 
         public DbSet<Blog> Blogs { get; set; }
 
-        public DbSet<Blog> BlogImages { get; set; }
+        public DbSet<BlogImage> BlogImages { get; set; }
 
         public DbSet<Dish> Dishes { get; set; }
+
+        public DbSet<DishImage> DishImages { get; set; }
 
         public DbSet<DishOrder> DishOrders { get; set; }
 
@@ -89,6 +88,11 @@
                 .HasOne(x => x.BlogImage)
                 .WithOne(x => x.Blog)
                 .HasForeignKey<BlogImage>(x => x.BlogId);
+
+            builder.Entity<Dish>()
+                .HasOne(x => x.DishImage)
+                .WithOne(x => x.Dish)
+                .HasForeignKey<DishImage>(x => x.DishId);
 
             // Needed for Identity models configuration
             base.OnModelCreating(builder);

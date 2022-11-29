@@ -1,12 +1,9 @@
 ﻿namespace MyHotelWebsite.Services.Data
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
+
     using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
-    using MyHotelWebsite.Web.ViewModels.Blogs;
 
     public interface IBlogsService
     {

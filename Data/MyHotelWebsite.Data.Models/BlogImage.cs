@@ -1,12 +1,9 @@
-﻿using MyHotelWebsite.Data.Common.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyHotelWebsite.Data.Models
+﻿namespace MyHotelWebsite.Data.Models
 {
+    using System;
+
+    using MyHotelWebsite.Data.Common.Models;
+
     public class BlogImage : BaseDeletableModel<string>
     {
         public BlogImage()

@@ -32,11 +32,15 @@
 
         public string DishImageUrl { get; set; }
 
+        public string DishImageId { get; set; }
+
+        public virtual DishImage DishImage { get; set; }
+
         public int QuantityInStock { get; set; }
 
         public ICollection<DishOrder> DishOrders { get; set; }
 
-        [Required]
+        //[Required]
         public string StaffId { get; set; }
 
         public virtual Staff Staff { get; set; }
