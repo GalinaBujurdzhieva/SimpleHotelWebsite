@@ -39,6 +39,7 @@
             try
             {
                 await this.blogService.AddBlogAsync(model, staffId, $"{this.environment.WebRootPath}/images");
+                this.TempData["Message"] = "Blog added successfully.";
             }
             catch (Exception)
             {
@@ -46,7 +47,6 @@
                 return this.View(model);
             }
 
-            this.TempData["Message"] = "Blog added successfully.";
             return this.RedirectToAction(nameof(this.All));
         }
 
@@ -100,17 +100,17 @@
 
             var staffId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
-            //try
-            //{
-            //    await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
-            //}
-            //catch (Exception)
-            //{
-            //    this.ModelState.AddModelError(string.Empty, "Could not edit this blog");
-            //    return this.View(model);
-            //}
+            try
+            {
+                await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
+                this.TempData["Message"] = "Blog changed successfully.";
+            }
+            catch (Exception)
+            {
+                this.ModelState.AddModelError(string.Empty, "Could not edit this blog");
+                return this.View(model);
+            }
 
-            this.TempData["Message"] = "Blog edited successfully.";
             return this.RedirectToAction(nameof(this.All));
         }
 
