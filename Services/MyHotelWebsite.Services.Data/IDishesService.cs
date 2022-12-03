@@ -9,5 +9,7 @@ namespace MyHotelWebsite.Services.Data
     public interface IDishesService
     {
         Task<int> GetCountAsync();
+
+        Task<IEnumerable<T>> GetRandomDishesAsync<T>();
     }
 }

@@ -29,6 +29,7 @@
                               new SettingsSeeder(),
                               new BlogsSeeder(),
                               new AdminSeeder(),
+                              new DishesSeeder(),
                           };
 
             foreach (var seeder in seeders)

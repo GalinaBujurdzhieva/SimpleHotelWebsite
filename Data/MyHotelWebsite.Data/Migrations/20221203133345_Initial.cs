@@ -1,10 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-#nullable disable
+﻿#nullable disable
 
 namespace MyHotelWebsite.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -238,8 +239,7 @@ namespace MyHotelWebsite.Data.Migrations
                 name: "Dishes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -328,7 +328,7 @@ namespace MyHotelWebsite.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DishId = table.Column<int>(type: "int", nullable: false),
+                    DishId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Extension = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StaffId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -447,7 +447,7 @@ namespace MyHotelWebsite.Data.Migrations
                 name: "DishOrders",
                 columns: table => new
                 {
-                    DishId = table.Column<int>(type: "int", nullable: false),
+                    DishId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     OrderId = table.Column<int>(type: "int", nullable: false),
                     DishQuantity = table.Column<int>(type: "int", nullable: false),
                     Id = table.Column<int>(type: "int", nullable: false),

@@ -4,12 +4,15 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
+    using MyHotelWebsite.Common;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
     using MyHotelWebsite.Web.ViewModels.Blogs;
 
+    [Authorize(Roles = GlobalConstants.HotelAdministratorRoleName + ", " + GlobalConstants.WebsiteAdministratorRoleName)]
     public class BlogsController : AdministrationController
     {
         private readonly IBlogsService blogService;

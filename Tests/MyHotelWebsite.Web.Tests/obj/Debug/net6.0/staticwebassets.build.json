@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FyYiUnIMOshH+QaHcSi4wVzMIllKeTXaTZCtSyn9Y1Q=",
+  "Hash": "k8efVuWijdxlWCtE/gi7nzFRJJ09l/PjU8IlgxIIkR0=",
   "Source": "MyHotelWebsite.Web.Tests",
   "BasePath": "_content/MyHotelWebsite.Web.Tests",
   "Mode": "Default",
@@ -539,6 +539,40 @@
       "OriginalItemSpec": "wwwroot\\images\\blogs\\05364cf3-9263-4f14-801f-782d954e63c6.jpg"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\08866e56-b3c7-4c5d-9973-adc1848a4a3b.jpg",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/blogs/08866e56-b3c7-4c5d-9973-adc1848a4a3b.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blogs\\08866e56-b3c7-4c5d-9973-adc1848a4a3b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\0a19975e-e11d-4800-9fa4-4932823c2fb5.jpg",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/blogs/0a19975e-e11d-4800-9fa4-4932823c2fb5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blogs\\0a19975e-e11d-4800-9fa4-4932823c2fb5.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\1.png",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Project",
@@ -947,6 +981,23 @@
       "OriginalItemSpec": "wwwroot\\images\\blogs\\87e0047a-f987-4cab-b31f-7e915b53e9db.jpg"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\884bcdba-9dfe-4f7e-8ef8-995d646744ea.jpg",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/blogs/884bcdba-9dfe-4f7e-8ef8-995d646744ea.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blogs\\884bcdba-9dfe-4f7e-8ef8-995d646744ea.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\9.png",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Project",
@@ -1168,6 +1219,23 @@
       "OriginalItemSpec": "wwwroot\\images\\blogs\\da88d40f-b67e-4959-8e1f-615b1ddcfbc3.png"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\e029ab91-3120-4860-bdce-b4fd04b271e6.jpg",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/blogs/e029ab91-3120-4860-bdce-b4fd04b271e6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blogs\\e029ab91-3120-4860-bdce-b4fd04b271e6.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\e0d16c3e-f0a3-47e3-9ae9-a7d481e38fa6.jpg",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Project",
@@ -1200,6 +1268,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\blogs\\e5ed139b-41d3-40a2-b134-05d98f5400b9.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\f3b876b6-c08a-496e-9f84-c4de7ea87fcf.jpg",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/blogs/f3b876b6-c08a-496e-9f84-c4de7ea87fcf.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blogs\\f3b876b6-c08a-496e-9f84-c4de7ea87fcf.jpg"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\f82c22d7-d347-4add-ad14-040d580b634f.jpg",

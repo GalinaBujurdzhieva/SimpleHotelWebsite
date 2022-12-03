@@ -12,10 +12,11 @@
     using MyHotelWebsite.Data.Common.Models;
     using MyHotelWebsite.Data.Models.Enums;
 
-    public class Dish : BaseDeletableModel<int>
+    public class Dish : BaseDeletableModel<string>
     {
         public Dish()
         {
+            this.Id = Guid.NewGuid().ToString();
             this.DishOrders = new HashSet<DishOrder>();
         }
 
@@ -23,7 +24,7 @@
         [StringLength(50)]
         public string Name { get; set; }
 
-        public int Quantity { get; set; }
+        public int Quantity { get; set; } = 0;
 
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Price { get; set; }

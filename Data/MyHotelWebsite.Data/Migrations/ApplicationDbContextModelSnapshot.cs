@@ -352,11 +352,8 @@ namespace MyHotelWebsite.Data.Migrations
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.Dish", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -419,8 +416,9 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DishId")
-                        .HasColumnType("int");
+                    b.Property<string>("DishId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Extension")
                         .HasColumnType("nvarchar(max)");
@@ -448,8 +446,8 @@ namespace MyHotelWebsite.Data.Migrations
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.DishOrder", b =>
                 {
-                    b.Property<int>("DishId")
-                        .HasColumnType("int");
+                    b.Property<string>("DishId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
