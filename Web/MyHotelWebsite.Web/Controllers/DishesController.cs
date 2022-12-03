@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using MyHotelWebsite.Web.ViewModels.Dishes;
-using MyHotelWebsite.Services.Data;
-
-namespace MyHotelWebsite.Web.Controllers
+﻿namespace MyHotelWebsite.Web.Controllers
 {
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Mvc;
+    using MyHotelWebsite.Services.Data;
+    using MyHotelWebsite.Web.ViewModels.Dishes;
+
     public class DishesController : BaseController
     {
         private readonly IDishesService dishesService;
@@ -31,10 +32,9 @@ namespace MyHotelWebsite.Web.Controllers
             {
                 ItemsPerPage = DishesPerPage,
                 AllEntitiesCount = await this.dishesService.GetCountAsync(),
-                Dishes = await this.dishesService.GetRandomDishesAsync<SingleDishViewModel>(),
+                Dishes = await this.dishesService.GetRandomDishesAsync<SingleDishViewModel>(id, DishesPerPage),
                 PageNumber = id,
             };
-
             return this.View(model);
         }
     }

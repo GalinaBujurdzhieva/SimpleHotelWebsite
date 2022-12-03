@@ -16,5 +16,7 @@
         public decimal Price { get; set; }
 
         public int QuantityInStock { get; set; }
+
+        public bool IsReady { get; set; }
     }
 }

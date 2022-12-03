@@ -1,14 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using MyHotelWebsite.Common.CustomValidationAttributes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyHotelWebsite.Web.ViewModels.Administration.Blogs
+﻿namespace MyHotelWebsite.Web.ViewModels.Administration.Blogs
 {
+    using System.ComponentModel.DataAnnotations;
+
+    using Microsoft.AspNetCore.Http;
+    using MyHotelWebsite.Common.CustomValidationAttributes;
+
     public class CreateBlogViewModel
     {
         [Required]

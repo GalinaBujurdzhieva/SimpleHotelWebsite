@@ -1,0 +1,16 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Dishes
+
+@model DishesAllViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="page">
+        <div class="clearfix"></div>
+        <div class="row">
+        <partial name="_SingleDishPartial" />
+        <partial name="_PagingPartial" model="@Model" />
+        </div>
+    </div>
+</body>
+</html>

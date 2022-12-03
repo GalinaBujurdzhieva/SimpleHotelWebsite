@@ -8,20 +8,20 @@
 
     public enum DishCategory
     {
-        HotDrink = 1,
+        HotDrinks = 1,
 
-        ColdDrink = 2,
+        ColdDrinks = 2,
 
-        AlcoholDrink = 3,
+        AlcoholDrinks = 3,
 
-        Appetizer = 4,
+        Appetizers = 4,
 
-        Gourmet = 5,
+        Gourmets = 5,
 
-        Salad = 6,
+        Salads = 6,
 
-        MainCourse = 7,
+        MainCourses = 7,
 
-        Dessert = 8,
+        Desserts = 8,
     }
 }

@@ -39,8 +39,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Areas/Administration/Views/Dishes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRGlzaGVzXEluZGV4LmNzaHRtbA==
+[C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Areas/Administration/Views/Dishes/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRGlzaGVzXEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Areas/Administration/Views/Dishes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRGlzaGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Areas/Administration/Views/Dishes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRGlzaGVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Areas/Administration/Views/_ValidationScriptsPartial.cshtml]

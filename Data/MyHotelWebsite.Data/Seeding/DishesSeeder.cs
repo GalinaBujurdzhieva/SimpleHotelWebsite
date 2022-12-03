@@ -1,12 +1,12 @@
 ﻿namespace MyHotelWebsite.Data.Seeding
 {
-    using MyHotelWebsite.Data.Models;
-    using MyHotelWebsite.Data.Models.Enums;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
+
+    using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Data.Models.Enums;
 
     public class DishesSeeder : ISeeder
     {
@@ -24,9 +24,9 @@
             {
                 Name = "Coffee Espresso",
                 Price = 2.00M,
-                DishCategory = DishCategory.HotDrink,
+                DishCategory = DishCategory.HotDrinks,
                 QuantityInStock = 50,
-                DishImageUrl = "images/hotDrinks/dishes/1.png",
+                DishImageUrl = "images/dishes/hotDrinks/1.png",
             });
 
             // 2
@@ -34,9 +34,9 @@
             {
                 Name = "Coffee Lavazza",
                 Price = 3.00M,
-                DishCategory = DishCategory.HotDrink,
+                DishCategory = DishCategory.HotDrinks,
                 QuantityInStock = 30,
-                DishImageUrl = "images/hotDrinks/dishes/2.png",
+                DishImageUrl = "images/dishes/hotDrinks/2.png",
             });
 
             // 3
@@ -44,9 +44,9 @@
             {
                 Name = "Cappucino",
                 Price = 3.50M,
-                DishCategory = DishCategory.HotDrink,
+                DishCategory = DishCategory.HotDrinks,
                 QuantityInStock = 20,
-                DishImageUrl = "images/hotDrinks/dishes/3.png",
+                DishImageUrl = "images/dishes/hotDrinks/3.png",
             });
 
             // 4
@@ -54,9 +54,9 @@
             {
                 Name = "Vienna coffee",
                 Price = 3.30M,
-                DishCategory = DishCategory.HotDrink,
+                DishCategory = DishCategory.HotDrinks,
                 QuantityInStock = 25,
-                DishImageUrl = "images/hotDrinks/dishes/4.png",
+                DishImageUrl = "images/dishes/hotDrinks/4.png",
             });
 
             await dbContext.Dishes.AddRangeAsync(dishes);

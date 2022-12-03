@@ -25,8 +25,4 @@
     <ProjectReference Include="..\..\Services\MyHotelWebsite.Services.Mapping\MyHotelWebsite.Services.Mapping.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Administration\Dishes\" />
-  </ItemGroup>
-
 </Project>
