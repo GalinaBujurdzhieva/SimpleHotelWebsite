@@ -79,7 +79,10 @@
             currentBlog.Content = model.Content;
 
             var currentBlogImage = await this.blogImagesRepo.All().FirstOrDefaultAsync(x => x.BlogId == currentBlog.Id);
-            this.blogImagesRepo.HardDelete(currentBlogImage);
+            if (currentBlogImage != null)
+            {
+                this.blogImagesRepo.HardDelete(currentBlogImage);
+            }
             // currentBlog.StaffId = staffId;
 
             Directory.CreateDirectory($"{imagePath}/blogs/");

@@ -85,7 +85,10 @@
             currentDish.QuantityInStock = model.QuantityInStock;
 
             var currentDishImage = await this.dishImagesRepo.All().FirstOrDefaultAsync(x => x.DishId == currentDish.Id);
-            this.dishImagesRepo.HardDelete(currentDishImage);
+            if (currentDishImage != null)
+            {
+                this.dishImagesRepo.HardDelete(currentDishImage);
+            }
             // currentDish.StaffId = staffId
 
             Directory.CreateDirectory($"{imagePath}/dishes/addedLater");
@@ -110,6 +113,13 @@
         public async Task<int> GetCountAsync()
         {
             return await this.dishesRepo.AllAsNoTracking().CountAsync();
+        }
+
+        public async Task<int> GetCountOfDishesByCategoryAsync(DishCategory dishCategory)
+        {
+            return await this.dishesRepo.AllAsNoTracking()
+                .Where(x => x.DishCategory == dishCategory)
+                .CountAsync();
         }
 
         public async Task<IEnumerable<T>> GetDishesByDishCategoryAsync<T>(int page, DishCategory dishCategory, int itemsPerPage = 4)

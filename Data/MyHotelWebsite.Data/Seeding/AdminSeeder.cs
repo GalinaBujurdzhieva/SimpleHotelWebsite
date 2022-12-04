@@ -34,7 +34,7 @@
             if (result.Succeeded)
             {
                 var user = await adminSeeder.FindByNameAsync("Admin");
-                await adminSeeder.AddToRoleAsync(user, GlobalConstants.HotelAdministratorRoleName);
+                await adminSeeder.AddToRoleAsync(user, GlobalConstants.HotelManagerRoleName);
                 dbContext.SaveChanges();
             }
         }

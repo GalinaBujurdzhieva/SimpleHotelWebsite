@@ -73,7 +73,7 @@
             if (user != null)
             {
                 var result = await this.signInManager.PasswordSignInAsync(model.UserName, model.Password, false, false);
-                var userIsInRoleAdmin = await this.userManager.IsInRoleAsync(user, GlobalConstants.HotelAdministratorRoleName);
+                var userIsInRoleAdmin = await this.userManager.IsInRoleAsync(user, GlobalConstants.HotelManagerRoleName);
 
                 if (result.Succeeded)
                 {

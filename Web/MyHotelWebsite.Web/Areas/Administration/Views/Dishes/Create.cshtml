@@ -47,11 +47,11 @@
             <span asp-validation-for="Price" class="text-danger"></span>
         </div>
         <div class="text-center mb-3">
-            <label class="input-group-text" asp-for="DishCategory">Choose Dish Category</label>
-            <select class="form-select" asp-for="DishCategory" asp-items="@Html.GetEnumSelectList<DishCategory>()"></select>
+            <label asp-for="DishCategory">Dish Category</label>
+            <select class="form-select" asp-for="DishCategory" asp-items="@Html.GetEnumSelectList<DishCategory>()" style="font-size:medium"></select>
         </div>
         <div class="text-center mb-3">
-            <label asp-for="QuantityInStock"></label>
+            <label asp-for="QuantityInStock">Quantity in Stock</label>
             <input asp-for="QuantityInStock" class="form-control" rows="5">
             <span asp-validation-for="QuantityInStock" class="text-danger"></span>
         </div>

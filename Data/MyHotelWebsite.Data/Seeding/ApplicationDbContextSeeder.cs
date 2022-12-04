@@ -30,6 +30,7 @@
                               new BlogsSeeder(),
                               new AdminSeeder(),
                               new DishesSeeder(),
+                              new RoomsSeeder(),
                           };
 
             foreach (var seeder in seeders)

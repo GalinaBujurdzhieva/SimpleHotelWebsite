@@ -2,6 +2,14 @@
 {
     using System.Reflection;
 
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using MyHotelWebsite.Common.CustomModelBinders;
     using MyHotelWebsite.Data;
     using MyHotelWebsite.Data.Common;
     using MyHotelWebsite.Data.Common.Repositories;
@@ -12,14 +20,6 @@
     using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Services.Messaging;
     using MyHotelWebsite.Web.ViewModels;
-
-    using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Http;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Hosting;
 
     public class Program
     {
@@ -57,7 +57,11 @@
                 options =>
                 {
                     options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
-                }).AddRazorRuntimeCompilation();
+                }).AddRazorRuntimeCompilation()
+                .AddMvcOptions(options =>
+                {
+                    options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+                });
             services.AddRazorPages();
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddSingleton(configuration);

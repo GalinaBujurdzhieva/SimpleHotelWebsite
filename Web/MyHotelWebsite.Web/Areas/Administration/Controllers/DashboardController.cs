@@ -6,7 +6,7 @@
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Administration.Dashboard;
 
-    [Authorize(Roles = GlobalConstants.HotelAdministratorRoleName)]
+    [Authorize(Roles = GlobalConstants.HotelManagerRoleName)]
     [Area("Administration")]
     public class DashboardController : AdministrationController
     {

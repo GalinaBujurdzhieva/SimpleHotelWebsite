@@ -4,7 +4,7 @@
     {
         public const string SystemName = "MyHotelWebsite";
 
-        public const string HotelAdministratorRoleName = "Manager"; // ACCESS TO ALLCONTROLLERS
+        public const string HotelManagerRoleName = "Manager"; // ACCESS TO ALLCONTROLLERS
 
         public const string WebsiteAdministratorRoleName = "WebAdministrator";  // ACCESS TO BLOGCONTROLLER & GUESTCOMMENTSCONTROLLER IF THERE IS
 

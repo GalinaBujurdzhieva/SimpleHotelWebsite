@@ -12,7 +12,7 @@
     using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
     using MyHotelWebsite.Web.ViewModels.Blogs;
 
-    [Authorize(Roles = GlobalConstants.HotelAdministratorRoleName + ", " + GlobalConstants.WebsiteAdministratorRoleName)]
+    [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.WebsiteAdministratorRoleName)]
     public class BlogsController : AdministrationController
     {
         private readonly IBlogsService blogService;
@@ -114,7 +114,6 @@
             }
 
             var staffId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
             try
             {
                 await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");

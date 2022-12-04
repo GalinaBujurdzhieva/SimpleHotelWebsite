@@ -48,7 +48,7 @@
                                 <h4><a asp-controller="Blogs" asp-action="Details" asp-route-id="@blog.Id">@blog.Title</a></h4>
                             <p id="blog-article">@blog.Content</p>
                                 <a class="btn btn-default" asp-controller="Blogs" asp-action="Details" asp-route-id="@blog.Id">Read All</a>
-                                @if (this.SignInManager.IsSignedIn(this.User) && (this.User.IsInRole(GlobalConstants.HotelAdministratorRoleName) || this.User.IsInRole(GlobalConstants.WebsiteAdministratorRoleName)))
+                                @if (this.SignInManager.IsSignedIn(this.User) && (this.User.IsInRole(GlobalConstants.HotelManagerRoleName) || this.User.IsInRole(GlobalConstants.WebsiteAdministratorRoleName)))
                                 {
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a class="btn btn-default" style="margin-left:5px" asp-controller="Blogs" asp-action="Edit" asp-route-id="@blog.Id" class="btn btn-secondary">Edit</a>

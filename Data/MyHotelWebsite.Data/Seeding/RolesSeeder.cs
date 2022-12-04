@@ -4,11 +4,10 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using MyHotelWebsite.Common;
-    using MyHotelWebsite.Data.Models;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
+    using MyHotelWebsite.Common;
+    using MyHotelWebsite.Data.Models;
 
     internal class RolesSeeder : ISeeder
     {
@@ -21,7 +20,7 @@
             await SeedRoleAsync(roleManager, GlobalConstants.WaiterRoleName);
             await SeedRoleAsync(roleManager, GlobalConstants.MaidRoleName);
             await SeedRoleAsync(roleManager, GlobalConstants.ReceptionistRoleName);
-            await SeedRoleAsync(roleManager, GlobalConstants.HotelAdministratorRoleName);
+            await SeedRoleAsync(roleManager, GlobalConstants.HotelManagerRoleName);
         }
 
         private static async Task SeedRoleAsync(RoleManager<ApplicationRole> roleManager, string roleName)

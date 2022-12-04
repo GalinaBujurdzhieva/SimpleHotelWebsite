@@ -1,16 +1,18 @@
 ﻿namespace MyHotelWebsite.Web.Areas.Administration.Controllers
 {
-    using System.Security.Claims;
     using System;
+    using System.Security.Claims;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
+    using MyHotelWebsite.Common;
+    using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Data;
-    using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
-    using MyHotelWebsite.Web.ViewModels.Dishes;
     using MyHotelWebsite.Web.ViewModels.Administration.Dishes;
+    using MyHotelWebsite.Web.ViewModels.Dishes;
 
+    [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.ChefRoleName)]
     public class DishesController : AdministrationController
     {
         private readonly IDishesService dishesService;
@@ -35,6 +37,24 @@
                 ItemsPerPage = DishesPerPage,
                 AllEntitiesCount = await this.dishesService.GetCountAsync(),
                 Dishes = await this.dishesService.GetRandomDishesAsync<SingleDishViewModel>(id, DishesPerPage),
+                PageNumber = id,
+            };
+            return this.View(model);
+        }
+
+        public async Task<IActionResult> ByCategory(DishCategory dishCategory, int id = 1)
+        {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int DishesPerPage = 12;
+            var model = new DishAllViewModel
+            {
+                ItemsPerPage = DishesPerPage,
+                AllEntitiesCount = await this.dishesService.GetCountOfDishesByCategoryAsync(dishCategory),
+                Dishes = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, DishesPerPage),
                 PageNumber = id,
             };
             return this.View(model);
@@ -100,6 +120,7 @@
             }
 
             var staffId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             try
             {
                 await this.dishesService.EditDishAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
