@@ -6,7 +6,7 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-@model DishesAllViewModel
+@model DishAllViewModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +48,7 @@
                     <br>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a type="button" class="btn btn-small btn-danger" style="margin-right:10px; width:100px" asp-area="Administration" asp-controller="Dishes" asp-action="Edit" asp-route-id="@dish.Id" class="btn btn-secondary">Edit</a>
-                            <a type="button" class="btn btn-small btn-danger" style="width:100px" asp-area="Administration" asp-controller="Dishes" asp-action="Delete" asp-route-id="@dish.Id" onclick="return confirm('Are you sure you want to delete this blog?')" class="btn btn-secondary">Delete</a>
+                            <a type="button" class="btn btn-small btn-danger" style="width:100px" asp-area="Administration" asp-controller="Dishes" asp-action="Delete" asp-route-id="@dish.Id" onclick="return confirm('Are you sure you want to delete this dish?')" class="btn btn-secondary">Delete</a>
                         </div>
                         }
                     

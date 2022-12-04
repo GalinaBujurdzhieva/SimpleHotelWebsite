@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class DishesAllViewModel : PagingViewModel
+    public class DishAllViewModel : PagingViewModel
     {
         public IEnumerable<SingleDishViewModel> Dishes { get; set; } = new List<SingleDishViewModel>();
     }

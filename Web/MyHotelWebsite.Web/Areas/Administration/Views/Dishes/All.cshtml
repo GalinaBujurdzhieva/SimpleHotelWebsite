@@ -1,6 +1,14 @@
 ﻿@using MyHotelWebsite.Web.ViewModels.Dishes
 
-@model DishesAllViewModel
+@model DishAllViewModel
+
+<script>
+    var msg = '@this.TempData["Message"]';
+    if (msg.length) {
+        alert(msg);
+    }
+</script>
+
 
 <!DOCTYPE html>
 <html lang="en">

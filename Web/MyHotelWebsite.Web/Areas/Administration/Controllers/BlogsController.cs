@@ -24,6 +24,25 @@
             this.environment = environment;
         }
 
+        public async Task<IActionResult> All(int id = 1)
+        {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int BlogsPerPage = 6;
+            var model = new BlogAllViewModel
+            {
+                ItemsPerPage = BlogsPerPage,
+                AllEntitiesCount = await this.blogService.GetCountAsync(),
+                Blogs = await this.blogService.GetAllBlogsAsync<SingleBlogViewModel>(id, BlogsPerPage),
+                PageNumber = id,
+            };
+            return this.View(model);
+        }
+
+
         public IActionResult Create()
         {
             var model = new CreateBlogViewModel();
@@ -53,22 +72,15 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
-        public async Task<IActionResult> All(int id = 1)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id < 1)
+            if (!await this.blogService.DoesBlogExistsAsync(id))
             {
-                return this.BadRequest();
+                return this.RedirectToAction(nameof(this.All));
             }
 
-            const int BlogsPerPage = 6;
-            var model = new BlogAllViewModel
-            {
-                ItemsPerPage = BlogsPerPage,
-                AllEntitiesCount = await this.blogService.GetCountAsync(),
-                Blogs = await this.blogService.GetAllBlogsAsync<SingleBlogViewModel>(id, BlogsPerPage),
-                PageNumber = id,
-            };
-            return this.View(model);
+            await this.blogService.DeleteBlogAsync(id);
+            return this.RedirectToAction(nameof(this.All));
         }
 
         public async Task<IActionResult> Details(int id)
@@ -114,17 +126,6 @@
                 return this.View(model);
             }
 
-            return this.RedirectToAction(nameof(this.All));
-        }
-
-        public async Task<IActionResult> Delete(int id)
-        {
-            if (!await this.blogService.DoesBlogExistsAsync(id))
-            {
-                return this.RedirectToAction(nameof(this.All));
-            }
-
-            await this.blogService.DeleteBlogAsync(id);
             return this.RedirectToAction(nameof(this.All));
         }
     }

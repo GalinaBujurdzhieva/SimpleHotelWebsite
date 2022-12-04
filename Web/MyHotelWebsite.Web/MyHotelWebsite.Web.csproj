@@ -54,6 +54,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\dishes\" />
+    <Folder Include="wwwroot\images\dishes\addedLater\" />
   </ItemGroup>
 </Project>

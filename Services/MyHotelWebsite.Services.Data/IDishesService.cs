@@ -3,26 +3,26 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using MyHotelWebsite.Data.Models.Enums;
+    using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
+    using MyHotelWebsite.Web.ViewModels.Administration.Dishes;
+
     public interface IDishesService
     {
         Task<int> GetCountAsync();
 
         Task<IEnumerable<T>> GetRandomDishesAsync<T>(int page, int itemsPerPage = 4);
 
-        Task<IEnumerable<T>> GetHotDrinksAsync<T>(int page, int itemsPerPage = 4);
+        Task<IEnumerable<T>> GetDishesByDishCategoryAsync<T>(int page, DishCategory dishCategory, int itemsPerPage = 4);
 
-        Task<IEnumerable<T>> GetColdDrinksAsync<T>(int page, int itemsPerPage = 4);
+        Task<T> DishDetailsByIdAsync<T>(string id);
 
-        Task<IEnumerable<T>> GetAlcoholDrinksAsync<T>(int page, int itemsPerPage = 4);
+        Task<bool> DoesDishExistsAsync(string id);
 
-        Task<IEnumerable<T>> GetAppetizersAsync<T>(int page, int itemsPerPage = 4);
+        Task AddDishAsync(CreateDishViewModel model, string staffId, string imagePath);
 
-        Task<IEnumerable<T>> GetGourmetsAsync<T>(int page, int itemsPerPage = 4);
+        Task EditDishAsync(EditDishViewModel model, string id, string staffId, string imagePath);
 
-        Task<IEnumerable<T>> GetSaladsAsync<T>(int page, int itemsPerPage = 4);
-
-        Task<IEnumerable<T>> GetMainCoursesAsync<T>(int page, int itemsPerPage = 4);
-
-        Task<IEnumerable<T>> GetDessertsAsync<T>(int page, int itemsPerPage = 4);
+        Task DeleteDishAsync(string id);
     }
 }
