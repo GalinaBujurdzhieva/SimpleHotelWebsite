@@ -2,6 +2,13 @@
 
 @model DishAllViewModel
 
+<script>
+    var msg = '@this.TempData["Message"]';
+    if (msg.length) {
+        alert(msg);
+    }
+</script>
+
 
 <!DOCTYPE html>
 <html lang="en">
