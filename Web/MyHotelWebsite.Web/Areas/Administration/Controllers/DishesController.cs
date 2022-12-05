@@ -42,24 +42,6 @@
             return this.View(model);
         }
 
-        public async Task<IActionResult> ByCategory(DishCategory dishCategory, int id = 1)
-        {
-            if (id < 1)
-            {
-                return this.BadRequest();
-            }
-
-            const int DishesPerPage = 12;
-            var model = new DishAllViewModel
-            {
-                ItemsPerPage = DishesPerPage,
-                AllEntitiesCount = await this.dishesService.GetCountOfDishesByCategoryAsync(dishCategory),
-                Dishes = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, DishesPerPage),
-                PageNumber = id,
-            };
-            return this.View(model);
-        }
-
         public IActionResult Create()
         {
             var model = new CreateDishViewModel();
@@ -133,6 +115,29 @@
             }
 
             return this.RedirectToAction(nameof(this.All));
+        }
+
+        public IActionResult Search()
+        {
+            return this.View();
+        }
+
+        public async Task<IActionResult> ByCategory(DishCategory dishCategory, int id = 1)
+        {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int DishesPerPage = 12;
+            var model = new DishAllViewModel
+            {
+                ItemsPerPage = DishesPerPage,
+                AllEntitiesCount = await this.dishesService.GetCountOfDishesByCategoryAsync(dishCategory),
+                Dishes = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, DishesPerPage),
+                PageNumber = id,
+            };
+            return this.View(model);
         }
     }
 }

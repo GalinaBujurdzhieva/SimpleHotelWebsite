@@ -4,11 +4,11 @@
     using System.Threading.Tasks;
 
     using MyHotelWebsite.Data.Models.Enums;
-    using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
     using MyHotelWebsite.Web.ViewModels.Administration.Dishes;
 
     public interface IDishesService
     {
+
         Task<int> GetCountAsync();
 
         Task<int> GetCountOfDishesByCategoryAsync(DishCategory dishCategory);

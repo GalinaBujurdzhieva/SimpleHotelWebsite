@@ -176,3 +176,6 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsi
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll

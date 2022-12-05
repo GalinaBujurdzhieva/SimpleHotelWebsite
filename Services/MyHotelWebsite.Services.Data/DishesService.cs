@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Reflection.Metadata;
     using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
@@ -122,14 +121,19 @@
                 .CountAsync();
         }
 
+
         public async Task<IEnumerable<T>> GetDishesByDishCategoryAsync<T>(int page, DishCategory dishCategory, int itemsPerPage = 4)
         {
-            var dishesByCategory = await this.dishesRepo.AllAsNoTracking()
-               .OrderBy(x => Guid.NewGuid())
-               .Where(x => x.DishCategory == dishCategory)
-               .Skip((page - 1) * itemsPerPage)
-               .Take(itemsPerPage).To<T>().ToListAsync();
-            return dishesByCategory;
+            if (!string.IsNullOrEmpty(dishCategory.ToString()))
+            {
+                var dishesByCategory = await this.dishesRepo.AllAsNoTracking()
+                    .OrderBy(x => x.Name)
+                    .Where(x => x.DishCategory == dishCategory)
+                    .Skip((page - 1) * itemsPerPage)
+                    .Take(itemsPerPage).To<T>().ToListAsync();
+                return dishesByCategory;
+            }
+            return null;
         }
 
         public async Task<IEnumerable<T>> GetRandomDishesAsync<T>(int page, int itemsPerPage = 4)
