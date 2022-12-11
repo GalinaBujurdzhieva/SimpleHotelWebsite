@@ -1,0 +1,48 @@
+﻿@using MyHotelWebsite.Data.Models.Enums
+@using MyHotelWebsite.Web.ViewModels.Dishes
+
+@model IEnumerable<SingleDishViewModel>
+
+<!DOCTYPE html>
+@*<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+</head>*@
+<body>
+    <div class="container" style="margin-top:20px; margin-bottom:10px">
+        <div class="row pt-1 pb-1">
+            <div class="col-lg-12 text-center">
+                <h3 class="text-center">Find your favourite dish by category or name</h3>
+            </div>
+        </div>
+    </div>
+    <br />
+    <section class="search-sec">
+        <div class="container">
+            <form asp-action="ByCategory" method="get" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <input type="text" class="form-control search-slt" placeholder="Type here the dish name">
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<DishCategory>()" name="dishCategory">
+                                    <option>Select Dish Category</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <input type="submit" value="Search" name="Search" class="btn btn-danger wrn-btn" style="margin-bottom:20px">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+
