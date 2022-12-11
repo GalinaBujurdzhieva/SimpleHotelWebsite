@@ -36,7 +36,7 @@
             {
                 ItemsPerPage = DishesPerPage,
                 AllEntitiesCount = await this.dishesService.GetCountAsync(),
-                Dishes = await this.dishesService.GetRandomDishesAsync<SingleDishViewModel>(id, DishesPerPage),
+                Dishes = await this.dishesService.GetAllDishesAsync<SingleDishViewModel>(id, DishesPerPage),
                 PageNumber = id,
             };
             return this.View(model);
@@ -124,17 +124,20 @@
 
         public async Task<IActionResult> ByCategory(DishCategory dishCategory, int id = 1)
         {
+            this.ViewBag.SortingParameter = !string.IsNullOrEmpty(dishCategory.ToString()) ? dishCategory.ToString() : "";
             if (id < 1)
             {
                 return this.BadRequest();
             }
 
             const int DishesPerPage = 12;
+
+            var dishesWithFilter = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, DishesPerPage);
             var model = new DishAllViewModel
             {
                 ItemsPerPage = DishesPerPage,
                 AllEntitiesCount = await this.dishesService.GetCountOfDishesByCategoryAsync(dishCategory),
-                Dishes = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, DishesPerPage),
+                Dishes = dishesWithFilter,
                 PageNumber = id,
             };
             return this.View(model);

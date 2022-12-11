@@ -13,7 +13,7 @@
 
         Task<int> GetCountOfDishesByCategoryAsync(DishCategory dishCategory);
 
-        Task<IEnumerable<T>> GetRandomDishesAsync<T>(int page, int itemsPerPage = 4);
+        Task<IEnumerable<T>> GetAllDishesAsync<T>(int page, int itemsPerPage = 4);
 
         Task<IEnumerable<T>> GetDishesByDishCategoryAsync<T>(int page, DishCategory dishCategory, int itemsPerPage = 4);
 

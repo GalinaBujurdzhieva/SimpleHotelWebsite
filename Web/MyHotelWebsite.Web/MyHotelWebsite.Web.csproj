@@ -55,6 +55,9 @@
 
   <ItemGroup>
     <Folder Include="Areas\Administration\Views\Rooms\" />
-    <Folder Include="wwwroot\images\dishes\addedLater\" />
+    <Folder Include="wwwroot\images\dishes\alcohol\" />
+    <Folder Include="wwwroot\images\dishes\coldDrinks\" />
+    <Folder Include="wwwroot\images\dishes\gourme\" />
+    <Folder Include="wwwroot\images\dishes\salads\" />
   </ItemGroup>
 </Project>

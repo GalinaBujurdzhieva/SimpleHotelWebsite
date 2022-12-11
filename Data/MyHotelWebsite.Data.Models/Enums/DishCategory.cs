@@ -16,7 +16,7 @@
 
         Appetizers = 4,
 
-        Gourmets = 5,
+        Gourmet = 5,
 
         Salads = 6,
 

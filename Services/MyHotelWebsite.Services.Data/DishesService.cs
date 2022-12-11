@@ -129,17 +129,20 @@
                 var dishesByCategory = await this.dishesRepo.AllAsNoTracking()
                     .OrderBy(x => x.Name)
                     .Where(x => x.DishCategory == dishCategory)
-                    .Skip((page - 1) * itemsPerPage)
-                    .Take(itemsPerPage).To<T>().ToListAsync();
+                    .OrderBy(x => x.Name).To<T>().ToListAsync();
+                dishesByCategory = dishesByCategory.Skip((page - 1) * itemsPerPage)
+                    .Take(itemsPerPage).ToList();
                 return dishesByCategory;
             }
+
             return null;
         }
 
-        public async Task<IEnumerable<T>> GetRandomDishesAsync<T>(int page, int itemsPerPage = 4)
+        public async Task<IEnumerable<T>> GetAllDishesAsync<T>(int page, int itemsPerPage = 4)
         {
             var randomDishes = await this.dishesRepo.AllAsNoTracking()
-                .OrderBy(x => Guid.NewGuid())
+                .OrderBy(x => x.DishCategory)
+                .ThenBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage).To<T>().ToListAsync();
             return randomDishes;

@@ -32,7 +32,7 @@
             {
                 ItemsPerPage = DishesPerPage,
                 AllEntitiesCount = await this.dishesService.GetCountAsync(),
-                Dishes = await this.dishesService.GetRandomDishesAsync<SingleDishViewModel>(id, DishesPerPage),
+                Dishes = await this.dishesService.GetAllDishesAsync<SingleDishViewModel>(id, DishesPerPage),
                 PageNumber = id,
             };
             return this.View(model);
