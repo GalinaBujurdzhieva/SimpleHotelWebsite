@@ -2,7 +2,9 @@
 {
     using System.Collections.Generic;
 
-    public class DishAllViewModel : PagingViewModel
+    using MyHotelWebsite.Web.ViewModels.Pagination;
+
+    public class DishAllViewModel : PagingAllViewModel
     {
         public IEnumerable<SingleDishViewModel> Dishes { get; set; } = new List<SingleDishViewModel>();
     }

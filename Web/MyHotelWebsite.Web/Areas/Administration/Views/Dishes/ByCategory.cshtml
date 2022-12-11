@@ -1,6 +1,6 @@
 ﻿@using MyHotelWebsite.Web.ViewModels.Dishes
 
-@model DishAllViewModel
+@model DishByCategoryViewModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,12 +16,12 @@
                 </div>
                 
             }
-            <partial name="_SingleDishPartial" />
+            <partial name="_SingleDishByCategoryPartial" />
             <br />
             <form method="post" asp-area="Administration" asp-controller="Dishes" asp-action="Search" asp-route-id="@ViewBag.SortingParameter">
                 <div class="text-center"><button type="submit" class="btn btn-danger wrn-btn" style="margin-left:10px">Search Again</button></div>
             </form>
-            <partial name="_PagingPartial" model="@Model" />
+            <partial name="_PagingDishesPartial" model="@Model" />
         </div>
     </div>
 </body>

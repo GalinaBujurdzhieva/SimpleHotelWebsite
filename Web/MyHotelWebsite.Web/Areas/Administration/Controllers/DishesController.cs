@@ -133,12 +133,13 @@
             const int DishesPerPage = 12;
 
             var dishesWithFilter = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, DishesPerPage);
-            var model = new DishAllViewModel
+            var model = new DishByCategoryViewModel
             {
                 ItemsPerPage = DishesPerPage,
                 AllEntitiesCount = await this.dishesService.GetCountOfDishesByCategoryAsync(dishCategory),
                 Dishes = dishesWithFilter,
                 PageNumber = id,
+                DishCategory = dishCategory.ToString(),
             };
             return this.View(model);
         }

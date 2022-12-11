@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WOE5VT3xykKm2r0HCbEDXntcPuaIVFPzEE53gXn9uSg=",
+  "Hash": "WOGW35B7dLO18B6FVfcf73IrUILfmJLl6+EslNFjYjw=",
   "Source": "MyHotelWebsite.Web.Tests",
   "BasePath": "_content/MyHotelWebsite.Web.Tests",
   "Mode": "Default",
@@ -2137,12 +2137,12 @@
       "OriginalItemSpec": "wwwroot\\images\\dishes\\appetizers\\Spinach_artichoke_brie.png"
     },
     {
-      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Stuffed_mushrooms.png",
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Stuffed_mushroom.png",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Project",
       "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
       "BasePath": "_content/MyHotelWebsite.Web",
-      "RelativePath": "images/dishes/appetizers/Stuffed_mushrooms.png",
+      "RelativePath": "images/dishes/appetizers/Stuffed_mushroom.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2151,7 +2151,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\dishes\\appetizers\\Stuffed_mushrooms.png"
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\appetizers\\Stuffed_mushroom.png"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\Coffee.png",
@@ -2409,12 +2409,12 @@
       "OriginalItemSpec": "wwwroot\\images\\dishes\\desserts\\Chocolate_fluffernutter_pie.png"
     },
     {
-      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_pots-de_creme.png",
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_pots_de_creme.png",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Project",
       "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
       "BasePath": "_content/MyHotelWebsite.Web",
-      "RelativePath": "images/dishes/desserts/Chocolate_pots-de_creme.png",
+      "RelativePath": "images/dishes/desserts/Chocolate_pots_de_creme.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2423,7 +2423,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\dishes\\desserts\\Chocolate_pots-de_creme.png"
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\desserts\\Chocolate_pots_de_creme.png"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Confetti_squares.png",
@@ -3480,12 +3480,12 @@
       "OriginalItemSpec": "wwwroot\\images\\dishes\\mainCourses\\Mast_Biryani.png"
     },
     {
-      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Mushrooms_with_béarnaise_yogurt.png",
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Mushrooms_with_bearnaise_yogurt.png",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Project",
       "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\",
       "BasePath": "_content/MyHotelWebsite.Web",
-      "RelativePath": "images/dishes/mainCourses/Mushrooms_with_béarnaise_yogurt.png",
+      "RelativePath": "images/dishes/mainCourses/Mushrooms_with_bearnaise_yogurt.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3494,7 +3494,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\dishes\\mainCourses\\Mushrooms_with_béarnaise_yogurt.png"
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\mainCourses\\Mushrooms_with_bearnaise_yogurt.png"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Pork_chops_with_celery_and_almond_salad.png",
