@@ -129,9 +129,8 @@
                 var dishesByCategory = await this.dishesRepo.AllAsNoTracking()
                     .OrderBy(x => x.Name)
                     .Where(x => x.DishCategory == dishCategory)
-                    .OrderBy(x => x.Name).To<T>().ToListAsync();
-                dishesByCategory = dishesByCategory.Skip((page - 1) * itemsPerPage)
-                    .Take(itemsPerPage).ToList();
+                    .OrderBy(x => x.Name).Skip((page - 1) * itemsPerPage)
+                    .Take(itemsPerPage).To<T>().ToListAsync();
                 return dishesByCategory;
             }
 

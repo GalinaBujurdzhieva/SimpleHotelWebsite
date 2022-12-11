@@ -1,6 +1,7 @@
 ﻿@using MyHotelWebsite.Web.ViewModels.Dishes
 @model DishAllViewModel
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,11 +32,11 @@
                 <h1>All Dishes</h1>
             </div>
         </section>
-        <div class="clearfix"></div>
+            @{ Html.RenderPartialAsync("_SearchDishesPartial", new List<SingleDishViewModel>()); }
         <div class="row">
         <partial name="_SingleDishPartial" />
         </div>
-        <partial name="_PagingPartial" model="@Model" />
+        <partial name="_PagingPartial" />
         <!--back to top--->
         <a style="display: none;" href="javascript:void(0);" class="scrollTop back-to-top" id="back-to-top">
             <span><i aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span>
