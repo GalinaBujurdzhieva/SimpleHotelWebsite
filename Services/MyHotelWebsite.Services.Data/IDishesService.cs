@@ -13,9 +13,13 @@
 
         Task<int> GetCountOfDishesByCategoryAsync(DishCategory dishCategory);
 
+        Task<int> GetCountOfDishesByNameAndCategoryAsync(string name = null, DishCategory? dishCategory = null);
+
         Task<IEnumerable<T>> GetAllDishesAsync<T>(int page, int itemsPerPage = 4);
 
         Task<IEnumerable<T>> GetDishesByDishCategoryAsync<T>(int page, DishCategory dishCategory, int itemsPerPage = 4);
+
+        Task<IEnumerable<T>> SearchDishesByNameAndCategoryAsync<T>(int page, string name = null, DishCategory? dishCategory = null, int itemsPerPage = 4);
 
         Task<T> DishDetailsByIdAsync<T>(string id);
 

@@ -4,7 +4,7 @@
 
     using MyHotelWebsite.Web.ViewModels.Pagination;
 
-    public class DishByCategoryViewModel : PagingDishesViewModel
+    public class DishByCategoryViewModel : PagingDishesByCategoryViewModel
     {
         public IEnumerable<SingleDishViewModel> Dishes { get; set; } = new List<SingleDishViewModel>();
     }

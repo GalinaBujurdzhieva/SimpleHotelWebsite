@@ -32,7 +32,7 @@
                 <h1>All Dishes</h1>
             </div>
         </section>
-            @{ Html.RenderPartialAsync("_SearchDishesPartial", new List<SingleDishViewModel>()); }
+            @{ await Html.RenderPartialAsync("_SearchDishesPartial", new SingleDishViewModel()); }
         <div class="row">
         <partial name="_SingleDishPartial" />
         </div>

@@ -109,6 +109,16 @@
             await this.dishesRepo.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<T>> GetAllDishesAsync<T>(int page, int itemsPerPage = 4)
+        {
+            var allDishes = await this.dishesRepo.AllAsNoTracking()
+                .OrderBy(x => x.DishCategory)
+                .ThenBy(x => x.Name)
+                .Skip((page - 1) * itemsPerPage)
+                .Take(itemsPerPage).To<T>().ToListAsync();
+            return allDishes;
+        }
+
         public async Task<int> GetCountAsync()
         {
             return await this.dishesRepo.AllAsNoTracking().CountAsync();
@@ -121,6 +131,24 @@
                 .CountAsync();
         }
 
+        public async Task<int> GetCountOfDishesByNameAndCategoryAsync(string name = null, DishCategory? dishCategory = null)
+        {
+            var searchDishesList = this.dishesRepo.All().AsQueryable();
+            if (!string.IsNullOrEmpty(dishCategory.ToString()))
+            {
+                searchDishesList = searchDishesList
+                    .Where(x => x.DishCategory == dishCategory);
+            }
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                name = $"%{name.ToLower()}%";
+                searchDishesList = searchDishesList
+                    .Where(x => EF.Functions.Like(x.Name.ToLower(), name));
+            }
+
+            return await searchDishesList.CountAsync();
+        }
 
         public async Task<IEnumerable<T>> GetDishesByDishCategoryAsync<T>(int page, DishCategory dishCategory, int itemsPerPage = 4)
         {
@@ -137,14 +165,26 @@
             return null;
         }
 
-        public async Task<IEnumerable<T>> GetAllDishesAsync<T>(int page, int itemsPerPage = 4)
+        public async Task<IEnumerable<T>> SearchDishesByNameAndCategoryAsync<T>(int page, string name = null, DishCategory? dishCategory = null, int itemsPerPage = 4)
         {
-            var randomDishes = await this.dishesRepo.AllAsNoTracking()
-                .OrderBy(x => x.DishCategory)
-                .ThenBy(x => x.Name)
+            var searchDishesList = this.dishesRepo.All().AsQueryable();
+            if (!string.IsNullOrEmpty(dishCategory.ToString()))
+            {
+                searchDishesList = searchDishesList
+                    .Where(x => x.DishCategory == dishCategory);
+            }
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                name = $"%{name.ToLower()}%";
+                searchDishesList = searchDishesList
+                    .Where(x => EF.Functions.Like(x.Name.ToLower(), name));
+            }
+
+            return await searchDishesList
+                .OrderBy(x => x.Name)
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage).To<T>().ToListAsync();
-            return randomDishes;
         }
     }
 }

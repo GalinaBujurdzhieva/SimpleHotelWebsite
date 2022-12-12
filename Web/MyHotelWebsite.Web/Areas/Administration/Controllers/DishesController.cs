@@ -117,14 +117,8 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
-        public IActionResult Search()
-        {
-            return this.View();
-        }
-
         public async Task<IActionResult> ByCategory(DishCategory dishCategory, int id = 1)
         {
-            this.ViewBag.SortingParameter = !string.IsNullOrEmpty(dishCategory.ToString()) ? dishCategory.ToString() : "";
             if (id < 1)
             {
                 return this.BadRequest();
@@ -142,6 +136,11 @@
                 DishCategory = dishCategory.ToString(),
             };
             return this.View(model);
+        }
+
+        public IActionResult Search()
+        {
+            return this.View();
         }
     }
 }

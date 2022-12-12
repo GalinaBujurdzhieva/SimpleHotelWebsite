@@ -41,6 +41,14 @@
                     <br>
                     <h4 class="card-text">Category: @dish.DishCategory</h4>
                     <h4 class="card-text">Price: @dish.Price euro</h4>
+                @if (this.SignInManager.IsSignedIn(this.User))
+                {
+                    <br>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a type="button" class="btn btn-small btn-danger" style="margin-right:10px; width:100px" asp-area="Administration" asp-controller="Dishes" asp-action="Order" asp-route-id="@dish.Id" class="btn btn-secondary">Order</a>
+                    </div>
+                }
+              
                         @if (this.SignInManager.IsSignedIn(this.User) && (this.User.IsInRole(GlobalConstants.HotelManagerRoleName) || this.User.IsInRole(GlobalConstants.ChefRoleName) || this.User.IsInRole(GlobalConstants.WaiterRoleName)))
                         {
                     <h4 class="card-text">In stock: @dish.QuantityInStock pcs.</h4>

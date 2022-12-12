@@ -1,15 +1,9 @@
 ﻿@using MyHotelWebsite.Data.Models.Enums
 @using MyHotelWebsite.Web.ViewModels.Dishes
 
-@model IEnumerable<SingleDishViewModel>
+@model SingleDishViewModel
 
 <!DOCTYPE html>
-@*<head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
-</head>*@
 <body>
     <div class="container" style="margin-top:20px; margin-bottom:10px">
         <div class="row pt-1 pb-1">
@@ -19,14 +13,14 @@
         </div>
     </div>
     <br />
-    <section class="search-sec">
+    <section class="search-sec justify-content-center">
         <div class="container">
-            <form asp-action="ByCategory" method="get" novalidate="novalidate">
+            <form asp-action="ByNameAndCategory" method="get" novalidate="novalidate">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row justify-content-center">
                             <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                <input type="text" class="form-control search-slt" placeholder="Type here the dish name">
+                                <input asp-for="Name" type="text" class="form-control search-slt" placeholder="Type here the dish name">
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                                 <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<DishCategory>()" name="dishCategory">

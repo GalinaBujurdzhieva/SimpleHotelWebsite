@@ -91,6 +91,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaGVzXEFsbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Views/Dishes/ByNameAndCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaGVzXEJ5TmFtZUFuZENhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Views/Dishes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -147,6 +151,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Views/Shared/_PagingDishesByNameAndCategoryPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdpbmdEaXNoZXNCeU5hbWVBbmRDYXRlZ29yeVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Views/Shared/_PagingDishesPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdpbmdEaXNoZXNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -165,6 +173,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Views/Shared/_SingleDishByCategoryPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaW5nbGVEaXNoQnlDYXRlZ29yeVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Views/Shared/_SingleDishByNameAndCategoryPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaW5nbGVEaXNoQnlOYW1lQW5kQ2F0ZWdvcnlQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/source/repos/ASP.NET.Advanced/ASP.NET.Project/Web/MyHotelWebsite.Web/Views/Shared/_SingleDishPartial.cshtml]
