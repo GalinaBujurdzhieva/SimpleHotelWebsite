@@ -131,10 +131,10 @@
                 .CountAsync();
         }
 
-        public async Task<int> GetCountOfDishesByNameAndCategoryAsync(string name = null, DishCategory? dishCategory = null)
+        public async Task<int> GetCountOfDishesByNameAndCategoryAsync(string name = null, DishCategory dishCategory = 0)
         {
             var searchDishesList = this.dishesRepo.All().AsQueryable();
-            if (!string.IsNullOrEmpty(dishCategory.ToString()))
+            if (dishCategory != 0)
             {
                 searchDishesList = searchDishesList
                     .Where(x => x.DishCategory == dishCategory);
@@ -165,10 +165,10 @@
             return null;
         }
 
-        public async Task<IEnumerable<T>> SearchDishesByNameAndCategoryAsync<T>(int page, string name = null, DishCategory? dishCategory = null, int itemsPerPage = 4)
+        public async Task<IEnumerable<T>> SearchDishesByNameAndCategoryAsync<T>(int page, string name = null, DishCategory dishCategory = 0, int itemsPerPage = 4)
         {
             var searchDishesList = this.dishesRepo.All().AsQueryable();
-            if (!string.IsNullOrEmpty(dishCategory.ToString()))
+            if (dishCategory != 0)
             {
                 searchDishesList = searchDishesList
                     .Where(x => x.DishCategory == dishCategory);

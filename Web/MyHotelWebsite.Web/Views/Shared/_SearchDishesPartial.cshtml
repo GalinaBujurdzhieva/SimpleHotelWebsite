@@ -20,11 +20,11 @@
                     <div class="col-lg-12">
                         <div class="row justify-content-center">
                             <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                <input asp-for="Name" type="text" class="form-control search-slt" placeholder="Type here the dish name">
+                                <input type="text" name="Name" class="form-control search-slt" placeholder="Type here the dish name">
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                                 <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<DishCategory>()" name="dishCategory">
-                                    <option>Select Dish Category</option>
+                                   <option>Select Dish Category</option>
                                 </select>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 p-0">
