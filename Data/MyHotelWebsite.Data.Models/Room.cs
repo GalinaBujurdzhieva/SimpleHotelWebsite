@@ -20,6 +20,8 @@
 
         public int RoomNumber { get; set; }
 
+        public int Floor { get; set; } = 0;
+
         public int Capacity { get; set; }
 
         public RoomType RoomType { get; set; }

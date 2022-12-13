@@ -1,4 +1,4 @@
-﻿namespace MyHotelWebsite.Web
+namespace MyHotelWebsite.Web
 {
     using System.Reflection;
 

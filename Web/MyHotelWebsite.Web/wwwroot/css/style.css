@@ -924,6 +924,11 @@ footer a{
     height: 450px;
     position: relative;
 }
+.image-head-wrapper-dining-all {
+    background: rgba(0, 0, 0, 0) url("../images/Dining-all.png") no-repeat scroll center top;
+    height: 450px;
+    position: relative;
+}
 .image-head-wrapper-blog {
     background: rgba(0, 0, 0, 0) url("../images/Blog-main2.png") no-repeat scroll center top;
     height: 450px;

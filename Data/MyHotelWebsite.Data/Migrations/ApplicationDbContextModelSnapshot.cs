@@ -622,6 +622,9 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Floor")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsCleaned")
                         .HasColumnType("bit");
 

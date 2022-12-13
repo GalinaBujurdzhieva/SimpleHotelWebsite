@@ -41,7 +41,7 @@
                 <br>
                 <h4 class="card-text">Category: @dish.DishCategory</h4>
                 <h4 class="card-text">Price: @dish.Price euro</h4>
-                @if (this.SignInManager.IsSignedIn(this.User) && (this.User.IsInRole(GlobalConstants.HotelManagerRoleName) || this.User.IsInRole(GlobalConstants.ChefRoleName) || this.User.IsInRole(GlobalConstants.WaiterRoleName)))
+                @if (this.SignInManager.IsSignedIn(this.User) && ((this.User.IsInRole(GlobalConstants.HotelManagerRoleName) || this.User.IsInRole(GlobalConstants.ChefRoleName) || this.User.IsInRole(GlobalConstants.WaiterRoleName))))
                 {
                     <h4 class="card-text">In stock: @dish.QuantityInStock pcs.</h4>
                     <h4 class="card-text">Is ready: @(dish.IsReady ? "Yes" : "No")</h4>
