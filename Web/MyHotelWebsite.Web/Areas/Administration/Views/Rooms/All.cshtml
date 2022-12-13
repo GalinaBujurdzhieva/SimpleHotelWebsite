@@ -1,0 +1,25 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Rooms
+
+@model RoomAllViewModel
+
+<script>
+    var msg = '@this.TempData["Message"]';
+    if (msg.length) {
+        alert(msg);
+    }
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div id="page">
+        <div class="clearfix"></div>
+        <div class="row">
+            <partial name="_SingleRoomPartial" />
+            <partial name="_PagingPartial" model="@Model" />
+        </div>
+    </div>
+</body>
+</html>
+
