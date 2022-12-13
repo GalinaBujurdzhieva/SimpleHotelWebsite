@@ -1,10 +1,10 @@
-﻿using System.Diagnostics;
-
-using Microsoft.AspNetCore.Mvc;
-using MyHotelWebsite.Web.ViewModels;
-
-namespace MyHotelWebsite.Web.Controllers
+﻿namespace MyHotelWebsite.Web.Controllers
 {
+    using System.Diagnostics;
+
+    using Microsoft.AspNetCore.Mvc;
+    using MyHotelWebsite.Web.ViewModels;
+
     public class HomeController : BaseController
     {
         public IActionResult Index()

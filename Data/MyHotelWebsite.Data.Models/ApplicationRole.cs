@@ -3,9 +3,8 @@ namespace MyHotelWebsite.Data.Models
 {
     using System;
 
-    using MyHotelWebsite.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
+    using MyHotelWebsite.Data.Common.Models;
 
     public class ApplicationRole : IdentityRole, IAuditInfo, IDeletableEntity
     {

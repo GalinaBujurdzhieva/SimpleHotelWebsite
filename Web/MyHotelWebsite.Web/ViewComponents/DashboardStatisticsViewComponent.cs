@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MyHotelWebsite.Services.Data;
-using MyHotelWebsite.Web.ViewModels.ViewComponents;
-using System.Threading.Tasks;
-
-namespace MyHotelWebsite.Web.ViewComponents
+﻿namespace MyHotelWebsite.Web.ViewComponents
 {
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Mvc;
+    using MyHotelWebsite.Services.Data;
+    using MyHotelWebsite.Web.ViewModels.ViewComponents;
+
     public class DashboardStatisticsViewComponent : ViewComponent
     {
         private readonly IBlogsService blogsService;

@@ -55,7 +55,7 @@
                 AllEntitiesCount = await this.dishesService.GetCountOfDishesByNameAndCategoryAsync(name, dishCategory),
                 Dishes = dishesWithFilter,
                 PageNumber = id,
-                //Name = name,
+                // Name = name,
                 DishCategory = dishCategory.ToString(),
             };
             return this.View(model);

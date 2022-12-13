@@ -1,12 +1,7 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyHotelWebsite.Services.Data
+﻿namespace MyHotelWebsite.Services.Data
 {
+    using Microsoft.AspNetCore.Hosting;
+
     internal class StorageService : IStorageService
     {
         private readonly IHostingEnvironment hostingEnvironment;

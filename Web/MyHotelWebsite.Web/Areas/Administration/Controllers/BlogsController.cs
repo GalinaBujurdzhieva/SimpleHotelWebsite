@@ -42,7 +42,6 @@
             return this.View(model);
         }
 
-
         public IActionResult Create()
         {
             var model = new CreateBlogViewModel();

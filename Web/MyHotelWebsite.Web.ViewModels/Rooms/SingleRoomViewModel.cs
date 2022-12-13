@@ -1,10 +1,11 @@
 ﻿namespace MyHotelWebsite.Web.ViewModels.Rooms
 {
+    using AutoMapper;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
 
-    public class SingleRoomViewModel : IMapFrom<Room>
+    public class SingleRoomViewModel : IMapFrom<Room>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
@@ -25,5 +26,11 @@
         public bool IsOccupied { get; set; }
 
         public bool IsCleaned { get; set; }
+
+        public void CreateMappings(IProfileExpression configuration)
+        {
+            configuration.CreateMap<Room, SingleRoomViewModel>()
+                .ForMember(x => x.Floor, opt => opt.MapFrom(r => r.Floor));
+        }
     }
 }

@@ -83,6 +83,7 @@
             {
                 this.blogImagesRepo.HardDelete(currentBlogImage);
             }
+
             // currentBlog.StaffId = staffId;
 
             Directory.CreateDirectory($"{imagePath}/blogs/");

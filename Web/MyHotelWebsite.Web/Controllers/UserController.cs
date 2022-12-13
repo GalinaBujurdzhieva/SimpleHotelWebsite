@@ -1,11 +1,12 @@
 ﻿namespace MyHotelWebsite.Web.Controllers
 {
+    using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Common;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Web.ViewModels.User;
-    using System.Threading.Tasks;
 
     public class UserController : BaseController
     {
@@ -49,7 +50,7 @@
 
             foreach (var error in result.Errors)
             {
-                this.ModelState.AddModelError("", error.Description);
+                this.ModelState.AddModelError(string.Empty, error.Description);
             }
 
             return this.View(model);
@@ -88,7 +89,7 @@
                 }
             }
 
-            this.ModelState.AddModelError("", "Invalid Username or Password");
+            this.ModelState.AddModelError(string.Empty, "Invalid Username or Password");
             return this.View(model);
         }
 

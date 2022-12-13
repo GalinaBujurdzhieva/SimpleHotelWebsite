@@ -1,8 +1,9 @@
 ﻿namespace MyHotelWebsite.Data.Models
 {
-    using MyHotelWebsite.Data.Common.Models;
     using System;
     using System.ComponentModel.DataAnnotations;
+
+    using MyHotelWebsite.Data.Common.Models;
 
     public class DishImage : BaseDeletableModel<string>
     {

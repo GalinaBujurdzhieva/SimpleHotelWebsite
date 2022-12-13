@@ -18,6 +18,11 @@
             this.roomsRepo = roomsRepo;
         }
 
+        public async Task<bool> DoesRoomExistAsync(int id)
+        {
+            return await this.roomsRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
+        }
+
         public async Task<IEnumerable<T>> GetAllRoomsAsync<T>(int page, int itemsPerPage = 4)
         {
             var rooms = await this.roomsRepo.AllAsNoTracking()
@@ -31,6 +36,15 @@
         public async Task<int> GetCountAsync()
         {
             return await this.roomsRepo.AllAsNoTracking().CountAsync();
+        }
+
+        public async Task<T> RoomDetailsByIdAsync<T>(int id)
+        {
+            var currentRoom = await this.roomsRepo.AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>()
+                .FirstOrDefaultAsync();
+            return currentRoom;
         }
     }
 }

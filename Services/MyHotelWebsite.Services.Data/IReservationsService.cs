@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyHotelWebsite.Services.Data
+﻿namespace MyHotelWebsite.Services.Data
 {
+    using System.Threading.Tasks;
+
     public interface IReservationsService
     {
         Task<int> GetCountAsync();

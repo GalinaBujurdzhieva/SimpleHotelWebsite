@@ -8,5 +8,9 @@
         Task<int> GetCountAsync();
 
         Task<IEnumerable<T>> GetAllRoomsAsync<T>(int page, int itemsPerPage = 4);
+
+        Task<bool> DoesRoomExistAsync(int id);
+
+        Task<T> RoomDetailsByIdAsync<T>(int id);
     }
 }
