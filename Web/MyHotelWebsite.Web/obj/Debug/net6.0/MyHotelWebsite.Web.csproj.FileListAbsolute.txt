@@ -571,7 +571,6 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\ref\MyHotelWebsite.Web.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\Microsoft.Build.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
@@ -580,3 +579,15 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\refs\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\refs\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\refs\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\bin\Debug\net6.0\refs\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\staticwebassets\msbuild.MyHotelWebsite.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.MyHotelWebsite.Web.props
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.MyHotelWebsite.Web.props
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.MyHotelWebsite.Web.props
+C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\Web\MyHotelWebsite.Web\obj\Debug\net6.0\staticwebassets.pack.json

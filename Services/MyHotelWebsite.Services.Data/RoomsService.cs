@@ -27,6 +27,7 @@
         {
             var rooms = await this.roomsRepo.AllAsNoTracking()
                 .OrderBy(x => x.RoomType)
+                .ThenBy(x => x.Floor)
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage).To<T>()
                 .ToListAsync();

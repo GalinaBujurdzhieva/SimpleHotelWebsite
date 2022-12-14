@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MyHotelWebsite.Web.props" />
+</Project>
