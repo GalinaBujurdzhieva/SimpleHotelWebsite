@@ -40,6 +40,28 @@
             return this.View(model);
         }
 
+        public async Task<IActionResult> Clean(int id)
+        {
+            if (!await this.roomsService.DoesRoomExistAsync(id))
+            {
+                return this.RedirectToAction(nameof(this.All));
+            }
+
+            var staffId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            try
+            {
+                await this.roomsService.CleanRoomAsync(id, staffId);
+                this.TempData["Message"] = "Room cleaned successfully.";
+            }
+            catch (Exception)
+            {
+                this.TempData["Message"] = "Room is already cleaned.";
+            }
+
+            return this.RedirectToAction(nameof(this.All));
+        }
+
         public async Task<IActionResult> Edit(int id)
         {
             if (!await this.roomsService.DoesRoomExistAsync(id))

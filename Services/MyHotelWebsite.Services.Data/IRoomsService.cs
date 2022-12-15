@@ -15,5 +15,7 @@
         Task<T> RoomDetailsByIdAsync<T>(int id);
 
         Task EditRoomAsync(EditRoomViewModel model, int id, string staffId);
+
+        Task CleanRoomAsync(int id, string staffId);
     }
 }

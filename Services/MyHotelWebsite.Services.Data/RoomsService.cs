@@ -19,6 +19,22 @@
             this.roomsRepo = roomsRepo;
         }
 
+        public async Task CleanRoomAsync(int id, string staffId)
+        {
+            var currentRoom = await this.roomsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            if (!currentRoom.IsCleaned)
+            {
+                currentRoom.IsCleaned = true;
+                // currentRoom.StaffId = staffId;
+            }
+            else
+            {
+                throw new System.Exception();
+            }
+
+            await this.roomsRepo.SaveChangesAsync();
+        }
+
         public async Task<bool> DoesRoomExistAsync(int id)
         {
             return await this.roomsRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
