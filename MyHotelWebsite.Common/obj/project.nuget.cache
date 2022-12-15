@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "skvYueggI7fPsN/C4ZGfz/0IH+ua0OwH+2jUtVjt4B/Djcl8Wh2tJEnE1xgPNdgHlpSU34GB264vAxf0Wi9sSw==",
+  "dgSpecHash": "Q81Oac842HgGWPUCQMWm/5djAtigk5Ila3NGkCebxVptYTf6+HKA2vgkrO8YdhIdllvzioboGQIQoEG9X49iBQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\ASP.NET.Advanced\\ASP.NET.Project\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",

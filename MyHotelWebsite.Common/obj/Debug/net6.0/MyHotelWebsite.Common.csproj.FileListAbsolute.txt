@@ -10,3 +10,15 @@ C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\MyHotelWebsite.Com
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\MyHotelWebsite.Common\obj\Debug\net6.0\refint\MyHotelWebsite.Common.dll
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\MyHotelWebsite.Common\obj\Debug\net6.0\MyHotelWebsite.Common.pdb
 C:\Users\Lenovo\source\repos\ASP.NET.Advanced\ASP.NET.Project\MyHotelWebsite.Common\obj\Debug\net6.0\ref\MyHotelWebsite.Common.dll
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\bin\Debug\net6.0\MyHotelWebsite.Common.deps.json
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\bin\Debug\net6.0\MyHotelWebsite.Common.dll
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\bin\Debug\net6.0\MyHotelWebsite.Common.pdb
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\obj\Debug\net6.0\MyHotelWebsite.Common.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\obj\Debug\net6.0\MyHotelWebsite.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\obj\Debug\net6.0\MyHotelWebsite.Common.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\obj\Debug\net6.0\MyHotelWebsite.Common.AssemblyInfo.cs
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\obj\Debug\net6.0\MyHotelWebsite.Common.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\obj\Debug\net6.0\MyHotelWebsite.Common.dll
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\obj\Debug\net6.0\refint\MyHotelWebsite.Common.dll
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\obj\Debug\net6.0\MyHotelWebsite.Common.pdb
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\MyHotelWebsite.Common\obj\Debug\net6.0\ref\MyHotelWebsite.Common.dll

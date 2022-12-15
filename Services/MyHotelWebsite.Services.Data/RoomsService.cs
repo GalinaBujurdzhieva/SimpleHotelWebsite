@@ -8,6 +8,7 @@
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Mapping;
+    using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
 
     public class RoomsService : IRoomsService
     {
@@ -21,6 +22,19 @@
         public async Task<bool> DoesRoomExistAsync(int id)
         {
             return await this.roomsRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
+        }
+
+        public async Task EditRoomAsync(EditRoomViewModel model, int id, string staffId)
+        {
+            var currentRoom = await this.roomsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            currentRoom.AdultPrice = model.AdultPrice;
+            currentRoom.ChildrenPrice = model.ChildrenPrice;
+            currentRoom.IsReserved = model.IsReserved;
+            currentRoom.IsOccupied = model.IsOccupied;
+            currentRoom.IsCleaned = model.IsCleaned;
+            // currentRoom.StaffId = staffId;
+
+            await this.roomsRepo.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<T>> GetAllRoomsAsync<T>(int page, int itemsPerPage = 4)

@@ -52,28 +52,29 @@
             return this.View(model);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Edit(int id, EditRoomViewModel model)
-        //{
-        //    if (!this.ModelState.IsValid)
-        //    {
-        //        return this.View(model);
-        //    }
-        //    var staffId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditRoomViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
 
-        //    //try
-        //    //{
-        //    //    await this.roomsService.EditRoomAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
-        //    //    this.TempData["Message"] = "Dish changed successfully.";
-        //    //}
-        //    //catch (Exception)
-        //    //{
-        //    //    this.ModelState.AddModelError(string.Empty, "Could not edit this dish");
-        //    //    return this.View(model);
-        //    //}
+            var staffId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-        //    return this.RedirectToAction(nameof(this.All));
-        //}
+            try
+            {
+                await this.roomsService.EditRoomAsync(model, id, staffId);
+                this.TempData["Message"] = "Room edited successfully.";
+            }
+            catch (Exception)
+            {
+                this.ModelState.AddModelError(string.Empty, "Could not edit this room");
+                return this.View(model);
+            }
+
+            return this.RedirectToAction(nameof(this.All));
+        }
 
         private void DropDownReBind()
         {

@@ -1,5 +1,6 @@
 ﻿namespace MyHotelWebsite.Services.Data
 {
+    using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
@@ -12,5 +13,7 @@
         Task<bool> DoesRoomExistAsync(int id);
 
         Task<T> RoomDetailsByIdAsync<T>(int id);
+
+        Task EditRoomAsync(EditRoomViewModel model, int id, string staffId);
     }
 }
