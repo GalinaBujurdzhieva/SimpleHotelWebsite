@@ -98,6 +98,12 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
+        public IActionResult Search()
+        {
+            this.DropDownReBind();
+            return this.View();
+        }
+
         private void DropDownReBind()
         {
             List<SelectListItem> boolYesOrNo = new List<SelectListItem>();

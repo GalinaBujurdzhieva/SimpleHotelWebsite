@@ -1,0 +1,52 @@
+﻿@using MyHotelWebsite.Data.Models.Enums
+@using MyHotelWebsite.Web.ViewModels.Administration.Rooms
+
+@model SingleRoomViewModel
+
+<!DOCTYPE html>
+<body>
+    <div class="container" style="margin-top:20px; margin-bottom:10px">
+        <div class="row pt-1 pb-1">
+            <div class="col-lg-12 text-center">
+                <h3 class="text-center">Search criteria</h3>
+            </div>
+        </div>
+    </div>
+    <br />
+    <section class="search-sec justify-content-center">
+        <div class="container">
+            <form asp-action="Search" method="get" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-1 col-md-1 col-sm-12 p-0">
+                            @Html.DropDownListFor(model => model.IsReserved
+                                , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "Reserved", new { style="width:100px; height:37px", onchange = "UpdateReport(this)" })
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-12 p-0">
+                                @Html.DropDownListFor(model => model.IsOccupied
+                                , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "Occupied", new { style="width:100px; height:37px", onchange = "UpdateReport(this)" })
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-12 p-0">
+                                @Html.DropDownListFor(model => model.IsCleaned
+                                , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "Cleaned", new { style="width:100px; height:37px", onchange = "UpdateReport(this)" })
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-12 p-0" style="width:180px; height:37px">
+                                <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<RoomType>()" name="roomType">
+                                    <option>Select Room Type</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-12 p-0">
+                                <input type="submit" value="Search" name="Search" class="btn btn-danger wrn-btn" style="margin-left:8px" border="1">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+
+
