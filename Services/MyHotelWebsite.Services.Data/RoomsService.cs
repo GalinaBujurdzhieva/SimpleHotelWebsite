@@ -7,6 +7,7 @@
     using Microsoft.EntityFrameworkCore;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
 
@@ -69,6 +70,33 @@
             return await this.roomsRepo.AllAsNoTracking().CountAsync();
         }
 
+        public async Task<int> GetCountOfRoomsByFourCriteriaAsync(bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0)
+        {
+            var searchRoomsList = this.roomsRepo.AllAsNoTracking().AsQueryable();
+
+            if (roomType != 0)
+            {
+                searchRoomsList = searchRoomsList.Where(x => x.RoomType == roomType);
+            }
+
+            if (isReserved)
+            {
+                searchRoomsList = searchRoomsList.Where(x => x.IsReserved);
+            }
+
+            if (isOccupied)
+            {
+                searchRoomsList = searchRoomsList.Where(x => x.IsOccupied);
+            }
+
+            if (isCleaned)
+            {
+                searchRoomsList = searchRoomsList.Where(x => x.IsCleaned);
+            }
+
+            return await searchRoomsList.CountAsync();
+        }
+
         public async Task<T> RoomDetailsByIdAsync<T>(int id)
         {
             var currentRoom = await this.roomsRepo.AllAsNoTracking()
@@ -76,6 +104,38 @@
                 .To<T>()
                 .FirstOrDefaultAsync();
             return currentRoom;
+        }
+
+        public async Task<IEnumerable<T>> SearchRoomsByFourCriteriaAsync<T>(int page, bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0, int itemsPerPage = 4)
+        {
+            var searchRoomsList = this.roomsRepo.AllAsNoTracking().AsQueryable();
+
+            if (roomType != 0)
+            {
+                searchRoomsList = searchRoomsList.Where(x => x.RoomType == roomType);
+            }
+
+            if (isReserved)
+            {
+                searchRoomsList = searchRoomsList.Where(x => x.IsReserved);
+            }
+
+            if (isOccupied)
+            {
+                searchRoomsList = searchRoomsList.Where(x => x.IsOccupied);
+            }
+
+            if (isCleaned)
+            {
+                searchRoomsList = searchRoomsList.Where(x => x.IsCleaned);
+            }
+
+            return await searchRoomsList
+                .OrderBy(x => x.RoomType)
+                .ThenBy(x => x.Floor)
+                .Skip((page - 1) * itemsPerPage)
+                .Take(itemsPerPage)
+                .To<T>().ToListAsync();
         }
     }
 }

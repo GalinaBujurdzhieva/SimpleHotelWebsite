@@ -1160,7 +1160,6 @@ C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\D
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.AssemblyInfoInputs.cache
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.AssemblyInfo.cs
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.csproj.CoreCompileInputs.cache
-C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.RazorAssemblyInfo.cache
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.RazorAssemblyInfo.cs

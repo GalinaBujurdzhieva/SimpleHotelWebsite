@@ -9,8 +9,10 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using MyHotelWebsite.Common;
+    using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
+    using MyHotelWebsite.Web.ViewModels.Dishes;
 
     [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.MaidRoleName)]
     public class RoomsController : AdministrationController
@@ -102,6 +104,30 @@
         {
             this.DropDownReBind();
             return this.View();
+        }
+
+        public async Task<IActionResult> ByFourCriteria(RoomType roomType, bool isReserved, bool isOccupied, bool isCleaned, int id = 1)
+        {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int RoomsPerPage = 12;
+
+            var roomsWithFilter = await this.roomsService.SearchRoomsByFourCriteriaAsync<SingleRoomViewModel>(id, isReserved, isOccupied, isCleaned, roomType, RoomsPerPage);
+            var model = new RoomByFourCriteriaSearchViewModel
+            {
+                ItemsPerPage = RoomsPerPage,
+                AllEntitiesCount = await this.roomsService.GetCountOfRoomsByFourCriteriaAsync(isReserved, isOccupied, isCleaned, roomType),
+                Rooms = roomsWithFilter,
+                PageNumber = id,
+                RoomType = roomType.ToString(),
+                IsCleaned = isCleaned,
+                IsReserved = isReserved,
+                IsOccupied = isOccupied,
+            };
+            return this.View(model);
         }
 
         private void DropDownReBind()

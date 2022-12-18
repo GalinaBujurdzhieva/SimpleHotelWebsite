@@ -19,8 +19,7 @@
                 <div class="row">
                     <div class="col-md-2 col-sm-6 col-xs-6">
                         <div id="logo">
-                            <!--<a href="home.html"><img src="images/logo.png" alt="logo"></a>-->
-                            <p href="home.html"><span>Wel </span> come </p>
+                            <p><span>Wel </span> come </p>
                         </div>
                     </div>
                     <div class="col-sm-6 visible-sm">
@@ -28,15 +27,6 @@
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
                         <nav class="navbar navbar-default">
-                            <div class="navbar-header page-scroll">
-                                <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-
-                            </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
                                     <li><a data-hover="Home" asp-controller="Home" asp-action="Index"><span>Home</span></a></li>
@@ -53,10 +43,23 @@
                     </div>
                     @if (signInManager.IsSignedIn(User))
                     {
-                        <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups" style="margin-bottom:5px">
+                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                <form method="post" asp-controller="Reservations" asp-action="Book">
+                                    <div class="text-center"><button type="submit" class="book-now-btn">Book a room</button></div>
+                                </form>
+                            </div>
                             <div class="btn-group mr-2" role="group" aria-label="First group">
                                 <form method="post" asp-controller="Reservations" asp-action="Mine">
                                     <div class="text-center"><button type="submit" class="book-now-btn">My Reservations</button></div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                <form method="post" asp-controller="Orders" asp-action="Create">
+                                    <div class="text-center"><button type="submit" class="book-now-btn">Order a dish</button></div>
                                 </form>
                             </div>
                             <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -75,6 +78,9 @@
                     }
                     else
                     {
+                        <div class="col-md-12 contact-form text-center">
+                            <h3>Want to make a reservation? <span>Please, register or just log into your account</span></h3>
+                        </div>
                         <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mr-2" role="group" aria-label="First group">
                                 <form method="post" asp-controller="User" asp-action="Register">

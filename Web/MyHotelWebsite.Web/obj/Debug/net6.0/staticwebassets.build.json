@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gnLwchiG/Zunch7NX7mLK8rff/H1M3TI9adEBcz3DgE=",
+  "Hash": "ASYRRFQ8Zy64FzPDNGsdOka0MVs3si1A04+vekhHX94=",
   "Source": "MyHotelWebsite.Web",
   "BasePath": "_content/MyHotelWebsite.Web",
   "Mode": "Default",
@@ -2278,6 +2278,23 @@
       "OriginalItemSpec": "wwwroot\\images\\blogs\\c2fc85c3-8d88-4b98-a58a-cfd894eb394d.png"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\c5087dff-2f87-455a-87fb-460de6188b06.png",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/blogs/c5087dff-2f87-455a-87fb-460de6188b06.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blogs\\c5087dff-2f87-455a-87fb-460de6188b06.png"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\c783468c-c752-4a7a-b26d-67978dcef77c.jpg",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Discovered",
@@ -2686,6 +2703,23 @@
       "OriginalItemSpec": "wwwroot\\images\\dishes\\addedLater\\3fc817d0-5ca1-4162-b09e-4eb5c139ac68.jpg"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\81186fcd-8a6f-4f75-b4b7-44fdf11d9dd8.png",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/dishes/addedLater/81186fcd-8a6f-4f75-b4b7-44fdf11d9dd8.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\addedLater\\81186fcd-8a6f-4f75-b4b7-44fdf11d9dd8.png"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\8c01e1ac-8dfb-4281-8283-2df23f708dfc.png",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Discovered",
@@ -2769,6 +2803,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\dishes\\addedLater\\ecac8fe1-e09d-4d1e-81c9-934447bbd97f.png"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\f949011f-2292-426d-aff2-a97c757515eb.png",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/dishes/addedLater/f949011f-2292-426d-aff2-a97c757515eb.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\addedLater\\f949011f-2292-426d-aff2-a97c757515eb.png"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Beer.png",
