@@ -8,7 +8,7 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
 
-    public class DishesSeeder : ISeeder
+    internal class DishesSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
@@ -1292,7 +1292,7 @@
             // 13
             dishes.Add(new Dish
             {
-                Name = "Key_lime_pie_mousse",
+                Name = "Key lime pie mousse",
                 Price = 31.00M,
                 DishCategory = DishCategory.Desserts,
                 QuantityInStock = 23,

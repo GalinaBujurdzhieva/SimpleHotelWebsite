@@ -22,13 +22,13 @@
             this.blogImagesRepo = blogImagesRepo;
         }
 
-        public async Task AddBlogAsync(CreateBlogViewModel model, string staffId, string imagePath)
+        public async Task AddBlogAsync(CreateBlogViewModel model, string applicationUserId, string imagePath)
         {
             var blog = new Blog
             {
                 Title = model.Title,
                 Content = model.Content,
-                // StaffId = staffId,
+                ApplicationUserId = applicationUserId,
             };
 
             Directory.CreateDirectory($"{imagePath}/blogs/");
@@ -37,7 +37,7 @@
             var blogImage = new BlogImage
             {
                 Extension = blogImageExtension,
-                // StaffId = staffId,
+                ApplicationUserId=applicationUserId,
             };
 
             blog.BlogImage = blogImage;
@@ -72,7 +72,7 @@
             return await this.blogsRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
         }
 
-        public async Task EditBlogAsync(EditBlogViewModel model, int id, string staffId, string imagePath)
+        public async Task EditBlogAsync(EditBlogViewModel model, int id, string applicationUserId, string imagePath)
         {
             var currentBlog = await this.blogsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
             currentBlog.Title = model.Title;
@@ -84,7 +84,7 @@
                 this.blogImagesRepo.HardDelete(currentBlogImage);
             }
 
-            // currentBlog.StaffId = staffId;
+            currentBlog.ApplicationUserId = applicationUserId;
 
             Directory.CreateDirectory($"{imagePath}/blogs/");
             var blogImageExtension = Path.GetExtension(model.Image.FileName).TrimStart('.');
@@ -92,7 +92,7 @@
             var blogImage = new BlogImage
             {
                 Extension = blogImageExtension,
-                // StaffId = staffId,
+                ApplicationUserId = applicationUserId,
             };
             currentBlog.BlogImage = blogImage;
             currentBlog.BlogImageId = blogImage.Id;

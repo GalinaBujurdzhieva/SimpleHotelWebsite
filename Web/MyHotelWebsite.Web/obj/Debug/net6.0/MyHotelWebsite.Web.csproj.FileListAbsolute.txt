@@ -1172,3 +1172,4 @@ C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\D
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.pdb
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.genruntimeconfig.cache
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\ref\MyHotelWebsite.Web.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new\Web\MyHotelWebsite.Web\obj\Debug\net6.0\MyHotelWebsite.Web.MvcApplicationPartsAssemblyInfo.cs

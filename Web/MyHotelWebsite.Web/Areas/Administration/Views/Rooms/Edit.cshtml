@@ -36,40 +36,16 @@
         <div class="text-center mb-3">
             <label asp-for="AdultPrice">Adult Price</label>
             <div>
-            <input asp-for="AdultPrice" style="width:450px;  height:30px" />
+                <input asp-for="AdultPrice" class="form-control" />
             </div>
             <span asp-validation-for="AdultPrice" class="text-danger"></span>
         </div>
         <div class="text-center mb-3">
             <label asp-for="ChildrenPrice">Children Price</label>
             <div>
-            <input asp-for="ChildrenPrice" style="width:450px;  height:30px">
+                <input asp-for="ChildrenPrice" class="form-control">
             </div>
             <span asp-validation-for="ChildrenPrice" class="text-danger"></span>
-        </div>
-        <div class="text-center mb-3">
-            <label asp-for="IsReserved">Is Reserved</label>
-            <div>
-            @Html.DropDownListFor(model => model.IsReserved
-            , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], new { style="width:450px; height:30px", onchange = "UpdateReport(this)" })
-            </div>
-            <span asp-validation-for="IsReserved" class="text-danger"></span>
-        </div>
-        <div class="text-center mb-3">
-            <label asp-for="IsOccupied">Is Occupied</label>
-            <div>
-            @Html.DropDownListFor(model => model.IsOccupied
-                , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], new { style="width:450px; height:30px", onchange = "UpdateReport(this)" })
-            </div>
-            <span asp-validation-for="IsOccupied" class="text-danger"></span>
-        </div>
-        <div class="text-center mb-3">
-            <label asp-for="IsCleaned">Is Cleaned</label>
-            <div>
-            @Html.DropDownListFor(model => model.IsCleaned
-                , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], new { style="width:450px;  height:30px", onchange = "UpdateReport(this)" })
-            </div>
-            <span asp-validation-for="IsCleaned" class="text-danger"></span>
         </div>
         <div class="text-center">
             <input type="submit" class="btn btn-danger" />

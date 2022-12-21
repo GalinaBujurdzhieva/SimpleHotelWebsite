@@ -15,5 +15,7 @@
         public const string MaidRoleName = "Maid";  // ACCESS TO ROOMSCONTROLLER
 
         public const string WaiterRoleName = "Waiter"; // ACCESS TO ORDERSCONTROLLER
+
+        public const string GuestRoleName = "Guest"; // ACCESS TO HIS RESERVATIONS AND ORDERS
     }
 }

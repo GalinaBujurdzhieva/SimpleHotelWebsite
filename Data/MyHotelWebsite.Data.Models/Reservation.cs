@@ -3,10 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+
 
     using MyHotelWebsite.Data.Common.Models;
     using MyHotelWebsite.Data.Models.Enums;
@@ -18,20 +15,26 @@
             this.RoomReservations = new HashSet<RoomReservation>();
         }
 
+        [Display(Name ="Check in")]
         public DateTime AccommodationDate { get; set; }
 
+        [Display(Name = "Check out")]
         public DateTime ReleaseDate { get; set; }
+
+        [Display(Name = "Adults Count")]
+        public int AdultsCount { get; set; }
+
+        [Display(Name = "Children Count")]
+        public int ChildrenCount { get; set; }
+
+        [Display(Name = "Room Type")]
+        public RoomType RoomType { get; set; }
 
         public Catering Catering { get; set; }
 
-        public string GuestId { get; set; }
+        public string ApplicationUserId { get; set; }
 
-        public virtual Guest Guest { get; set; }
-
-        //[Required]
-        public string StaffId { get; set; }
-
-        public virtual Staff Staff { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         public virtual ICollection<RoomReservation> RoomReservations { get; set; }
     }

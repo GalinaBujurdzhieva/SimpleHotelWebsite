@@ -53,15 +53,18 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                  @if (this.SignInManager.IsSignedIn(this.User) && this.User.IsInRole(GlobalConstants.HotelManagerRoleName))
                 {
-                <a type="button" class="btn btn-small btn-danger" style="margin:10px; width:100px" asp-area="Administration" asp-controller="Rooms" asp-action="Edit" asp-route-id="@room.Id" class="btn btn-secondary">Edit</a>
+                <a type="button" class="btn btn-small btn-danger" style="margin-right:10px; width:100px" asp-area="Administration" asp-controller="Rooms" asp-action="Edit" asp-route-id="@room.Id" class="btn btn-secondary">Edit prices</a>
                 }
                 @if (this.SignInManager.IsSignedIn(this.User) && (this.User.IsInRole(GlobalConstants.HotelManagerRoleName) || this.User.IsInRole(GlobalConstants.MaidRoleName)))
                 {
-                        <a type="button" class="btn btn-small btn-danger" style="margin:10px; margin-left:50px; width:100px" asp-area="Administration" asp-controller="Rooms" asp-action="Clean" asp-route-id="@room.Id" class="btn btn-secondary">Clean</a>
+                        <a type="button" class="btn btn-small btn-danger" style="width:100px" asp-area="Administration" asp-controller="Rooms" asp-action="Clean" asp-route-id="@room.Id" class="btn btn-secondary">Clean</a>
                 }
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
                 @if (this.SignInManager.IsSignedIn(this.User) && (this.User.IsInRole(GlobalConstants.HotelManagerRoleName) || this.User.IsInRole(GlobalConstants.ReceptionistRoleName)))
                 {
-                        <a type="button" class="btn btn-small btn-danger" style="margin:10px; margin-left:100px;width:100px" asp-area="Administration" asp-controller="Reservations" asp-action="Book" asp-route-id="@room.Id" class="btn btn-secondary">Reserve</a>
+                        <a type="button" class="btn btn-small btn-danger" style="margin-right:10px; margin-top:10px; width:100px" asp-area="Administration" asp-controller="Reservations" asp-action="Book" asp-route-id="@room.Id" class="btn btn-secondary">Reserve</a>
+                        <a type="button" class="btn btn-small btn-danger" style=" margin-top:10px; width:100px" asp-area="Administration" asp-controller="Reservations" asp-action="Occupy" asp-route-id="@room.Id" class="btn btn-secondary">Occupy</a>
                 }
                 </div>
             </div>

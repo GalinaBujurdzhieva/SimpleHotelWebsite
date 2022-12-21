@@ -23,7 +23,7 @@
             this.dishImagesRepo = dishImagesRepo;
         }
 
-        public async Task AddDishAsync(CreateDishViewModel model, string staffId, string imagePath)
+        public async Task AddDishAsync(CreateDishViewModel model, string applicationUserId, string imagePath)
         {
             var dish = new Dish
             {
@@ -31,7 +31,7 @@
                 Price = model.Price,
                 DishCategory = model.DishCategory,
                 QuantityInStock = model.QuantityInStock,
-                //StaffId = staffId,
+                ApplicationUserId = applicationUserId,
             };
             Directory.CreateDirectory($"{imagePath}/dishes/addedLater");
             var dishImageExtension = Path.GetExtension(model.Image.FileName).TrimStart('.');
@@ -39,7 +39,7 @@
             var dishImage = new DishImage
             {
                 Extension = dishImageExtension,
-                // StaffId = staffId,
+                ApplicationUserId=applicationUserId,
             };
 
             dish.DishImage = dishImage;
@@ -74,7 +74,7 @@
             return await this.dishesRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
         }
 
-        public async Task EditDishAsync(EditDishViewModel model, string id, string staffId, string imagePath)
+        public async Task EditDishAsync(EditDishViewModel model, string id, string applicationUserId, string imagePath)
         {
             var currentDish = await this.dishesRepo.All().FirstOrDefaultAsync(x => x.Id == id);
             currentDish.Name = model.Name;
@@ -87,7 +87,8 @@
             {
                 this.dishImagesRepo.HardDelete(currentDishImage);
             }
-            // currentDish.StaffId = staffId
+
+            currentDish.ApplicationUserId = applicationUserId;
 
             Directory.CreateDirectory($"{imagePath}/dishes/addedLater");
             var dishImageExtension = Path.GetExtension(model.Image.FileName).TrimStart('.');
@@ -95,7 +96,7 @@
             var dishImage = new DishImage
             {
                 Extension = dishImageExtension,
-                // StaffId = staffId,
+                ApplicationUserId = applicationUserId,
             };
 
             currentDish.DishImage = dishImage;

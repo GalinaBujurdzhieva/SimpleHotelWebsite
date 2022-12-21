@@ -15,11 +15,5 @@
 
         [Range(typeof(decimal), "0.01", "79228162514264337593543950335", ConvertValueInInvariantCulture = true)]
         public decimal ChildrenPrice { get; set; }
-
-        public bool IsReserved { get; set; }
-
-        public bool IsOccupied { get; set; }
-
-        public bool IsCleaned { get; set; }
     }
 }

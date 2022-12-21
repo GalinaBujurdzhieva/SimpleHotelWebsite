@@ -1,0 +1,104 @@
+﻿@using MyHotelWebsite.Data.Models.Enums
+@using MyHotelWebsite.Web.ViewModels.Reservations
+
+@model AddReservationViewModel
+
+@{
+    this.ViewData["Title"] = "Book a room";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/icons/favicon.png" />
+	<title>vacayhome</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="~/css/bootstrap.min.css" rel="stylesheet">
+	<link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<!-- Custom styles for this template -->
+	<link href="~/css/style.css" rel="stylesheet">
+	<link href="~/fonts/antonio-exotic/stylesheet.css" rel="stylesheet">
+	<link rel="stylesheet" href="~/css/lightbox.min.css">
+	<link href="~/css/responsive.css" rel="stylesheet">
+	<script src="~/js/jquery.min.js" type="text/javascript"></script>
+	<script src="~/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="~/js/lightbox-plus-jquery.min.js" type="text/javascript"></script>
+	<script src="~/js/instafeed.min.js" type="text/javascript"></script>
+	<script src="~/js/custom.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js">
+	</script>
+</head>
+
+
+<body>
+	<form method="post" class="col-md-6 offset-md-3"
+		  enctype="multipart/form-data">
+		<div class="text-center mb-3">
+			<h1>@this.ViewData["Title"]</h1>
+		</div>
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div class="text-center mb-3">
+			<label asp-for="AccommodationDate"></label>
+			<input asp-for="AccommodationDate" class="form-control" type="date"/>
+			<span asp-validation-for="AccommodationDate" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="ReleaseDate"></label>
+			<input asp-for="ReleaseDate" type="date" class="form-control" />
+			<span asp-validation-for="ReleaseDate" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="AdultsCount"></label>
+			<input asp-for="AdultsCount" type="number" class="form-control" />
+			<span asp-validation-for="AdultsCount" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="ChildrenCount"></label>
+			<input asp-for="ChildrenCount" type="number" class="form-control" />
+			<span asp-validation-for="ChildrenCount" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="RoomType"></label>
+			<select class="form-select" asp-for="RoomType" asp-items="@Html.GetEnumSelectList<RoomType>()" style="font-size:medium">
+				<option value="" selected hidden>Select Room Type</option>
+			</select>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="Catering"></label>
+			<select class="form-select" asp-for="Catering" asp-items="@Html.GetEnumSelectList<Catering>()" style="font-size:medium">
+				<option value="" selected hidden>Select Catering</option>
+			</select>
+		</div>
+		<div class="text-center mb-3">
+			<input type="submit" class="btn btn-danger" />
+		</div>
+	</form>
+
+
+@*<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		  rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css"
+		  rel="stylesheet" />
+
+</head>
+<body>
+	<input type="text" class="date form-control" style="width: 200px" />
+*@
+	<script type="text/javascript">
+		$('#datepicker').datepicker({
+			format: 'dd/mm/yyyy',
+		}).datepicker("setDate", 'now');
+	</script>
+</body>
+</html>

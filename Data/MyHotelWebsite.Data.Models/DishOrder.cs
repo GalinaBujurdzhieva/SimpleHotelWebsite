@@ -1,15 +1,10 @@
 ﻿namespace MyHotelWebsite.Data.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     using MyHotelWebsite.Data.Common.Models;
 
-    public class DishOrder : BaseModel<int>
+    public class DishOrder : BaseDeletableModel<int>
     {
         [Required]
         public string DishId { get; set; }

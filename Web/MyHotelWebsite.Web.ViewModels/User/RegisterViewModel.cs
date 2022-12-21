@@ -1,16 +1,12 @@
 ﻿namespace MyHotelWebsite.Web.ViewModels.User
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class RegisterViewModel
     {
         [Required]
         [StringLength(20, MinimumLength = 5, ErrorMessage = "{0} must be between {2} and {1} characters long")]
+        [Display(Name ="Username")]
         public string UserName { get; set; }
 
         [Required]
@@ -20,17 +16,26 @@
 
         [Required]
         [StringLength(20, MinimumLength = 5, ErrorMessage = "{0} must be between {2} and {1} characters long")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
         [StringLength(20, MinimumLength = 5, ErrorMessage = "{0} must be between {2} and {1} characters long")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
+
+        [Required]
+        [StringLength(15)]
+        [Phone]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
 
         [Required]
         [StringLength(20, MinimumLength = 5, ErrorMessage = "{0} must be between {2} and {1} characters long")]
         public string Password { get; set; }
 
         [Compare(nameof(Password), ErrorMessage = "{0} and {1} must be the same")]
+        [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
     }
 }

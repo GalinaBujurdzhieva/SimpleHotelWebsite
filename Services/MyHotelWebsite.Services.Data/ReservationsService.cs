@@ -5,6 +5,7 @@
     using Microsoft.EntityFrameworkCore;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Web.ViewModels.Reservations;
 
     public class ReservationsService : IReservationsService
     {
@@ -13,6 +14,11 @@
         public ReservationsService(IDeletableEntityRepository<Reservation> reservationsRepo)
         {
             this.reservationsRepo = reservationsRepo;
+        }
+
+        public async Task AddReservationAsync(AddReservationViewModel model)
+        {
+            
         }
 
         public async Task<int> GetCountAsync()

@@ -23,14 +23,9 @@
 
         public OrderStatus OrderStatus { get; set; }
 
-        public string GuestId { get; set; }
+        public string ApplicationUserId { get; set; }
 
-        public virtual Guest Guest { get; set; }
-
-        //[Required]
-        public string StaffId { get; set; }
-
-        public virtual Staff Staff { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         public virtual ICollection<DishOrder> DishOrders { get; set; }
     }

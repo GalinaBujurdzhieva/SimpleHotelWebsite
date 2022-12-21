@@ -41,7 +41,7 @@
                     <br>
                     <h4 class="card-text">Category: @dish.DishCategory</h4>
                     <h4 class="card-text">Price: @dish.Price euro</h4>
-                @if (this.SignInManager.IsSignedIn(this.User))
+                @if (this.SignInManager.IsSignedIn(this.User) && this.User.IsInRole(GlobalConstants.GuestRoleName))
                 {
                     <br>
                     <div class="btn-group" role="group" aria-label="Basic example">

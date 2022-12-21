@@ -1,14 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyHotelWebsite.Common.CustomValidationAttributes
+﻿namespace MyHotelWebsite.Common.CustomValidationAttributes
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.IO;
+    using System.Linq;
+
+    using Microsoft.AspNetCore.Http;
+
     public class AllowedExtensionsAttribute : ValidationAttribute
     {
         private readonly string[] allowedExtensions;

@@ -17,8 +17,8 @@
 
         public string Extension { get; set; }
 
-        public string StaffId { get; set; }
+        public string ApplicationUserId { get; set; }
 
-        public virtual Staff Staff { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

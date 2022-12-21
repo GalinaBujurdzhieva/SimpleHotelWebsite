@@ -33,9 +33,7 @@
 
         public DbSet<DishImage> DishImages { get; set; }
 
-        public DbSet<DishOrder> DishOrders { get; set; }
-
-        public DbSet<Guest> Guests { get; set; }
+        public DbSet<DishOrder> DishesOrders { get; set; }
 
         public DbSet<Order> Orders { get; set; }
 
@@ -43,9 +41,7 @@
 
         public DbSet<Room> Rooms { get; set; }
 
-        public DbSet<RoomReservation> RoomReservations { get; set; }
-
-        public DbSet<Staff> Staff { get; set; }
+        public DbSet<RoomReservation> RoomsReservations { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
@@ -74,16 +70,6 @@
             builder.Entity<DishOrder>()
                 .HasKey(k => new { k.DishId, k.OrderId });
 
-            builder.Entity<ApplicationUser>()
-           .HasOne(x => x.Guest)
-           .WithOne(x => x.ApplicationUser)
-           .HasForeignKey<Guest>(x => x.ApplicationUserId);
-
-            builder.Entity<ApplicationUser>()
-            .HasOne(x => x.Staff)
-            .WithOne(x => x.ApplicationUser)
-            .HasForeignKey<Staff>(x => x.ApplicationUserId);
-
             builder.Entity<Blog>()
                 .HasOne(x => x.BlogImage)
                 .WithOne(x => x.Blog)
@@ -96,6 +82,11 @@
 
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
+
+            builder.Entity<ApplicationUser>()
+                .Property(x => x.PhoneNumber)
+                .IsRequired()
+                .HasMaxLength(15);
 
             this.ConfigureUserIdentityRelations(builder);
 

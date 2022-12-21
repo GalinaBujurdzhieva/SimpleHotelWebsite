@@ -31,13 +31,12 @@
 
         public bool IsOccupied { get; set; }
 
-        //[Required]
-        public string StaffId { get; set; }
+        public bool IsCleaned { get; set; }
 
-        public virtual Staff Staff { get; set; }
+        public string ApplicationUserId { get; set; }
+
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         public virtual ICollection<RoomReservation> RoomReservations { get; set; }
-
-        public bool IsCleaned { get; set; }
     }
 }

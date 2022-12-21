@@ -4,6 +4,7 @@ namespace MyHotelWebsite.Data.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+
     using Microsoft.AspNetCore.Identity;
     using MyHotelWebsite.Data.Common.Models;
 
@@ -15,6 +16,11 @@ namespace MyHotelWebsite.Data.Models
             this.Roles = new HashSet<IdentityUserRole<string>>();
             this.Claims = new HashSet<IdentityUserClaim<string>>();
             this.Logins = new HashSet<IdentityUserLogin<string>>();
+            this.Orders = new HashSet<Order>();
+            this.Reservations = new HashSet<Reservation>();
+            this.Rooms = new HashSet<Room>();
+            this.Blogs = new HashSet<Blog>();
+            this.Dishes = new HashSet<Dish>();
         }
 
         // Audit info
@@ -41,12 +47,14 @@ namespace MyHotelWebsite.Data.Models
         [StringLength(20)]
         public string LastName { get; set; }
 
-        public string GuestId { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
 
-        public virtual Guest Guest { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
 
-        public string StaffId { get; set; }
+        public virtual ICollection<Room> Rooms { get; set; }
 
-        public virtual Staff Staff { get; set; }
+        public virtual ICollection<Blog> Blogs { get; set; }
+
+        public virtual ICollection<Dish> Dishes { get; set; }
     }
 }

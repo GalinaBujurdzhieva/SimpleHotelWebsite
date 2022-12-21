@@ -12,11 +12,13 @@
     {
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<ApplicationRole> roleManager;
 
-        public UserController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager)
+        public UserController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
+            this.roleManager = roleManager;
         }
 
         public IActionResult Register()
@@ -39,11 +41,18 @@
                 Email = model.Email,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber,
             };
 
             var result = await this.userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
+                var guestRole = await this.roleManager.FindByNameAsync("Guest");
+                if (guestRole != null)
+                {
+                    IdentityResult roleResult = await this.userManager.AddToRoleAsync(user, "Guest");
+                }
+
                 await this.signInManager.SignInAsync(user, isPersistent: false);
                 return this.RedirectToAction("Login", "User");
             }
@@ -75,10 +84,15 @@
             {
                 var result = await this.signInManager.PasswordSignInAsync(model.UserName, model.Password, false, false);
                 var userIsInRoleAdmin = await this.userManager.IsInRoleAsync(user, GlobalConstants.HotelManagerRoleName);
+                var userIsInRoleChef = await this.userManager.IsInRoleAsync(user, GlobalConstants.ChefRoleName);
+                var userIsInRoleWaiter = await this.userManager.IsInRoleAsync(user, GlobalConstants.WaiterRoleName);
+                var userIsInRoleMaid = await this.userManager.IsInRoleAsync(user, GlobalConstants.MaidRoleName);
+                var userIsInRoleReceptionist = await this.userManager.IsInRoleAsync(user, GlobalConstants.ReceptionistRoleName);
+                var userIsInRoleWebsiteAdmin = await this.userManager.IsInRoleAsync(user, GlobalConstants.WebsiteAdministratorRoleName);
 
                 if (result.Succeeded)
                 {
-                    if (userIsInRoleAdmin)
+                    if (userIsInRoleAdmin || userIsInRoleChef || userIsInRoleWaiter || userIsInRoleMaid || userIsInRoleReceptionist || userIsInRoleWebsiteAdmin)
                     {
                         return this.RedirectToAction("Index", "Dashboard", new { area = "Administration" });
                     }

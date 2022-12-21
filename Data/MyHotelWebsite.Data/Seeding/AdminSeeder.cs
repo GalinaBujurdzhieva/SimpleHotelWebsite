@@ -27,6 +27,7 @@
                 Email = "gal.vins301184@gmail.com",
                 FirstName = "Galina",
                 LastName = "Stoyanova",
+                PhoneNumber = "00359898464437",
                 EmailConfirmed = true,
             },
                 "Dariq200108");

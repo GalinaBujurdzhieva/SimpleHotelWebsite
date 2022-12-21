@@ -38,8 +38,6 @@ namespace MyHotelWebsite.Data.Migrations
                     DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     FirstName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    GuestId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StaffId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -48,7 +46,7 @@ namespace MyHotelWebsite.Data.Migrations
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
                     TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
@@ -185,30 +183,6 @@ namespace MyHotelWebsite.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Staff",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    JobTitle = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    JobTitleImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Staff", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Staff_AspNetUsers_ApplicationUserId",
-                        column: x => x.ApplicationUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Blogs",
                 columns: table => new
                 {
@@ -218,7 +192,7 @@ namespace MyHotelWebsite.Data.Migrations
                     Content = table.Column<string>(type: "nvarchar(max)", maxLength: 20000, nullable: false),
                     BlogImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BlogImageId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StaffId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -228,9 +202,9 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     table.PrimaryKey("PK_Blogs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Blogs_Staff_StaffId",
-                        column: x => x.StaffId,
-                        principalTable: "Staff",
+                        name: "FK_Blogs_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id");
                 });
 
@@ -239,14 +213,14 @@ namespace MyHotelWebsite.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     DishCategory = table.Column<int>(type: "int", nullable: false),
                     DishImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DishImageId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     QuantityInStock = table.Column<int>(type: "int", nullable: false),
-                    StaffId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     IsReady = table.Column<bool>(type: "bit", nullable: false),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -256,128 +230,10 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     table.PrimaryKey("PK_Dishes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Dishes_Staff_StaffId",
-                        column: x => x.StaffId,
-                        principalTable: "Staff",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Rooms",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RoomNumber = table.Column<int>(type: "int", nullable: false),
-                    Capacity = table.Column<int>(type: "int", nullable: false),
-                    RoomType = table.Column<int>(type: "int", nullable: false),
-                    AdultPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ChildrenPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    IsReserved = table.Column<bool>(type: "bit", nullable: false),
-                    IsOccupied = table.Column<bool>(type: "bit", nullable: false),
-                    StaffId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    IsCleaned = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Rooms", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Rooms_Staff_StaffId",
-                        column: x => x.StaffId,
-                        principalTable: "Staff",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "BlogImages",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    BlogId = table.Column<int>(type: "int", nullable: false),
-                    Extension = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StaffId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BlogImages", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BlogImages_Blogs_BlogId",
-                        column: x => x.BlogId,
-                        principalTable: "Blogs",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_BlogImages_Staff_StaffId",
-                        column: x => x.StaffId,
-                        principalTable: "Staff",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DishImages",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DishId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Extension = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StaffId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DishImages", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_DishImages_Dishes_DishId",
-                        column: x => x.DishId,
-                        principalTable: "Dishes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_DishImages_Staff_StaffId",
-                        column: x => x.StaffId,
-                        principalTable: "Staff",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Guests",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    RoomId = table.Column<int>(type: "int", nullable: false),
-                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Guests", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Guests_AspNetUsers_ApplicationUserId",
+                        name: "FK_Dishes_AspNetUsers_ApplicationUserId",
                         column: x => x.ApplicationUserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Guests_Rooms_RoomId",
-                        column: x => x.RoomId,
-                        principalTable: "Rooms",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -388,8 +244,7 @@ namespace MyHotelWebsite.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Comment = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     OrderStatus = table.Column<int>(type: "int", nullable: false),
-                    GuestId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    StaffId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -399,14 +254,9 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orders_Guests_GuestId",
-                        column: x => x.GuestId,
-                        principalTable: "Guests",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Orders_Staff_StaffId",
-                        column: x => x.StaffId,
-                        principalTable: "Staff",
+                        name: "FK_Orders_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id");
                 });
 
@@ -418,9 +268,11 @@ namespace MyHotelWebsite.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AccommodationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AdultsCount = table.Column<int>(type: "int", nullable: false),
+                    ChildrenCount = table.Column<int>(type: "int", nullable: false),
+                    RoomType = table.Column<int>(type: "int", nullable: false),
                     Catering = table.Column<int>(type: "int", nullable: false),
-                    GuestId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    StaffId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -430,19 +282,103 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     table.PrimaryKey("PK_Reservations", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Reservations_Guests_GuestId",
-                        column: x => x.GuestId,
-                        principalTable: "Guests",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Reservations_Staff_StaffId",
-                        column: x => x.StaffId,
-                        principalTable: "Staff",
+                        name: "FK_Reservations_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "DishOrders",
+                name: "Rooms",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RoomNumber = table.Column<int>(type: "int", nullable: false),
+                    Floor = table.Column<int>(type: "int", nullable: false),
+                    Capacity = table.Column<int>(type: "int", nullable: false),
+                    RoomType = table.Column<int>(type: "int", nullable: false),
+                    AdultPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ChildrenPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    IsReserved = table.Column<bool>(type: "bit", nullable: false),
+                    IsOccupied = table.Column<bool>(type: "bit", nullable: false),
+                    IsCleaned = table.Column<bool>(type: "bit", nullable: false),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rooms", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Rooms_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BlogImages",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    BlogId = table.Column<int>(type: "int", nullable: false),
+                    Extension = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BlogImages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BlogImages_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_BlogImages_Blogs_BlogId",
+                        column: x => x.BlogId,
+                        principalTable: "Blogs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DishImages",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    DishId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Extension = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DishImages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DishImages_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_DishImages_Dishes_DishId",
+                        column: x => x.DishId,
+                        principalTable: "Dishes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DishesOrders",
                 columns: table => new
                 {
                     DishId = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -450,19 +386,21 @@ namespace MyHotelWebsite.Data.Migrations
                     DishQuantity = table.Column<int>(type: "int", nullable: false),
                     Id = table.Column<int>(type: "int", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DishOrders", x => new { x.DishId, x.OrderId });
+                    table.PrimaryKey("PK_DishesOrders", x => new { x.DishId, x.OrderId });
                     table.ForeignKey(
-                        name: "FK_DishOrders_Dishes_DishId",
+                        name: "FK_DishesOrders_Dishes_DishId",
                         column: x => x.DishId,
                         principalTable: "Dishes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_DishOrders_Orders_OrderId",
+                        name: "FK_DishesOrders_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "Id",
@@ -470,23 +408,28 @@ namespace MyHotelWebsite.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RoomReservations",
+                name: "RoomsReservations",
                 columns: table => new
                 {
                     RoomId = table.Column<int>(type: "int", nullable: false),
-                    ReservationId = table.Column<int>(type: "int", nullable: false)
+                    ReservationId = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RoomReservations", x => new { x.RoomId, x.ReservationId });
+                    table.PrimaryKey("PK_RoomsReservations", x => new { x.RoomId, x.ReservationId });
                     table.ForeignKey(
-                        name: "FK_RoomReservations_Reservations_ReservationId",
+                        name: "FK_RoomsReservations_Reservations_ReservationId",
                         column: x => x.ReservationId,
                         principalTable: "Reservations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_RoomReservations_Rooms_RoomId",
+                        name: "FK_RoomsReservations_Rooms_RoomId",
                         column: x => x.RoomId,
                         principalTable: "Rooms",
                         principalColumn: "Id",
@@ -543,6 +486,11 @@ namespace MyHotelWebsite.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_BlogImages_ApplicationUserId",
+                table: "BlogImages",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_BlogImages_BlogId",
                 table: "BlogImages",
                 column: "BlogId",
@@ -554,9 +502,9 @@ namespace MyHotelWebsite.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BlogImages_StaffId",
-                table: "BlogImages",
-                column: "StaffId");
+                name: "IX_Blogs_ApplicationUserId",
+                table: "Blogs",
+                column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Blogs_IsDeleted",
@@ -564,9 +512,9 @@ namespace MyHotelWebsite.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Blogs_StaffId",
-                table: "Blogs",
-                column: "StaffId");
+                name: "IX_Dishes_ApplicationUserId",
+                table: "Dishes",
+                column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Dishes_IsDeleted",
@@ -574,9 +522,19 @@ namespace MyHotelWebsite.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Dishes_StaffId",
-                table: "Dishes",
-                column: "StaffId");
+                name: "IX_DishesOrders_IsDeleted",
+                table: "DishesOrders",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DishesOrders_OrderId",
+                table: "DishesOrders",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DishImages_ApplicationUserId",
+                table: "DishImages",
+                column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DishImages_DishId",
@@ -590,35 +548,9 @@ namespace MyHotelWebsite.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DishImages_StaffId",
-                table: "DishImages",
-                column: "StaffId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DishOrders_OrderId",
-                table: "DishOrders",
-                column: "OrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Guests_ApplicationUserId",
-                table: "Guests",
-                column: "ApplicationUserId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Guests_IsDeleted",
-                table: "Guests",
-                column: "IsDeleted");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Guests_RoomId",
-                table: "Guests",
-                column: "RoomId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_GuestId",
+                name: "IX_Orders_ApplicationUserId",
                 table: "Orders",
-                column: "GuestId");
+                column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_IsDeleted",
@@ -626,14 +558,9 @@ namespace MyHotelWebsite.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_StaffId",
-                table: "Orders",
-                column: "StaffId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Reservations_GuestId",
+                name: "IX_Reservations_ApplicationUserId",
                 table: "Reservations",
-                column: "GuestId");
+                column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reservations_IsDeleted",
@@ -641,14 +568,9 @@ namespace MyHotelWebsite.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reservations_StaffId",
-                table: "Reservations",
-                column: "StaffId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_RoomReservations_ReservationId",
-                table: "RoomReservations",
-                column: "ReservationId");
+                name: "IX_Rooms_ApplicationUserId",
+                table: "Rooms",
+                column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Rooms_IsDeleted",
@@ -656,24 +578,18 @@ namespace MyHotelWebsite.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Rooms_StaffId",
-                table: "Rooms",
-                column: "StaffId");
+                name: "IX_RoomsReservations_IsDeleted",
+                table: "RoomsReservations",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RoomsReservations_ReservationId",
+                table: "RoomsReservations",
+                column: "ReservationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Settings_IsDeleted",
                 table: "Settings",
-                column: "IsDeleted");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Staff_ApplicationUserId",
-                table: "Staff",
-                column: "ApplicationUserId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Staff_IsDeleted",
-                table: "Staff",
                 column: "IsDeleted");
         }
 
@@ -698,13 +614,13 @@ namespace MyHotelWebsite.Data.Migrations
                 name: "BlogImages");
 
             migrationBuilder.DropTable(
+                name: "DishesOrders");
+
+            migrationBuilder.DropTable(
                 name: "DishImages");
 
             migrationBuilder.DropTable(
-                name: "DishOrders");
-
-            migrationBuilder.DropTable(
-                name: "RoomReservations");
+                name: "RoomsReservations");
 
             migrationBuilder.DropTable(
                 name: "Settings");
@@ -716,22 +632,16 @@ namespace MyHotelWebsite.Data.Migrations
                 name: "Blogs");
 
             migrationBuilder.DropTable(
-                name: "Dishes");
+                name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Orders");
+                name: "Dishes");
 
             migrationBuilder.DropTable(
                 name: "Reservations");
 
             migrationBuilder.DropTable(
-                name: "Guests");
-
-            migrationBuilder.DropTable(
                 name: "Rooms");
-
-            migrationBuilder.DropTable(
-                name: "Staff");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

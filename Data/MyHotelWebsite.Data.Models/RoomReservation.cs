@@ -1,12 +1,8 @@
 ﻿namespace MyHotelWebsite.Data.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using MyHotelWebsite.Data.Common.Models;
 
-    public class RoomReservation
+    public class RoomReservation : BaseDeletableModel<int>
     {
         public int RoomId { get; set; }
 

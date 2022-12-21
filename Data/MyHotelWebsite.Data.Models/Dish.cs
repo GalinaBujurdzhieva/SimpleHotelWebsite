@@ -33,13 +33,12 @@
 
         public int QuantityInStock { get; set; }
 
+        public bool IsReady { get; set; }
+
         public ICollection<DishOrder> DishOrders { get; set; }
 
-        //[Required]
-        public string StaffId { get; set; }
+        public string ApplicationUserId { get; set; }
 
-        public virtual Staff Staff { get; set; }
-
-        public bool IsReady { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

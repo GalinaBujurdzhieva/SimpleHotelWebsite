@@ -22,5 +22,7 @@
 
         [Display(Name = "All Inclusive")]
         AllInclusive = 5,
+
+        Without = 6,
     }
 }

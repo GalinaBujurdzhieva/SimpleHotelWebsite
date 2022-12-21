@@ -1,5 +1,6 @@
 ﻿namespace MyHotelWebsite.Services.Data
 {
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
@@ -8,13 +9,21 @@
 
     public interface IRoomsService
     {
-        Task CleanRoomAsync(int id, string staffId);
+        Task CleanRoomAsync(int id, string applicationUserId);
 
         Task<bool> DoesRoomExistAsync(int id);
 
-        Task EditRoomAsync(EditRoomViewModel model, int id, string staffId);
+        Task EditRoomAsync(EditRoomViewModel model, int id, string applicationUserId);
+
+        Task<IEnumerable<T>> GetAllFreeRoomsAtTheMomentAsync<T>();
+
+        Task<IEnumerable<T>> GetAllFreeRoomsForACertainPeriodOfTimeAsync<T>(DateTime accommodationDate, DateTime releaseDate);
 
         Task<IEnumerable<T>> GetAllRoomsAsync<T>(int page, int itemsPerPage = 4);
+
+        Task<IEnumerable<T>> GetAllRoomsByCapacityAsync<T>(int capacity);
+
+        Task<IEnumerable<T>> GetAllRoomsByRoomTypeAsync<T>(RoomType roomType);
 
         Task<int> GetCountAsync();
 
