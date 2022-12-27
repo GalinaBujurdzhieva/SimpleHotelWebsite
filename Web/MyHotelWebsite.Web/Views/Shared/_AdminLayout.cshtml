@@ -42,7 +42,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Guest Orders
+                                Orders
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
                                 <li><a class="dropdown-item" asp-area="Administration" asp-controller="Orders" asp-action="All">All Orders</a></li>
@@ -60,6 +60,15 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Reservations
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
+                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="All">All Reservations</a></li>
+                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="Create">Add New Reservation</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Guests
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
@@ -68,18 +77,20 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Reservations
+                                Staff
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="All">All Reservations</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="Create">Add New Reservation</a></li>
+                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Staff" asp-action="All">All Employees</a></li>
+                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Staff" asp-action="Register">Register New Employee</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Administration" asp-controller="Dashboard" asp-action="Index">Statistics</a>
                         </li>
-                        <li class="navbar-brand mr-auto">
-                            <a class="navbar-brand mr-auto" asp-area="" asp-controller="User" asp-action="Logout">Log out</a>   
+                        <li class="navbar-brand" style="justify-content:end">
+                            <div class="container ">
+                                <a class="navbar-brand mr-auto" asp-area="" asp-controller="User" asp-action="Logout">Log out</a>
+                            </div>
                         </li>
                     </ul>
                 </div>

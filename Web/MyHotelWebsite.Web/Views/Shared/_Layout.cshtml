@@ -43,56 +43,59 @@
                     </div>
                     @if (signInManager.IsSignedIn(User))
                     {
-                        <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups" style="margin-bottom:5px">
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <form method="post" asp-controller="Reservations" asp-action="Book">
-                                    <div class="text-center"><button type="submit" class="book-now-btn">Book a room</button></div>
-                                </form>
-                            </div>
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <form method="post" asp-controller="Reservations" asp-action="Mine">
-                                    <div class="text-center"><button type="submit" class="book-now-btn">My Reservations</button></div>
-                                </form>
-                            </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 remove-padd">
+                            <nav class="navbar navbar-default">
+                                <div class="justify-content-center">
+                                    <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
+
+                                        <ul class="list-unstyled nav1 cl-effect-10">
+                                            <li><a data-hover="Book a room" class="active" asp-area="Guest" asp-controller="Reservations" asp-action="Book"><span>Book a room</span></a></li>
+                                            <li><a data-hover="My Reservations" class="active" asp-area="Guest" asp-controller="Reservations" asp-action="Mine"><span>My Reservations</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
                         </div>
-                        
+                        <div class="col-md-12 col-sm-12 col-xs-12 remove-padd">
+                            <nav class="navbar navbar-default">
+                                <div class="justify-content-center">
+                                    <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
+
+                                        <ul class="list-unstyled nav1 cl-effect-10">
+                                            <li><a data-hover="Order a dish" class="active" asp-area="Guest" asp-controller="Orders" asp-action="Create"><span>Order a dish</span></a></li>
+                                            <li><a data-hover="My Food Orders" class="active" asp-area="Guest" asp-controller="Orders" asp-action="Mine"><span>My Food Orders</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
                         <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <form method="post" asp-controller="Orders" asp-action="Create">
-                                    <div class="text-center"><button type="submit" class="book-now-btn">Order a dish</button></div>
-                                </form>
-                            </div>
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <form method="post" asp-controller="Orders" asp-action="Mine">
-                                    <div class="text-center"><button type="submit" class="book-now-btn">My Food Orders</button></div>
-                                </form>
-                            </div>
-
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <form method="post" asp-controller="User" asp-action="Logout">
+                                <form method="post" asp-area="" asp-controller="User" asp-action="Logout">
                                     <div class="text-center"><button type="submit" class="book-now-btn">Logout</button></div>
                                 </form>
                             </div>
                         </div>
-
                     }
                     else
                     {
                         <div class="col-md-12 contact-form text-center">
                             <h3>Want to make a reservation? <span>Please, register or just log into your account</span></h3>
                         </div>
-                        <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <form method="post" asp-controller="User" asp-action="Register">
-                                    <div class="text-center"><button type="submit" class="book-now-btn">Register</button></div>
-                                </form>
-                            </div>
-                            <div class="btn-group mr-2" role="group" aria-label="Second group">
-                                <form method="post" asp-controller="User" asp-action="Login">
-                                    <div class="text-center"><button type="submit" class="book-now-btn">Log in</button></div>
-                                </form>
-                            </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 remove-padd">
+                            <nav class="navbar navbar-default">
+                                <div class="justify-content-center">
+                                <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
+                                    
+                                    <ul class="list-unstyled nav1 cl-effect-10">
+                                            <li><a data-hover="Register" class="active" asp-controller="User" asp-action="Register"><span>Register</span></a></li>
+                                            <li><a data-hover="Log in" class="active" asp-controller="User" asp-action="Login"><span>Log in</span></a></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </nav>
                         </div>
+                        
                     }
                 </div>
             </div>
@@ -111,13 +114,23 @@
                 <div class="btn-group mr-1">
                     <div class="contact-form">
                     <h3><span>Administration Area</span></h3>
-                    </div>
-                    <form method="post" asp-controller="User" asp-action="Login">
-                        <div class="text-center"><button type="submit" class="book-now-btn">Log in</button></div>
-                    </form>
+                    <div class="col-md-12 col-sm-12 col-xs-12 remove-padd">
+                            <nav class="navbar navbar-default">
+                                <div class="justify-content-center">
+                                <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
+                                    
+                                    <ul class="list-unstyled nav1 cl-effect-10">
+                                            <li><a data-hover="Log in" class="active" asp-controller="User" asp-action="Login"><span>Log in</span></a></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
                 </div>
             </div>
+            
             <div class="copyright">
+                <br />
                 <!--Do not remove Backlink from footer of the template. To remove it you can purchase the Backlink !-->
                 &copy; 2017 All right reserved. Designed by <a href="http://www.themevault.net/" target="_blank">ThemeVault.</a>
             </div>

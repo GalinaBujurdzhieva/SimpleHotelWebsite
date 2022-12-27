@@ -1,6 +1,7 @@
 ﻿namespace MyHotelWebsite.Services.Data
 {
     using System.Linq;
+    using System.Security.Claims;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Identity;
@@ -20,8 +21,20 @@
 
         public async Task<int> GetCountAsync()
         {
-            var usersInGuestRole = await this.userManager.GetUsersInRoleAsync("Guest");
-            return usersInGuestRole.Count();
+            var guests = await this.userManager.GetUsersInRoleAsync("Guest");
+            return guests.Count();
+        }
+
+        public async Task<string> GetGuestEmailAsync(ClaimsPrincipal claims)
+        {
+            ApplicationUser guestId = await this.userManager.GetUserAsync(claims);
+            return guestId.Email;
+        }
+
+        public async Task<string> GetGuestPhoneNumberAsync(ClaimsPrincipal claims)
+        {
+            ApplicationUser guestID = await this.userManager.GetUserAsync(claims);
+            return guestID.PhoneNumber;
         }
     }
 }

@@ -60,6 +60,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Reservations\" />
     <Folder Include="wwwroot\images\dishes\alcohol\" />
     <Folder Include="wwwroot\images\dishes\coldDrinks\" />
     <Folder Include="wwwroot\images\dishes\gourme\" />

@@ -12,37 +12,37 @@
 
 <div class="row">
     <div class="col-md-4 offset-md-4">
-        <form id="registerForm" method="post">
+        <form method="post">
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="text-center mb-3">
                 <label asp-for="UserName"></label>
-                <input asp-for ="UserName" input class="form-control" />
+                <input asp-for ="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
             <div class="text-center mb-3">
                 <label asp-for="Email"></label>
-                <input asp-for="Email" input class="form-control" />
+                <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="text-center mb-3">
                 <label asp-for="FirstName"></label>
-                <input asp-for="FirstName" input class="form-control" />
+                <input asp-for="FirstName" class="form-control" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="text-center mb-3">
                 <label asp-for="LastName"></label>
-                <input asp-for="LastName" input class="form-control" />
+                <input asp-for="LastName" class="form-control" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="text-center mb-3">
                 <label asp-for="PhoneNumber"></label>
-                <input asp-for="PhoneNumber" input class="form-control" />
+                <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="text-center mb-3">
                 <label asp-for="Password"></label>
-                <input asp-for="Password" input class="form-control" type="password" />
+                <input asp-for="Password" class="form-control" type="password" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="text-center mb-3">
@@ -51,9 +51,13 @@
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="text-center">
-                <button id="registerSubmit" type="submit" class="btn btn-danger">Register</button>
+                <input type="submit" class="btn btn-danger" />
             </div>
         </form>
     </div>
 </div>
+
+@*@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}*@
 

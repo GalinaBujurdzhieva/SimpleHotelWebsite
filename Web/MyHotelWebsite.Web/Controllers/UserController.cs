@@ -21,9 +21,10 @@
             this.roleManager = roleManager;
         }
 
+        [HttpGet]
         public IActionResult Register()
         {
-            var model = new RegisterViewModel();
+            RegisterViewModel model = new RegisterViewModel();
             return this.View(model);
         }
 
@@ -58,14 +59,14 @@
             }
 
             foreach (var error in result.Errors)
-            {
-                this.ModelState.AddModelError(string.Empty, error.Description);
-            }
+                {
+                    this.ModelState.AddModelError(string.Empty, error.Description);
+                }
 
             return this.View(model);
-        }
+            }
 
-        public IActionResult Login()
+            public IActionResult Login()
         {
             var model = new LoginViewModel();
             return this.View(model);

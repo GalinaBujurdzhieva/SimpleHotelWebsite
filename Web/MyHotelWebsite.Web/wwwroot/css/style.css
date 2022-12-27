@@ -1010,3 +1010,6 @@ footer a{
     background-color: #ff4157;
     border-color: #ff4157;
 }
+.validation-summary-valid {
+    display: none;
+}

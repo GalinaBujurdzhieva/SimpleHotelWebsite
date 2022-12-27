@@ -1,23 +1,20 @@
 ﻿namespace MyHotelWebsite.Data.Models.Enums
 {
-    using System;
-    using System.Collections.Generic;
+
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Xml.Linq;
 
     public enum RoomType
     {
-        [Display(Name = "Single Room")]
+        [Display(Name = "Single Room (1 bed)")]
         SingleRoom = 1,
 
-        [Display(Name = "Double Room")]
+        [Display(Name = "Double Room (2 beds)")]
         DoubleRoom = 2,
 
+        [Display(Name = "Studio (3 beds)")]
         Studio = 3,
 
+        [Display(Name = "Apartment (4 beds)")]
         Apartment = 4,
     }
 }

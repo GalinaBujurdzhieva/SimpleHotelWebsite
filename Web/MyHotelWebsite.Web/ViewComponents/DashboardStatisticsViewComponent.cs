@@ -34,7 +34,7 @@
                 OrdersCount = await this.ordersService.GetCountAsync(),
                 RoomsCount = await this.roomsService.GetCountAsync(),
                 ReservationsCount = await this.reservationsService.GetCountAsync(),
-                // GuestsCount = await this.guestsService.GetCountAsync(),
+                GuestsCount = await this.guestsService.GetCountAsync(),
             };
             return this.View(viewModel);
         }

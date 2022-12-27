@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ASYRRFQ8Zy64FzPDNGsdOka0MVs3si1A04+vekhHX94=",
+  "Hash": "UKwWkXUMahLWLs9ATpLKGH8VZcsY/6oRBx4y0PFbY+4=",
   "Source": "MyHotelWebsite.Web",
   "BasePath": "_content/MyHotelWebsite.Web",
   "Mode": "Default",
@@ -1868,6 +1868,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\blogs\\602fe3ab-9547-4e4e-91ec-49eac72a7b19.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\692c3d69-a658-45de-9d17-ef854824e56c.png",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/blogs/692c3d69-a658-45de-9d17-ef854824e56c.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blogs\\692c3d69-a658-45de-9d17-ef854824e56c.png"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\6e002d8b-2d35-4681-8c4d-acf3d3bf3181.jpg",
