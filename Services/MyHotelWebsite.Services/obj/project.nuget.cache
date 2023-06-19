@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Zw7LVEmLhNtVsjcig0Tu+dKcXEI12LTwqDN9NbWIA6CBXVBFYM0mlwYoEWVAUV1vyIs8HbvG9AXw+hwbIg2IeQ==",
+  "dgSpecHash": "Rqs4DN2HDTSONZyYR6c4BnJ9C65UxcHHlJr+AIFLz3BgzVMrdCJPWbVCkTw0eVza6BxnRl9fRWdkMsClLmasZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Galina841130\\Source\\Repos\\SimpleHotelWebsite-new-2023\\Services\\MyHotelWebsite.Services\\MyHotelWebsite.Services.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services\\MyHotelWebsite.Services.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Galina841130\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
-    "C:\\Users\\Galina841130\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
+    "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
   ],
   "logs": []
 }
