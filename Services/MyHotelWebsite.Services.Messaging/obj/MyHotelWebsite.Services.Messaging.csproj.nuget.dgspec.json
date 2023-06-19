@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging\\MyHotelWebsite.Services.Messaging.csproj": {}
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging\\MyHotelWebsite.Services.Messaging.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging\\MyHotelWebsite.Services.Messaging.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging\\MyHotelWebsite.Services.Messaging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging\\MyHotelWebsite.Services.Messaging.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging\\MyHotelWebsite.Services.Messaging.csproj",
         "projectName": "MyHotelWebsite.Services.Messaging",
-        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging\\MyHotelWebsite.Services.Messaging.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging\\MyHotelWebsite.Services.Messaging.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging\\obj\\",
         "projectStyle": "PackageReference",

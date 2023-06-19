@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n1S9oMlL5Rjtf39Kvu4a2je7jdhYI0twX8fzU0sSSqNoNqrw+sBZWiFweBoM30fikN1LJseTa1OlPX0g1Xzrkg==",
+  "dgSpecHash": "91HoI170BSSgHiIZ5e/8qsj/PGiAJTSsCtjoTa3VLBUXnZ9nYkrl8Rq3pAFor++6o/y1PzUC/4Nz1J5OCVcZMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

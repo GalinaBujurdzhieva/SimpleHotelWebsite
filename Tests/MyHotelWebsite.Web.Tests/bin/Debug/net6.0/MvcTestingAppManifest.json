@@ -1,13 +1,13 @@
 {
-  "MyHotelWebsite.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\MyHotelWebsite.Common",
-  "MyHotelWebsite.Data.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Data\\MyHotelWebsite.Data.Common",
-  "MyHotelWebsite.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Data\\MyHotelWebsite.Data",
-  "MyHotelWebsite.Data.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Data\\MyHotelWebsite.Data.Models",
-  "MyHotelWebsite.Services.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Services\\MyHotelWebsite.Services.Data",
-  "MyHotelWebsite.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Services\\MyHotelWebsite.Services",
-  "MyHotelWebsite.Services.Mapping, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Services\\MyHotelWebsite.Services.Mapping",
-  "MyHotelWebsite.Services.Messaging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Services\\MyHotelWebsite.Services.Messaging",
-  "MyHotelWebsite.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web",
-  "MyHotelWebsite.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web.Infrastructure",
-  "MyHotelWebsite.Web.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new\\Web\\MyHotelWebsite.Web.ViewModels"
+  "MyHotelWebsite.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\MyHotelWebsite.Common",
+  "MyHotelWebsite.Data.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data.Common",
+  "MyHotelWebsite.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data",
+  "MyHotelWebsite.Data.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data.Models",
+  "MyHotelWebsite.Services.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Data",
+  "MyHotelWebsite.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services",
+  "MyHotelWebsite.Services.Mapping, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Mapping",
+  "MyHotelWebsite.Services.Messaging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Messaging",
+  "MyHotelWebsite.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web",
+  "MyHotelWebsite.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web.Infrastructure",
+  "MyHotelWebsite.Web.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web.ViewModels"
 }

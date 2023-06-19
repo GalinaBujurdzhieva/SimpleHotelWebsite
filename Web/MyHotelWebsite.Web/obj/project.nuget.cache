@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+XT5lx10jTwAAU5l41nKGjeEnObfBOHinMWVbJi4YcW7UiuG1kvblSBA1gFbg8RXcKMROjjKPznlN/ybQpCAbw==",
+  "dgSpecHash": "Qd2m2eTtGCFjkfCqbEjdiq+3QvxnzGBJ2nvsvdvbeNG97l+Xib2+5H2EizM/JaK7h60AbbBYf0BIiNfxXE5HSg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\MyHotelWebsite.Web.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\MyHotelWebsite.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",

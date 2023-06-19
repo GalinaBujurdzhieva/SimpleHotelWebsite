@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9GPG4akOL4u+awQ7U01Q6wIERwKXA3F1KhrmhL527hBCsJJE4CcMbEFIzm8JToYEbUsT/Ia/h1TIv7RXij7pwg==",
+  "dgSpecHash": "EM3vPFZpCdR+kz++f65/7MPRsLlZESLj8kY+hSnb8JJX9EhqaFj5OZHNa+izqlvpRTpERTyFfuCCfsuSvG/TGA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Tests\\Sandbox\\Sandbox.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Tests\\Sandbox\\Sandbox.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512",
