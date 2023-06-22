@@ -2,9 +2,10 @@
 {
     using System;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using MyHotelWebsite.Common;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.Controllers;
@@ -25,6 +26,7 @@
             this.roomsService = roomsService;
         }
 
+        [Authorize(Roles = GlobalConstants.GuestRoleName)]
         public async Task<IActionResult> Book()
         {
             ApplicationUser guestId = await this.userManager.GetUserAsync(this.User);
@@ -41,12 +43,14 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = GlobalConstants.GuestRoleName)]
         public async Task<IActionResult> Book(AddReservationViewModel model)
         {
             if (!this.ModelState.IsValid)
             {
                 return this.View(model);
             }
+
             var roomsByType = await this.roomsService.GetAllRoomsByRoomTypeAsync<SingleRoomViewModel>(model.RoomType);
             return this.RedirectToAction("Index", "Home");
         }

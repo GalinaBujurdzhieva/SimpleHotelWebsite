@@ -10,13 +10,15 @@
     public class ReservationsService : IReservationsService
     {
         private readonly IDeletableEntityRepository<Reservation> reservationsRepo;
+        private readonly IRoomsService roomsService;
 
-        public ReservationsService(IDeletableEntityRepository<Reservation> reservationsRepo)
+        public ReservationsService(IDeletableEntityRepository<Reservation> reservationsRepo, IRoomsService roomsService)
         {
             this.reservationsRepo = reservationsRepo;
+            this.roomsService = roomsService;
         }
 
-        public async Task AddReservationAsync(AddReservationViewModel model)
+        public async Task AddReservationAsync(AddReservationViewModel model, string applicationUserId)
         {
             
         }

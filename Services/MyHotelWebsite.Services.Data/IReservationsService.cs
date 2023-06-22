@@ -8,6 +8,6 @@
     {
         Task<int> GetCountAsync();
 
-        Task AddReservationAsync(AddReservationViewModel model);
+        Task AddReservationAsync(AddReservationViewModel model, string applicationUserId);
     }
 }

@@ -51,7 +51,8 @@
                                     <li><a data-hover="Rooms" asp-controller="Rooms" asp-action="Index"><span>Rooms</span></a></li>
                                     <li><a data-hover="Dining" asp-controller="Dishes" asp-action="Index"><span>Dining</span></a></li>
                                     <li><a data-hover="Blog" asp-controller="Blogs" asp-action="Index"><span>Blog</span></a></li>
-                                    <li><a data-hover="Contact Us" asp-controller="Home" asp-action="Contacts"><span>contact Us</span></a></li>
+                                    <li><a data-hover="Contact Us" asp-controller="Home" asp-action="Contacts"><span>Contact Us</span></a></li>
+                                    <li><vc:get-count-of-free-rooms data-hover="Free Rooms" title="freeroomscount"/></li>
                                 </ul>
 
                             </div>
@@ -111,17 +112,17 @@
                                 </div>
                             </nav>
                         </div>
-                        
                     }
                 </div>
             </div>
         </div>
     </header>
-
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">@RenderBody()</main>
-    </div>
+    <main>
+        <div class="container">
+            <partial name="_CookieConsentPartial" />
+            <main role="main" class="pb-3">@RenderBody()</main>
+        </div>
+    </main>
 
     <footer>
             <div class="btn-toolbar justify-content-center">
@@ -132,7 +133,6 @@
                             <nav class="navbar navbar-default">
                                 <div class="justify-content-center">
                                 <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
-                                    
                                     <ul class="list-unstyled nav1 cl-effect-10">
                                             <li><a data-hover="Log in" class="active" asp-controller="User" asp-action="Login"><span>Log in</span></a></li>
                                     </ul>
@@ -150,25 +150,17 @@
                 &copy; 2017 All right reserved. Designed by <a href="http://www.themevault.net/" target="_blank">ThemeVault.</a>
             </div>
     </footer>
-    
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @this.RenderBody()
-        </main>
-    </div>
 
     <!--back to top--->
     <a style="display: none;" href="javascript:void(0);" class="scrollTop back-to-top" id="back-to-top">
         <span><i aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span>
         <span>Top</span>
     </a>
-
+    @await this.RenderSectionAsync("Scripts", required: false)
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
     <script src="~/js/site.min.js" asp-append-version="true"></script>
-    @await this.RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

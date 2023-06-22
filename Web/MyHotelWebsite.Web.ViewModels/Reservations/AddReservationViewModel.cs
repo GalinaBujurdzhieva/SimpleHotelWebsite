@@ -5,6 +5,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+    using MyHotelWebsite.Common;
     using MyHotelWebsite.Common.CustomValidationAttributes;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
@@ -52,6 +53,16 @@
             if (this.ReleaseDate <= this.AccommodationDate)
             {
                 results.Add(new ValidationResult("Check out date must be later that Check In date", new[] { "ReleaseDate" }));
+            }
+
+            if (this.AdultsCount + this.ChildrenCount > 4)
+            {
+                results.Add(new ValidationResult("We do not have rooms for more than 4 people. Please make separate reservations or contact us to do this instead of you"));
+            }
+
+            if (this.AdultsCount + this.ChildrenCount > (int)this.RoomType)
+            {
+                results.Add(new ValidationResult("Beds in the selected room are not enough"));
             }
 
             return results;

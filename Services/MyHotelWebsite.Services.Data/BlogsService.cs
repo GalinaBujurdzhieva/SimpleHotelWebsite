@@ -37,7 +37,7 @@
             var blogImage = new BlogImage
             {
                 Extension = blogImageExtension,
-                ApplicationUserId=applicationUserId,
+                ApplicationUserId = applicationUserId,
             };
 
             blog.BlogImage = blogImage;

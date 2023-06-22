@@ -78,7 +78,7 @@
         "projectName": "MyHotelWebsite.Data.Models",
         "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data.Models\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -149,7 +149,7 @@
         "projectName": "MyHotelWebsite.Data",
         "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -317,7 +317,7 @@
         "projectName": "MyHotelWebsite.Services.Data",
         "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Data\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Services\\MyHotelWebsite.Services.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -594,7 +594,7 @@
         "projectName": "Sandbox",
         "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Tests\\Sandbox\\Sandbox.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Tests\\Sandbox\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Tests\\Sandbox\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -706,7 +706,7 @@
         "projectName": "MyHotelWebsite.Web.ViewModels",
         "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web.ViewModels\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
