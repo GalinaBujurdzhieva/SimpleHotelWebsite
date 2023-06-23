@@ -967,7 +967,6 @@
                 DishImageUrl = "images/dishes/mainCourses/Mast_Biryani.png",
             });
 
-
             // 25
             dishes.Add(new Dish
             {

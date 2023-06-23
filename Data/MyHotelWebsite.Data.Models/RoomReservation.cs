@@ -11,5 +11,9 @@
         public int ReservationId { get; set; }
 
         public virtual Reservation Reservation { get; set; }
+
+        public string ApplicationUserId { get; set; }
+
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

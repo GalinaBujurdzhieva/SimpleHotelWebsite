@@ -1,5 +1,4 @@
-﻿
-namespace MyHotelWebsite.Web.ViewModels.Pagination
+﻿namespace MyHotelWebsite.Web.ViewModels.Pagination
 {
     public class PagingDishesByCategoryViewModel : PagingAllViewModel
     {

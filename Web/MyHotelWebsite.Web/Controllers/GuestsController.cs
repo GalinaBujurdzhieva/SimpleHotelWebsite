@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace MyHotelWebsite.Web.Controllers
+﻿namespace MyHotelWebsite.Web.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+
     public class GuestsController : BaseController
     {
         public IActionResult Index()
         {
-            return View();
+            return this.View();
         }
     }
 }

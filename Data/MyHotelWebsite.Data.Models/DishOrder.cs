@@ -15,6 +15,10 @@
 
         public virtual Order Order { get; set; }
 
+        public string ApplicationUserId { get; set; }
+
+        public virtual ApplicationUser ApplicationUser { get; set; }
+
         public int DishQuantity { get; set; }
 
         public decimal TotalPrice

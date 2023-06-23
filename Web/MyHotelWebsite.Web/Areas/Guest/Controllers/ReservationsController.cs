@@ -7,6 +7,7 @@
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Common;
     using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.Controllers;
     using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
@@ -52,6 +53,7 @@
             }
 
             var roomsByType = await this.roomsService.GetAllRoomsByRoomTypeAsync<SingleRoomViewModel>(model.RoomType);
+
             return this.RedirectToAction("Index", "Home");
         }
     }

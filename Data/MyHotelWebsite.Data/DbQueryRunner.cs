@@ -3,9 +3,8 @@
     using System;
     using System.Threading.Tasks;
 
-    using MyHotelWebsite.Data.Common;
-
     using Microsoft.EntityFrameworkCore;
+    using MyHotelWebsite.Data.Common;
 
     public class DbQueryRunner : IDbQueryRunner
     {

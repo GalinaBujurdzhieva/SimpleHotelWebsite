@@ -40,7 +40,7 @@
         public int ChildrenCount { get; set; }
 
         [Display(Name = "Room Type")]
-        [Required]
+        [Required(ErrorMessage = "Some message")]
         public RoomType RoomType { get; set; }
 
         [Required]
@@ -57,12 +57,12 @@
 
             if (this.AdultsCount + this.ChildrenCount > 4)
             {
-                results.Add(new ValidationResult("We do not have rooms for more than 4 people. Please make separate reservations or contact us to do this instead of you"));
+                results.Add(new ValidationResult("We do not have rooms for more than 4 people. Please make separate reservations or contact us to do this instead of you", new[] { "AdultsCount" }));
             }
 
             if (this.AdultsCount + this.ChildrenCount > (int)this.RoomType)
             {
-                results.Add(new ValidationResult("Beds in the selected room are not enough"));
+                results.Add(new ValidationResult("Beds in the selected room are not enough", new[] { "RoomType" }));
             }
 
             return results;

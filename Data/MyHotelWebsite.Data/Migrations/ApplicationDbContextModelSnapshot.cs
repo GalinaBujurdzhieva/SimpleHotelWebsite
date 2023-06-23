@@ -445,6 +445,9 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -464,6 +467,8 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("DishId", "OrderId");
+
+                    b.HasIndex("ApplicationUserId");
 
                     b.HasIndex("IsDeleted");
 
@@ -531,7 +536,7 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<int>("Catering")
                         .HasColumnType("int");
 
-                    b.Property<int>("ChildrenCount")
+                    b.Property<int?>("ChildrenCount")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -628,6 +633,9 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<int>("ReservationId")
                         .HasColumnType("int");
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -644,6 +652,8 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("RoomId", "ReservationId");
+
+                    b.HasIndex("ApplicationUserId");
 
                     b.HasIndex("IsDeleted");
 
@@ -790,6 +800,10 @@ namespace MyHotelWebsite.Data.Migrations
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.DishOrder", b =>
                 {
+                    b.HasOne("MyHotelWebsite.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+
                     b.HasOne("MyHotelWebsite.Data.Models.Dish", "Dish")
                         .WithMany("DishOrders")
                         .HasForeignKey("DishId")
@@ -801,6 +815,8 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("ApplicationUser");
 
                     b.Navigation("Dish");
 
@@ -836,6 +852,10 @@ namespace MyHotelWebsite.Data.Migrations
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.RoomReservation", b =>
                 {
+                    b.HasOne("MyHotelWebsite.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+
                     b.HasOne("MyHotelWebsite.Data.Models.Reservation", "Reservation")
                         .WithMany("RoomReservations")
                         .HasForeignKey("ReservationId")
@@ -847,6 +867,8 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("ApplicationUser");
 
                     b.Navigation("Reservation");
 

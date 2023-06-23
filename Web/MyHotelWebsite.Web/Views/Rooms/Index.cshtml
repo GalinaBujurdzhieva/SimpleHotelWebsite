@@ -1,9 +1,7 @@
-﻿
-<!--Template Name: vacayhome
-File Name: rooms.html
-Author Name: ThemeVault
-Author URI: http://www.themevault.net/
-License URI: http://www.themevault.net/license/-->
+﻿@using Microsoft.AspNetCore.Identity;
+@using MyHotelWebsite.Data.Models;
+
+@inject SignInManager<ApplicationUser> signInManager
 
 <body>
     <div id="page">
@@ -62,9 +60,16 @@ License URI: http://www.themevault.net/license/-->
         <section>
             <div class="container justify-content-center">
                 <div class="h-100 d-flex align-items-center justify-content-center">
-                    <form method="post" asp-controller="Reservations" asp-action="Book">
-                        <div class="text-center"><button type="submit" class="book-now-btn">Book now</button></div>
-                    </form>
+                    <ul class="list-unstyled nav1 cl-effect-10">
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                         <li><a data-hover="Book a room" class="active" asp-area="Guest" asp-controller="Reservations" asp-action="Book"><span>Book a room</span></a></li>
+                    }
+                    else
+                    {
+                            <li><a data-hover="Book a room" class="active" asp-area="Guest" asp-controller="Reservations" asp-action="Book"><span>Book a room</span></a></li>
+                    }
+                    </ul>
                 </div>
             </div>
         </section>

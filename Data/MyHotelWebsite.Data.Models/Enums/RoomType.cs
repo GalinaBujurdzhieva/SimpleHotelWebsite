@@ -1,6 +1,5 @@
 ﻿namespace MyHotelWebsite.Data.Models.Enums
 {
-
     using System.ComponentModel.DataAnnotations;
 
     public enum RoomType

@@ -39,7 +39,7 @@
             var dishImage = new DishImage
             {
                 Extension = dishImageExtension,
-                ApplicationUserId=applicationUserId,
+                ApplicationUserId = applicationUserId,
             };
 
             dish.DishImage = dishImage;

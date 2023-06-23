@@ -5,6 +5,11 @@
     using System.IO;
     using System.Threading.Tasks;
 
+    using CommandLine;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
     using MyHotelWebsite.Data;
     using MyHotelWebsite.Data.Common;
     using MyHotelWebsite.Data.Common.Repositories;
@@ -13,13 +18,6 @@
     using MyHotelWebsite.Data.Seeding;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Services.Messaging;
-
-    using CommandLine;
-
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Logging;
 
     public static class Program
     {

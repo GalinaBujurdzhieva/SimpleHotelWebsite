@@ -21,6 +21,7 @@
         public RoomsService(IDeletableEntityRepository<Room> roomsRepo/*, IRepository<RoomReservation> roomsReservationsRepo, IDeletableEntityRepository<Reservation> reservationsRepo*/)
         {
             this.roomsRepo = roomsRepo;
+
             // this.roomsReservationsRepo = roomsReservationsRepo;
             // this.reservationsRepo = reservationsRepo;
         }
@@ -107,7 +108,7 @@
         public async Task<IEnumerable<T>> GetAllRoomsByRoomTypeAsync<T>(RoomType roomType)
         {
             var roomsByRoomType = await this.roomsRepo.AllAsNoTracking()
-                .Where(x => x.RoomType == roomType)
+                .Where(x => x.RoomType == roomType && x.IsOccupied == false)
                 .To<T>()
                 .ToListAsync();
             return roomsByRoomType;

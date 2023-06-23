@@ -1,5 +1,5 @@
 ﻿namespace MyHotelWebsite.Web.ViewModels.Blogs
-{ 
+{
     using AutoMapper;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Mapping;

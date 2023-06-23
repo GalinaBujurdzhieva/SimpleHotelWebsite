@@ -31,6 +31,7 @@
                               new AdminSeeder(),
                               new DishesSeeder(),
                               new RoomsSeeder(),
+                              new ReservationsSeeder(),
                           };
 
             foreach (var seeder in seeders)

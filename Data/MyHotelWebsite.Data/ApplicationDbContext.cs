@@ -62,6 +62,8 @@
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
 
+        internal bool Any() => throw new NotImplementedException();
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<RoomReservation>()
@@ -142,11 +144,6 @@
                     entity.ModifiedOn = DateTime.UtcNow;
                 }
             }
-        }
-
-        internal bool Any()
-        {
-            throw new NotImplementedException();
         }
     }
 }

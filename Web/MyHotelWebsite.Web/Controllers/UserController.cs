@@ -66,7 +66,7 @@
             return this.View(model);
             }
 
-            public IActionResult Login()
+        public IActionResult Login()
         {
             var model = new LoginViewModel();
             return this.View(model);

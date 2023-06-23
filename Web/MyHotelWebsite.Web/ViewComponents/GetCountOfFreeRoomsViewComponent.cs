@@ -1,14 +1,12 @@
 ﻿namespace MyHotelWebsite.Web.ViewComponents
 {
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Threading.Tasks;
+    using System.Linq;
+    using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
-    using MyHotelWebsite.Web.ViewModels.Reservations;
-	using MyHotelWebsite.Web.ViewModels.ViewComponents;
+    using MyHotelWebsite.Web.ViewModels.ViewComponents;
 
     public class GetCountOfFreeRoomsViewComponent : ViewComponent
     {

@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-
     using MyHotelWebsite.Data.Common.Models;
     using MyHotelWebsite.Data.Models.Enums;
 
@@ -25,7 +24,7 @@
         public int AdultsCount { get; set; }
 
         [Display(Name = "Children Count")]
-        public int ChildrenCount { get; set; }
+        public int? ChildrenCount { get; set; }
 
         [Display(Name = "Room Type")]
         public RoomType RoomType { get; set; }
