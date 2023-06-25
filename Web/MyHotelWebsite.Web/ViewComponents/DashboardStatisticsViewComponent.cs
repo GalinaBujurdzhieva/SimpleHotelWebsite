@@ -1,9 +1,11 @@
 ﻿namespace MyHotelWebsite.Web.ViewComponents
 {
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Services.Data;
+    using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
     using MyHotelWebsite.Web.ViewModels.ViewComponents;
 
     public class DashboardStatisticsViewComponent : ViewComponent
@@ -27,12 +29,15 @@
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
+            var freeRooms = await this.roomsService.GetAllFreeRoomsAtTheMomentAsync<SingleRoomViewModel>();
+            var allRoomsCount = await this.roomsService.GetCountAsync();
+
             var viewModel = new DashboardStatisticsViewModel
             {
                 BlogsCount = await this.blogsService.GetCountAsync(),
                 DishesCount = await this.dishesService.GetCountAsync(),
                 OrdersCount = await this.ordersService.GetCountAsync(),
-                RoomsCount = await this.roomsService.GetCountAsync(),
+                OccupiedRoomsCount = allRoomsCount - freeRooms.Count(),
                 ReservationsCount = await this.reservationsService.GetCountAsync(),
                 GuestsCount = await this.guestsService.GetCountAsync(),
             };

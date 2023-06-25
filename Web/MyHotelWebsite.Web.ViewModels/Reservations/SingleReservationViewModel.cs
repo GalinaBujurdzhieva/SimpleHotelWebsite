@@ -9,6 +9,8 @@
 
     public class SingleReservationViewModel : IMapFrom<Reservation>
     {
+        public int Id { get; set; }
+
         public DateTime AccommodationDate { get; set; }
 
         public DateTime ReleaseDate { get; set; }
@@ -25,5 +27,7 @@
         public string ApplicationUserId { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
+
+        public decimal TotalPrice { get; set; }
     }
 }

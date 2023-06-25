@@ -69,6 +69,10 @@
             builder.Entity<RoomReservation>()
                 .HasKey(k => new { k.RoomId, k.ReservationId });
 
+            builder.Entity<Reservation>()
+                .Property(p => p.TotalPrice)
+                .HasColumnType("decimal(18,4)");
+
             builder.Entity<DishOrder>()
                 .HasKey(k => new { k.DishId, k.OrderId });
 

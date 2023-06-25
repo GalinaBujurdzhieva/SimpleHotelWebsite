@@ -31,6 +31,8 @@
 
         public Catering Catering { get; set; }
 
+        public decimal TotalPrice { get; set; }
+
         public string ApplicationUserId { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }

@@ -50,7 +50,7 @@
         {
             List<ValidationResult> results = new List<ValidationResult>();
 
-            if (this.ReleaseDate <= this.AccommodationDate)
+            if (DateTime.Compare(this.ReleaseDate, this.AccommodationDate) < 0)
             {
                 results.Add(new ValidationResult("Check out date must be later that Check In date", new[] { "ReleaseDate" }));
             }

@@ -1,0 +1,11 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Reservations
+
+@model ReservationAllViewModel;
+
+<body>
+    <div id="page">
+        <div class="clearfix"></div>
+        <partial name="_SingleReservationPartial" />
+        <partial name="_PagingPartial" model="@Model" />
+    </div>
+</body>

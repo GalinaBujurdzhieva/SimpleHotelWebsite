@@ -8,7 +8,7 @@
 
         public int OrdersCount { get; set; }
 
-        public int RoomsCount { get; set; }
+        public int OccupiedRoomsCount { get; set; }
 
         public int GuestsCount { get; set; }
 

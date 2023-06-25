@@ -2015,7 +2015,6 @@ C:\Users\Lenovo\source\repos\SimpleHotelWebsite\Tests\MyHotelWebsite.Web.Tests\o
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.AssemblyInfoInputs.cache
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.AssemblyInfo.cs
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.csproj.CoreCompileInputs.cache
-C:\Users\Lenovo\source\repos\SimpleHotelWebsite\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\MyHotelWebsite.Web.Tests.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\staticwebassets\msbuild.MyHotelWebsite.Web.Tests.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite\Tests\MyHotelWebsite.Web.Tests\obj\Debug\net6.0\staticwebassets\msbuild.build.MyHotelWebsite.Web.Tests.props

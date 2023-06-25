@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using MyHotelWebsite.Common;
+@using MyHotelWebsite.Data.Models;
+@using MyHotelWebsite.Web.ViewModels.Reservations;
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    int i = 1;
+}
+
+@model ReservationAllViewModel
+
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Guest Name</th>
+                <th scope="col">Accommodation Date</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">Room Type</th>
+                <th scope="col">Catering</th>
+                <th scope="col">Adults Count</th>
+                <th scope="col">Children Count</th>
+                <th scope="col">Total Price (without food in euro)</th>
+                <th scope="col">Change Reservation</th>
+                <th scope="col">Delete Reservation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model.Reservations)
+            {
+                if (this.SignInManager.IsSignedIn(this.User) && (this.User.IsInRole(GlobalConstants.GuestRoleName)))
+                {
+                    <tr>
+                        <td>@(i++)</td>
+                        <td>@reservation.ApplicationUser.FirstName  @reservation.ApplicationUser.LastName</td>
+                        <td>@reservation.AccommodationDate</td>
+                        <td>@reservation.ReleaseDate</td>
+                        <td>@reservation.RoomType</td>
+                        <td>@reservation.Catering</td>
+                        <td>@reservation.AdultsCount</td>
+                        <td>@reservation.ChildrenCount</td>
+                        <td>@reservation.TotalPrice.ToString("F2")</td>
+                        <td><a class="btn btn-default" style="margin-left:5px" asp-controller="Reservations" asp-action="Edit" asp-route-id="@reservation.Id" class="btn btn-secondary">Edit</a></td>
+                        <td><a class="btn btn-default" style="margin-left:5px" asp-controller="Reservations" asp-action="Delete" asp-route-id="@reservation.Id" class="btn btn-secondary">Delete</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>

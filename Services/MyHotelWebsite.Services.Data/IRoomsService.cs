@@ -6,12 +6,17 @@
 
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
+    using MyHotelWebsite.Web.ViewModels.Reservations;
 
     public interface IRoomsService
     {
         Task CleanRoomAsync(int id, string applicationUserId);
 
         Task<bool> DoesRoomExistAsync(int id);
+
+        Task<int> ReserveRoomAsync(AddReservationViewModel model);
+
+        // Task<int> OccupyRoomAsync()
 
         Task EditRoomAsync(EditRoomViewModel model, int id, string applicationUserId);
 
@@ -23,7 +28,7 @@
 
         Task<IEnumerable<T>> GetAllRoomsByCapacityAsync<T>(int capacity);
 
-        Task<IEnumerable<T>> GetAllRoomsByRoomTypeAsync<T>(RoomType roomType);
+        Task<IEnumerable<T>> GetAllFreeRoomsByRoomTypeAsync<T>(RoomType roomType);
 
         Task<int> GetCountAsync();
 

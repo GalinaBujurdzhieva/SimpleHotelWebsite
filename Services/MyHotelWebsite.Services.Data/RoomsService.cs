@@ -11,6 +11,7 @@
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
+    using MyHotelWebsite.Web.ViewModels.Reservations;
 
     public class RoomsService : IRoomsService
     {
@@ -105,7 +106,7 @@
             return roomsByCapacity;
         }
 
-        public async Task<IEnumerable<T>> GetAllRoomsByRoomTypeAsync<T>(RoomType roomType)
+        public async Task<IEnumerable<T>> GetAllFreeRoomsByRoomTypeAsync<T>(RoomType roomType)
         {
             var roomsByRoomType = await this.roomsRepo.AllAsNoTracking()
                 .Where(x => x.RoomType == roomType && x.IsOccupied == false)
@@ -185,6 +186,23 @@
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage)
                 .To<T>().ToListAsync();
+        }
+
+        public async Task<int> ReserveRoomAsync(AddReservationViewModel model)
+        {
+            var roomToBeReserved = await this.roomsRepo.All().Where(r => r.RoomType == model.RoomType && r.IsOccupied == false).FirstOrDefaultAsync();
+            if (roomToBeReserved != null)
+            {
+                roomToBeReserved.IsReserved = true;
+            }
+            else
+            {
+                throw new System.Exception();
+            }
+
+            await this.roomsRepo.SaveChangesAsync();
+
+            return roomToBeReserved.Id;
         }
     }
 }

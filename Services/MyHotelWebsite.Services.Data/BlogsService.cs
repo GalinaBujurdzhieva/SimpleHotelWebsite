@@ -109,7 +109,6 @@
                 .OrderByDescending(x => x.CreatedOn)
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage).To<T>().ToListAsync();
-
             return blogs;
         }
 

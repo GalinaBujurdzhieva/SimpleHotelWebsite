@@ -12,7 +12,7 @@
         public override bool IsValid(object value)
         {
             var date = (DateTime)value;
-            if (date.Day >= DateTime.UtcNow.AddDays(1).Day)
+            if (DateTime.Compare(date, DateTime.UtcNow.AddDays(1)) > 0)
             {
                 return true;
             }
