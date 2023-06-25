@@ -194,8 +194,12 @@
             var roomsThanCanBeReserved = await this.roomsRepo.All()
                 .Include(r => r.RoomReservations)
                 .ThenInclude(r => r.Reservation)
-                .Where(r => r.RoomType == model.RoomType && r.RoomReservations.Any(r => r.Reservation.AccommodationDate <= model.AccommodationDate &&
-                r.Reservation.ReleaseDate > model.ReleaseDate))
+                .Where(r => r.RoomType == model.RoomType)
+                .Where(r => !r.RoomReservations.Any(r => 
+                ((model.AccommodationDate >= r.Reservation.AccommodationDate 
+                && model.AccommodationDate <= r.Reservation.ReleaseDate) 
+                || (model.ReleaseDate >= r.Reservation.AccommodationDate 
+                && model.ReleaseDate <= r.Reservation.ReleaseDate))))
                 .ToListAsync();
 
             if (roomsThanCanBeReserved.Count == 0)

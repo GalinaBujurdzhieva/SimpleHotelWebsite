@@ -75,29 +75,26 @@
             currentReservation.ApplicationUserId = applicationUserId;
             currentReservation.TotalPrice = await this.GetReservationTotalPrice(model.RoomType, model.AccommodationDate, model.ReleaseDate, model.AdultsCount, model.ChildrenCount);
 
-            //currentReservation.RoomReservations.roo
-                
-                
-            //    Add(new RoomReservation()
-            //{
-            //    ReservationId = reservation.Id,
-            //    RoomId = await this.roomsService.ReserveRoomAsync(model),
-            //    ApplicationUserId = applicationUserId,
-            //});
+            currentReservation.RoomReservations.Add(new RoomReservation()
+                {
+                    ReservationId = reservation.Id,
+                    RoomId = await this.roomsService.ReserveRoomAsync(model),
+                    ApplicationUserId = applicationUserId,
+                });
 
             await this.reservationsRepo.SaveChangesAsync();
         }
-
+        // USED
         public async Task<int> GetCountAsync()
         {
             return await this.reservationsRepo.AllAsNoTracking().CountAsync();
         }
-
+        // USED
         public async Task<int> GetCountOfMyReservationsAsync(string applicationUserId)
         {
             return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ApplicationUserId == applicationUserId).CountAsync();
         }
-
+        // USED
         public async Task<IEnumerable<T>> GetMyReservationsAsync<T>(string applicationUserId, int page, int itemsPerPage = 4)
         {
             var reservations = await this.reservationsRepo.AllAsNoTracking()
@@ -108,7 +105,7 @@
              .Take(itemsPerPage).To<T>().ToListAsync();
             return reservations;
         }
-
+        // USED
         public async Task<decimal> GetReservationTotalPrice(RoomType roomType, DateTime accomodationDate, DateTime releaseDate, int adultsCount, int childrenCount)
         {
             var room = await this.roomsRepo.AllAsNoTracking()

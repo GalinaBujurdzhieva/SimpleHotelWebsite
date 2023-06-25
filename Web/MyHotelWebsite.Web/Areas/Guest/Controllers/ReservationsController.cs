@@ -55,9 +55,15 @@
             // TODO: Check if there are free rooms of this type left for this period of time. Write services. For Edit action also
 
             var applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            await this.reservationsService.AddReservationAsync(model, applicationUserId);
-
-            // var roomsByType = await this.roomsService.GetAllFreeRoomsByRoomTypeAsync<SingleRoomViewModel>(model.RoomType);
+            try
+            {
+                await this.reservationsService.AddReservationAsync(model, applicationUserId);
+            }
+            catch (Exception)
+            {
+                this.ModelState.AddModelError("", "There are no free rooms for this period of time");
+                return this.View(model);
+            }
             return this.RedirectToAction("MyReservations", "Reservations");
         }
 
