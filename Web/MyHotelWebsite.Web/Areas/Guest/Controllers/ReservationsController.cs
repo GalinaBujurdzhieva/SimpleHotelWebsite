@@ -10,8 +10,7 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.Controllers;
-
-    using MyHotelWebsite.Web.ViewModels.Reservations;
+    using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
     [Area("Guest")]
     [Authorize(Roles = GlobalConstants.GuestRoleName)]
@@ -53,7 +52,7 @@
                 return this.View(model);
             }
 
-            // TODO: Check if there are free rooms of this type left for this period of time. Write services
+            // TODO: Check if there are free rooms of this type left for this period of time. Write services. For Edit action also
 
             var applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             await this.reservationsService.AddReservationAsync(model, applicationUserId);

@@ -1,4 +1,5 @@
-﻿@using MyHotelWebsite.Web.ViewModels.Reservations
+﻿@using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
+
 
 @model ReservationAllViewModel;
 
@@ -6,6 +7,6 @@
     <div id="page">
         <div class="clearfix"></div>
         <partial name="_SingleReservationPartial" />
-        <partial name="_PagingPartial" model="@Model" />
+        <partial name="_PagingMyReservationsPartial" model="@Model" />
     </div>
 </body>

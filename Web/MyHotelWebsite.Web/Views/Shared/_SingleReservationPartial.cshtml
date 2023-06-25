@@ -1,16 +1,17 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using MyHotelWebsite.Common;
 @using MyHotelWebsite.Data.Models;
-@using MyHotelWebsite.Web.ViewModels.Reservations;
+@using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
+    
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
+@model ReservationAllViewModel
+
 @{
     int i = 1;
 }
-
-@model ReservationAllViewModel
 
 <body>
     <table class="table table-striped">
@@ -30,6 +31,10 @@
             </tr>
         </thead>
         <tbody>
+            @if (Model.PageNumber != 1)
+            {
+                i = (Model.PageNumber) * 10 - 9;
+            }
             @foreach (var reservation in Model.Reservations)
             {
                 if (this.SignInManager.IsSignedIn(this.User) && (this.User.IsInRole(GlobalConstants.GuestRoleName)))

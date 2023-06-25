@@ -11,7 +11,7 @@
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
-    using MyHotelWebsite.Web.ViewModels.Reservations;
+    using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
     public class RoomsService : IRoomsService
     {
@@ -188,20 +188,29 @@
                 .To<T>().ToListAsync();
         }
 
+        //TODO: CHECK IF FREE ROOM OF THIS TYPE EXISTS FOR TIME OF THE RESERVATION
         public async Task<int> ReserveRoomAsync(AddReservationViewModel model)
         {
-            var roomToBeReserved = await this.roomsRepo.All().Where(r => r.RoomType == model.RoomType && r.IsOccupied == false).FirstOrDefaultAsync();
-            if (roomToBeReserved != null)
-            {
-                roomToBeReserved.IsReserved = true;
-            }
-            else
+            var roomsThanCanBeReserved = await this.roomsRepo.All()
+                .Include(r => r.RoomReservations)
+                .ThenInclude(r => r.Reservation)
+                .Where(r => r.RoomType == model.RoomType && r.RoomReservations.Any(r => r.Reservation.AccommodationDate <= model.AccommodationDate &&
+                r.Reservation.ReleaseDate > model.ReleaseDate))
+                .ToListAsync();
+
+            if (roomsThanCanBeReserved.Count == 0)
             {
                 throw new System.Exception();
             }
 
-            await this.roomsRepo.SaveChangesAsync();
+            var roomToBeReserved = roomsThanCanBeReserved.FirstOrDefault();
 
+            if (roomToBeReserved != null)
+            {
+                roomToBeReserved.IsReserved = true;
+            }
+
+            await this.roomsRepo.SaveChangesAsync();
             return roomToBeReserved.Id;
         }
     }

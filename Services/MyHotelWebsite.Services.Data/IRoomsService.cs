@@ -6,7 +6,7 @@
 
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
-    using MyHotelWebsite.Web.ViewModels.Reservations;
+    using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
     public interface IRoomsService
     {

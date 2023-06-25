@@ -1,9 +1,11 @@
 ﻿namespace MyHotelWebsite.Services.Data
 {
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
-    using MyHotelWebsite.Web.ViewModels.Reservations;
+    using MyHotelWebsite.Data.Models.Enums;
+    using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
+    using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
     public interface IReservationsService
     {
@@ -15,6 +17,8 @@
 
         Task<int> GetCountOfMyReservationsAsync(string applicationUserId);
 
-        Task<decimal> GetReservationTotalPrice(AddReservationViewModel model);
+        Task<decimal> GetReservationTotalPrice(RoomType roomType, DateTime accomodationDate, DateTime releaseDate, int adultsCount, int childrenCount);
+
+        Task EditReservationAsync(EditReservationViewModel model, int id, string applicationUserId);
     }
 }

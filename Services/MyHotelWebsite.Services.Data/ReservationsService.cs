@@ -2,14 +2,16 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
-    using MyHotelWebsite.Web.ViewModels.Reservations;
+    using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
     public class ReservationsService : IReservationsService
     {
@@ -39,7 +41,7 @@
                     RoomType = model.RoomType,
                     Catering = model.Catering,
                     ApplicationUserId = applicationUserId,
-                    TotalPrice = await this.GetReservationTotalPrice(model),
+                    TotalPrice = await this.GetReservationTotalPrice(model.RoomType, model.AccommodationDate, model.ReleaseDate, model.AdultsCount, model.ChildrenCount),
                 };
                 reservation.RoomReservations.Add(new RoomReservation()
                 {
@@ -55,6 +57,35 @@
             {
                 throw new System.Exception();
             }
+        }
+
+        public async Task EditReservationAsync(EditReservationViewModel model, int id, string applicationUserId)
+        {
+            var currentReservation = await this.reservationsRepo.All()
+                .Include(r => r.RoomReservations)
+                .ThenInclude(r => r.Room)
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            currentReservation.AccommodationDate = model.AccommodationDate;
+            currentReservation.ReleaseDate = model.ReleaseDate;
+            currentReservation.AdultsCount = model.AdultsCount;
+            currentReservation.ChildrenCount = model.ChildrenCount;
+            currentReservation.Catering = model.Catering;
+            currentReservation.RoomType = model.RoomType;
+            currentReservation.ApplicationUserId = applicationUserId;
+            currentReservation.TotalPrice = await this.GetReservationTotalPrice(model.RoomType, model.AccommodationDate, model.ReleaseDate, model.AdultsCount, model.ChildrenCount);
+
+            //currentReservation.RoomReservations.roo
+                
+                
+            //    Add(new RoomReservation()
+            //{
+            //    ReservationId = reservation.Id,
+            //    RoomId = await this.roomsService.ReserveRoomAsync(model),
+            //    ApplicationUserId = applicationUserId,
+            //});
+
+            await this.reservationsRepo.SaveChangesAsync();
         }
 
         public async Task<int> GetCountAsync()
@@ -78,17 +109,17 @@
             return reservations;
         }
 
-        public async Task<decimal> GetReservationTotalPrice(AddReservationViewModel model)
+        public async Task<decimal> GetReservationTotalPrice(RoomType roomType, DateTime accomodationDate, DateTime releaseDate, int adultsCount, int childrenCount)
         {
             var room = await this.roomsRepo.AllAsNoTracking()
-                .FirstOrDefaultAsync(r => r.RoomType == model.RoomType);
+                .FirstOrDefaultAsync(r => r.RoomType == roomType);
 
-            TimeSpan totalAsTimeSpan = model.ReleaseDate.Subtract(model.AccommodationDate);
+            TimeSpan totalAsTimeSpan =releaseDate.Subtract(accomodationDate);
             var totalDays = (int)totalAsTimeSpan.TotalDays;
 
-            var totalPrice = totalDays * ((model.AdultsCount * room.AdultPrice) + (model.ChildrenCount * room.ChildrenPrice));
+            var totalPrice = totalDays * ((adultsCount * room.AdultPrice) + (childrenCount * room.ChildrenPrice));
 
-            return (decimal)totalPrice;
+            return totalPrice;
         }
     }
 }
