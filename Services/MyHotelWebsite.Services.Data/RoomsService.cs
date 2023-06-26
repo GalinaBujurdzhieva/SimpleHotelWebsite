@@ -201,7 +201,6 @@
         }
 
         // USED
-        // TODO: CHECK IF FREE ROOM OF THIS TYPE EXISTS FOR TIME OF THE RESERVATION
         public async Task<int> ReserveRoomAsync(RoomType roomType, DateTime accommodationDate, DateTime releaseDate)
         {
             var roomsThanCanBeReserved = await this.roomsRepo.All()

@@ -3,13 +3,15 @@
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
+
     using MyHotelWebsite.Data.Models.Enums;
-    using MyHotelWebsite.Web.ViewModels.Administration.Blogs;
     using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
     public interface IReservationsService
     {
         Task AddReservationAsync(AddReservationViewModel model, string applicationUserId);
+
+        Task DeleteReservationAsync(int id);
 
         Task<bool> DoesReservationExistsAsync(int id);
 

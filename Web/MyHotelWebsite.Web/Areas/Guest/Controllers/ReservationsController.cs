@@ -78,12 +78,12 @@
             ApplicationUser guestId = await this.userManager.GetUserAsync(this.User);
             string guestEmail = guestId.Email;  // await this.guestsService.GetGuestEmailAsync(this.User);
             string guestPhoneNumber = guestId.PhoneNumber; // await this.guestsService.GetGuestPhoneNumberAsync(this.User);
-            if (model.Email == string.Empty)
+            if (model.Email == null)
             {
                 model.Email = guestEmail;
             }
 
-            if (model.PhoneNumber == string.Empty)
+            if (model.PhoneNumber == null)
             {
                 model.PhoneNumber = guestPhoneNumber;
             }

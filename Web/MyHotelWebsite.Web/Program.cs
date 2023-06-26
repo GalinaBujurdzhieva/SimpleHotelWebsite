@@ -8,8 +8,8 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Hosting;
-    using MyHotelWebsite.Common.CustomModelBinders;
+	using Microsoft.Extensions.Hosting;
+	using MyHotelWebsite.Common.CustomModelBinders;
     using MyHotelWebsite.Data;
     using MyHotelWebsite.Data.Common;
     using MyHotelWebsite.Data.Common.Repositories;

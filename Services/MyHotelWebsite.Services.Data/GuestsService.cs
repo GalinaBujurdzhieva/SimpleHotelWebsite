@@ -10,7 +10,7 @@
 
     public class GuestsService : IGuestsService
     {
-        private readonly IDeletableEntityRepository<ApplicationUser> guestsRepo;
+        private readonly IDeletableEntityRepository<ApplicationUser> guestsRepo; // NOT USED
         private readonly UserManager<ApplicationUser> userManager;
 
         public GuestsService(IDeletableEntityRepository<ApplicationUser> guestsRepo, UserManager<ApplicationUser> userManager)
