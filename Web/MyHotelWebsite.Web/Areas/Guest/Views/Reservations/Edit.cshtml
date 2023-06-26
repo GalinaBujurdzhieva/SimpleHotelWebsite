@@ -1,0 +1,72 @@
+﻿@using MyHotelWebsite.Data.Models.Enums
+@using MyHotelWebsite.Web.ViewModels.Guests.Reservations
+
+@model EditReservationViewModel
+
+@{
+	this.ViewData["Title"] = "Edit a reservation";
+}
+
+<body>
+	<form method="post" class="col-md-6 offset-md-3">
+		<div class="text-center mb-3">
+			<h1>@this.ViewData["Title"]</h1>
+			<br />
+			<h4>Dear <b>Guests</b>,</h4>
+			<h4>With this form you can edit your reservation for 1 room only. <i class="fa fa-smile-o" aria-hidden="true"></i> </h4>
+			<h4>The rules remain the same:</h4>
+			<h4>Number of beds (<i class="fa fa-bed" aria-hidden="true"></i>) are written next to the type of the room.</h4>
+			<h4>We insist on having at least 1 adult (<i class="fa fa-male" aria-hidden="true"></i>) or (<i class="fa fa-female" aria-hidden="true"></i>) in each room with children (<i class="fa fa-child" aria-hidden="true"></i>, <i class="fa fa-child" aria-hidden="true"></i>, ...). </h4>
+			<h4>If you are a group (<i class="fa fa-users" aria-hidden="true"></i>), so one room is not enough and you don't want (or don't have time <i class="fa fa-clock-o" aria-hidden="true"></i>) to make many reservations <i class="fa fa-list-alt" aria-hidden="true"></i>, do not hesitate to contact us on the phone <i class="fa fa-mobile" aria-hidden="true"></i> or via e-mail <i class="fa fa-envelope-o" aria-hidden="true"></i>.</h4>
+		</div>
+		<hr />
+		<br />
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<input type="hidden" asp-for="@Model.Id" />
+		<div class="text-center mb-3">
+			<label asp-for="Email"></label>
+			<input asp-for="Email" class="form-control" />
+			<span asp-validation-for="Email" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="PhoneNumber"></label>
+			<input asp-for="PhoneNumber" class="form-control" />
+			<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="AccommodationDate"></label>
+			<input asp-for="AccommodationDate" class="date form-control" type="date" />
+			<span asp-validation-for="AccommodationDate" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="ReleaseDate"></label>
+			<input asp-for="ReleaseDate" class="date form-control" type="date" />
+			<span asp-validation-for="ReleaseDate" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="AdultsCount"></label>
+			<input asp-for="AdultsCount" type="number" class="form-control" />
+			<span asp-validation-for="AdultsCount" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="ChildrenCount"></label>
+			<input asp-for="ChildrenCount" type="number" class="form-control" />
+			<span asp-validation-for="ChildrenCount" class="text-danger"></span>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="RoomType"></label>
+			<select class="form-select" asp-for="RoomType" asp-items="@Html.GetEnumSelectList<RoomType>()" style="font-size:medium">
+				<option class="text-danger">Please, select Room type from the list below:</option>
+			</select>
+		</div>
+		<div class="text-center mb-3">
+			<label asp-for="Catering"></label>
+			<select class="form-select" asp-for="Catering" asp-items="@Html.GetEnumSelectList<Catering>()" style="font-size:medium">
+				<option class="text-danger">Please, select type of Catering from the list below:</option>
+			</select>
+		</div>
+		<div class="text-center mb-3">
+			<input type="submit" class="btn btn-danger" value="Edit"/>
+		</div>
+	</form>
+</body>

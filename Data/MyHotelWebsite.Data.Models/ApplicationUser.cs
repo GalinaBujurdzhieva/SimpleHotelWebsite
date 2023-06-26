@@ -47,6 +47,10 @@ namespace MyHotelWebsite.Data.Models
         [StringLength(20)]
         public string LastName { get; set; }
 
+        public string? ReservationEmail { get; set; }
+
+        public string? ReservationPhone { get; set; }
+
         public virtual ICollection<Order> Orders { get; set; }
 
         public virtual ICollection<Reservation> Reservations { get; set; }

@@ -9,16 +9,20 @@
 
     public interface IReservationsService
     {
-        Task<int> GetCountAsync();
-
         Task AddReservationAsync(AddReservationViewModel model, string applicationUserId);
 
-        Task<IEnumerable<T>> GetMyReservationsAsync<T>(string applicationUserId, int page, int itemsPerPage = 4);
+        Task<bool> DoesReservationExistsAsync(int id);
+
+        Task<int> GetCountAsync();
 
         Task<int> GetCountOfMyReservationsAsync(string applicationUserId);
+
+        Task<IEnumerable<T>> GetMyReservationsAsync<T>(string applicationUserId, int page, int itemsPerPage = 4);
 
         Task<decimal> GetReservationTotalPrice(RoomType roomType, DateTime accomodationDate, DateTime releaseDate, int adultsCount, int childrenCount);
 
         Task EditReservationAsync(EditReservationViewModel model, int id, string applicationUserId);
+
+        Task<T> ReservationDetailsByIdAsync<T>(int id);
     }
 }

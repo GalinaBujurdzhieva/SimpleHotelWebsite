@@ -10,9 +10,8 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.Controllers;
-    using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
-
-    [Area("Guest")]
+	using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
+	[Area("Guest")]
     [Authorize(Roles = GlobalConstants.GuestRoleName)]
     public class ReservationsController : BaseController
      {
@@ -61,9 +60,59 @@
             }
             catch (Exception)
             {
-                this.ModelState.AddModelError("", "There are no free rooms for this period of time");
+                this.ModelState.AddModelError(string.Empty, "There are no free rooms for this period of time");
                 return this.View(model);
             }
+            return this.RedirectToAction("MyReservations", "Reservations");
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (!await this.reservationsService.DoesReservationExistsAsync(id))
+            {
+                return this.RedirectToAction(nameof(this.MyReservations));
+            }
+
+            var model = await this.reservationsService.ReservationDetailsByIdAsync<EditReservationViewModel>(id);
+
+            ApplicationUser guestId = await this.userManager.GetUserAsync(this.User);
+            string guestEmail = guestId.Email;  // await this.guestsService.GetGuestEmailAsync(this.User);
+            string guestPhoneNumber = guestId.PhoneNumber; // await this.guestsService.GetGuestPhoneNumberAsync(this.User);
+            if (model.Email == string.Empty)
+            {
+                model.Email = guestEmail;
+            }
+
+            if (model.PhoneNumber == string.Empty)
+            {
+                model.PhoneNumber = guestPhoneNumber;
+            }
+
+            return this.View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditReservationViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            // TODO: Check if there are free rooms of this type left for this period of time. Write services. For Edit action also
+
+            var applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            try
+            {
+                await this.reservationsService.EditReservationAsync(model, id, applicationUserId);
+                this.TempData["Message"] = "Reservation changed successfully.";
+            }
+            catch (Exception)
+            {
+                this.ModelState.AddModelError(string.Empty, "You can't edit this reservation");
+                return this.View(model);
+            }
+
             return this.RedirectToAction("MyReservations", "Reservations");
         }
 

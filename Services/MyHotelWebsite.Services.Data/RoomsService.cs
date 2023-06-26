@@ -27,6 +27,7 @@
             // this.reservationsRepo = reservationsRepo;
         }
 
+        // USED
         public async Task CleanRoomAsync(int id, string applicationUserId)
         {
             var currentRoom = await this.roomsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
@@ -43,11 +44,13 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
+        // USED
         public async Task<bool> DoesRoomExistAsync(int id)
         {
             return await this.roomsRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
         }
 
+        // USED
         public async Task EditRoomAsync(EditRoomViewModel model, int id, string applicationUserId)
         {
             var currentRoom = await this.roomsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
@@ -58,13 +61,14 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
+        // USED
         public async Task<IEnumerable<T>> GetAllFreeRoomsAtTheMomentAsync<T>()
         {
             var freeRoomsNow = await this.roomsRepo.AllAsNoTracking()
                 .Include(x => x.RoomReservations)
                 .ThenInclude(x => x.Reservation)
-                .Where(x => !x.RoomReservations.Any(r => r.Reservation.AccommodationDate <= DateTime.UtcNow &&
-                r.Reservation.ReleaseDate > DateTime.UtcNow))
+                .Where(x => !x.RoomReservations.Any(r => r.Reservation.AccommodationDate <= DateTime.UtcNow.Date &&
+                r.Reservation.ReleaseDate > DateTime.UtcNow.Date))
                 .OrderBy(x => x.RoomType)
                 .ThenBy(x => x.Floor)
                 .To<T>()
@@ -72,13 +76,14 @@
             return freeRoomsNow;
         }
 
+        // USED
         public async Task<IEnumerable<T>> GetAllFreeRoomsForACertainPeriodOfTimeAsync<T>(DateTime accommodationDate, DateTime releaseDate)
         {
             var freeRoomsForACertainPeriodOfTime = await this.roomsRepo.AllAsNoTracking()
                 .Include(x => x.RoomReservations)
                 .ThenInclude(x => x.Reservation)
                 .Where(x => !x.RoomReservations.Any(r => r.Reservation.AccommodationDate <= accommodationDate &&
-                r.Reservation.ReleaseDate > releaseDate))
+                r.Reservation.ReleaseDate >= releaseDate))
                 .OrderBy(x => x.RoomType)
                 .ThenBy(x => x.Floor)
                 .To<T>()
@@ -86,6 +91,7 @@
             return freeRoomsForACertainPeriodOfTime;
         }
 
+        // ?
         public async Task<IEnumerable<T>> GetAllRoomsAsync<T>(int page, int itemsPerPage = 4)
         {
             var rooms = await this.roomsRepo.AllAsNoTracking()
@@ -97,6 +103,7 @@
             return rooms;
         }
 
+        // NO
         public async Task<IEnumerable<T>> GetAllRoomsByCapacityAsync<T>(int capacity)
         {
             var roomsByCapacity = await this.roomsRepo.AllAsNoTracking()
@@ -106,6 +113,7 @@
             return roomsByCapacity;
         }
 
+        // NO
         public async Task<IEnumerable<T>> GetAllFreeRoomsByRoomTypeAsync<T>(RoomType roomType)
         {
             var roomsByRoomType = await this.roomsRepo.AllAsNoTracking()
@@ -115,11 +123,13 @@
             return roomsByRoomType;
         }
 
+        // ?
         public async Task<int> GetCountAsync()
         {
             return await this.roomsRepo.AllAsNoTracking().CountAsync();
         }
 
+        // NO
         public async Task<int> GetCountOfRoomsByFourCriteriaAsync(bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0)
         {
             var searchRoomsList = this.roomsRepo.AllAsNoTracking().AsQueryable();
@@ -147,6 +157,7 @@
             return await searchRoomsList.CountAsync();
         }
 
+        // ?
         public async Task<T> RoomDetailsByIdAsync<T>(int id)
         {
             var currentRoom = await this.roomsRepo.AllAsNoTracking()
@@ -156,6 +167,7 @@
             return currentRoom;
         }
 
+        // ?
         public async Task<IEnumerable<T>> SearchRoomsByFourCriteriaAsync<T>(int page, bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0, int itemsPerPage = 4)
         {
             var searchRoomsList = this.roomsRepo.AllAsNoTracking().AsQueryable();
@@ -188,18 +200,19 @@
                 .To<T>().ToListAsync();
         }
 
-        //TODO: CHECK IF FREE ROOM OF THIS TYPE EXISTS FOR TIME OF THE RESERVATION
-        public async Task<int> ReserveRoomAsync(AddReservationViewModel model)
+        // USED
+        // TODO: CHECK IF FREE ROOM OF THIS TYPE EXISTS FOR TIME OF THE RESERVATION
+        public async Task<int> ReserveRoomAsync(RoomType roomType, DateTime accommodationDate, DateTime releaseDate)
         {
             var roomsThanCanBeReserved = await this.roomsRepo.All()
                 .Include(r => r.RoomReservations)
                 .ThenInclude(r => r.Reservation)
-                .Where(r => r.RoomType == model.RoomType)
+                .Where(r => r.RoomType == roomType)
                 .Where(r => !r.RoomReservations.Any(r => 
-                ((model.AccommodationDate >= r.Reservation.AccommodationDate 
-                && model.AccommodationDate <= r.Reservation.ReleaseDate) 
-                || (model.ReleaseDate >= r.Reservation.AccommodationDate 
-                && model.ReleaseDate <= r.Reservation.ReleaseDate))))
+                ((accommodationDate >= r.Reservation.AccommodationDate 
+                && accommodationDate <= r.Reservation.ReleaseDate) 
+                || (releaseDate >= r.Reservation.AccommodationDate 
+                && releaseDate <= r.Reservation.ReleaseDate))))
                 .ToListAsync();
 
             if (roomsThanCanBeReserved.Count == 0)

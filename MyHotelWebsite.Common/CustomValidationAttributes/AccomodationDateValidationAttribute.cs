@@ -5,18 +5,13 @@
 
     public class AccomodationDateValidationAttribute : ValidationAttribute
     {
-        public AccomodationDateValidationAttribute()
-        {
-        }
-
         public override bool IsValid(object value)
         {
             var date = (DateTime)value;
-            if (DateTime.Compare(date, DateTime.UtcNow) > 0)
+            if (DateTime.Compare(date, DateTime.UtcNow.Date) >= 0)
             {
                 return true;
             }
-
             return false;
         }
     }

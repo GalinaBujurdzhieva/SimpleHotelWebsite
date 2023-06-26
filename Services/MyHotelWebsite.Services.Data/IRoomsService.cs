@@ -14,7 +14,7 @@
 
         Task<bool> DoesRoomExistAsync(int id);
 
-        Task<int> ReserveRoomAsync(AddReservationViewModel model);
+        Task<int> ReserveRoomAsync(RoomType roomType, DateTime accommodationDate, DateTime releaseDate);
 
         // Task<int> OccupyRoomAsync()
 
