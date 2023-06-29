@@ -235,12 +235,6 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("ReservationEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ReservationPhone")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -559,6 +553,12 @@ namespace MyHotelWebsite.Data.Migrations
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ReservationEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReservationPhone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoomType")
                         .HasColumnType("int");

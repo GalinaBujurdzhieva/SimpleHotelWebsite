@@ -2,13 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
-	using System.Security.Claims;
-	using System.Threading.Tasks;
-	using Microsoft.AspNetCore.Http;
-	using Microsoft.AspNetCore.Identity;
-	using Microsoft.EntityFrameworkCore;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
@@ -51,12 +49,14 @@
                 ApplicationUser user = await this.userManager.FindByIdAsync(applicationUserId);
                 if (user.Email != model.Email)
                 {
-                    user.ReservationEmail = model.Email;
+                    user.ReservationEmails.Add(model.Email);
+                    reservation.ReservationEmail = model.Email;
                 }
 
                 if (user.PhoneNumber != model.PhoneNumber)
                 {
-                    user.ReservationPhone = model.PhoneNumber;
+                    user.ReservationPhones.Add(model.PhoneNumber);
+                    reservation.ReservationPhone = model.PhoneNumber;
                 }
 
                 reservation.RoomReservations.Add(new RoomReservation()
@@ -75,9 +75,11 @@
             }
         }
 
-        public Task DeleteReservationAsync(int id)
+        public async Task DeleteReservationAsync(int id)
         {
-            throw new NotImplementedException();
+            var currentReservation = await this.reservationsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            this.reservationsRepo.Delete(currentReservation);
+            await this.reservationsRepo.SaveChangesAsync();
         }
 
         public async Task<bool> DoesReservationExistsAsync(int id)
@@ -97,44 +99,55 @@
             currentReservation.AdultsCount = model.AdultsCount;
             currentReservation.ChildrenCount = model.ChildrenCount;
             currentReservation.Catering = model.Catering;
-            currentReservation.RoomType = model.RoomType;
+            if (currentReservation.RoomType != model.RoomType)
+            {
+                var roomReservationToBeRemoved = currentReservation.RoomReservations.FirstOrDefault(r => r.ReservationId == id);
+                var roomToBeFreed = roomReservationToBeRemoved.Room;
+                if (this.roomReservationRepo.All().Where(r => r.RoomId == roomToBeFreed.Id).Count() == 1)
+                {
+                    roomToBeFreed.IsReserved = false;
+                }
+
+                currentReservation.RoomReservations.Remove(roomReservationToBeRemoved);
+                currentReservation.RoomReservations.Add(new RoomReservation()
+                {
+                    ReservationId = currentReservation.Id,
+                    RoomId = await this.roomsService.ReserveRoomAsync(model.RoomType, model.AccommodationDate, model.ReleaseDate),
+                    ApplicationUserId = applicationUserId,
+                });
+                currentReservation.RoomType = model.RoomType;
+            }
+
             currentReservation.ApplicationUserId = applicationUserId;
             currentReservation.TotalPrice = await this.GetReservationTotalPrice(model.RoomType, model.AccommodationDate, model.ReleaseDate, model.AdultsCount, model.ChildrenCount);
 
             ApplicationUser user = await this.userManager.FindByIdAsync(applicationUserId);
             if (user.Email != model.Email)
             {
-                user.ReservationEmail = model.Email;
+                user.ReservationEmails.Add(model.Email);
+                currentReservation.ReservationEmail = model.Email;
             }
 
             if (user.PhoneNumber != model.PhoneNumber)
             {
-                user.ReservationPhone = model.PhoneNumber;
+                user.ReservationPhones.Add(model.PhoneNumber);
+                currentReservation.ReservationPhone = model.PhoneNumber;
             }
 
-            currentReservation.RoomReservations.Add(new RoomReservation()
-                {
-                    ReservationId = currentReservation.Id,
-                    RoomId = await this.roomsService.ReserveRoomAsync(model.RoomType, model.AccommodationDate, model.ReleaseDate),
-                    ApplicationUserId = applicationUserId,
-                });
-
             await this.reservationsRepo.SaveChangesAsync();
+            await this.roomsRepo.SaveChangesAsync();
         }
 
-        // USED
         public async Task<int> GetCountAsync()
         {
             return await this.reservationsRepo.AllAsNoTracking().CountAsync();
         }
 
-        // USED
         public async Task<int> GetCountOfMyReservationsAsync(string applicationUserId)
         {
             return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ApplicationUserId == applicationUserId).CountAsync();
         }
 
-        // USED
         public async Task<IEnumerable<T>> GetMyReservationsAsync<T>(string applicationUserId, int page, int itemsPerPage = 4)
         {
             var reservations = await this.reservationsRepo.AllAsNoTracking()
@@ -146,7 +159,6 @@
             return reservations;
         }
 
-        // USED
         public async Task<decimal> GetReservationTotalPrice(RoomType roomType, DateTime accomodationDate, DateTime releaseDate, int adultsCount, int childrenCount)
         {
             var room = await this.roomsRepo.AllAsNoTracking()
@@ -158,6 +170,17 @@
             var totalPrice = totalDays * ((adultsCount * room.AdultPrice) + (childrenCount * room.ChildrenPrice));
 
             return totalPrice;
+        }
+
+        public async Task<bool> IsReservationActiveAtTheMoment(int id)
+        {
+            var currentReservation = await this.reservationsRepo.AllAsNoTracking().FirstOrDefaultAsync(r => r.Id == id);
+            if (currentReservation.AccommodationDate.CompareTo(DateTime.UtcNow.Date) <= 0 && currentReservation.ReleaseDate.CompareTo(DateTime.UtcNow.Date) > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public async Task<T> ReservationDetailsByIdAsync<T>(int id)

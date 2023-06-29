@@ -4,6 +4,7 @@ namespace MyHotelWebsite.Data.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     using Microsoft.AspNetCore.Identity;
     using MyHotelWebsite.Data.Common.Models;
@@ -21,6 +22,8 @@ namespace MyHotelWebsite.Data.Models
             this.Rooms = new HashSet<Room>();
             this.Blogs = new HashSet<Blog>();
             this.Dishes = new HashSet<Dish>();
+            this.ReservationEmails = new HashSet<string>();
+            this.ReservationPhones = new HashSet<string>();
         }
 
         // Audit info
@@ -47,9 +50,11 @@ namespace MyHotelWebsite.Data.Models
         [StringLength(20)]
         public string LastName { get; set; }
 
-        public string ReservationEmail { get; set; }
+        [NotMapped]
+        public ICollection<string> ReservationEmails { get; set; }
 
-        public string ReservationPhone { get; set; }
+        [NotMapped]
+        public ICollection<string> ReservationPhones { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
 

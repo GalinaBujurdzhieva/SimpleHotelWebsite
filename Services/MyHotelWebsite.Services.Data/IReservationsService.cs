@@ -25,6 +25,8 @@
 
         Task EditReservationAsync(EditReservationViewModel model, int id, string applicationUserId);
 
+        Task<bool> IsReservationActiveAtTheMoment(int id);
+
         Task<T> ReservationDetailsByIdAsync<T>(int id);
     }
 }

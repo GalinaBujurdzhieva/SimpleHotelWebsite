@@ -3,6 +3,7 @@
     using System;
     using System.Security.Claims;
     using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -10,8 +11,9 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.Controllers;
-	using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
-	[Area("Guest")]
+    using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
+
+    [Area("Guest")]
     [Authorize(Roles = GlobalConstants.GuestRoleName)]
     public class ReservationsController : BaseController
      {
@@ -51,8 +53,6 @@
                 return this.View(model);
             }
 
-            // TODO: Check if there are free rooms of this type left for this period of time. Write services. For Edit action also
-
             var applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             try
             {
@@ -63,7 +63,26 @@
                 this.ModelState.AddModelError(string.Empty, "There are no free rooms for this period of time");
                 return this.View(model);
             }
+
             return this.RedirectToAction("MyReservations", "Reservations");
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (!await this.reservationsService.DoesReservationExistsAsync(id))
+            {
+                return this.RedirectToAction(nameof(this.MyReservations));
+            }
+
+            if (await this.reservationsService.IsReservationActiveAtTheMoment(id))
+            {
+                this.TempData["Message"] = "Reservation is active and can not be deleted.";
+                return this.RedirectToAction(nameof(this.MyReservations));
+            }
+
+            await this.reservationsService.DeleteReservationAsync(id);
+            await this.roomsService.RemoveIsReservedPropertyOfNotReservedRooms();
+            return this.RedirectToAction(nameof(this.MyReservations));
         }
 
         public async Task<IActionResult> Edit(int id)
@@ -98,8 +117,6 @@
             {
                 return this.View(model);
             }
-
-            // TODO: Check if there are free rooms of this type left for this period of time. Write services. For Edit action also
 
             var applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             try

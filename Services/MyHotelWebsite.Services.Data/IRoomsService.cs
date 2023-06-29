@@ -34,6 +34,12 @@
 
         Task<int> GetCountOfRoomsByFourCriteriaAsync(bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0);
 
+        Task LeaveOccupiedRoomsAsync();
+
+        Task OccupyRoomsAsync();
+
+        Task RemoveIsReservedPropertyOfNotReservedRooms();
+
         Task<T> RoomDetailsByIdAsync<T>(int id);
 
         Task<IEnumerable<T>> SearchRoomsByFourCriteriaAsync<T>(int page, bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0, int itemsPerPage = 4);

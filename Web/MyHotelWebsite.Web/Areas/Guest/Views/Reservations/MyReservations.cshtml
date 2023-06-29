@@ -3,6 +3,13 @@
 
 @model ReservationAllViewModel;
 
+<script>
+    var msg = '@this.TempData["Message"]';
+    if (msg.length) {
+        alert(msg);
+    }
+</script>
+
 <body>
     <div id="page">
         <div class="clearfix"></div>

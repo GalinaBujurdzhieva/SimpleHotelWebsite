@@ -157,6 +157,83 @@
             return await searchRoomsList.CountAsync();
         }
 
+        // USED
+        public async Task LeaveOccupiedRoomsAsync()
+        {
+            var roomsToBeLeft = await this.roomsRepo.All()
+                .Include(x => x.RoomReservations)
+                .ThenInclude(x => x.Reservation)
+                .Where(x => x.RoomReservations.Any(r => r.Reservation.ReleaseDate == DateTime.UtcNow.Date))
+                .ToListAsync();
+            foreach (var room in roomsToBeLeft)
+            {
+                room.IsOccupied = false;
+            }
+
+            await this.roomsRepo.SaveChangesAsync();
+        }
+
+        // USED
+        public async Task OccupyRoomsAsync()
+        {
+            var roomsToBeOccupied = await this.roomsRepo.All()
+                .Include(x => x.RoomReservations)
+                .ThenInclude(x => x.Reservation)
+                .Where(x => x.RoomReservations.Any(r => r.Reservation.AccommodationDate.CompareTo(DateTime.UtcNow.Date) <= 0 && r.Reservation.ReleaseDate.CompareTo(DateTime.UtcNow.Date) > 0))
+                .ToListAsync();
+            foreach (var room in roomsToBeOccupied)
+            {
+                room.IsOccupied = true;
+            }
+
+            await this.roomsRepo.SaveChangesAsync();
+        }
+
+        public async Task RemoveIsReservedPropertyOfNotReservedRooms()
+        {
+            var notReservedRooms = await this.roomsRepo.All()
+                .Include(x => x.RoomReservations)
+                .ThenInclude(x => x.Reservation)
+                .Where(x => !x.RoomReservations.Any(r => r.Reservation.ReleaseDate.CompareTo(DateTime.UtcNow.Date) > 0))
+                .ToListAsync();
+            foreach (var room in notReservedRooms)
+            {
+                room.IsReserved = false;
+            }
+
+            await this.roomsRepo.SaveChangesAsync();
+        }
+
+        // USED
+        public async Task<int> ReserveRoomAsync(RoomType roomType, DateTime accommodationDate, DateTime releaseDate)
+        {
+            var roomsThanCanBeReserved = await this.roomsRepo.All()
+                .Include(r => r.RoomReservations)
+                .ThenInclude(r => r.Reservation)
+                .Where(r => r.RoomType == roomType)
+                .Where(r => !r.RoomReservations.Any(r =>
+                ((accommodationDate >= r.Reservation.AccommodationDate
+                && accommodationDate <= r.Reservation.ReleaseDate)
+                || (releaseDate >= r.Reservation.AccommodationDate
+                && releaseDate <= r.Reservation.ReleaseDate))))
+                .ToListAsync();
+
+            if (roomsThanCanBeReserved.Count == 0)
+            {
+                throw new System.Exception();
+            }
+
+            var roomToBeReserved = roomsThanCanBeReserved.FirstOrDefault();
+
+            if (roomToBeReserved != null)
+            {
+                roomToBeReserved.IsReserved = true;
+            }
+
+            await this.roomsRepo.SaveChangesAsync();
+            return roomToBeReserved.Id;
+        }
+
         // ?
         public async Task<T> RoomDetailsByIdAsync<T>(int id)
         {
@@ -198,36 +275,6 @@
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage)
                 .To<T>().ToListAsync();
-        }
-
-        // USED
-        public async Task<int> ReserveRoomAsync(RoomType roomType, DateTime accommodationDate, DateTime releaseDate)
-        {
-            var roomsThanCanBeReserved = await this.roomsRepo.All()
-                .Include(r => r.RoomReservations)
-                .ThenInclude(r => r.Reservation)
-                .Where(r => r.RoomType == roomType)
-                .Where(r => !r.RoomReservations.Any(r => 
-                ((accommodationDate >= r.Reservation.AccommodationDate 
-                && accommodationDate <= r.Reservation.ReleaseDate) 
-                || (releaseDate >= r.Reservation.AccommodationDate 
-                && releaseDate <= r.Reservation.ReleaseDate))))
-                .ToListAsync();
-
-            if (roomsThanCanBeReserved.Count == 0)
-            {
-                throw new System.Exception();
-            }
-
-            var roomToBeReserved = roomsThanCanBeReserved.FirstOrDefault();
-
-            if (roomToBeReserved != null)
-            {
-                roomToBeReserved.IsReserved = true;
-            }
-
-            await this.roomsRepo.SaveChangesAsync();
-            return roomToBeReserved.Id;
         }
     }
 }

@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "Tg7oMYnhYxPy1JPJwxtFY/rzZeYwve28FSU5ieTka9Uupaevf3Qabwuz3muOe+kdxyJbByc38XbEJB7u1xOvzA==",
+  "dgSpecHash": "W/o5UajeJLrmswtrm9Tfjc2VAeyyqJtsAMv5i955h6SczFBaiS943wYKwOJCrwu0zxxTxseyiAx8HoNFkFXX0g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Tests\\MyHotelWebsite.Web.Tests\\MyHotelWebsite.Web.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\hangfire.aspnetcore\\1.8.2\\hangfire.aspnetcore.1.8.2.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\hangfire.core\\1.8.2\\hangfire.core.1.8.2.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\hangfire.netcore\\1.8.2\\hangfire.netcore.1.8.2.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\hangfire.sqlserver\\1.8.2\\hangfire.sqlserver.1.8.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

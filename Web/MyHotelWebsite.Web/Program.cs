@@ -1,15 +1,18 @@
 ﻿namespace MyHotelWebsite.Web
 {
+    using System;
     using System.Reflection;
 
+    using Hangfire;
+    using Hangfire.SqlServer;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-	using Microsoft.Extensions.Hosting;
-	using MyHotelWebsite.Common.CustomModelBinders;
+    using Microsoft.Extensions.Hosting;
+    using MyHotelWebsite.Common.CustomModelBinders;
     using MyHotelWebsite.Data;
     using MyHotelWebsite.Data.Common;
     using MyHotelWebsite.Data.Common.Repositories;
@@ -41,6 +44,29 @@
                 .AddRoles<ApplicationRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddHangfire(hangfire =>
+            {
+                hangfire.SetDataCompatibilityLevel(CompatibilityLevel.Version_170);
+                hangfire.UseSimpleAssemblyNameTypeSerializer();
+                hangfire.UseRecommendedSerializerSettings();
+                hangfire.UseColouredConsoleLogProvider();
+                hangfire.UseSqlServerStorage(
+                             configuration.GetConnectionString("HangfireConnection"),
+                             new SqlServerStorageOptions
+                    {
+                        CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
+                        SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
+                        QueuePollInterval = TimeSpan.Zero,
+                        UseRecommendedIsolationLevel = true,
+                        DisableGlobalLocks = true,
+                    });
+
+                var backgroundServer = new BackgroundJobServer(new BackgroundJobServerOptions
+                {
+                    ServerName = "hangfire-test",
+                });
+            });
+
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/User/Login";
@@ -64,6 +90,7 @@
                 });
             services.AddRazorPages();
             services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddHangfireServer();
             services.AddSingleton(configuration);
 
             // Data repositories
@@ -82,7 +109,7 @@
             services.AddTransient<IReservationsService, ReservationsService>();
         }
 
-        private static void Configure(WebApplication app)
+        private static void Configure(WebApplication app/*, IBackgroundJobClient backgroundJobs*/)
         {
             // Seed data on application startup
             using (var serviceScope = app.Services.CreateScope())
@@ -107,16 +134,22 @@
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseHangfireDashboard();
+            RecurringJob.AddOrUpdate<IRoomsService>("is-occupied-turned-true", service => service.OccupyRoomsAsync(), Cron.Daily);
+            RecurringJob.AddOrUpdate<IRoomsService>("is-occupied-turned-false", service => service.LeaveOccupiedRoomsAsync(), Cron.Daily);
+            RecurringJob.AddOrUpdate<IRoomsService>("is-reserved-turned-false", service => service.RemoveIsReservedPropertyOfNotReservedRooms(), Cron.Daily);
             app.UseCookiePolicy();
 
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseEndpoints(endpoints => endpoints.MapHangfireDashboard());
 
             app.MapControllerRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            app.MapRazorPages();
+
+            // app.MapRazorPages();
         }
     }
 }
