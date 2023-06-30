@@ -19,20 +19,19 @@
 
         public const string GuestRoleName = "Guest"; // ACCESS TO HIS RESERVATIONS AND ORDERS
 
-        //// ROOM PRICES
+        // ROOM PRICES
+        public const decimal SingleRoomPrice = 150;
 
-        //public const decimal SingleRoomPrice = 150;
+        public const decimal DoubleRoomAdultsPricePerBed = 130;
 
-        //public const decimal DoubleRoomAdultPricePerBed = 130;
+        public const decimal DoubleRoomChildrenPricePerBed = 80;
 
-        //public const decimal DoubleRoomChildrenPricePerBed = 80;
+        public const decimal StudioAdultsPricePerBed = 170;
 
-        //public const decimal StudioAdultPricePerBed = 170;
+        public const decimal StudioChildrenPricePerBed = 100;
 
-        //public const decimal StudioChildrenPricePerBed = 100;
+        public const decimal ApartmentAdultsPricePerBed = 200;
 
-        //public const decimal ApartamentAdultPricePerBed = 200;
-
-        //public const decimal ApartamentChildrenPricePerBed = 120;
+        public const decimal ApartmentChildrenPricePerBed = 120;
     }
 }

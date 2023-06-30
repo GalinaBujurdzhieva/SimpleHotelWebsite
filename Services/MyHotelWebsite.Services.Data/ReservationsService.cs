@@ -78,8 +78,17 @@
         public async Task DeleteReservationAsync(int id)
         {
             var currentReservation = await this.reservationsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            var roomReservationToBeDeleted = await this.roomReservationRepo.All().FirstOrDefaultAsync(r => r.ReservationId == id);
+
+            if (roomReservationToBeDeleted != null)
+            {
+                this.roomReservationRepo.Delete(roomReservationToBeDeleted);
+            }
+
             this.reservationsRepo.Delete(currentReservation);
+
             await this.reservationsRepo.SaveChangesAsync();
+            await this.roomReservationRepo.SaveChangesAsync();
         }
 
         public async Task<bool> DoesReservationExistsAsync(int id)

@@ -18,6 +18,8 @@
             }
 
             List<Reservation> reservations = new List<Reservation>();
+
+            // 1
             reservations.Add(
                 new Reservation
                 {
@@ -28,6 +30,8 @@
                     Catering = Catering.Without,
                     ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
                 });
+
+            // 2
             reservations.Add(
                 new Reservation
                 {
@@ -38,6 +42,8 @@
                     Catering = Catering.Without,
                     ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
                 });
+
+            // 3
             reservations.Add(
                 new Reservation
                 {
@@ -48,6 +54,8 @@
                     Catering = Catering.Breakfast,
                     ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
                 });
+
+            // 4
             reservations.Add(
                 new Reservation
                 {
@@ -58,6 +66,8 @@
                     Catering = Catering.Breakfast,
                     ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
                 });
+
+            // 5
             reservations.Add(
                 new Reservation
                 {
@@ -68,6 +78,8 @@
                     Catering = Catering.AllInclusive,
                     ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
                 });
+
+            // 6
             reservations.Add(
                 new Reservation
                 {
@@ -78,6 +90,8 @@
                     Catering = Catering.AllInclusive,
                     ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
                 });
+
+            // 7
             reservations.Add(
                 new Reservation
                 {
@@ -88,6 +102,8 @@
                     Catering = Catering.Dinner,
                     ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
                 });
+
+            // 8
             reservations.Add(
                 new Reservation
                 {
@@ -98,6 +114,8 @@
                     Catering = Catering.Dinner,
                     ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
                 });
+
+            // 9
             reservations.Add(
                 new Reservation
                 {
@@ -108,6 +126,8 @@
                     Catering = Catering.BreakfastAndDinner,
                     ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
                 });
+
+            // 10
             reservations.Add(
                 new Reservation
                 {

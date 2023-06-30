@@ -19,6 +19,7 @@
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
+            await this.roomsService.LeaveOccupiedRoomsAsync();
             var freeRooms = await this.roomsService.GetAllFreeRoomsAtTheMomentAsync<SingleRoomViewModel>();
 
             var viewModel = new FreeRoomsAtTheMomentViewModel

@@ -163,11 +163,12 @@
             var roomsToBeLeft = await this.roomsRepo.All()
                 .Include(x => x.RoomReservations)
                 .ThenInclude(x => x.Reservation)
-                .Where(x => x.RoomReservations.Any(r => r.Reservation.ReleaseDate == DateTime.UtcNow.Date))
+                .Where(x => !x.RoomReservations.Any(r => r.Reservation.AccommodationDate <= DateTime.UtcNow.Date &&
+                r.Reservation.ReleaseDate > DateTime.UtcNow.Date))
                 .ToListAsync();
-            foreach (var room in roomsToBeLeft)
+            for (int i = 0; i < roomsToBeLeft.Count; i++)
             {
-                room.IsOccupied = false;
+                roomsToBeLeft[i].IsOccupied = false;
             }
 
             await this.roomsRepo.SaveChangesAsync();
