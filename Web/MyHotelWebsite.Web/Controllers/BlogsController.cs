@@ -17,7 +17,7 @@
 
         public async Task<IActionResult> Index()
         {
-            var model = new BlogAllViewModel
+            var model = new AllBlogViewModel
             {
                 Blogs = await this.blogService.GetLastBlogsAsync<SingleBlogViewModel>(2),
             };
@@ -32,7 +32,7 @@
             }
 
             const int BlogsPerPage = 4;
-            var model = new BlogAllViewModel
+            var model = new AllBlogViewModel
             {
                 ItemsPerPage = BlogsPerPage,
                 AllEntitiesCount = await this.blogService.GetCountAsync(),

@@ -37,8 +37,8 @@
             string guestPhoneNumber = guestId.PhoneNumber; // await this.guestsService.GetGuestPhoneNumberAsync(this.User);
             var model = new AddReservationViewModel()
             {
-                Email = guestEmail,
-                PhoneNumber = guestPhoneNumber,
+                ReservationEmail = guestEmail,
+                ReservationPhone = guestPhoneNumber,
                 AccommodationDate = DateTime.UtcNow,
                 ReleaseDate = DateTime.UtcNow.AddDays(1),
             };
@@ -97,14 +97,14 @@
             ApplicationUser guestId = await this.userManager.GetUserAsync(this.User);
             string guestEmail = guestId.Email;  // await this.guestsService.GetGuestEmailAsync(this.User);
             string guestPhoneNumber = guestId.PhoneNumber; // await this.guestsService.GetGuestPhoneNumberAsync(this.User);
-            if (model.Email == null)
+            if (model.ReservationEmail == null)
             {
-                model.Email = guestEmail;
+                model.ReservationEmail = guestEmail;
             }
 
-            if (model.PhoneNumber == null)
+            if (model.ReservationPhone == null)
             {
-                model.PhoneNumber = guestPhoneNumber;
+                model.ReservationPhone = guestPhoneNumber;
             }
 
             return this.View(model);
@@ -143,7 +143,7 @@
             const int ReservationsPerPage = 10;
             var applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var model = new ReservationAllViewModel
+            var model = new AllReservationViewModel
             {
                 ItemsPerPage = ReservationsPerPage,
                 AllEntitiesCount = await this.reservationsService.GetCountOfMyReservationsAsync(applicationUserId),

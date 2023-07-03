@@ -32,7 +32,7 @@
             }
 
             const int BlogsPerPage = 6;
-            var model = new BlogAllViewModel
+            var model = new AllBlogViewModel
             {
                 ItemsPerPage = BlogsPerPage,
                 AllEntitiesCount = await this.blogService.GetCountAsync(),

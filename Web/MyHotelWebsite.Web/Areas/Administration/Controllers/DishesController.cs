@@ -33,7 +33,7 @@
             }
 
             const int DishesPerPage = 12;
-            var model = new DishAllViewModel
+            var model = new AllDishViewModel
             {
                 ItemsPerPage = DishesPerPage,
                 AllEntitiesCount = await this.dishesService.GetCountAsync(),

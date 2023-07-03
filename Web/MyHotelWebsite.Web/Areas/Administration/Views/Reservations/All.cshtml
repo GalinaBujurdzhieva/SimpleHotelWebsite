@@ -1,0 +1,18 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Reservations
+
+@model HotelAdministrationAllReservationViewModel
+
+<script>
+    var msg = '@this.TempData["Message"]';
+    if (msg.length) {
+        alert(msg);
+    }
+</script>
+
+<body>
+    <div id="page">
+        <div class="clearfix"></div>
+        <partial name="_SingleReservationHotelManagementPartial"/>
+        <partial name="_PagingPartial" model="@Model" />
+    </div>
+</body>

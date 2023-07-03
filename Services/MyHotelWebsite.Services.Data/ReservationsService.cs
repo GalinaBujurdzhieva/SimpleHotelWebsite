@@ -11,6 +11,7 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
+    using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
     using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
     public class ReservationsService : IReservationsService
@@ -47,16 +48,16 @@
                 };
 
                 ApplicationUser user = await this.userManager.FindByIdAsync(applicationUserId);
-                if (user.Email != model.Email)
+                if (user.Email != model.ReservationEmail)
                 {
-                    user.ReservationEmails.Add(model.Email);
-                    reservation.ReservationEmail = model.Email;
+                    user.ReservationEmails.Add(model.ReservationEmail);
+                    reservation.ReservationEmail = model.ReservationEmail;
                 }
 
-                if (user.PhoneNumber != model.PhoneNumber)
+                if (user.PhoneNumber != model.ReservationPhone)
                 {
-                    user.ReservationPhones.Add(model.PhoneNumber);
-                    reservation.ReservationPhone = model.PhoneNumber;
+                    user.ReservationPhones.Add(model.ReservationPhone);
+                    reservation.ReservationPhone = model.ReservationPhone;
                 }
 
                 reservation.RoomReservations.Add(new RoomReservation()
@@ -131,16 +132,16 @@
             currentReservation.TotalPrice = await this.GetReservationTotalPrice(model.RoomType, model.AccommodationDate, model.ReleaseDate, model.AdultsCount, model.ChildrenCount);
 
             ApplicationUser user = await this.userManager.FindByIdAsync(applicationUserId);
-            if (user.Email != model.Email)
+            if (user.Email != model.ReservationEmail)
             {
-                user.ReservationEmails.Add(model.Email);
-                currentReservation.ReservationEmail = model.Email;
+                user.ReservationEmails.Add(model.ReservationEmail);
+                currentReservation.ReservationEmail = model.ReservationEmail;
             }
 
-            if (user.PhoneNumber != model.PhoneNumber)
+            if (user.PhoneNumber != model.ReservationPhone)
             {
-                user.ReservationPhones.Add(model.PhoneNumber);
-                currentReservation.ReservationPhone = model.PhoneNumber;
+                user.ReservationPhones.Add(model.ReservationPhone);
+                currentReservation.ReservationPhone = model.ReservationPhone;
             }
 
             await this.reservationsRepo.SaveChangesAsync();
@@ -155,6 +156,32 @@
         public async Task<int> GetCountOfMyReservationsAsync(string applicationUserId)
         {
             return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ApplicationUserId == applicationUserId).CountAsync();
+        }
+
+        public async Task<string> GetGuestEmail(int reservationId)
+        {
+            var currentReservation = await this.reservationsRepo.AllAsNoTracking().Where(r => r.Id == reservationId).FirstOrDefaultAsync();
+            if (currentReservation != null)
+            {
+                string guestId = currentReservation.ApplicationUserId;
+                ApplicationUser guest = await this.userManager.FindByIdAsync(guestId);
+                return guest.Email;
+            }
+
+            return null;
+        }
+
+        public async Task<string> GetGuestPhoneNumber(int reservationId)
+        {
+            var currentReservation = await this.reservationsRepo.AllAsNoTracking().Where(r => r.Id == reservationId).FirstOrDefaultAsync();
+            if (currentReservation != null)
+            {
+                string guestId = currentReservation.ApplicationUserId;
+                ApplicationUser guest = await this.userManager.FindByIdAsync(guestId);
+                return guest.PhoneNumber;
+            }
+
+            return null;
         }
 
         public async Task<IEnumerable<T>> GetMyReservationsAsync<T>(string applicationUserId, int page, int itemsPerPage = 4)
@@ -179,6 +206,93 @@
             var totalPrice = totalDays * ((adultsCount * room.AdultPrice) + (childrenCount * room.ChildrenPrice));
 
             return totalPrice;
+        }
+
+        public async Task HotelAdministrationCreateReservationAsync(HotelAdministrationAddReservationViewModel model)
+        {
+            try
+            {
+                var reservation = new Reservation
+                {
+                    AccommodationDate = model.AccommodationDate,
+                    ReleaseDate = model.ReleaseDate,
+                    AdultsCount = model.AdultsCount,
+                    ChildrenCount = model.ChildrenCount,
+                    RoomType = model.RoomType,
+                    Catering = model.Catering,
+                    TotalPrice = await this.GetReservationTotalPrice(model.RoomType, model.AccommodationDate, model.ReleaseDate, model.AdultsCount, model.ChildrenCount),
+                    ReservationEmail = model.ReservationEmail,
+                    ReservationPhone = model.ReservationPhone,
+                };
+
+                reservation.RoomReservations.Add(new RoomReservation()
+                {
+                    ReservationId = reservation.Id,
+                    RoomId = await this.roomsService.ReserveRoomAsync(model.RoomType, model.AccommodationDate, model.ReleaseDate),
+                });
+
+                await this.reservationsRepo.AddAsync(reservation);
+                await this.reservationsRepo.SaveChangesAsync();
+            }
+            catch (System.Exception)
+            {
+                throw new System.Exception();
+            }
+        }
+
+        public async Task HotelAdministrationEditReservationAsync(HotelAdministrationEditReservationViewModel model, int id)
+        {
+            var currentReservation = await this.reservationsRepo.All()
+                .Include(r => r.RoomReservations)
+                .ThenInclude(r => r.Room)
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            currentReservation.ReservationEmail = model.ReservationEmail;
+            currentReservation.ReservationPhone = model.ReservationPhone;
+            currentReservation.AccommodationDate = model.AccommodationDate;
+            currentReservation.ReleaseDate = model.ReleaseDate;
+            currentReservation.AdultsCount = model.AdultsCount;
+            currentReservation.ChildrenCount = model.ChildrenCount;
+            currentReservation.Catering = model.Catering;
+            if (currentReservation.RoomType != model.RoomType)
+            {
+                var roomReservationToBeRemoved = currentReservation.RoomReservations.FirstOrDefault(r => r.ReservationId == id);
+                var roomToBeFreed = roomReservationToBeRemoved.Room;
+                if (this.roomReservationRepo.All().Where(r => r.RoomId == roomToBeFreed.Id).Count() == 1)
+                {
+                    roomToBeFreed.IsReserved = false;
+                }
+
+                currentReservation.RoomReservations.Remove(roomReservationToBeRemoved);
+                currentReservation.RoomReservations.Add(new RoomReservation()
+                {
+                    ReservationId = currentReservation.Id,
+                    RoomId = await this.roomsService.ReserveRoomAsync(model.RoomType, model.AccommodationDate, model.ReleaseDate),
+                });
+                currentReservation.RoomType = model.RoomType;
+            }
+
+            currentReservation.TotalPrice = await this.GetReservationTotalPrice(model.RoomType, model.AccommodationDate, model.ReleaseDate, model.AdultsCount, model.ChildrenCount);
+            await this.reservationsRepo.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<T>> HotelAdministrationGetAllReservationsAsync<T>(int page, int itemsPerPage = 4)
+        {
+            var reservations = await this.reservationsRepo.AllAsNoTracking()
+             .OrderByDescending(r => r.AccommodationDate)
+             .ThenByDescending(r => r.ReleaseDate)
+             .Skip((page - 1) * itemsPerPage)
+             .Take(itemsPerPage).To<T>().ToListAsync();
+            return reservations;
+        }
+
+        public async Task<T> HotelAdministrationReservationDetailsByIdAsync<T>(int id)
+        {
+            var currentReservation = await this.reservationsRepo.AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>()
+                .FirstOrDefaultAsync();
+            return currentReservation;
         }
 
         public async Task<bool> IsReservationActiveAtTheMoment(int id)

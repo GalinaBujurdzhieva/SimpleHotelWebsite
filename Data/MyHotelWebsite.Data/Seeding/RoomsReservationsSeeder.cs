@@ -1,12 +1,12 @@
-﻿using MyHotelWebsite.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyHotelWebsite.Data.Seeding
+﻿namespace MyHotelWebsite.Data.Seeding
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using MyHotelWebsite.Data.Models;
+
     internal class RoomsReservationsSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)

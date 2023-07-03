@@ -7,7 +7,7 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-@model ReservationAllViewModel
+@model AllReservationViewModel
 
 @{
     int i = 1;
@@ -42,8 +42,8 @@
                     <tr>
                         <td>@(i++)</td>
                         <td>@reservation.ApplicationUser.FirstName  @reservation.ApplicationUser.LastName</td>
-                        <td>@reservation.AccommodationDate</td>
-                        <td>@reservation.ReleaseDate</td>
+                        <td>@reservation.AccommodationDate.ToShortDateString()</td>
+                        <td>@reservation.ReleaseDate.ToShortDateString()</td>
                         <td>@reservation.RoomType</td>
                         <td>@reservation.Catering</td>
                         <td>@reservation.AdultsCount</td>

@@ -1,9 +1,8 @@
 ﻿namespace MyHotelWebsite.Web.ViewModels.Settings
 {
+    using AutoMapper;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Mapping;
-
-    using AutoMapper;
 
     public class SettingViewModel : IMapFrom<Setting>, IHaveCustomMappings
     {

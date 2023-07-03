@@ -1,0 +1,67 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
+
+@model HotelAdministrationSingleReservationViewModel
+
+@{
+    this.ViewData["Title"] = "Reservation details";
+}
+
+<body>
+    <div class="text-center mt-3 mb-3">
+        <h1>@this.ViewData["Title"]</h1>
+    </div>
+    <br />
+    <div class="col-md-6 offset-3 mt-2">
+        <table class="table table-bordered border-danger">
+            <thead>
+                <tr>
+                    <th scope="col">Reservation</th>
+                    <th scope="col"># @Model.Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="col">Phone Number</th>
+                    <td>@Model.ReservationPhone</td>
+                </tr>
+                <tr>
+                    <th scope="col">Email</th>
+                    <td>@Model.ReservationEmail</td>
+                </tr>
+                <tr>
+                    <th scope="col">Accommodation Date</th>
+                    <td>@Model.AccommodationDate.ToShortDateString()</td>
+                </tr>
+                <tr>
+                    <th scope="col">Release Date</th>
+                    <td>@Model.ReleaseDate.ToShortDateString()</td>
+                </tr>
+                <tr>
+                    <th scope="col">Adults Count</th>
+                    <td>@Model.AdultsCount</td>
+                </tr>
+                <tr>
+                    <th scope="col">Children Count</th>
+                    <td>@Model.ChildrenCount</td>
+                <tr>
+                    <th scope="col">Room Type</th>
+                    <td>@Model.RoomType</td>
+                </tr>
+                <tr>
+                    <th scope="col">Catering</th>
+                    <td>@Model.Catering</td>
+                </tr>
+                <tr>
+                    <th scope="col">Total Price</th>
+                    <td>@Model.TotalPrice</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="event-blog-details">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Reservations" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary">Edit </a>
+                <a class="btn btn-default" style="margin-left:7px" asp-area="Administration" asp-controller="Reservations" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-secondary">Delete</a>
+            </div>
+        </div>
+    </div>
+</body>

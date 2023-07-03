@@ -60,6 +60,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcRGlzaGVzXFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lenovo/source/repos/SimpleHotelWebsite/Web/MyHotelWebsite.Web/Areas/Administration/Views/Reservations/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcUmVzZXJ2YXRpb25zXEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/SimpleHotelWebsite/Web/MyHotelWebsite.Web/Areas/Administration/Views/Reservations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcUmVzZXJ2YXRpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/SimpleHotelWebsite/Web/MyHotelWebsite.Web/Areas/Administration/Views/Reservations/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcUmVzZXJ2YXRpb25zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/SimpleHotelWebsite/Web/MyHotelWebsite.Web/Areas/Administration/Views/Reservations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcUmVzZXJ2YXRpb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/source/repos/SimpleHotelWebsite/Web/MyHotelWebsite.Web/Areas/Administration/Views/Rooms/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcUm9vbXNcQWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -234,6 +250,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Lenovo/source/repos/SimpleHotelWebsite/Web/MyHotelWebsite.Web/Views/Shared/_SingleDishPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaW5nbGVEaXNoUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/SimpleHotelWebsite/Web/MyHotelWebsite.Web/Views/Shared/_SingleReservationHotelManagementPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaW5nbGVSZXNlcnZhdGlvbkhvdGVsTWFuYWdlbWVudFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/source/repos/SimpleHotelWebsite/Web/MyHotelWebsite.Web/Views/Shared/_SingleReservationPartial.cshtml]

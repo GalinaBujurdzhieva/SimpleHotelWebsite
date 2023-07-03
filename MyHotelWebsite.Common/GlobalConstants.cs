@@ -7,7 +7,7 @@
         // ROLE CONSTANTS
         public const string HotelManagerRoleName = "Manager"; // ACCESS TO ALLCONTROLLERS
 
-        public const string WebsiteAdministratorRoleName = "WebAdministrator";  // ACCESS TO BLOGCONTROLLER & GUESTCOMMENTSCONTROLLER IF THERE IS
+        public const string WebsiteAdministratorRoleName = "WebAdministrator";  // ACCESS TO BLOGCONTROLLER
 
         public const string ReceptionistRoleName = "Receptionist"; // ACCESS TO RESERVATIONSCONTROLLER
 

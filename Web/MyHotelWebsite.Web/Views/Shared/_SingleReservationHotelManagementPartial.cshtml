@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using MyHotelWebsite.Common;
+@using MyHotelWebsite.Data.Models;
+@using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
+@using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
+
+@model HotelAdministrationAllReservationViewModel
+
+@{
+    int i = 1;
+}
+
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Guest Email</th>
+                <th scope="col">Guest Phone Number</th>
+                <th scope="col">Accommodation Date</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">Room Type</th>
+                <th scope="col">Catering</th>
+                <th scope="col">Adults Count</th>
+                <th scope="col">Children Count</th>
+                <th scope="col">Total Price (without food in euro)</th>
+                <th scope="col">See details</th>
+                <th scope="col">Edit Reservation</th>
+                <th scope="col">Delete Reservation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.PageNumber != 1)
+            {
+                i = (Model.PageNumber) * 10 - 9;
+            }
+            @foreach (var reservation in Model.Reservations)
+            {
+                    <tr>
+                        <td>@(i++)</td>
+                        <td>@reservation.ReservationEmail</td>
+                        <td>@reservation.ReservationPhone</td>
+                        <td>@reservation.AccommodationDate.ToShortDateString()</td>
+                        <td>@reservation.ReleaseDate.ToShortDateString()</td>
+                        <td>@reservation.RoomType</td>
+                        <td>@reservation.Catering</td>
+                        <td>@reservation.AdultsCount</td>
+                        <td>@reservation.ChildrenCount</td>
+                        <td>@reservation.TotalPrice.ToString("F2")</td>
+                    <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Reservations" asp-action="Details" asp-route-id="@reservation.Id" class="btn btn-secondary"><i class="fa fa-info" aria-hidden="true"></i></a></td>
+                    <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Reservations" asp-action="Edit" asp-route-id="@reservation.Id" class="btn btn-secondary"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                    <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Reservations" asp-action="Delete" asp-route-id="@reservation.Id" onclick="return confirm('Are you sure you want to delete this reservation?')" class="btn btn-secondary"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</body>

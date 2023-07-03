@@ -32,7 +32,7 @@
             }
 
             const int RoomsPerPage = 12;
-            var model = new RoomAllViewModel
+            var model = new AllRoomViewModel
             {
                 ItemsPerPage = RoomsPerPage,
                 AllEntitiesCount = await this.roomsService.GetCountAsync(),

@@ -4,7 +4,7 @@
 @model EditReservationViewModel
 
 @{
-	this.ViewData["Title"] = "Edit a reservation";
+	this.ViewData["Title"] = "Change reservation";
 }
 
 <body>
@@ -24,14 +24,14 @@
 		<div asp-validation-summary="All" class="text-danger"></div>
 		<input type="hidden" asp-for="@Model.Id" />
 		<div class="text-center mb-3">
-			<label asp-for="Email"></label>
-			<input asp-for="Email" class="form-control" />
-			<span asp-validation-for="Email" class="text-danger"></span>
+			<label asp-for="ReservationEmail"></label>
+			<input asp-for="ReservationEmail" class="form-control" />
+			<span asp-validation-for="ReservationEmail" class="text-danger"></span>
 		</div>
 		<div class="text-center mb-3">
-			<label asp-for="PhoneNumber"></label>
-			<input asp-for="PhoneNumber" class="form-control" />
-			<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+			<label asp-for="ReservationPhone"></label>
+			<input asp-for="ReservationPhone" class="form-control" />
+			<span asp-validation-for="ReservationPhone" class="text-danger"></span>
 		</div>
 		<div class="text-center mb-3">
 			<label asp-for="AccommodationDate"></label>

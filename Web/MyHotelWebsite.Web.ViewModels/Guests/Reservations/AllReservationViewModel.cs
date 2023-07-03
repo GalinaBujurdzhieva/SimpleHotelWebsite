@@ -4,7 +4,7 @@
 
     using MyHotelWebsite.Web.ViewModels.Pagination;
 
-    public class ReservationAllViewModel : PagingAllViewModel
+    public class AllReservationViewModel : PagingAllViewModel
     {
         public IEnumerable<SingleReservationViewModel> Reservations { get; set; } = new List<SingleReservationViewModel>();
     }

@@ -13,9 +13,11 @@
 
     public class AddReservationViewModel : IValidatableObject, IMapFrom<Reservation>
     {
-        public string Email { get; set; }
+        [Display(Name = "Email")]
+        public virtual string ReservationEmail { get; set; }
 
-        public string PhoneNumber { get; set; }
+        [Display(Name = "Phone number")]
+        public virtual string ReservationPhone { get; set; }
 
         [Display(Name = "Check in")]
         [Required]

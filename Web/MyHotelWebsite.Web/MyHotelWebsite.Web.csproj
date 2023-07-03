@@ -11,6 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Reservations\**" />
+    <Content Remove="Views\Reservations\**" />
+    <EmbeddedResource Remove="Views\Reservations\**" />
+    <None Remove="Views\Reservations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Blogs\_SingleBlogPartial.cshtml" />
   </ItemGroup>
 	<ItemGroup>
@@ -62,7 +69,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Reservations\" />
     <Folder Include="wwwroot\images\dishes\alcohol\" />
     <Folder Include="wwwroot\images\dishes\coldDrinks\" />
     <Folder Include="wwwroot\images\dishes\gourme\" />
