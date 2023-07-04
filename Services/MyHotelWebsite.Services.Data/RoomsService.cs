@@ -61,6 +61,28 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
+        public async Task<int> GetAdultsCountAsync(int id)
+        {
+            RoomType roomType = await this.GetRoomTypeByIdAsync(id);
+
+            if (roomType == RoomType.SingleRoom)
+            {
+                return 1;
+            }
+            else if (roomType == RoomType.DoubleRoom)
+            {
+                return 2;
+            }
+            else if (roomType == RoomType.Studio)
+            {
+                return 3;
+            }
+            else
+            {
+                return 4;
+            }
+        }
+
         // USED
         public async Task<IEnumerable<T>> GetAllFreeRoomsAtTheMomentAsync<T>()
         {
@@ -157,6 +179,17 @@
             return await searchRoomsList.CountAsync();
         }
 
+        public async Task<RoomType> GetRoomTypeByIdAsync(int id)
+        {
+            var roomById = await this.roomsRepo.All().AsNoTracking().FirstOrDefaultAsync(r => r.Id == id);
+            if (roomById == null)
+            {
+                throw new System.Exception();
+            }
+
+            return roomById.RoomType;
+        }
+
         // USED
         public async Task LeaveOccupiedRoomsAsync()
         {
@@ -233,6 +266,34 @@
 
             await this.roomsRepo.SaveChangesAsync();
             return roomToBeReserved.Id;
+        }
+
+        public async Task<bool> ReserveRoomByIdAsync(int roomId, DateTime accommodationDate, DateTime releaseDate)
+        {
+            var roomToBeReserved = await this.roomsRepo.All()
+                .Include(r => r.RoomReservations)
+                .ThenInclude(r => r.Reservation)
+                .FirstOrDefaultAsync(r => r.Id == roomId);
+
+            if (roomToBeReserved == null)
+            {
+                throw new System.Exception();
+            }
+            else
+            {
+                bool isRoomFreeForThisPeriodOfTime = !roomToBeReserved.RoomReservations.Any(r =>
+                ((accommodationDate >= r.Reservation.AccommodationDate
+                && accommodationDate <= r.Reservation.ReleaseDate)
+                || (releaseDate >= r.Reservation.AccommodationDate
+                && releaseDate <= r.Reservation.ReleaseDate)));
+
+                if (isRoomFreeForThisPeriodOfTime)
+                {
+                    return true;
+                }
+
+                return false;
+            }
         }
 
         // ?

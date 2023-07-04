@@ -14,11 +14,9 @@
 
         Task<bool> DoesRoomExistAsync(int id);
 
-        Task<int> ReserveRoomAsync(RoomType roomType, DateTime accommodationDate, DateTime releaseDate);
-
-        // Task<int> OccupyRoomAsync()
-
         Task EditRoomAsync(EditRoomViewModel model, int id, string applicationUserId);
+
+        Task<int> GetAdultsCountAsync(int id);
 
         Task<IEnumerable<T>> GetAllFreeRoomsAtTheMomentAsync<T>();
 
@@ -34,11 +32,17 @@
 
         Task<int> GetCountOfRoomsByFourCriteriaAsync(bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0);
 
+        Task<RoomType> GetRoomTypeByIdAsync(int id);
+
         Task LeaveOccupiedRoomsAsync();
 
         Task OccupyRoomsAsync();
 
         Task RemoveIsReservedPropertyOfNotReservedRooms();
+
+        Task<int> ReserveRoomAsync(RoomType roomType, DateTime accommodationDate, DateTime releaseDate);
+
+        Task<bool> ReserveRoomByIdAsync(int roomId, DateTime accommodationDate, DateTime releaseDate);
 
         Task<T> RoomDetailsByIdAsync<T>(int id);
 

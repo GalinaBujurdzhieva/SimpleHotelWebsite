@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-md-2 col-sm-6 col-xs-6">
                         <div id="logo">
-                            @if (signInManager.IsSignedIn(User))
+                            @if (signInManager.IsSignedIn(User) && User.IsInRole(GlobalConstants.GuestRoleName))
                             {
                                 <p><span>Wel </span> come, </p>
                                 <p class="mt-4"><span>@User.Identity.Name</span></p>
@@ -46,9 +46,6 @@
                             }
                             
                         </div>
-                    </div>
-                    <div class="col-sm-6 visible-sm">
-                        <div class="text-right"><button type="button" class="book-now-btn">Register</button></div>
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
                         <nav class="navbar navbar-default">
@@ -67,7 +64,7 @@
                             </div>
                         </nav>
                     </div>
-                    @if (signInManager.IsSignedIn(User))
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole(GlobalConstants.GuestRoleName))
                     {
                         <div class="col-md-12 col-sm-12 col-xs-12 remove-padd">
                             <nav class="navbar navbar-default">
@@ -105,8 +102,9 @@
                     }
                     else
                     {
-                        <div class="col-md-12 contact-form text-center">
+                    <div class="col-md-12 contact-form text-center">
                             <h3>Want to make a reservation? <span>Please, register or just log into your account</span></h3>
+                            <h3>Have in mind: <span>only registered users can <u>reserve a room</u>, <u>edit his reservations</u> and <u>order a dish</u> from our restaurant</span></h3>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 remove-padd">
                             <nav class="navbar navbar-default">
@@ -134,7 +132,9 @@
     </main>
 
     <footer>
-            <div class="btn-toolbar justify-content-center">
+        @if (!User.IsInRole(GlobalConstants.GuestRoleName))
+        {
+        <div class="btn-toolbar justify-content-center">
                 <div class="btn-group mr-1">
                     <div class="contact-form">
                     <h3><span>Administration Area</span></h3>
@@ -152,6 +152,7 @@
                 </div>
             </div>
         </div>
+        }
             
             <div class="copyright">
                 <br />

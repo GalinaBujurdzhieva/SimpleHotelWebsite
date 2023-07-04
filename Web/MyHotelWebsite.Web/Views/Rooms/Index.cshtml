@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity;
+@using MyHotelWebsite.Common;
 @using MyHotelWebsite.Data.Models;
 
 @inject SignInManager<ApplicationUser> signInManager
@@ -20,8 +21,8 @@
                         <div class="gallery-image">
                             <img class="img-responsive" src="~/images/Room-single.png">
                             <div class="overlay">
-                                <a class="info pop example-image-link img-responsive" href="~/images/Room-single-big.png" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                <p>Single room</p>
+                                <a class="info pop example-image-link img-responsive" href="~/images/Room-single-big.png"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                <p style="color:white">Single room Price: @GlobalConstants.SingleRoomPrice euro</p>
                             </div>
                         </div>
                     </div>
@@ -30,7 +31,7 @@
                             <img class="img-responsive" src="~/images/Room-double.png">
                             <div class="overlay">
                                 <a class="info pop example-image-link img-responsive" href="~/images/Room-double-big.png" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                <p>Double room</p>
+                                <p style="color:white">Double room Prices: @GlobalConstants.DoubleRoomAdultsPricePerBed / @GlobalConstants.DoubleRoomChildrenPricePerBed euro</p>
                             </div>
                         </div>
                     </div>
@@ -39,7 +40,7 @@
                             <img class="img-responsive" src="~/images/Room-studio.png">
                             <div class="overlay">
                                 <a class="info pop example-image-link img-responsive" href="~/images/Room-studio-big.png" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                <p>Studio</p>
+                                <p style="color:white">Studio <br /> Prices: @GlobalConstants.StudioAdultsPricePerBed / @GlobalConstants.StudioChildrenPricePerBed euro</p>
                             </div>
                         </div>
                     </div>
@@ -48,7 +49,7 @@
                             <img class="img-responsive" src="~/images/Room-apartment.png">
                             <div class="overlay">
                                 <a class="info pop example-image-link img-responsive" href="~/images/Room-apartment-big.png" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                <p>Apartment</p>
+                                <p style="color:white">Apartment Prices: @GlobalConstants.ApartmentAdultsPricePerBed / @GlobalConstants.ApartmentChildrenPricePerBed euro</p>
                             </div>
                         </div>
                     </div>

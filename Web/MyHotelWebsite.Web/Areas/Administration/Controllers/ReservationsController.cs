@@ -10,7 +10,6 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
-    using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
     [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.ReceptionistRoleName)]
     public class ReservationsController : AdministrationController
@@ -86,7 +85,7 @@
                 return this.View(model);
             }
 
-            return this.RedirectToAction("Index", "Dashboard");
+            return this.RedirectToAction(nameof(this.All));
         }
 
         public async Task<IActionResult> Delete(int id)
@@ -159,6 +158,41 @@
             catch (Exception)
             {
                 this.ModelState.AddModelError(string.Empty, "You can't edit this reservation");
+                return this.View(model);
+            }
+
+            return this.RedirectToAction(nameof(this.All));
+        }
+
+        // ???
+        public async Task<IActionResult> ReserveRoom(int id)
+        {
+            var model = new HotelAdministrationAddReservationViewModel()
+            {
+                AccommodationDate = DateTime.UtcNow,
+                ReleaseDate = DateTime.UtcNow.AddDays(1),
+                RoomType = await this.roomsService.GetRoomTypeByIdAsync(id),
+                AdultsCount = await this.roomsService.GetAdultsCountAsync(id),
+            };
+            return this.View(model);
+        }
+
+        // ??? NOT IMPLEMENTED
+        [HttpPost]
+        public async Task<IActionResult> ReserveRoom(HotelAdministrationAddReservationViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            try
+            {
+                await this.reservationsService.HotelAdministrationCreateReservationAsync(model);
+            }
+            catch (Exception)
+            {
+                this.ModelState.AddModelError(string.Empty, "There are no free rooms for this period of time");
                 return this.View(model);
             }
 
