@@ -148,6 +148,38 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
+        public async Task<List<object>> FillPdf(int id)
+        {
+            var currentReservation = await this.reservationsRepo.All()
+               .Include(r => r.RoomReservations)
+               .ThenInclude(r => r.Room)
+               .FirstOrDefaultAsync(x => x.Id == id);
+
+            List<object> data = new List<object>();
+            object row1 = new { ID = "Reservation", Name = "# " + currentReservation.Id };
+            object row2 = new { ID = "Phone Number", Name = currentReservation.ReservationPhone };
+            object row3 = new { ID = "Email", Name = currentReservation.ReservationEmail };
+            object row4 = new { ID = "Accommodation Date", Name = currentReservation.AccommodationDate.ToString("dd/MM/yyyy") };
+            object row5 = new { ID = "Release Date", Name = currentReservation.ReleaseDate.ToString("dd/MM/yyyy") };
+            object row6 = new { ID = "Adults Count", Name = currentReservation.AdultsCount };
+            object row7 = new { ID = "Children Count", Name = currentReservation.ChildrenCount ?? 0 };
+            object row8 = new { ID = "Room Type", Name = currentReservation.RoomType };
+            object row9 = new { ID = "Catering", Name = currentReservation.Catering };
+            object row10 = new { ID = "Total Price", Name = currentReservation.TotalPrice.ToString("F2") + " euro"};
+
+            data.Add(row1);
+            data.Add(row2);
+            data.Add(row3);
+            data.Add(row4);
+            data.Add(row5);
+            data.Add(row6);
+            data.Add(row7);
+            data.Add(row8);
+            data.Add(row9);
+            data.Add(row10);
+            return data;
+        }
+
         public async Task<int> GetCountAsync()
         {
             return await this.reservationsRepo.AllAsNoTracking().CountAsync();

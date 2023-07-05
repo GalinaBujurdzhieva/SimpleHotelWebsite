@@ -27,6 +27,7 @@
                 <th scope="col">See details</th>
                 <th scope="col">Edit Reservation</th>
                 <th scope="col">Delete Reservation</th>
+                <th scope="col">Get Pdf</th>
             </tr>
         </thead>
         <tbody>
@@ -50,6 +51,11 @@
                     <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Reservations" asp-action="Details" asp-route-id="@reservation.Id" class="btn btn-secondary"><i class="fa fa-info" aria-hidden="true"></i></a></td>
                     <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Reservations" asp-action="Edit" asp-route-id="@reservation.Id" class="btn btn-secondary"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                     <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Reservations" asp-action="Delete" asp-route-id="@reservation.Id" onclick="return confirm('Are you sure you want to delete this reservation?')" class="btn btn-secondary"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                    <td>
+                        <form method="get">
+                            <button type="submit" class="btn btn-secondary" asp-area="Administration" asp-controller="Reservations" asp-action="CreatePdfDocument" asp-route-id="@reservation.Id"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></button>
+                        </form>
+                    </td>
                     </tr>
             }
         </tbody>

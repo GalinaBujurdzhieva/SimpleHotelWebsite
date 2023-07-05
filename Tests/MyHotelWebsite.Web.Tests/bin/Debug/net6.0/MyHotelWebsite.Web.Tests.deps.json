@@ -2728,6 +2728,44 @@
         }
       },
       "StyleCop.Analyzers.Unstable/1.2.0.435": {},
+      "Syncfusion.Compression.Net.Core/22.1.37": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Compression.Portable.dll": {
+            "assemblyVersion": "22.1.37.0",
+            "fileVersion": "22.1.37.0"
+          }
+        },
+        "compile": {
+          "lib/net6.0/Syncfusion.Compression.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/22.1.37": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "22.1.37.0",
+            "fileVersion": "22.1.37.0"
+          }
+        },
+        "compile": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Pdf.Net.Core/22.1.37": {
+        "dependencies": {
+          "Syncfusion.Compression.Net.Core": "22.1.37",
+          "Syncfusion.Licensing": "22.1.37",
+          "System.Text.Encoding.CodePages": "4.7.0"
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Pdf.Portable.dll": {
+            "assemblyVersion": "22.1.37.0",
+            "fileVersion": "22.1.37.0"
+          }
+        },
+        "compile": {
+          "lib/net6.0/Syncfusion.Pdf.Portable.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -3748,7 +3786,8 @@
           "MyHotelWebsite.Services.Mapping": "1.0.0",
           "MyHotelWebsite.Services.Messaging": "1.0.0",
           "MyHotelWebsite.Web.Infrastructure": "1.0.0",
-          "MyHotelWebsite.Web.ViewModels": "1.0.0"
+          "MyHotelWebsite.Web.ViewModels": "1.0.0",
+          "Syncfusion.Pdf.Net.Core": "22.1.37"
         },
         "runtime": {
           "MyHotelWebsite.Web.dll": {}
@@ -6508,6 +6547,27 @@
       "sha512": "sha512-ouwPWZxbOV3SmCZxIRqHvljkSzkCyi1tDoMzQtDb/bRP8ctASV/iRJr+A2Gdj0QLaLmWnqTWDrH82/iP+X80Lg==",
       "path": "stylecop.analyzers.unstable/1.2.0.435",
       "hashPath": "stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Net.Core/22.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fwIUffKg7CtU/7R76zvesuqX0smjxfsL5Wcb4ut+PXOYuI0CKTtBNmn7qqi6JrdgrCs0vVfKlEVCqXuooWjPAQ==",
+      "path": "syncfusion.compression.net.core/22.1.37",
+      "hashPath": "syncfusion.compression.net.core.22.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/22.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HP5qCjGBp/HUUuSBjD7Wrxq5MhCjws8RSia3SQiw49D/kEAhVmXVVZjY8zQYuDjqhyz32WlZb8eBi/9z+7bkNA==",
+      "path": "syncfusion.licensing/22.1.37",
+      "hashPath": "syncfusion.licensing.22.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Net.Core/22.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O5CU1biskfqFKWKFV5D6rXKSr4OIOeAztvEhO3xnmpa+4YXl2HqO+uOKnh+Tmh3CVOZdtFkfyS43v6i2CaQItA==",
+      "path": "syncfusion.pdf.net.core/22.1.37",
+      "hashPath": "syncfusion.pdf.net.core.22.1.37.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

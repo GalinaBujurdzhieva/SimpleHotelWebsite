@@ -18,6 +18,8 @@
 
         Task EditReservationAsync(EditReservationViewModel model, int id, string applicationUserId);
 
+        Task<List<object>> FillPdf(int id);
+
         Task<int> GetCountAsync();
 
         Task<int> GetCountOfMyReservationsAsync(string applicationUserId);

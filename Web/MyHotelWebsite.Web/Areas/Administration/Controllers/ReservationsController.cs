@@ -1,6 +1,8 @@
 ﻿namespace MyHotelWebsite.Web.Areas.Administration.Controllers
 {
     using System;
+    using System.Collections.Generic;
+    using System.IO;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Authorization;
@@ -10,6 +12,8 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
+    using Syncfusion.Pdf.Grid;
+    using Syncfusion.Pdf;
 
     [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.ReceptionistRoleName)]
     public class ReservationsController : AdministrationController
@@ -164,7 +168,47 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
-        // ???
+        public async Task <IActionResult> CreatePdfDocument(int id)
+        {
+            // Generate a new PDF document.
+            PdfDocument doc = new PdfDocument();
+
+            // Add a page.
+            PdfPage page = doc.Pages.Add();
+
+            // Create a PdfGrid.
+            PdfGrid pdfGrid = new PdfGrid();
+
+            // Add list to IEnumerable.
+            IEnumerable<object> dataTable = await this.reservationsService.FillPdf(id);
+
+            // Assign data source.
+            pdfGrid.DataSource = dataTable;
+
+            // Draw grid to the page of PDF document.
+            pdfGrid.Draw(page, new Syncfusion.Drawing.PointF(10, 10));
+
+            // Write the PDF document to stream.
+            MemoryStream stream = new MemoryStream();
+            doc.Save(stream);
+
+            // If the position is not set to '0' then the PDF will be empty.
+            stream.Position = 0;
+
+            // Close the document.
+            doc.Close(true);
+
+            // Defining the ContentType for pdf file.
+            string contentType = "application/pdf";
+
+            // Define the file name.
+            string fileName = "Reservation.pdf";
+
+            // Creates a FileContentResult object by using the file contents, content type, and file name.
+            return this.File(stream, contentType, fileName);
+        }
+
+        // ??? NOT IMPLEMENTED
         public async Task<IActionResult> ReserveRoom(int id)
         {
             var model = new HotelAdministrationAddReservationViewModel()
