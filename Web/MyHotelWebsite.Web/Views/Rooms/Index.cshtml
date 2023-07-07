@@ -62,14 +62,14 @@
             <div class="container justify-content-center">
                 <div class="h-100 d-flex align-items-center justify-content-center">
                     <ul class="list-unstyled nav1 cl-effect-10">
-                    @if (signInManager.IsSignedIn(User))
-                    {
-                         <li><a data-hover="Book a room" class="active" asp-area="Guest" asp-controller="Reservations" asp-action="Book"><span>Book a room</span></a></li>
-                    }
-                    else
-                    {
+                        @if (signInManager.IsSignedIn(User))
+                        {
                             <li><a data-hover="Book a room" class="active" asp-area="Guest" asp-controller="Reservations" asp-action="Book"><span>Book a room</span></a></li>
-                    }
+                        }
+                        else
+                        {
+                            <li><a data-hover="Book a room" class="active" asp-area="Guest" asp-controller="Reservations" asp-action="Book"><span>Book a room</span></a></li>
+                        }
                     </ul>
                 </div>
             </div>

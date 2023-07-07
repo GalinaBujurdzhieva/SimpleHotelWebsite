@@ -40,6 +40,8 @@
 
         Task<T> HotelAdministrationReservationDetailsByIdAsync<T>(int id);
 
+        Task HotelAdministrationReserveRoomAsync(HotelAdministrationReserveRoomViewModel model, int id);
+
         Task<bool> IsReservationActiveAtTheMoment(int id);
 
         Task<T> ReservationDetailsByIdAsync<T>(int id);

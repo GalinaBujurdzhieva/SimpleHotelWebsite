@@ -14,6 +14,7 @@
     using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
     using Syncfusion.Pdf.Grid;
     using Syncfusion.Pdf;
+    using MyHotelWebsite.Data.Models.Enums;
 
     [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.ReceptionistRoleName)]
     public class ReservationsController : AdministrationController
@@ -168,53 +169,31 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
-        public async Task <IActionResult> CreatePdfDocument(int id)
+        public async Task<IActionResult> CreatePdfDocument(int id)
         {
-            // Generate a new PDF document.
             PdfDocument doc = new PdfDocument();
-
-            // Add a page.
             PdfPage page = doc.Pages.Add();
-
-            // Create a PdfGrid.
             PdfGrid pdfGrid = new PdfGrid();
-
-            // Add list to IEnumerable.
             IEnumerable<object> dataTable = await this.reservationsService.FillPdf(id);
-
-            // Assign data source.
             pdfGrid.DataSource = dataTable;
-
-            // Draw grid to the page of PDF document.
             pdfGrid.Draw(page, new Syncfusion.Drawing.PointF(10, 10));
-
-            // Write the PDF document to stream.
             MemoryStream stream = new MemoryStream();
             doc.Save(stream);
-
-            // If the position is not set to '0' then the PDF will be empty.
             stream.Position = 0;
-
-            // Close the document.
             doc.Close(true);
-
-            // Defining the ContentType for pdf file.
             string contentType = "application/pdf";
-
-            // Define the file name.
             string fileName = "Reservation.pdf";
-
-            // Creates a FileContentResult object by using the file contents, content type, and file name.
             return this.File(stream, contentType, fileName);
         }
 
-        // ??? NOT IMPLEMENTED
+        // USED
         public async Task<IActionResult> ReserveRoom(int id)
         {
-            var model = new HotelAdministrationAddReservationViewModel()
+            var model = new HotelAdministrationReserveRoomViewModel()
             {
                 AccommodationDate = DateTime.UtcNow,
                 ReleaseDate = DateTime.UtcNow.AddDays(1),
+                RoomId = id,
                 RoomType = await this.roomsService.GetRoomTypeByIdAsync(id),
                 AdultsCount = await this.roomsService.GetAdultsCountAsync(id),
             };
@@ -223,8 +202,11 @@
 
         // ??? NOT IMPLEMENTED
         [HttpPost]
-        public async Task<IActionResult> ReserveRoom(HotelAdministrationAddReservationViewModel model)
+        public async Task<IActionResult> ReserveRoom(HotelAdministrationReserveRoomViewModel model, int id)
         {
+            model.RoomId = id;
+            model.RoomType = await this.roomsService.GetRoomTypeByIdAsync(id);
+
             if (!this.ModelState.IsValid)
             {
                 return this.View(model);
@@ -232,11 +214,11 @@
 
             try
             {
-                await this.reservationsService.HotelAdministrationCreateReservationAsync(model);
+                await this.reservationsService.HotelAdministrationReserveRoomAsync(model, id);
             }
             catch (Exception)
             {
-                this.ModelState.AddModelError(string.Empty, "There are no free rooms for this period of time");
+                this.ModelState.AddModelError(string.Empty, "The room is occupied for this period of time");
                 return this.View(model);
             }
 

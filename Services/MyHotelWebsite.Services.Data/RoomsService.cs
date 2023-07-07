@@ -16,8 +16,9 @@
     public class RoomsService : IRoomsService
     {
         private readonly IDeletableEntityRepository<Room> roomsRepo;
-        private readonly IRepository<RoomReservation> roomsReservationsRepo;
-        private readonly IDeletableEntityRepository<Reservation> reservationsRepo;
+
+        // private readonly IRepository<RoomReservation> roomsReservationsRepo;
+        // private readonly IDeletableEntityRepository<Reservation> reservationsRepo;
 
         public RoomsService(IDeletableEntityRepository<Room> roomsRepo/*, IRepository<RoomReservation> roomsReservationsRepo, IDeletableEntityRepository<Reservation> reservationsRepo*/)
         {
@@ -61,6 +62,7 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
+        // USED
         public async Task<int> GetAdultsCountAsync(int id)
         {
             RoomType roomType = await this.GetRoomTypeByIdAsync(id);
@@ -113,7 +115,7 @@
             return freeRoomsForACertainPeriodOfTime;
         }
 
-        // ?
+        // USED
         public async Task<IEnumerable<T>> GetAllRoomsAsync<T>(int page, int itemsPerPage = 4)
         {
             var rooms = await this.roomsRepo.AllAsNoTracking()
@@ -145,13 +147,13 @@
             return roomsByRoomType;
         }
 
-        // ?
+        // USED
         public async Task<int> GetCountAsync()
         {
             return await this.roomsRepo.AllAsNoTracking().CountAsync();
         }
 
-        // NO
+        // USED
         public async Task<int> GetCountOfRoomsByFourCriteriaAsync(bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0)
         {
             var searchRoomsList = this.roomsRepo.AllAsNoTracking().AsQueryable();
@@ -179,6 +181,7 @@
             return await searchRoomsList.CountAsync();
         }
 
+        // USED
         public async Task<RoomType> GetRoomTypeByIdAsync(int id)
         {
             var roomById = await this.roomsRepo.All().AsNoTracking().FirstOrDefaultAsync(r => r.Id == id);
@@ -223,6 +226,7 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
+        // USED
         public async Task RemoveIsReservedPropertyOfNotReservedRooms()
         {
             var notReservedRooms = await this.roomsRepo.All()
@@ -289,6 +293,8 @@
 
                 if (isRoomFreeForThisPeriodOfTime)
                 {
+                    roomToBeReserved.IsReserved = true;
+                    await this.roomsRepo.SaveChangesAsync();
                     return true;
                 }
 
@@ -296,7 +302,7 @@
             }
         }
 
-        // ?
+        // USED
         public async Task<T> RoomDetailsByIdAsync<T>(int id)
         {
             var currentRoom = await this.roomsRepo.AllAsNoTracking()
@@ -306,7 +312,7 @@
             return currentRoom;
         }
 
-        // ?
+        // USED
         public async Task<IEnumerable<T>> SearchRoomsByFourCriteriaAsync<T>(int page, bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0, int itemsPerPage = 4)
         {
             var searchRoomsList = this.roomsRepo.AllAsNoTracking().AsQueryable();
