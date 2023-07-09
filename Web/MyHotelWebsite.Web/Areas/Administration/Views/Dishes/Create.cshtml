@@ -5,8 +5,6 @@
 @{
     this.ViewData["Title"] = "Add new dish";
 }
-
-<body>
     <form method="post" class="col-md-6 offset-md-3"
           enctype="multipart/form-data">
         <div class="text-center mb-3">
@@ -25,7 +23,9 @@
         </div>
         <div class="text-center mb-3">
             <label asp-for="DishCategory">Dish Category</label>
-            <select class="form-select" asp-for="DishCategory" asp-items="@Html.GetEnumSelectList<DishCategory>()" style="font-size:medium"></select>
+            <select class="form-select" asp-for="DishCategory" asp-items="@Html.GetEnumSelectList<DishCategory>()" style="font-size:medium">
+            <option disabled selected class="text-danger">Please, select Dish type from the list below:</option>
+            </select>
         </div>
         <div class="text-center mb-3">
             <label asp-for="QuantityInStock">Quantity in Stock</label>
@@ -41,4 +41,7 @@
             <input type="submit" class="btn btn-danger" />
         </div>
     </form>
-</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

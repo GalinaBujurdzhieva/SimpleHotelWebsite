@@ -64,42 +64,6 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
-        public async Task<IActionResult> Edit(int id)
-        {
-            if (!await this.roomsService.DoesRoomExistAsync(id))
-            {
-                return this.RedirectToAction(nameof(this.All));
-            }
-
-            var model = await this.roomsService.RoomDetailsByIdAsync<EditRoomViewModel>(id);
-            this.DropDownReBind();
-            return this.View(model);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Edit(int id, EditRoomViewModel model)
-        {
-            if (!this.ModelState.IsValid)
-            {
-                return this.View(model);
-            }
-
-            var staffId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            try
-            {
-                await this.roomsService.EditRoomAsync(model, id, staffId);
-                this.TempData["Message"] = "Room edited successfully.";
-            }
-            catch (Exception)
-            {
-                this.ModelState.AddModelError(string.Empty, "Could not edit this room");
-                return this.View(model);
-            }
-
-            return this.RedirectToAction(nameof(this.All));
-        }
-
         public IActionResult Search()
         {
             this.DropDownReBind();

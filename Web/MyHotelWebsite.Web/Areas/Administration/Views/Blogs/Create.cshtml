@@ -4,7 +4,6 @@
     this.ViewData["Title"] = "Add new blog";
    
 }
-    <body>
 <form method="post" class="col-md-6 offset-md-3"
      enctype="multipart/form-data">
     <div class="text-center mb-3">
@@ -18,7 +17,7 @@
     </div>
     <div class="text-center mb-3">
         <label asp-for="Content"></label>
-        <textarea asp-for="Content" class="form-control" rows="5"></textarea>
+        <textarea id="myTextArea" asp-for="Content" class="form-control" rows="5"></textarea>
         <span asp-validation-for="Content" class="text-danger"></span>
     </div>
     <div class="text-center mb-3">
@@ -30,6 +29,22 @@
     <input type="submit" class="btn btn-danger" />
     </div>
 </form>
-</body>
+
+@section Scripts {
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
+            ]
+        });
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}
 
 

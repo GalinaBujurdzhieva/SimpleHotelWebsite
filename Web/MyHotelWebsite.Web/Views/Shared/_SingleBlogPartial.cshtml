@@ -1,10 +1,12 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Hosting;
+@using Microsoft.AspNetCore.Identity
 @using MyHotelWebsite.Common
 @using MyHotelWebsite.Data.Models
 @using MyHotelWebsite.Web.ViewModels.Blogs
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@inject IWebHostEnvironment environment
 
 @model AllBlogViewModel
 
@@ -17,7 +19,7 @@
                 <div class="view-set-block">
                     <div class="col-md-5 col-sm-5 col-xs-12">
                         <div class="event-blog-image">
-                            <img alt="Blog image" class="img-responsive" src="@("https://localhost:5001/" + @blog.BlogImageUrl)">
+                                <img alt="@blog.Title" class="img-responsive" src="@("https://localhost:5001/" + @blog.BlogImageUrl)">
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12 side-in-image">

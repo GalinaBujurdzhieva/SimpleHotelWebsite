@@ -7,7 +7,6 @@
 	this.ViewData["Title"] = "Change reservation";
 }
 
-<body>
 	<form method="post" class="col-md-6 offset-md-3">
 		<div class="text-center mb-3">
 			<h1>@this.ViewData["Title"]</h1>
@@ -49,17 +48,20 @@
 		<div class="text-center mb-3">
 			<label asp-for="RoomType"></label>
 			<select class="form-select" asp-for="RoomType" asp-items="@Html.GetEnumSelectList<RoomType>()" style="font-size:medium">
-				<option class="text-danger">Please, select Room type from the list below:</option>
+			<option disabled selected class="text-danger">Please, select Room type from the list below:</option>
 			</select>
 		</div>
 		<div class="text-center mb-3">
 			<label asp-for="Catering"></label>
 			<select class="form-select" asp-for="Catering" asp-items="@Html.GetEnumSelectList<Catering>()" style="font-size:medium">
-				<option class="text-danger">Please, select type of Catering from the list below:</option>
+			<option disabled selected class="text-danger">Please, select type of Catering from the list below:</option>
 			</select>
 		</div>
 		<div class="text-center mb-3">
 			<input type="submit" class="btn btn-danger" value="Edit" />
 		</div>
 	</form>
-</body>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}

@@ -6,6 +6,7 @@
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Common;
     using MyHotelWebsite.Services.Data;
@@ -93,7 +94,7 @@
             return this.View(model);
         }
 
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(int id, IFormFile? file)
         {
             if (!await this.blogService.DoesBlogExistsAsync(id))
             {

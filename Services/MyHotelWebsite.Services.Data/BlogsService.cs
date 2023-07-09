@@ -42,7 +42,7 @@
 
             blog.BlogImage = blogImage;
             blog.BlogImageId = blogImage.Id;
-            blog.BlogImageUrl = $"images/blogs/{blogImage.Id}.{blogImageExtension}";
+            blog.BlogImageUrl = $"/images/blogs/{blogImage.Id}.{blogImageExtension}";
             var physicalPath = $"{imagePath}/blogs/{blogImage.Id}.{blogImageExtension}";
             using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
             await model.Image.CopyToAsync(fileStream);

@@ -52,17 +52,6 @@
         }
 
         // USED
-        public async Task EditRoomAsync(EditRoomViewModel model, int id, string applicationUserId)
-        {
-            var currentRoom = await this.roomsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
-            currentRoom.AdultPrice = model.AdultPrice;
-            currentRoom.ChildrenPrice = model.ChildrenPrice;
-            currentRoom.ApplicationUserId = applicationUserId;
-
-            await this.roomsRepo.SaveChangesAsync();
-        }
-
-        // USED
         public async Task<int> GetAdultsCountAsync(int id)
         {
             RoomType roomType = await this.GetRoomTypeByIdAsync(id);
@@ -300,16 +289,6 @@
 
                 return false;
             }
-        }
-
-        // USED
-        public async Task<T> RoomDetailsByIdAsync<T>(int id)
-        {
-            var currentRoom = await this.roomsRepo.AllAsNoTracking()
-                .Where(x => x.Id == id)
-                .To<T>()
-                .FirstOrDefaultAsync();
-            return currentRoom;
         }
 
         // USED
