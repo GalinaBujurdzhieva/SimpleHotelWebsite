@@ -94,7 +94,7 @@
             return this.View(model);
         }
 
-        public async Task<IActionResult> Edit(int id, IFormFile? file)
+        public async Task<IActionResult> Edit(int id)
         {
             if (!await this.blogService.DoesBlogExistsAsync(id))
             {
@@ -102,11 +102,12 @@
             }
 
             var model = await this.blogService.BlogDetailsByIdAsync<EditBlogViewModel>(id);
+            // model.Image = (IFormFile)await this.blogService.BlogImageByBlogIdAsync(id);
             return this.View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, EditBlogViewModel model)
+        public async Task<IActionResult> Edit(int id, EditBlogViewModel model, IFormFile? file)
         {
             if (!this.ModelState.IsValid)
             {
@@ -116,7 +117,7 @@
             var staffId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             try
             {
-                await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
+                await this.blogService.EditBlogAsync(model, id, staffId, $"{this.environment.WebRootPath}/images", file);
                 this.TempData["Message"] = "Blog changed successfully.";
             }
             catch (Exception)

@@ -21,5 +21,7 @@
 
         [AllowedExtensions(new string[] { ".jpg", ".png" }, ErrorMessage = "Selected file is not an image.")]
         public IFormFile Image { get; set; }
+
+        public string BlogImageUrl { get; set; }
     }
 }

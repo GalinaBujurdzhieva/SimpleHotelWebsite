@@ -4,14 +4,16 @@
     this.ViewData["Title"] = "Edit this blog";
 
 }
-
-    <form method="post" class="col-md-6 offset-md-3"
+<div class="row">
+    <div class="col-10">
+    <form method="post" class="col-md-10"
           enctype="multipart/form-data">
         <div class="text-center mb-3">
             <h1>@this.ViewData["Title"]</h1>
         </div>
         <div asp-validation-summary="All" class="text-danger"></div>
         <input type="hidden" asp-for="@Model.Id" />
+        @*<input type="hidden" asp-for="@Model.BlogImageUrl" />*@
         <div class="text-center mb-3">
             <label asp-for="Title"></label>
             <input asp-for="Title" class="form-control" />
@@ -23,14 +25,25 @@
             <span asp-validation-for="Content" class="text-danger"></span>
         </div>
         <div class="text-center mb-3">
-            <label asp-for="Image"></label>
-            <input asp-for="Image" class="form-control" />
+            <label asp-for="BlogImageUrl"></label>
+            <input type="file" name="file" asp-for="Image" class="form-control" />
             <span asp-validation-for="Image" class="text-danger"></span>
         </div>
         <div class="text-center">
             <input type="submit" class="btn btn-danger" />
         </div>
     </form>
+    </div>
+
+<div class="col-2 mt-auto mb-auto">
+    <img alt="@Model.Title" class="img-responsive" src="@("https://localhost:5001/" + @Model.BlogImageUrl)">
+</div>
+</div>
+
+   @* <div class="col-2">
+    <img class="img-responsive" type="file" name="file" scr="@("https://localhost:5001/" + Model.BlogImageUrl)" style="width:100%; border-radius:5px; border:1px solid black" />
+    <p>@Model.BlogImageUrl</p>
+    </div>*@
 
 @section Scripts {
     <script>

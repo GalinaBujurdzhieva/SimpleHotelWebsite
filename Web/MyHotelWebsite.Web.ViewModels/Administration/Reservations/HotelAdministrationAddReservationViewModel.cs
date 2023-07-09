@@ -1,4 +1,4 @@
-﻿namespace MyHotelWebsite.Web.ViewModels.Administration.Reservations
+﻿ namespace MyHotelWebsite.Web.ViewModels.Administration.Reservations
 {
     using System.ComponentModel.DataAnnotations;
 

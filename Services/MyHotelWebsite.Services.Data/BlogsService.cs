@@ -4,7 +4,7 @@
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Http;
     using Microsoft.EntityFrameworkCore;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
@@ -54,10 +54,18 @@
         public async Task<T> BlogDetailsByIdAsync<T>(int id)
         {
             var currentBlog = await this.blogsRepo.AllAsNoTracking()
+                .Include(b => b.BlogImage)
                 .Where(x => x.Id == id)
                 .To<T>()
                 .FirstOrDefaultAsync();
+
             return currentBlog;
+        }
+
+        public async Task<BlogImage> BlogImageByBlogIdAsync(int id)
+        {
+            var currentBlogImage = await this.blogImagesRepo.All().FirstOrDefaultAsync(x => x.BlogId == id);
+            return currentBlogImage;
         }
 
         public async Task DeleteBlogAsync(int id)
@@ -72,34 +80,52 @@
             return await this.blogsRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
         }
 
-        public async Task EditBlogAsync(EditBlogViewModel model, int id, string applicationUserId, string imagePath)
+        public async Task EditBlogAsync(EditBlogViewModel model, int id, string applicationUserId, string imagePath, IFormFile file)
         {
-            var currentBlog = await this.blogsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            var currentBlog = await this.blogsRepo.All()
+                .Include(b => b.BlogImage)
+                .FirstOrDefaultAsync(x => x.Id == id);
             currentBlog.Title = model.Title;
             currentBlog.Content = model.Content;
-
             var currentBlogImage = await this.blogImagesRepo.All().FirstOrDefaultAsync(x => x.BlogId == currentBlog.Id);
-            if (currentBlogImage != null)
-            {
-                this.blogImagesRepo.HardDelete(currentBlogImage);
-            }
-
             currentBlog.ApplicationUserId = applicationUserId;
 
-            Directory.CreateDirectory($"{imagePath}/blogs/");
-            var blogImageExtension = Path.GetExtension(model.Image.FileName).TrimStart('.');
-
-            var blogImage = new BlogImage
+            if (file != null)
             {
-                Extension = blogImageExtension,
-                ApplicationUserId = applicationUserId,
-            };
-            currentBlog.BlogImage = blogImage;
-            currentBlog.BlogImageId = blogImage.Id;
-            currentBlog.BlogImageUrl = $"images/blogs/{blogImage.Id}.{blogImageExtension}";
-            var physicalPath = $"{imagePath}/blogs/{blogImage.Id}.{blogImageExtension}";
-            using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
-            await model.Image.CopyToAsync(fileStream);
+                var oldBlogImagePhysicalPath = $"{imagePath}/blogs/{currentBlogImage.Id}.{currentBlogImage.Extension}";
+
+                if (currentBlogImage != null)
+                {
+                    this.blogImagesRepo.HardDelete(currentBlogImage);
+                }
+
+                if (File.Exists(oldBlogImagePhysicalPath))
+                {
+                    File.Delete(oldBlogImagePhysicalPath);
+                }
+
+                Directory.CreateDirectory($"{imagePath}/blogs/");
+                var blogImageExtension = Path.GetExtension(file.FileName).TrimStart('.');
+
+                var blogImage = new BlogImage
+                {
+                    Extension = blogImageExtension,
+                    ApplicationUserId = applicationUserId,
+                };
+                currentBlog.BlogImage = blogImage;
+                currentBlog.BlogImageId = blogImage.Id;
+                currentBlog.BlogImageUrl = $"images/blogs/{blogImage.Id}.{blogImageExtension}";
+                var physicalPath = $"{imagePath}/blogs/{blogImage.Id}.{blogImageExtension}";
+                using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
+                await file.CopyToAsync(fileStream);
+            }
+            else
+            {
+                currentBlog.BlogImage = currentBlogImage;
+                currentBlog.BlogImageId = currentBlogImage.Id;
+                currentBlog.BlogImageUrl = currentBlog.BlogImageUrl;
+            }
+
             await this.blogsRepo.SaveChangesAsync();
         }
 

@@ -4,6 +4,8 @@
 
     using Microsoft.AspNetCore.Http;
     using MyHotelWebsite.Common.CustomValidationAttributes;
+    using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Services.Mapping;
 
     public class CreateBlogViewModel
     {
@@ -17,5 +19,7 @@
 
         [AllowedExtensions(new string[] { ".jpg", ".png" }, ErrorMessage = "Selected file is not an image.")]
         public IFormFile Image { get; set; }
+
+        public string BlogImageUrl { get; set; }
     }
 }
