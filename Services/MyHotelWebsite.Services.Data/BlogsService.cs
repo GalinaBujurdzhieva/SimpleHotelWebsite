@@ -62,12 +62,6 @@
             return currentBlog;
         }
 
-        public async Task<BlogImage> BlogImageByBlogIdAsync(int id)
-        {
-            var currentBlogImage = await this.blogImagesRepo.All().FirstOrDefaultAsync(x => x.BlogId == id);
-            return currentBlogImage;
-        }
-
         public async Task DeleteBlogAsync(int id)
         {
             var currentBlog = await this.blogsRepo.All().FirstOrDefaultAsync(x => x.Id == id);

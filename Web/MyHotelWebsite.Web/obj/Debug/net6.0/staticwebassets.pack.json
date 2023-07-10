@@ -457,6 +457,10 @@
       "PackagePath": "staticwebassets\\images\\blogs\\5.png"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\5b37ff95-a875-4d5d-ad95-d6ef099b948b.jpg",
+      "PackagePath": "staticwebassets\\images\\blogs\\5b37ff95-a875-4d5d-ad95-d6ef099b948b.jpg"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\6.png",
       "PackagePath": "staticwebassets\\images\\blogs\\6.png"
     },
@@ -471,10 +475,6 @@
     {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\9.png",
       "PackagePath": "staticwebassets\\images\\blogs\\9.png"
-    },
-    {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\f3691510-3a9a-444d-a25b-0f5ae5077f0d.jpg",
-      "PackagePath": "staticwebassets\\images\\blogs\\f3691510-3a9a-444d-a25b-0f5ae5077f0d.jpg"
     },
     {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\client1.png",
@@ -663,6 +663,10 @@
     {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Soda.png",
       "PackagePath": "staticwebassets\\images\\dishes\\coldDrinks\\Soda.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\3207e0d9-3831-4d8c-9bc1-96cbb94db00e.jpg",
+      "PackagePath": "staticwebassets\\images\\dishes\\desserts\\3207e0d9-3831-4d8c-9bc1-96cbb94db00e.jpg"
     },
     {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Banana_pudding.png",

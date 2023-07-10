@@ -4,7 +4,7 @@
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Http;
     using Microsoft.EntityFrameworkCore;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
@@ -33,7 +33,7 @@
                 QuantityInStock = model.QuantityInStock,
                 ApplicationUserId = applicationUserId,
             };
-            Directory.CreateDirectory($"{imagePath}/dishes/addedLater");
+            Directory.CreateDirectory($"{imagePath}/dishes/{dish.DishCategory}");
             var dishImageExtension = Path.GetExtension(model.Image.FileName).TrimStart('.');
 
             var dishImage = new DishImage
@@ -44,8 +44,8 @@
 
             dish.DishImage = dishImage;
             dish.DishImageId = dishImage.Id;
-            dish.DishImageUrl = $"images/dishes/addedLater/{dishImage.Id}.{dishImageExtension}";
-            var physicalPath = $"{imagePath}/dishes/addedLater/{dishImage.Id}.{dishImageExtension}";
+            dish.DishImageUrl = $"images/dishes/{dish.DishCategory}/{dishImage.Id}.{dishImageExtension}";
+            var physicalPath = $"{imagePath}/dishes/{dish.DishCategory}/{dishImage.Id}.{dishImageExtension}";
             using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
             await model.Image.CopyToAsync(fileStream);
 
@@ -63,6 +63,7 @@
         public async Task<T> DishDetailsByIdAsync<T>(string id)
         {
             var currentDish = await this.dishesRepo.AllAsNoTracking()
+                .Include(d => d.DishImage)
                  .Where(x => x.Id == id)
                  .To<T>()
                  .FirstOrDefaultAsync();
@@ -74,37 +75,52 @@
             return await this.dishesRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
         }
 
-        public async Task EditDishAsync(EditDishViewModel model, string id, string applicationUserId, string imagePath)
+        public async Task EditDishAsync(EditDishViewModel model, string id, string applicationUserId, string imagePath, IFormFile? file)
         {
-            var currentDish = await this.dishesRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            var currentDish = await this.dishesRepo.All().Include(d => d.DishImage).FirstOrDefaultAsync(x => x.Id == id);
             currentDish.Name = model.Name;
             currentDish.Price = model.Price;
             currentDish.DishCategory = model.DishCategory;
             currentDish.QuantityInStock = model.QuantityInStock;
 
             var currentDishImage = await this.dishImagesRepo.All().FirstOrDefaultAsync(x => x.DishId == currentDish.Id);
-            if (currentDishImage != null)
-            {
-                this.dishImagesRepo.HardDelete(currentDishImage);
-            }
-
             currentDish.ApplicationUserId = applicationUserId;
 
-            Directory.CreateDirectory($"{imagePath}/dishes/addedLater");
-            var dishImageExtension = Path.GetExtension(model.Image.FileName).TrimStart('.');
-
-            var dishImage = new DishImage
+            if (file != null)
             {
-                Extension = dishImageExtension,
-                ApplicationUserId = applicationUserId,
-            };
+                var oldDishImagePhysicalPath = $"{imagePath}/dishes/{currentDish.DishCategory}/{currentDishImage.Id}.{currentDishImage.Extension}";
+                if (currentDishImage != null)
+                {
+                    this.dishImagesRepo.HardDelete(currentDishImage);
+                }
 
-            currentDish.DishImage = dishImage;
-            currentDish.DishImageId = dishImage.Id;
-            currentDish.DishImageUrl = $"images/dishes/addedLater/{dishImage.Id}.{dishImageExtension}";
-            var physicalPath = $"{imagePath}/dishes/addedLater/{dishImage.Id}.{dishImageExtension}";
-            using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
-            await model.Image.CopyToAsync(fileStream);
+                if (File.Exists(oldDishImagePhysicalPath))
+                {
+                    File.Delete(oldDishImagePhysicalPath);
+                }
+
+                Directory.CreateDirectory($"{imagePath}/dishes/{currentDish.DishCategory}");
+                var dishImageExtension = Path.GetExtension(file.FileName).TrimStart('.');
+
+                var dishImage = new DishImage
+                {
+                    Extension = dishImageExtension,
+                    ApplicationUserId = applicationUserId,
+                };
+
+                currentDish.DishImage = dishImage;
+                currentDish.DishImageId = dishImage.Id;
+                currentDish.DishImageUrl = $"images/dishes/{currentDish.DishCategory}/{dishImage.Id}.{dishImageExtension}";
+                var physicalPath = $"{imagePath}/dishes/{currentDish.DishCategory}/{dishImage.Id}.{dishImageExtension}";
+                using FileStream fileStream = new FileStream(physicalPath, FileMode.Create);
+                await file.CopyToAsync(fileStream);
+            }
+            else
+            {
+                currentDish.DishImage = currentDishImage;
+                currentDish.DishImageId = currentDishImage.Id;
+                currentDish.DishImageUrl = currentDish.DishImageUrl;
+            }
 
             await this.dishesRepo.SaveChangesAsync();
         }

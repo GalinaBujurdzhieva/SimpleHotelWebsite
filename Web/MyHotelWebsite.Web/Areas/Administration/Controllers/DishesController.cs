@@ -6,6 +6,7 @@
 
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Common;
     using MyHotelWebsite.Data.Models.Enums;
@@ -95,7 +96,7 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(string id, EditDishViewModel model)
+        public async Task<IActionResult> Edit(string id, EditDishViewModel model, IFormFile? file)
         {
             if (!this.ModelState.IsValid)
             {
@@ -106,7 +107,7 @@
 
             try
             {
-                await this.dishesService.EditDishAsync(model, id, staffId, $"{this.environment.WebRootPath}/images");
+                await this.dishesService.EditDishAsync(model, id, staffId, $"{this.environment.WebRootPath}/images", file);
                 this.TempData["Message"] = "Dish changed successfully.";
             }
             catch (Exception)

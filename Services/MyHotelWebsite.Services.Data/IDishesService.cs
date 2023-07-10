@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Http;
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Dishes;
 
@@ -16,7 +16,7 @@
 
         Task<bool> DoesDishExistsAsync(string id);
 
-        Task EditDishAsync(EditDishViewModel model, string id, string applicationUserId, string imagePath);
+        Task EditDishAsync(EditDishViewModel model, string id, string applicationUserId, string imagePath, IFormFile? file);
 
         Task<IEnumerable<T>> GetAllDishesAsync<T>(int page, int itemsPerPage = 4);
 

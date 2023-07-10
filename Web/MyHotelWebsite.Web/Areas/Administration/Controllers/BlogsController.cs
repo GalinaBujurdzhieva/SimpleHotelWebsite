@@ -102,7 +102,6 @@
             }
 
             var model = await this.blogService.BlogDetailsByIdAsync<EditBlogViewModel>(id);
-            // model.Image = (IFormFile)await this.blogService.BlogImageByBlogIdAsync(id);
             return this.View(model);
         }
 
