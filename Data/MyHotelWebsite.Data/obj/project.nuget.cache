@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UZvnTliUdab6GFpQv/LbMAU9u3Yqx2hYn7Dpz/KBe5lYYaHN0SXU4ETghIinUOA9lYhifW407tcbx3uUeig+tg==",
+  "dgSpecHash": "mD4T/MP+xe6gXSldsdKx9jKaSZRON2ICyfTertR4ZrNKbi3W0/85jNTvOm7qYmt7CB3Vq5XhXDomCED+Ew6NgQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.5\\microsoft.aspnetcore.cryptography.internal.6.0.5.nupkg.sha512",

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
     <link rel="stylesheet" href="~/fonts/antonio-exotic/stylesheet.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" asp-append-version="true" />
 
 
     <script src="~/js/jquery.min.js" type="text/javascript" asp-append-version="true"></script>
@@ -127,7 +128,10 @@
     </header>
     <main>
         <div class="container">
-            <main role="main" class="pb-3">@RenderBody()</main>
+            <main role="main" class="pb-3">
+                <partial name="_Notification" />
+                @RenderBody()
+                </main>
             <div style="display:none">
                 <partial name="_CookieConsentPartial" />
             </div>

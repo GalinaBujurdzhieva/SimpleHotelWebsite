@@ -1,1235 +1,1239 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\lightbox.min.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\lightbox.min.css",
       "PackagePath": "staticwebassets\\css\\lightbox.min.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\responsive.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\responsive.css",
       "PackagePath": "staticwebassets\\css\\responsive.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\site.min.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\site.min.css",
       "PackagePath": "staticwebassets\\css\\site.min.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\style.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\css\\font-awesome.min.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\css\\font-awesome.min.css",
       "PackagePath": "staticwebassets\\font-awesome\\css\\font-awesome.min.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\FontAwesome.otf",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\FontAwesome.otf",
       "PackagePath": "staticwebassets\\font-awesome\\fonts\\FontAwesome.otf"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.eot",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.eot",
       "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.eot"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.svg",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.svg",
       "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.svg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.ttf",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.ttf",
       "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.ttf"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.woff",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.woff",
       "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.woff"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.woff2",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\font-awesome\\fonts\\fontawesome-webfont.woff2",
       "PackagePath": "staticwebassets\\font-awesome\\fonts\\fontawesome-webfont.woff2"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-bold-webfont.woff",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-bold-webfont.woff",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\antonio-bold-webfont.woff"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-bold-webfont.woff2",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-bold-webfont.woff2",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\antonio-bold-webfont.woff2"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-light-webfont.woff",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-light-webfont.woff",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\antonio-light-webfont.woff"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-light-webfont.woff2",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-light-webfont.woff2",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\antonio-light-webfont.woff2"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-regular-webfont.woff",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-regular-webfont.woff",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\antonio-regular-webfont.woff"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-regular-webfont.woff2",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\antonio-regular-webfont.woff2",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\antonio-regular-webfont.woff2"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\exotic_350_demi-bold_bt-webfont.woff",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\exotic_350_demi-bold_bt-webfont.woff",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\exotic_350_demi-bold_bt-webfont.woff"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\exotic_350_demi-bold_bt-webfont.woff2",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\exotic_350_demi-bold_bt-webfont.woff2",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\exotic_350_demi-bold_bt-webfont.woff2"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\stylesheet.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\stylesheet.css",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\stylesheet.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\ufonts.com_exotic-350-bold-bt-webfont.woff",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\ufonts.com_exotic-350-bold-bt-webfont.woff",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\ufonts.com_exotic-350-bold-bt-webfont.woff"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\ufonts.com_exotic-350-bold-bt-webfont.woff2",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\fonts\\antonio-exotic\\ufonts.com_exotic-350-bold-bt-webfont.woff2",
       "PackagePath": "staticwebassets\\fonts\\antonio-exotic\\ufonts.com_exotic-350-bold-bt-webfont.woff2"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Blog-All.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Blog-All.png",
       "PackagePath": "staticwebassets\\images\\Blog-All.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Blog-banner.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Blog-banner.png",
       "PackagePath": "staticwebassets\\images\\Blog-banner.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Blog-main2.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Blog-main2.png",
       "PackagePath": "staticwebassets\\images\\Blog-main2.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\ContactUs-main.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\ContactUs-main.png",
       "PackagePath": "staticwebassets\\images\\ContactUs-main.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-all.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-all.png",
       "PackagePath": "staticwebassets\\images\\Dining-all.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-appetizers.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-appetizers.png",
       "PackagePath": "staticwebassets\\images\\Dining-appetizers.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-desserts.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-desserts.png",
       "PackagePath": "staticwebassets\\images\\Dining-desserts.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-drinks.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-drinks.png",
       "PackagePath": "staticwebassets\\images\\Dining-drinks.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-gourmets.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-gourmets.png",
       "PackagePath": "staticwebassets\\images\\Dining-gourmets.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-main.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-main.png",
       "PackagePath": "staticwebassets\\images\\Dining-main.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-maincourses.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-maincourses.png",
       "PackagePath": "staticwebassets\\images\\Dining-maincourses.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-salads.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dining-salads.png",
       "PackagePath": "staticwebassets\\images\\Dining-salads.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dishes-banner.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Dishes-banner.png",
       "PackagePath": "staticwebassets\\images\\Dishes-banner.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-1-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-1-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-1-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-1.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-1.png",
       "PackagePath": "staticwebassets\\images\\Gallery-1.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-10-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-10-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-10-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-10.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-10.png",
       "PackagePath": "staticwebassets\\images\\Gallery-10.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-11-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-11-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-11-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-11.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-11.png",
       "PackagePath": "staticwebassets\\images\\Gallery-11.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-12-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-12-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-12-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-12.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-12.png",
       "PackagePath": "staticwebassets\\images\\Gallery-12.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-13-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-13-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-13-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-13.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-13.png",
       "PackagePath": "staticwebassets\\images\\Gallery-13.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-14-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-14-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-14-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-14.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-14.png",
       "PackagePath": "staticwebassets\\images\\Gallery-14.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-15-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-15-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-15-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-15.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-15.png",
       "PackagePath": "staticwebassets\\images\\Gallery-15.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-16-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-16-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-16-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-16.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-16.png",
       "PackagePath": "staticwebassets\\images\\Gallery-16.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-17-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-17-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-17-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-17.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-17.png",
       "PackagePath": "staticwebassets\\images\\Gallery-17.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-18-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-18-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-18-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-18.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-18.png",
       "PackagePath": "staticwebassets\\images\\Gallery-18.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-19-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-19-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-19-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-19.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-19.png",
       "PackagePath": "staticwebassets\\images\\Gallery-19.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-2-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-2-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-2-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-2.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-2.png",
       "PackagePath": "staticwebassets\\images\\Gallery-2.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-20-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-20-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-20-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-20.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-20.png",
       "PackagePath": "staticwebassets\\images\\Gallery-20.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-21-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-21-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-21-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-21.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-21.png",
       "PackagePath": "staticwebassets\\images\\Gallery-21.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-22-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-22-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-22-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-22.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-22.png",
       "PackagePath": "staticwebassets\\images\\Gallery-22.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-23-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-23-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-23-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-23.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-23.png",
       "PackagePath": "staticwebassets\\images\\Gallery-23.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-24-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-24-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-24-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-24.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-24.png",
       "PackagePath": "staticwebassets\\images\\Gallery-24.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-3-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-3-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-3-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-3.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-3.png",
       "PackagePath": "staticwebassets\\images\\Gallery-3.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-4-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-4-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-4-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-4.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-4.png",
       "PackagePath": "staticwebassets\\images\\Gallery-4.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-5-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-5-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-5-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-5.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-5.png",
       "PackagePath": "staticwebassets\\images\\Gallery-5.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-6-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-6-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-6-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-6.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-6.png",
       "PackagePath": "staticwebassets\\images\\Gallery-6.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-7-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-7-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-7-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-7.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-7.png",
       "PackagePath": "staticwebassets\\images\\Gallery-7.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-8-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-8-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-8-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-8.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-8.png",
       "PackagePath": "staticwebassets\\images\\Gallery-8.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-9-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-9-big.png",
       "PackagePath": "staticwebassets\\images\\Gallery-9-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-9.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-9.png",
       "PackagePath": "staticwebassets\\images\\Gallery-9.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-main.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Gallery-main.png",
       "PackagePath": "staticwebassets\\images\\Gallery-main.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Home-about-main.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Home-about-main.png",
       "PackagePath": "staticwebassets\\images\\Home-about-main.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-apartment-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-apartment-big.png",
       "PackagePath": "staticwebassets\\images\\Room-apartment-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-apartment.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-apartment.png",
       "PackagePath": "staticwebassets\\images\\Room-apartment.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-double-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-double-big.png",
       "PackagePath": "staticwebassets\\images\\Room-double-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-double.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-double.png",
       "PackagePath": "staticwebassets\\images\\Room-double.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-single-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-single-big.png",
       "PackagePath": "staticwebassets\\images\\Room-single-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-single.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-single.png",
       "PackagePath": "staticwebassets\\images\\Room-single.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-studio-big.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-studio-big.png",
       "PackagePath": "staticwebassets\\images\\Room-studio-big.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-studio.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Room-studio.png",
       "PackagePath": "staticwebassets\\images\\Room-studio.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Rooms-banner.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Rooms-banner.png",
       "PackagePath": "staticwebassets\\images\\Rooms-banner.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Rooms-main.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Rooms-main.png",
       "PackagePath": "staticwebassets\\images\\Rooms-main.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\SearchCarouselImage1.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\SearchCarouselImage1.png",
       "PackagePath": "staticwebassets\\images\\SearchCarouselImage1.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\SearchCarouselImage2.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\SearchCarouselImage2.png",
       "PackagePath": "staticwebassets\\images\\SearchCarouselImage2.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\SearchCarouselImage3.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\SearchCarouselImage3.png",
       "PackagePath": "staticwebassets\\images\\SearchCarouselImage3.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Slider1.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Slider1.png",
       "PackagePath": "staticwebassets\\images\\Slider1.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Slider2.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Slider2.png",
       "PackagePath": "staticwebassets\\images\\Slider2.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Slider3.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\Slider3.png",
       "PackagePath": "staticwebassets\\images\\Slider3.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\1.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\1.png",
       "PackagePath": "staticwebassets\\images\\blogs\\1.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\10.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\10.png",
       "PackagePath": "staticwebassets\\images\\blogs\\10.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\11.jpg",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\11.jpg",
       "PackagePath": "staticwebassets\\images\\blogs\\11.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\11.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\11.png",
       "PackagePath": "staticwebassets\\images\\blogs\\11.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\12.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\12.png",
       "PackagePath": "staticwebassets\\images\\blogs\\12.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\13.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\13.png",
       "PackagePath": "staticwebassets\\images\\blogs\\13.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\2.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\2.png",
       "PackagePath": "staticwebassets\\images\\blogs\\2.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\3.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\3.png",
       "PackagePath": "staticwebassets\\images\\blogs\\3.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\4.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\4.png",
       "PackagePath": "staticwebassets\\images\\blogs\\4.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\5.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\5.png",
       "PackagePath": "staticwebassets\\images\\blogs\\5.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\5b37ff95-a875-4d5d-ad95-d6ef099b948b.jpg",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\5b37ff95-a875-4d5d-ad95-d6ef099b948b.jpg",
       "PackagePath": "staticwebassets\\images\\blogs\\5b37ff95-a875-4d5d-ad95-d6ef099b948b.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\6.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\6.png",
       "PackagePath": "staticwebassets\\images\\blogs\\6.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\7.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\7.png",
       "PackagePath": "staticwebassets\\images\\blogs\\7.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\8.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\8.png",
       "PackagePath": "staticwebassets\\images\\blogs\\8.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\9.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\9.png",
       "PackagePath": "staticwebassets\\images\\blogs\\9.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\client1.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\client1.png",
       "PackagePath": "staticwebassets\\images\\client1.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\close.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\close.png",
       "PackagePath": "staticwebassets\\images\\close.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\07be884d-e455-4364-9a3d-d9cbb68d82f7.jpg",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\07be884d-e455-4364-9a3d-d9cbb68d82f7.jpg",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\07be884d-e455-4364-9a3d-d9cbb68d82f7.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\0ccfa9be-3602-4317-96eb-0cf45c3c4264.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\0ccfa9be-3602-4317-96eb-0cf45c3c4264.png",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\0ccfa9be-3602-4317-96eb-0cf45c3c4264.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\1e072bfb-97ec-469a-94b7-e6d92f85677b.jpg",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\1e072bfb-97ec-469a-94b7-e6d92f85677b.jpg",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\1e072bfb-97ec-469a-94b7-e6d92f85677b.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\275e5a4c-6862-44ff-a689-aa5a8b8c5253.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\275e5a4c-6862-44ff-a689-aa5a8b8c5253.png",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\275e5a4c-6862-44ff-a689-aa5a8b8c5253.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\3fc817d0-5ca1-4162-b09e-4eb5c139ac68.jpg",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\3fc817d0-5ca1-4162-b09e-4eb5c139ac68.jpg",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\3fc817d0-5ca1-4162-b09e-4eb5c139ac68.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\81186fcd-8a6f-4f75-b4b7-44fdf11d9dd8.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\81186fcd-8a6f-4f75-b4b7-44fdf11d9dd8.png",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\81186fcd-8a6f-4f75-b4b7-44fdf11d9dd8.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\8c01e1ac-8dfb-4281-8283-2df23f708dfc.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\8c01e1ac-8dfb-4281-8283-2df23f708dfc.png",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\8c01e1ac-8dfb-4281-8283-2df23f708dfc.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\9e5a523d-365b-4aec-9b2b-ed8c53b87a79.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\9e5a523d-365b-4aec-9b2b-ed8c53b87a79.png",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\9e5a523d-365b-4aec-9b2b-ed8c53b87a79.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\a083198b-ae02-4b92-8bc3-5d4c0e1c58ca.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\a083198b-ae02-4b92-8bc3-5d4c0e1c58ca.png",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\a083198b-ae02-4b92-8bc3-5d4c0e1c58ca.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\a4827e1c-2279-45c8-b42c-985f05a8f5f1.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\a4827e1c-2279-45c8-b42c-985f05a8f5f1.png",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\a4827e1c-2279-45c8-b42c-985f05a8f5f1.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\cae054c5-67fe-401d-b80c-c9ad19fcf04b.jpg",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\cae054c5-67fe-401d-b80c-c9ad19fcf04b.jpg",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\cae054c5-67fe-401d-b80c-c9ad19fcf04b.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\ecac8fe1-e09d-4d1e-81c9-934447bbd97f.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\ecac8fe1-e09d-4d1e-81c9-934447bbd97f.png",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\ecac8fe1-e09d-4d1e-81c9-934447bbd97f.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\f949011f-2292-426d-aff2-a97c757515eb.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\addedLater\\f949011f-2292-426d-aff2-a97c757515eb.png",
       "PackagePath": "staticwebassets\\images\\dishes\\addedLater\\f949011f-2292-426d-aff2-a97c757515eb.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Beer.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Beer.png",
       "PackagePath": "staticwebassets\\images\\dishes\\alcohol\\Beer.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Cocktail.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Cocktail.png",
       "PackagePath": "staticwebassets\\images\\dishes\\alcohol\\Cocktail.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Gin.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Gin.png",
       "PackagePath": "staticwebassets\\images\\dishes\\alcohol\\Gin.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Red_wine.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Red_wine.png",
       "PackagePath": "staticwebassets\\images\\dishes\\alcohol\\Red_wine.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Tequila.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Tequila.png",
       "PackagePath": "staticwebassets\\images\\dishes\\alcohol\\Tequila.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Vodka.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Vodka.png",
       "PackagePath": "staticwebassets\\images\\dishes\\alcohol\\Vodka.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Whiskey.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\Whiskey.png",
       "PackagePath": "staticwebassets\\images\\dishes\\alcohol\\Whiskey.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\White_wine.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\alcohol\\White_wine.png",
       "PackagePath": "staticwebassets\\images\\dishes\\alcohol\\White_wine.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Air_fryer_loaded_zucchini_skins.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Air_fryer_loaded_zucchini_skins.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Air_fryer_loaded_zucchini_skins.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Antipasto_bites.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Antipasto_bites.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Antipasto_bites.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Bacon_wrapped_water_chestnuts.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Bacon_wrapped_water_chestnuts.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Bacon_wrapped_water_chestnuts.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Baked_brie.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Baked_brie.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Baked_brie.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Baked_feta_bites.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Baked_feta_bites.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Baked_feta_bites.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Bang_bang_cauliflower.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Bang_bang_cauliflower.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Bang_bang_cauliflower.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Black_eyed_pea_bruschetta.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Black_eyed_pea_bruschetta.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Black_eyed_pea_bruschetta.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Brie_asparagus_prosciutto.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Brie_asparagus_prosciutto.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Brie_asparagus_prosciutto.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Brussels_sprout_chips.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Brussels_sprout_chips.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Brussels_sprout_chips.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Cranberry_brie_bites.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Cranberry_brie_bites.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Cranberry_brie_bites.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Garlic_knots.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Garlic_knots.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Garlic_knots.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Greek_feta_dip.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Greek_feta_dip.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Greek_feta_dip.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Jalapeno_popper_crisps.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Jalapeno_popper_crisps.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Jalapeno_popper_crisps.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Melon_prosciutto_skewers.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Melon_prosciutto_skewers.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Melon_prosciutto_skewers.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Spinach_artichoke_brie.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Spinach_artichoke_brie.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Spinach_artichoke_brie.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Stuffed_mushroom.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\appetizers\\Stuffed_mushroom.png",
       "PackagePath": "staticwebassets\\images\\dishes\\appetizers\\Stuffed_mushroom.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Coca_Cola.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Coca_Cola.png",
       "PackagePath": "staticwebassets\\images\\dishes\\coldDrinks\\Coca_Cola.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Fruit_juice.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Fruit_juice.png",
       "PackagePath": "staticwebassets\\images\\dishes\\coldDrinks\\Fruit_juice.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Iced_tea.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Iced_tea.png",
       "PackagePath": "staticwebassets\\images\\dishes\\coldDrinks\\Iced_tea.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Mineral_water.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Mineral_water.png",
       "PackagePath": "staticwebassets\\images\\dishes\\coldDrinks\\Mineral_water.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Nescafe_Frappe.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Nescafe_Frappe.png",
       "PackagePath": "staticwebassets\\images\\dishes\\coldDrinks\\Nescafe_Frappe.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Shake.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Shake.png",
       "PackagePath": "staticwebassets\\images\\dishes\\coldDrinks\\Shake.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Smoothie.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Smoothie.png",
       "PackagePath": "staticwebassets\\images\\dishes\\coldDrinks\\Smoothie.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Soda.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\coldDrinks\\Soda.png",
       "PackagePath": "staticwebassets\\images\\dishes\\coldDrinks\\Soda.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\3207e0d9-3831-4d8c-9bc1-96cbb94db00e.jpg",
-      "PackagePath": "staticwebassets\\images\\dishes\\desserts\\3207e0d9-3831-4d8c-9bc1-96cbb94db00e.jpg"
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\4bcea067-e983-4daa-a603-b94a7d27ec81.jpg",
+      "PackagePath": "staticwebassets\\images\\dishes\\desserts\\4bcea067-e983-4daa-a603-b94a7d27ec81.jpg"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Banana_pudding.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Banana_pudding.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Banana_pudding.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Caramel_apple_tart.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Caramel_apple_tart.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Caramel_apple_tart.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Carrot_cake_dip.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Carrot_cake_dip.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Carrot_cake_dip.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_almond_bark.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_almond_bark.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Chocolate_almond_bark.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_covered_cherries.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_covered_cherries.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Chocolate_covered_cherries.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_fluffernutter_pie.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_fluffernutter_pie.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Chocolate_fluffernutter_pie.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_pots_de_creme.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Chocolate_pots_de_creme.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Chocolate_pots_de_creme.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Confetti_squares.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Confetti_squares.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Confetti_squares.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Cookie_dough_fudge.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Cookie_dough_fudge.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Cookie_dough_fudge.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Crepes.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Crepes.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Crepes.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Fried_ice_cream.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Fried_ice_cream.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Fried_ice_cream.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Frozen_samoa_pie.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Frozen_samoa_pie.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Frozen_samoa_pie.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Key_lime_pie_mousse.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Key_lime_pie_mousse.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Key_lime_pie_mousse.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Magic_cookie_bars.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Magic_cookie_bars.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Magic_cookie_bars.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\No_bake_blackberry_cheesecake_bars.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\No_bake_blackberry_cheesecake_bars.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\No_bake_blackberry_cheesecake_bars.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Oreo_cookie_skillet.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Oreo_cookie_skillet.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Oreo_cookie_skillet.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Oreo_truffles.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Oreo_truffles.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Oreo_truffles.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Peach_galette.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Peach_galette.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Peach_galette.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Peanut_butter_dessert_lasagna.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Peanut_butter_dessert_lasagna.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Peanut_butter_dessert_lasagna.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Pistachio_cake.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Pistachio_cake.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Pistachio_cake.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Profiteroles.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Profiteroles.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Profiteroles.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Samoa_dessert_lasagna.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Samoa_dessert_lasagna.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Samoa_dessert_lasagna.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Shoofly_pie.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Shoofly_pie.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Shoofly_pie.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Strawberry_cheesecake_pie.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Strawberry_cheesecake_pie.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Strawberry_cheesecake_pie.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Stroopwafel_milkshake.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Stroopwafel_milkshake.png",
       "PackagePath": "staticwebassets\\images\\dishes\\desserts\\Stroopwafel_milkshake.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Beef_Steak_Black_Angus_Tritip.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Beef_Steak_Black_Angus_Tritip.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Beef_Steak_Black_Angus_Tritip.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Chicken_Scarparielo.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Chicken_Scarparielo.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Chicken_Scarparielo.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Foie_gras_cream.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Foie_gras_cream.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Foie_gras_cream.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Foie_gras_souffle_with_red_grape_confit.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Foie_gras_souffle_with_red_grape_confit.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Foie_gras_souffle_with_red_grape_confit.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Fresh_raw_blue_swimming_crab_ocean_gourme.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Fresh_raw_blue_swimming_crab_ocean_gourme.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Fresh_raw_blue_swimming_crab_ocean_gourme.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Fried_fish_fillet_with_rice_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Fried_fish_fillet_with_rice_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Fried_fish_fillet_with_rice_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Gaspacho_soup.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Gaspacho_soup.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Gaspacho_soup.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Goose_shanks_with_portobello_forest_mushrooms_baked_with_new_potatoes.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Goose_shanks_with_portobello_forest_mushrooms_baked_with_new_potatoes.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Goose_shanks_with_portobello_forest_mushrooms_baked_with_new_potatoes.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Orange_pancakes_slices_cheese_with_mint_leaf.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Orange_pancakes_slices_cheese_with_mint_leaf.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Orange_pancakes_slices_cheese_with_mint_leaf.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Salmon_cheesecake_with_parmesan_bread_crisps_purslane_and_quail_eggs.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Salmon_cheesecake_with_parmesan_bread_crisps_purslane_and_quail_eggs.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Salmon_cheesecake_with_parmesan_bread_crisps_purslane_and_quail_eggs.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Stuffed_eggplant_with_tomatoes_carrots_cheese.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Stuffed_eggplant_with_tomatoes_carrots_cheese.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Stuffed_eggplant_with_tomatoes_carrots_cheese.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Тurbot_with_shrimp_mousse_and_vegetable_spaghetti.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\gourme\\Тurbot_with_shrimp_mousse_and_vegetable_spaghetti.png",
       "PackagePath": "staticwebassets\\images\\dishes\\gourme\\Тurbot_with_shrimp_mousse_and_vegetable_spaghetti.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Cappucino.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\06f9e9a2-c507-4742-b394-311d0a90648d.png",
+      "PackagePath": "staticwebassets\\images\\dishes\\hotDrinks\\06f9e9a2-c507-4742-b394-311d0a90648d.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Cappucino.png",
       "PackagePath": "staticwebassets\\images\\dishes\\hotDrinks\\Cappucino.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Coffee_Espresso.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Coffee_Espresso.png",
       "PackagePath": "staticwebassets\\images\\dishes\\hotDrinks\\Coffee_Espresso.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Coffee_Lavazza.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Coffee_Lavazza.png",
       "PackagePath": "staticwebassets\\images\\dishes\\hotDrinks\\Coffee_Lavazza.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Hot_chocolate.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Hot_chocolate.png",
       "PackagePath": "staticwebassets\\images\\dishes\\hotDrinks\\Hot_chocolate.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Milk_with_cocoa.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Milk_with_cocoa.png",
       "PackagePath": "staticwebassets\\images\\dishes\\hotDrinks\\Milk_with_cocoa.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Milk_with_nescafe.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Milk_with_nescafe.png",
       "PackagePath": "staticwebassets\\images\\dishes\\hotDrinks\\Milk_with_nescafe.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Tea.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Tea.png",
       "PackagePath": "staticwebassets\\images\\dishes\\hotDrinks\\Tea.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Vienna_coffee.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Vienna_coffee.png",
       "PackagePath": "staticwebassets\\images\\dishes\\hotDrinks\\Vienna_coffee.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Broken_lasagna_with_parmesan_and_peas.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Broken_lasagna_with_parmesan_and_peas.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Broken_lasagna_with_parmesan_and_peas.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Cauliflower_bolognese.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Cauliflower_bolognese.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Cauliflower_bolognese.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Chard_wrapped_fish_with_lemon_and_olive.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Chard_wrapped_fish_with_lemon_and_olive.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Chard_wrapped_fish_with_lemon_and_olive.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Charred_chicken_with_sweet_potatoes_and_oranges.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Charred_chicken_with_sweet_potatoes_and_oranges.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Charred_chicken_with_sweet_potatoes_and_oranges.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Chicken_and_potato_gratin_with_brown_butter_cream.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Chicken_and_potato_gratin_with_brown_butter_cream.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Chicken_and_potato_gratin_with_brown_butter_cream.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Chicken_legs_with_grapes_and_fennel.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Chicken_legs_with_grapes_and_fennel.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Chicken_legs_with_grapes_and_fennel.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Clam_toasts_with_pancetta.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Clam_toasts_with_pancetta.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Clam_toasts_with_pancetta.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Coq_au_vin_with_cocoa_powder.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Coq_au_vin_with_cocoa_powder.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Coq_au_vin_with_cocoa_powder.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Creamy_squash_risotto_with_toasted_pepitas.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Creamy_squash_risotto_with_toasted_pepitas.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Creamy_squash_risotto_with_toasted_pepitas.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Crispy_chicken_thighs_with_spring_vegetables.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Crispy_chicken_thighs_with_spring_vegetables.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Crispy_chicken_thighs_with_spring_vegetables.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Easy_lamb_tagine_with_pomegranate.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Easy_lamb_tagine_with_pomegranate.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Easy_lamb_tagine_with_pomegranate.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Fish_tacos_al_pastor.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Fish_tacos_al_pastor.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Fish_tacos_al_pastor.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Fried_whole_fish_with_tomatillo_sauce.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Fried_whole_fish_with_tomatillo_sauce.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Fried_whole_fish_with_tomatillo_sauce.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Frogmore_stew.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Frogmore_stew.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Frogmore_stew.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Gado_Gado.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Gado_Gado.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Gado_Gado.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grand_Aioli.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grand_Aioli.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Grand_Aioli.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grilled_jerk_tofu_and_plantains_with_mango_salsa.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grilled_jerk_tofu_and_plantains_with_mango_salsa.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Grilled_jerk_tofu_and_plantains_with_mango_salsa.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grilled_pizza.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grilled_pizza.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Grilled_pizza.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grilled_pork_spareribs_with_soda_bottle_barbecue_sauce.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grilled_pork_spareribs_with_soda_bottle_barbecue_sauce.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Grilled_pork_spareribs_with_soda_bottle_barbecue_sauce.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grilled_scallops_with_creamed_corn.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Grilled_scallops_with_creamed_corn.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Grilled_scallops_with_creamed_corn.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Habanero_shrimp_skewers.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Habanero_shrimp_skewers.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Habanero_shrimp_skewers.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Instant_pot_lamb_haleem.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Instant_pot_lamb_haleem.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Instant_pot_lamb_haleem.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Lamb_chops_with_polenta_and_grilled_scallion_sauce.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Lamb_chops_with_polenta_and_grilled_scallion_sauce.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Lamb_chops_with_polenta_and_grilled_scallion_sauce.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Mast_Biryani.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Mast_Biryani.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Mast_Biryani.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Mushrooms_with_bearnaise_yogurt.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Mushrooms_with_bearnaise_yogurt.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Mushrooms_with_bearnaise_yogurt.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Pork_chops_with_celery_and_almond_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Pork_chops_with_celery_and_almond_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Pork_chops_with_celery_and_almond_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Pork_chops_with_fig_and_grape_agrodolce.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Pork_chops_with_fig_and_grape_agrodolce.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Pork_chops_with_fig_and_grape_agrodolce.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Pork_shoulder_with_pineapple-and_sesame_broccoli.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Pork_shoulder_with_pineapple-and_sesame_broccoli.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Pork_shoulder_with_pineapple-and_sesame_broccoli.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Potato_flake_gnocchi.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Potato_flake_gnocchi.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Potato_flake_gnocchi.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Pozole_verde_con_hongos.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Pozole_verde_con_hongos.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Pozole_verde_con_hongos.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Roasted_salmon_with_green_herbs.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Roasted_salmon_with_green_herbs.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Roasted_salmon_with_green_herbs.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Seared_scallops_with_basil_risotto.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Seared_scallops_with_basil_risotto.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Seared_scallops_with_basil_risotto.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Seared_scallops_with_brown_butter_and_lemon_pan_sauce.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Seared_scallops_with_brown_butter_and_lemon_pan_sauce.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Seared_scallops_with_brown_butter_and_lemon_pan_sauce.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Slow_cooker_pork_shoulder_with_zesty_basil_sauce.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Slow_cooker_pork_shoulder_with_zesty_basil_sauce.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Slow_cooker_pork_shoulder_with_zesty_basil_sauce.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Spicy_lobster_pasta.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Spicy_lobster_pasta.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Spicy_lobster_pasta.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Spicy_tamarind_glazed_grilled_chicken_wings.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Spicy_tamarind_glazed_grilled_chicken_wings.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Spicy_tamarind_glazed_grilled_chicken_wings.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Spring_risotto.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Spring_risotto.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Spring_risotto.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Sri_Lankan_cashew_curry.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Sri_Lankan_cashew_curry.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Sri_Lankan_cashew_curry.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Stuffed_eggplants_and_zucchini_in_a_rich_tomato_sauce.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Stuffed_eggplants_and_zucchini_in_a_rich_tomato_sauce.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Stuffed_eggplants_and_zucchini_in_a_rich_tomato_sauce.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Tamales_con_elote_y_chile_poblano.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Tamales_con_elote_y_chile_poblano.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Tamales_con_elote_y_chile_poblano.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Tamarind_glazed_black_bass_with_coconut_herb_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Tamarind_glazed_black_bass_with_coconut_herb_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Tamarind_glazed_black_bass_with_coconut_herb_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Tomato_and_roasted_garlic_pie.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Tomato_and_roasted_garlic_pie.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Tomato_and_roasted_garlic_pie.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Tomato_tart_with_chickpea_crumble.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Tomato_tart_with_chickpea_crumble.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Tomato_tart_with_chickpea_crumble.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Wild_mushroom_and_parsnip_ragout_with_cheesy_polenta.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\mainCourses\\Wild_mushroom_and_parsnip_ragout_with_cheesy_polenta.png",
       "PackagePath": "staticwebassets\\images\\dishes\\mainCourses\\Wild_mushroom_and_parsnip_ragout_with_cheesy_polenta.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Asian_slaw.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Asian_slaw.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Asian_slaw.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Broccoli_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Broccoli_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Broccoli_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Brussels_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Brussels_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Brussels_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Caprese_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Caprese_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Caprese_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Cherry_tabouleh.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Cherry_tabouleh.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Cherry_tabouleh.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Chimichurri_potato_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Chimichurri_potato_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Chimichurri_potato_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Cobb_salad_with_coconut_bacon.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Cobb_salad_with_coconut_bacon.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Cobb_salad_with_coconut_bacon.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Couscous_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Couscous_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Couscous_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Heirloom_tomato_fattoush.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Heirloom_tomato_fattoush.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Heirloom_tomato_fattoush.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Kale_salad_with_carrot_ginger_dressing.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Kale_salad_with_carrot_ginger_dressing.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Kale_salad_with_carrot_ginger_dressing.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Mexican_street_corn_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Mexican_street_corn_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Mexican_street_corn_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Orzo_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Orzo_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Orzo_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Pasta_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Pasta_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Pasta_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Romain_wedges.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Romain_wedges.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Romain_wedges.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Soba_noodles.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Soba_noodles.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Soba_noodles.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Taco_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Taco_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Taco_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Tomato_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Tomato_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Tomato_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Watermelon_tomato_salad.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\salads\\Watermelon_tomato_salad.png",
       "PackagePath": "staticwebassets\\images\\dishes\\salads\\Watermelon_tomato_salad.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\car.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\car.png",
       "PackagePath": "staticwebassets\\images\\icons\\car.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\favicon.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\favicon.png",
       "PackagePath": "staticwebassets\\images\\icons\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\key.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\key.png",
       "PackagePath": "staticwebassets\\images\\icons\\key.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\left-arrow-hover.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\left-arrow-hover.png",
       "PackagePath": "staticwebassets\\images\\icons\\left-arrow-hover.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\left-arrow.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\left-arrow.png",
       "PackagePath": "staticwebassets\\images\\icons\\left-arrow.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\left-quotes-sign.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\left-quotes-sign.png",
       "PackagePath": "staticwebassets\\images\\icons\\left-quotes-sign.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\right-arrow-hover.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\right-arrow-hover.png",
       "PackagePath": "staticwebassets\\images\\icons\\right-arrow-hover.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\right-arrow.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\right-arrow.png",
       "PackagePath": "staticwebassets\\images\\icons\\right-arrow.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\right-quotes-symbol.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\right-quotes-symbol.png",
       "PackagePath": "staticwebassets\\images\\icons\\right-quotes-symbol.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\user.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\user.png",
       "PackagePath": "staticwebassets\\images\\icons\\user.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\wifi.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\icons\\wifi.png",
       "PackagePath": "staticwebassets\\images\\icons\\wifi.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\loading.gif",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\loading.gif",
       "PackagePath": "staticwebassets\\images\\loading.gif"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\next.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\next.png",
       "PackagePath": "staticwebassets\\images\\next.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\prev.png",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\prev.png",
       "PackagePath": "staticwebassets\\images\\prev.png"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\custom.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\custom.js",
       "PackagePath": "staticwebassets\\js\\custom.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\instafeed.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\instafeed.min.js",
       "PackagePath": "staticwebassets\\js\\instafeed.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\jquery.imagesloaded.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\jquery.imagesloaded.js",
       "PackagePath": "staticwebassets\\js\\jquery.imagesloaded.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\jquery.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\jquery.min.js",
       "PackagePath": "staticwebassets\\js\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\lightbox-plus-jquery.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\lightbox-plus-jquery.min.js",
       "PackagePath": "staticwebassets\\js\\lightbox-plus-jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\masonry.pkgd.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\masonry.pkgd.min.js",
       "PackagePath": "staticwebassets\\js\\masonry.pkgd.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\site.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\js\\site.min.js",
       "PackagePath": "staticwebassets\\js\\site.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.override-validator.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.override-validator.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.override-validator.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
