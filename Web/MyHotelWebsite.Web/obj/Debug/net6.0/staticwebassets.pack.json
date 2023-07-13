@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\accessDenied.css",
+      "PackagePath": "staticwebassets\\css\\accessDenied.css"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
@@ -449,6 +453,10 @@
       "PackagePath": "staticwebassets\\images\\blogs\\3.png"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\355635c0-4ae7-495e-ada6-fd60e1d1f096.jpg",
+      "PackagePath": "staticwebassets\\images\\blogs\\355635c0-4ae7-495e-ada6-fd60e1d1f096.jpg"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\4.png",
       "PackagePath": "staticwebassets\\images\\blogs\\4.png"
     },
@@ -465,8 +473,16 @@
       "PackagePath": "staticwebassets\\images\\blogs\\6.png"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\660c1d52-d52e-44af-acc2-c5289a6f4132.jpg",
+      "PackagePath": "staticwebassets\\images\\blogs\\660c1d52-d52e-44af-acc2-c5289a6f4132.jpg"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\7.png",
       "PackagePath": "staticwebassets\\images\\blogs\\7.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\776483b8-221a-4c4f-98ab-7b9c7f68f54b.jpg",
+      "PackagePath": "staticwebassets\\images\\blogs\\776483b8-221a-4c4f-98ab-7b9c7f68f54b.jpg"
     },
     {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\blogs\\8.png",

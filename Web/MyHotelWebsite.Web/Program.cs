@@ -70,6 +70,7 @@
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/User/Login";
+                options.AccessDeniedPath = "/Home/AccessDenied";
             });
 
             services.Configure<CookiePolicyOptions>(

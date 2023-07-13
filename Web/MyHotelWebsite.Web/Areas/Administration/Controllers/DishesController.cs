@@ -1,6 +1,7 @@
 ﻿namespace MyHotelWebsite.Web.Areas.Administration.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
@@ -8,10 +9,12 @@
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
     using MyHotelWebsite.Common;
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Administration.Dishes;
+    using MyHotelWebsite.Web.ViewModels.Administration.Enums;
     using MyHotelWebsite.Web.ViewModels.Dishes;
 
     [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.ChefRoleName)]
@@ -119,7 +122,7 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
-        public async Task<IActionResult> ByCategory(DishCategory dishCategory, int id = 1)
+        public async Task<IActionResult> ByCategory(DishCategory dishCategory, bool isReady, bool? isInStock, DishSorting sorting, int id = 1)
         {
             if (id < 1)
             {
@@ -128,21 +131,43 @@
 
             const int DishesPerPage = 12;
 
-            var dishesWithFilter = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, DishesPerPage);
+            var dishesWithFilter = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, sorting, isInStock, isReady, DishesPerPage);
             var model = new DishByCategoryViewModel
             {
                 ItemsPerPage = DishesPerPage,
-                AllEntitiesCount = await this.dishesService.GetCountOfDishesByCategoryAsync(dishCategory),
+                AllEntitiesCount = await this.dishesService.GetCountOfDishesByCategoryAsync(isInStock, isReady, dishCategory, sorting),
                 Dishes = dishesWithFilter,
                 PageNumber = id,
                 DishCategory = dishCategory.ToString(),
+                IsReady = isReady,
+                IsInStock = isInStock,
+                Sorting = sorting,
             };
             return this.View(model);
         }
 
         public IActionResult Search()
         {
+            this.DropDownReBind();
             return this.View();
+        }
+
+        private void DropDownReBind()
+        {
+            List<SelectListItem> boolYesOrNo = new List<SelectListItem>();
+
+            boolYesOrNo.Add(new SelectListItem
+            {
+                Text = "Yes",
+                Value = true.ToString(),
+            });
+            boolYesOrNo.Add(new SelectListItem
+            {
+                Text = "No",
+                Value = false.ToString(),
+            });
+
+            this.ViewData["boolYesOrNo"] = boolYesOrNo;
         }
     }
 }

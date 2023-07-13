@@ -1,8 +1,11 @@
 ﻿namespace MyHotelWebsite.Web.ViewModels.Dishes
 {
+    using System.ComponentModel.DataAnnotations.Schema;
+
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
+    using MyHotelWebsite.Web.ViewModels.Administration.Enums;
 
     public class SingleDishViewModel : IMapFrom<Dish>
     {
@@ -19,5 +22,11 @@
         public int QuantityInStock { get; set; }
 
         public bool IsReady { get; set; }
+
+        [NotMapped]
+        public bool IsInStock { get; set; }
+
+        [NotMapped]
+        public DishSorting Sorting { get; set; }
     }
 }

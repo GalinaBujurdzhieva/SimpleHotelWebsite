@@ -31,7 +31,7 @@
                                 @Html.DropDownListFor(model => model.IsCleaned
                                 , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "Cleaned", new { style="width:100px; height:37px", onchange = "UpdateReport(this)" })
                             </div>
-                            <div class="col-lg-2 col-md-2 col-sm-12 p-0" style="width:180px; height:37px">
+                            <div class="col-lg-2 col-md-2 col-sm-12 p-0" style="margin-left:5px; width:180px; height:37px">
                                 <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<RoomType>()" name="roomType">
                                     <option>Select Room Type</option>
                                 </select>

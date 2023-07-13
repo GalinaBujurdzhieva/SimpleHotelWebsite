@@ -8,6 +8,12 @@
   <PropertyGroup>
     <CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Rooms\**" />
+    <EmbeddedResource Remove="Rooms\**" />
+    <None Remove="Rooms\**" />
+  </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json" />
   </ItemGroup>
@@ -23,10 +29,6 @@
     <ProjectReference Include="..\..\Data\MyHotelWebsite.Data.Models\MyHotelWebsite.Data.Models.csproj" />
     <ProjectReference Include="..\..\MyHotelWebsite.Common\MyHotelWebsite.Common.csproj" />
     <ProjectReference Include="..\..\Services\MyHotelWebsite.Services.Mapping\MyHotelWebsite.Services.Mapping.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Rooms\" />
   </ItemGroup>
 
 </Project>

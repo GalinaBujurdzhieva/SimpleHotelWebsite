@@ -4,6 +4,7 @@
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Http;
     using Microsoft.EntityFrameworkCore;
     using MyHotelWebsite.Data.Common.Repositories;
@@ -11,6 +12,7 @@
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Web.ViewModels.Administration.Dishes;
+    using MyHotelWebsite.Web.ViewModels.Administration.Enums;
 
     public class DishesService : IDishesService
     {
@@ -140,11 +142,39 @@
             return await this.dishesRepo.AllAsNoTracking().CountAsync();
         }
 
-        public async Task<int> GetCountOfDishesByCategoryAsync(DishCategory dishCategory)
+        public async Task<int> GetCountOfDishesByCategoryAsync(bool? isInStock = null, bool isReady = false, DishCategory dishCategory = 0, DishSorting sorting = DishSorting.Name)
         {
-            return await this.dishesRepo.AllAsNoTracking()
-                .Where(x => x.DishCategory == dishCategory)
-                .CountAsync();
+            var searchDishesList = this.dishesRepo.AllAsNoTracking().AsQueryable();
+
+            if (dishCategory != 0)
+            {
+                searchDishesList = searchDishesList
+                    .Where(x => x.DishCategory == dishCategory);
+            }
+
+            if (isReady)
+            {
+                searchDishesList = searchDishesList.Where(x => x.IsReady);
+            }
+
+            if (isInStock == true)
+            {
+                searchDishesList = searchDishesList.Where(x => x.QuantityInStock > 0);
+            }
+
+            if (isInStock == false)
+            {
+                searchDishesList = searchDishesList.Where(x => x.QuantityInStock < 1);
+            }
+
+            searchDishesList = sorting switch
+            {
+                DishSorting.Price => searchDishesList.OrderBy(x => x.Price),
+                DishSorting.Newest => searchDishesList.OrderByDescending(x => x.CreatedOn),
+                _ => searchDishesList.OrderByDescending(x => x.Name),
+            };
+
+            return await searchDishesList.CountAsync();
         }
 
         public async Task<int> GetCountOfDishesByNameAndCategoryAsync(string name = null, DishCategory dishCategory = 0)
@@ -166,19 +196,39 @@
             return await searchDishesList.CountAsync();
         }
 
-        public async Task<IEnumerable<T>> GetDishesByDishCategoryAsync<T>(int page, DishCategory dishCategory, int itemsPerPage = 4)
+        public async Task<IEnumerable<T>> GetDishesByDishCategoryAsync<T>(int page, DishCategory dishCategory, DishSorting sorting, bool? isInStock = null, bool isReady = false, int itemsPerPage = 4)
         {
-            if (!string.IsNullOrEmpty(dishCategory.ToString()))
+            var dishesByCategory = this.dishesRepo.AllAsNoTracking().AsQueryable();
+
+            if (dishCategory != 0)
             {
-                var dishesByCategory = await this.dishesRepo.AllAsNoTracking()
-                    .OrderBy(x => x.Name)
-                    .Where(x => x.DishCategory == dishCategory)
-                    .OrderBy(x => x.Name).Skip((page - 1) * itemsPerPage)
-                    .Take(itemsPerPage).To<T>().ToListAsync();
-                return dishesByCategory;
+                dishesByCategory = dishesByCategory
+                    .Where(x => x.DishCategory == dishCategory);
             }
 
-            return null;
+            if (isReady)
+            {
+                dishesByCategory = dishesByCategory.Where(x => x.IsReady);
+            }
+
+            if (isInStock == true)
+            {
+                dishesByCategory = dishesByCategory.Where(x => x.QuantityInStock > 0);
+            }
+
+            if (isInStock == false)
+            {
+                dishesByCategory = dishesByCategory.Where(x => x.QuantityInStock < 1);
+            }
+
+            dishesByCategory = sorting switch
+            {
+                DishSorting.Price => dishesByCategory.OrderBy(x => x.Price),
+                DishSorting.Newest => dishesByCategory.OrderByDescending(x => x.CreatedOn),
+                _ => dishesByCategory.OrderByDescending(x => x.Name),
+            };
+
+            return await dishesByCategory.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<T>().ToListAsync();
         }
 
         public async Task<IEnumerable<T>> SearchDishesByNameAndCategoryAsync<T>(int page, string name = null, DishCategory dishCategory = 0, int itemsPerPage = 4)

@@ -23,3 +23,10 @@
         toastr["info"]('@this.TempData["Message"]');
     </script>
 }
+<script src="~/lib/jquery/dist/jquery.min.js"> </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"> </script>
+<script type="text/javascript">
+    $("#target").on("click", function () {
+        toastr["error"]('Are you sure you want to delete this blog?');
+    });
+</script>
