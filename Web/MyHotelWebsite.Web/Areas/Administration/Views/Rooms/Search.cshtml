@@ -19,24 +19,24 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row justify-content-center">
-                            <div class="col-lg-1 col-md-1 col-sm-12 p-0" style="margin-right:9px">
+                            <div class="col-lg-1 col-md-1 col-sm-12 p-2" style="margin-right:9px">
                             @Html.DropDownListFor(model => model.IsReserved
                                 , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "Reserved", new { style="width:100px; height:37px", onchange = "UpdateReport(this)" })
                             </div>
-                            <div class="col-lg-1 col-md-1 col-sm-12 p-0" style="margin-right:9px">
+                            <div class="col-lg-1 col-md-1 col-sm-12 p-2" style="margin-right:9px">
                                 @Html.DropDownListFor(model => model.IsOccupied
                                 , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "Occupied", new { style="width:100px; height:37px", onchange = "UpdateReport(this)" })
                             </div>
-                            <div class="col-lg-1 col-md-1 col-sm-12 p-0" style="margin-right:9px">
+                            <div class="col-lg-1 col-md-1 col-sm-12 p-2" style="margin-right:9px">
                                 @Html.DropDownListFor(model => model.IsCleaned
                                 , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "Cleaned", new { style="width:100px; height:37px", onchange = "UpdateReport(this)" })
                             </div>
-                            <div class="col-lg-2 col-md-2 col-sm-12 p-0" style="margin-left:5px; width:180px; height:37px">
+                            <div class="col-lg-2 col-md-2 col-sm-12 p-2" style="margin-left:5px; width:180px; height:37px">
                                 <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<RoomType>()" name="roomType">
                                     <option>Select Room Type</option>
                                 </select>
                             </div>
-                            <div class="col-lg-1 col-md-1 col-sm-12 p-0">
+                            <div class="col-lg-1 col-md-1 col-sm-12 p-1">
                                 <input type="submit" value="Search" name="Search" class="btn btn-danger wrn-btn" style="margin-left:8px" border="1">
                             </div>
 

@@ -3,6 +3,7 @@
 @using MyHotelWebsite.Data.Models
 
 @inject SignInManager<ApplicationUser> signInManager
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +55,7 @@
                         <nav class="navbar navbar-default">
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
-                                    <li><a data-hover="Home" asp-area="" asp-controller="Home" asp-action="Index"><span>Home</span></a></li>
+                                    <li><a data-hover="Home" asp-area="" asp-controller="Home" asp-action="Index" onclick="addClassActive()"><span>Home</span></a></li>
                                     <li><a data-hover="About" asp-area="" asp-controller="Home" asp-action="About"><span>About</span></a></li>
                                     <li><a data-hover="Gallery" asp-area="" asp-controller="Home" asp-action="Gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Rooms" asp-area="" asp-controller="Rooms" asp-action="Index"><span>Rooms</span></a></li>
@@ -180,6 +181,5 @@
     <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
     <script src="~/js/site.min.js" asp-append-version="true"></script>
-
 </body>
 </html>

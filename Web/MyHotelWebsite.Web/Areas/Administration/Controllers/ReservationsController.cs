@@ -15,6 +15,8 @@
     using Syncfusion.Pdf.Grid;
     using Syncfusion.Pdf;
     using MyHotelWebsite.Data.Models.Enums;
+    using MyHotelWebsite.Web.ViewModels.Administration.Enums;
+    using MyHotelWebsite.Web.ViewModels.Dishes;
 
     [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.ReceptionistRoleName)]
     public class ReservationsController : AdministrationController
@@ -59,6 +61,31 @@
                 }
             }
 
+            return this.View(model);
+        }
+
+        public async Task<IActionResult> ByFiveCriteria(Catering catering, RoomType roomType, string reservationEmail, string reservationPhone, ReservationSorting sorting, int id = 1)
+        {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int ReservationsPerPage = 15;
+
+            var reservationsWithFilter = await this.reservationsService.HotelAdministrationGetReservationsByFiveCriteriaAsync<HotelAdministrationSingleReservationViewModel>(id, catering, roomType, sorting, reservationEmail, reservationPhone, ReservationsPerPage);
+            var model = new HotelAdministrationReservationByFiveCriteriaViewModel
+            {
+                ItemsPerPage = ReservationsPerPage,
+                AllEntitiesCount = await this.reservationsService.HotelAdministrationGetCountOfReservationsByFiveCriteriaAsync(reservationEmail, reservationPhone, catering, roomType, sorting),
+                Reservations = reservationsWithFilter,
+                PageNumber = id,
+                Catering = catering.ToString(),
+                RoomType = roomType.ToString(),
+                ReservationEmail = reservationEmail,
+                ReservationPhone = reservationPhone,
+                Sorting = sorting,
+            };
             return this.View(model);
         }
 
@@ -186,7 +213,6 @@
             return this.File(stream, contentType, fileName);
         }
 
-        // USED
         public async Task<IActionResult> ReserveRoom(int id)
         {
             var model = new HotelAdministrationReserveRoomViewModel()
@@ -200,7 +226,6 @@
             return this.View(model);
         }
 
-        // ??? NOT IMPLEMENTED
         [HttpPost]
         public async Task<IActionResult> ReserveRoom(HotelAdministrationReserveRoomViewModel model, int id)
         {
@@ -223,6 +248,11 @@
             }
 
             return this.RedirectToAction(nameof(this.All));
+        }
+
+        public IActionResult Search()
+        {
+            return this.View();
         }
     }
 }

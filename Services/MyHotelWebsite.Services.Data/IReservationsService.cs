@@ -5,6 +5,7 @@
     using System.Threading.Tasks;
 
     using MyHotelWebsite.Data.Models.Enums;
+    using MyHotelWebsite.Web.ViewModels.Administration.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
     using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
@@ -37,6 +38,10 @@
         Task HotelAdministrationEditReservationAsync(HotelAdministrationEditReservationViewModel model, int id);
 
         Task<IEnumerable<T>> HotelAdministrationGetAllReservationsAsync<T>(int page, int itemsPerPage = 4);
+
+        Task<int> HotelAdministrationGetCountOfReservationsByFiveCriteriaAsync(string reservationEmail = null, string reservationPhone = null, Catering catering = 0, RoomType roomType = 0, ReservationSorting sorting = ReservationSorting.AccommodationDate);
+
+        Task<IEnumerable<T>> HotelAdministrationGetReservationsByFiveCriteriaAsync<T>(int page, Catering catering, RoomType roomType, ReservationSorting sorting, string reservationEmail = null, string reservationPhone = null, int itemsPerPage = 4);
 
         Task<T> HotelAdministrationReservationDetailsByIdAsync<T>(int id);
 

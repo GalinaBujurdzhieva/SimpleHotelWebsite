@@ -12,13 +12,12 @@
                     <h2>Nothing found</h2>
                     <br />
                 </div>
-                
             }
+            <form class="mb-2 mt-4" method="post" asp-area="Administration" asp-controller="Dishes" asp-action="Search">
+                <div class="text-center"><button type="submit" class="btn btn-danger wrn-btn" >Search Again</button></div>
+            </form>
             <partial name="_SingleDishByCategoryPartial" />
             <br />
-            <form class="mb-4" method="post" asp-area="Administration" asp-controller="Dishes" asp-action="Search">
-                <div class="text-center"><button type="submit" class="btn btn-danger wrn-btn" style="margin-left:10px">Search Again</button></div>
-            </form>
             <partial name="_PagingDishesPartial" model="@Model" />
         </div>
     </div>

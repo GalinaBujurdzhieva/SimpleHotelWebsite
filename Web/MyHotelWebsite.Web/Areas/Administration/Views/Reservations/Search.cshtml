@@ -1,0 +1,61 @@
+﻿@using MyHotelWebsite.Data.Models.Enums;
+@using MyHotelWebsite.Web.ViewModels.Administration.Enums;
+@using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
+
+@model HotelAdministrationSingleReservationViewModel
+<body>
+    <div class="container">
+        <div class="row pt-1 pb-1">
+            <div class="col-lg-12 text-center">
+                <h4 class="text-center">Find reservation</h4>
+            </div>
+        </div>
+    </div>
+    <partial name="_SearchCarouselPartial" />
+    <br />
+    <section class="search-sec">
+        <div class="container">
+            <form asp-action="ByFiveCriteria" method="get" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <br />
+                                <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<Catering>()" name="catering">
+                                    <option disabled selected>Select type of Catering</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <br />
+                                <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<RoomType>()" name="roomType">
+                                    <option disabled selected>Select Room Type</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <br />
+                                <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<ReservationSorting>()" name="sorting">
+                                    <option disabled selected>Select Sorting of the Reservations</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row pt-3 mb-3">
+                            <div class="col-lg-12 offset-2">
+                            <div class="col-lg-4 col-md-4 col-sm-12 p-0">
+                                <input type="text" name="reservationEmail" class="form-control search-slt" placeholder="Type here email of the reservation">
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 p-0">
+                                <input type="text" name="reservationPhone" class="form-control search-slt" placeholder="Type here phone number of the reservation">
+                            </div>
+                        </div>
+                            <div class="row justify-content-center pt-3 mb-5">
+                                <div class="col-lg-1 col-md-1 col-sm-12 p-0">
+                                    <input type="submit" value="Search" name="Search" class="btn btn-danger wrn-btn" style="margin-left:8px" border="1">
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>

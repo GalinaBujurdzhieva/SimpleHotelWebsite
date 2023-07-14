@@ -11,6 +11,7 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
+    using MyHotelWebsite.Web.ViewModels.Administration.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
     using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
@@ -332,6 +333,84 @@
              .Skip((page - 1) * itemsPerPage)
              .Take(itemsPerPage).To<T>().ToListAsync();
             return reservations;
+        }
+
+        public async Task<int> HotelAdministrationGetCountOfReservationsByFiveCriteriaAsync(string reservationEmail = null, string reservationPhone = null, Catering catering = 0, RoomType roomType = 0, ReservationSorting sorting = ReservationSorting.AccommodationDate)
+        {
+            var searchReservationsList = this.reservationsRepo.All().AsQueryable();
+            if (catering != 0)
+            {
+                searchReservationsList = searchReservationsList
+                    .Where(x => x.Catering == catering);
+            }
+
+            if (roomType != 0)
+            {
+                searchReservationsList = searchReservationsList
+                    .Where(x => x.RoomType == roomType);
+            }
+
+            if (!string.IsNullOrEmpty(reservationEmail))
+            {
+                reservationEmail = $"%{reservationEmail.ToLower()}%";
+                searchReservationsList = searchReservationsList
+                    .Where(x => EF.Functions.Like(x.ReservationEmail.ToLower(), reservationEmail));
+            }
+
+            if (!string.IsNullOrEmpty(reservationPhone))
+            {
+                reservationPhone = $"%{reservationPhone.ToLower()}%";
+                searchReservationsList = searchReservationsList
+                    .Where(x => EF.Functions.Like(x.ReservationPhone.ToLower(), reservationPhone));
+            }
+
+            searchReservationsList = sorting switch
+            {
+                ReservationSorting.AccommodationDate => searchReservationsList.OrderBy(x => x.AccommodationDate),
+                ReservationSorting.ReleaseDate => searchReservationsList.OrderByDescending(x => x.ReleaseDate),
+                _ => searchReservationsList.OrderByDescending(x => x.TotalPrice),
+            };
+
+            return await searchReservationsList.CountAsync();
+        }
+
+        public async Task<IEnumerable<T>> HotelAdministrationGetReservationsByFiveCriteriaAsync<T>(int page, Catering catering, RoomType roomType, ReservationSorting sorting, string reservationEmail = null, string reservationPhone = null, int itemsPerPage = 4)
+        {
+            var searchReservationsList = this.reservationsRepo.All().AsQueryable();
+            if (catering != 0)
+            {
+                searchReservationsList = searchReservationsList
+                    .Where(x => x.Catering == catering);
+            }
+
+            if (roomType != 0)
+            {
+                searchReservationsList = searchReservationsList
+                    .Where(x => x.RoomType == roomType);
+            }
+
+            if (!string.IsNullOrEmpty(reservationEmail))
+            {
+                reservationEmail = $"%{reservationEmail.ToLower()}%";
+                searchReservationsList = searchReservationsList
+                    .Where(x => EF.Functions.Like(x.ReservationEmail.ToLower(), reservationEmail));
+            }
+
+            if (!string.IsNullOrEmpty(reservationPhone))
+            {
+                reservationPhone = $"%{reservationPhone.ToLower()}%";
+                searchReservationsList = searchReservationsList
+                    .Where(x => EF.Functions.Like(x.ReservationPhone.ToLower(), reservationPhone));
+            }
+
+            searchReservationsList = sorting switch
+            {
+                ReservationSorting.AccommodationDate => searchReservationsList.OrderBy(x => x.AccommodationDate),
+                ReservationSorting.ReleaseDate => searchReservationsList.OrderByDescending(x => x.ReleaseDate),
+                _ => searchReservationsList.OrderByDescending(x => x.TotalPrice),
+            };
+
+            return await searchReservationsList.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<T>().ToListAsync();
         }
 
         public async Task<T> HotelAdministrationReservationDetailsByIdAsync<T>(int id)

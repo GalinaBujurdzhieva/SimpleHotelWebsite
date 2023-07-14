@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row pt-1 pb-1">
         <div class="col-lg-12 text-center">
-            <h4 class="text-center">Find dish by category</h4>
+            <h4 class="text-center">Find dish</h4>
         </div>
     </div>
 </div>
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-lg-12">
                         <div class="row justify-content-center">
-                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <div class="col-lg-3 col-md-3 col-sm-12 pl-1">
                                     <br />
                                 <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<DishCategory>()" name="dishCategory">
                                         <option disabled selected>Select Dish Category</option>
@@ -31,13 +31,13 @@
                                     <option disabled selected>Select Sorting of the Dishes</option>
                                 </select>
                             </div>
-                            <div class="col-lg-1 col-md-1 col-sm-12 mt-3">
+                            <div class="col-lg-1 col-md-1 col-sm-12 pt-3">
                                 @Html.DropDownListFor(model => model.IsReady
-                                , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "Ready", new { style="width:100px; height:37px", onchange = "UpdateReport(this)" })
+                                , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "Ready", new { style="width:100px; height:33px", onchange = "UpdateReport(this)" })
                             </div>
-                            <div class="col-lg-1 col-md-1 col-sm-12 mt-3 ml-3">
+                            <div class="col-lg-1 col-md-1 col-sm-12 pt-3">
                                 @Html.DropDownListFor(model => model.IsInStock
-                                , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "In stock", new { style="width:100px; height:37px", onchange = "UpdateReport(this)" })
+                                , (IEnumerable<SelectListItem>)ViewData["boolYesOrNo"], "In stock", new { style="width:100px; height:33px", onchange = "UpdateReport(this)" })
                             </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                             <br />

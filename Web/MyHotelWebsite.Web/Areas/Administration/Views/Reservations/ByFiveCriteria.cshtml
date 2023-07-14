@@ -1,0 +1,24 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Reservations
+
+@model HotelAdministrationReservationByFiveCriteriaViewModel
+
+<body>
+    <div id="page">
+        <div class="clearfix"></div>
+        <div class="row">
+            @if (!Model.Reservations.Any())
+            {
+                <div class="col-12 text-center">
+                    <h2>Nothing found</h2>
+                    <br />
+                </div>
+            }
+            <form class="mb-2 mt-4" method="post" asp-area="Administration" asp-controller="Reservations" asp-action="Search">
+                <div class="text-center"><button type="submit" class="btn btn-danger wrn-btn">Search Again</button></div>
+            </form>
+            <partial name="_SingleReservationByFiveCriteriaPartial" />
+            <br />
+            <partial name="_PagingReservationsByFiveCriteriaPartial" model="@Model" />
+        </div>
+    </div>
+</body>
