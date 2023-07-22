@@ -29,6 +29,8 @@
 
         public DbSet<BlogImage> BlogImages { get; set; }
 
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+
         public DbSet<Dish> Dishes { get; set; }
 
         public DbSet<DishImage> DishImages { get; set; }

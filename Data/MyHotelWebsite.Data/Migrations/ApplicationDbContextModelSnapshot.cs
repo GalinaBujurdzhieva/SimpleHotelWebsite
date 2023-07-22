@@ -704,6 +704,48 @@ namespace MyHotelWebsite.Data.Migrations
                     b.ToTable("Settings");
                 });
 
+            modelBuilder.Entity("MyHotelWebsite.Data.Models.ShoppingCart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DishId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("DishId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("ShoppingCarts");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.ApplicationRole", null)
@@ -882,6 +924,25 @@ namespace MyHotelWebsite.Data.Migrations
                     b.Navigation("Reservation");
 
                     b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("MyHotelWebsite.Data.Models.ShoppingCart", b =>
+                {
+                    b.HasOne("MyHotelWebsite.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MyHotelWebsite.Data.Models.Dish", "Dish")
+                        .WithMany()
+                        .HasForeignKey("DishId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("Dish");
                 });
 
             modelBuilder.Entity("MyHotelWebsite.Data.Models.ApplicationUser", b =>

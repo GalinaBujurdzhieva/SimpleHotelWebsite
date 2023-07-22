@@ -10,13 +10,12 @@
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Common;
     using MyHotelWebsite.Data.Models;
-    using MyHotelWebsite.Services.Data;
-    using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
-    using Syncfusion.Pdf.Grid;
-    using Syncfusion.Pdf;
     using MyHotelWebsite.Data.Models.Enums;
+    using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Administration.Enums;
-    using MyHotelWebsite.Web.ViewModels.Dishes;
+    using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
+    using Syncfusion.Pdf;
+    using Syncfusion.Pdf.Grid;
 
     [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.ReceptionistRoleName)]
     public class ReservationsController : AdministrationController

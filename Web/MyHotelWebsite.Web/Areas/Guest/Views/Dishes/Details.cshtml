@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using MyHotelWebsite.Common;
+@using MyHotelWebsite.Data.Models;
+@using MyHotelWebsite.Web.ViewModels.Guests.ShoppingCarts;
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@model ShoppingCartViewModel
+
+<body>
+    <form method="post">
+        <div class="card mb-3" style="max-width: 840px;">
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <img src="@("https://localhost:5001/" + @Model.Dish.DishImageUrl)" alt="@Model.Dish.Name" class="card-img">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">@Model.Dish.Name</h2>
+                        <h3 class="card-text mb-3"><b>Category: </b>@Model.Dish.DishCategory</h3>
+                        <h3 class="card-text mb-3"><b>Price: </b>@Model.Dish.Price euro</h3>
+                        @if (this.SignInManager.IsSignedIn(this.User) && this.User.IsInRole(GlobalConstants.GuestRoleName))
+                        {
+                            <br />
+                            <br />
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="d-flex justify-content-center mb-4">
+                                <div class="form-outline me-4" style="width:200px">
+                                    <label asp-for="@Model.Count" style="font-size:large">Count:</label>
+                                    <input asp-for="@Model.Count" type="number" class="form-control" />
+                                    <span asp-validation-for="@Model.Count" class="text-danger"></span>
+                                </div>
+                                @*CONTROLLER AND ACTION*@
+                                <button type="button" class="btn btn-small btn-danger" style="margin-right:10px; width:150px" asp-area="Guest" asp-controller="Dishes" asp-action="Details" asp-route-id="@Model.Dish.Id" class="btn btn-secondary">Buy</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>

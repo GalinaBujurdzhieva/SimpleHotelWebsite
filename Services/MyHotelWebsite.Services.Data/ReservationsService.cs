@@ -474,7 +474,6 @@
             await this.reservationsRepo.SaveChangesAsync();
         }
 
-
         public async Task<bool> IsReservationActiveAtTheMoment(int id)
         {
             var currentReservation = await this.reservationsRepo.AllAsNoTracking().FirstOrDefaultAsync(r => r.Id == id);

@@ -1,0 +1,36 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Guests;
+@model AllGuestViewModel
+
+@{
+    int i = 1;
+}
+
+<body>
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Guest Email</th>
+                <th scope="col">Guest Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.PageNumber != 1)
+            {
+                i = (Model.PageNumber) * 10 - 9;
+            }
+            @foreach (var guest in Model.Guests)
+            {
+                <tr>
+                    <td><i class="fa fa-user-circle-o" aria-hidden="true"></i> @(i++)</td>
+                    <td>@guest.FirstName</td>
+                    <td>@guest.LastName</td>
+                    <td>@guest.Email</td>
+                    <td>@guest.PhoneNumber</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

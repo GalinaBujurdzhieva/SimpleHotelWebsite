@@ -16,14 +16,15 @@
             <div class="card-body justify-content-center">
                 <h3 class="card-title justify-content-center">@dish.Name</h3>
                 <br>
-                <h4 class="card-text">Category: @dish.DishCategory</h4>
-                <h4 class="card-text">Price: @dish.Price euro</h4>
+                <h4 class="card-text mb-3"> <b>Category: </b>@dish.DishCategory</h4>
+                <h4 class="card-text"><b>Price: </b>@dish.Price euro</h4>
                 @if (this.SignInManager.IsSignedIn(this.User) && this.User.IsInRole(GlobalConstants.GuestRoleName))
                 {
                     <br>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <div class="event-blog-details">
-                            <a type="button" class="btn btn-small btn-danger" style="margin-right:10px; width:100px" asp-area="Administration" asp-controller="Dishes" asp-action="Order" asp-route-id="@dish.Id" class="btn btn-secondary">Order</a>
+                            @*CONTROLLER & ACTION ???*@
+                            <a type="button" class="btn btn-small btn-danger" style="margin-right:10px; width:100px" asp-area="Guest" asp-controller="Dishes" asp-action="Details" asp-route-id="@dish.Id" class="btn btn-secondary">Order</a>
                         </div>
                     </div>
                 }

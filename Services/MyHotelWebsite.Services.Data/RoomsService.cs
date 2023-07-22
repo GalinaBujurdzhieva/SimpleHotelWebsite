@@ -10,22 +10,14 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
-    using MyHotelWebsite.Web.ViewModels.Administration.Rooms;
-    using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
 
     public class RoomsService : IRoomsService
     {
         private readonly IDeletableEntityRepository<Room> roomsRepo;
 
-        // private readonly IRepository<RoomReservation> roomsReservationsRepo;
-        // private readonly IDeletableEntityRepository<Reservation> reservationsRepo;
-
-        public RoomsService(IDeletableEntityRepository<Room> roomsRepo/*, IRepository<RoomReservation> roomsReservationsRepo, IDeletableEntityRepository<Reservation> reservationsRepo*/)
+        public RoomsService(IDeletableEntityRepository<Room> roomsRepo)
         {
             this.roomsRepo = roomsRepo;
-
-            // this.roomsReservationsRepo = roomsReservationsRepo;
-            // this.reservationsRepo = reservationsRepo;
         }
 
         // USED
