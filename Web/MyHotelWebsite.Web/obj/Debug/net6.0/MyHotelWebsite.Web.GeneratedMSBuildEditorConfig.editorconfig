@@ -116,10 +116,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lenovo/source/repos/SimpleHotelWebsite-new-07.2023/Web/MyHotelWebsite.Web/Areas/Guest/Views/Dishes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR3Vlc3RcVmlld3NcRGlzaGVzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Lenovo/source/repos/SimpleHotelWebsite-new-07.2023/Web/MyHotelWebsite.Web/Areas/Guest/Views/Reservations/Book.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR3Vlc3RcVmlld3NcUmVzZXJ2YXRpb25zXEJvb2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -130,6 +126,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Lenovo/source/repos/SimpleHotelWebsite-new-07.2023/Web/MyHotelWebsite.Web/Areas/Guest/Views/Reservations/MyReservations.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR3Vlc3RcVmlld3NcUmVzZXJ2YXRpb25zXE15UmVzZXJ2YXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/SimpleHotelWebsite-new-07.2023/Web/MyHotelWebsite.Web/Areas/Guest/Views/ShoppingCarts/Buy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR3Vlc3RcVmlld3NcU2hvcHBpbmdDYXJ0c1xCdXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/SimpleHotelWebsite-new-07.2023/Web/MyHotelWebsite.Web/Areas/Guest/Views/ShoppingCarts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR3Vlc3RcVmlld3NcU2hvcHBpbmdDYXJ0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/source/repos/SimpleHotelWebsite-new-07.2023/Web/MyHotelWebsite.Web/Areas/Guest/Views/_ValidationScriptsPartial.cshtml]

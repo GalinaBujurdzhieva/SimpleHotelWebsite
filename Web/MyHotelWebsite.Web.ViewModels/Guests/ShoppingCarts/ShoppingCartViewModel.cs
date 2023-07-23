@@ -2,13 +2,15 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-
+    using System.ComponentModel.DataAnnotations.Schema;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Web.ViewModels.Dishes;
 
     public class ShoppingCartViewModel : IMapFrom<ShoppingCart>
     {
+        public int Id { get; set; }
+
         [Required]
         public string ApplicationUserId { get; set; }
 
@@ -22,5 +24,8 @@
         public string DishId { get; set; }
 
         public virtual SingleDishViewModel Dish { get; set; }
+
+        [NotMapped]
+        public decimal Price { get; set; }
     }
 }

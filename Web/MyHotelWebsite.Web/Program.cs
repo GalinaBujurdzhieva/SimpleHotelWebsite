@@ -108,6 +108,7 @@
             services.AddTransient<IRoomsService, RoomsService>();
             services.AddTransient<IGuestsService, GuestsService>();
             services.AddTransient<IReservationsService, ReservationsService>();
+            services.AddTransient<IShoppingCartsService, ShoppingCartsService>();
         }
 
         private static void Configure(WebApplication app/*, IBackgroundJobClient backgroundJobs*/)
