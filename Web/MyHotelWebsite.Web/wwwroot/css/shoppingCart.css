@@ -23,3 +23,28 @@
     box-shadow: 0 0 0 1px rgba(0,0,0,0.15) inset;
     vertical-align: middle;
 }
+
+#divs-heading{
+    display: inline;
+}
+#plus {
+    color: #4FD5D9;
+}
+
+#minus {
+    color: #010808;
+}
+
+#remove, #h3, #h4 {
+    color: #d9534f;
+}
+
+#plus:hover, #minus:hover, #remove:hover{
+    cursor:pointer;
+}
+
+#name-and-category-div{
+    display:flex;
+    align-items:start;
+    gap: 20px;
+}

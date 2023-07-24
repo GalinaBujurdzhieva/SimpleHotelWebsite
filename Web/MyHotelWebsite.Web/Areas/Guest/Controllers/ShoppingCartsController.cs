@@ -31,7 +31,7 @@
                 return this.RedirectToAction("All", "Dishes", new { area = string.Empty });
             }
 
-            var model = new ShoppingCartViewModel
+            var model = new SingleShoppingCartViewModel
             {
                 DishId = id,
                 Dish = await this.dishesService.DishDetailsByIdAsync<SingleDishViewModel>(id),
@@ -42,7 +42,7 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> Buy(ShoppingCartViewModel shoppingCart)
+        public async Task<IActionResult> Buy(SingleShoppingCartViewModel shoppingCart)
         {
             bool dishAlreadyIsInTheShoppingCart = await this.shoppingCartsService.IsDishAlreadyInTheShoppingCartOfThatUserAsync(shoppingCart.DishId, shoppingCart.ApplicationUserId);
             if (!dishAlreadyIsInTheShoppingCart)
@@ -57,9 +57,16 @@
             return this.RedirectToAction("All", "Dishes", new { area = string.Empty });
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return this.View();
+            var model = new AllShoppingCartsOfOneUserViewModel();
+            string applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!string.IsNullOrEmpty(applicationUserId))
+            {
+                model.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser<SingleShoppingCartViewModel>(applicationUserId);
+            }
+
+            return this.View(model);
         }
     }
 }

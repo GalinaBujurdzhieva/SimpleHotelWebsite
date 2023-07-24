@@ -6,37 +6,41 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-@model ShoppingCartViewModel
+@model SingleShoppingCartViewModel
 
 <body>
     <form method="post">
         <input type="hidden" asp-for="@Model.DishId"/>
         <input type="hidden" asp-for="@Model.ApplicationUserId"/>
-        <div class="card mb-3" style="max-width: 840px;">
-            <div class="row no-gutters">
-                <div class="col-md-6">
-                    <img src="@("https://localhost:5001/" + @Model.Dish.DishImageUrl)" alt="@Model.Dish.Name" class="card-img">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h2 class="card-title text-center mb-4">@Model.Dish.Name</h2>
-                        <h3 class="card-text mb-3"><b>Category: </b>@Model.Dish.DishCategory</h3>
-                        <h3 class="card-text mb-3"><b>Price: </b>@Model.Dish.Price euro</h3>
-                        @if (this.SignInManager.IsSignedIn(this.User) && this.User.IsInRole(GlobalConstants.GuestRoleName))
-                        {
-                            <br />
-                            <br />
-                            <div asp-validation-summary="All" class="text-danger"></div>
-                            <div class="d-flex justify-content-center mb-4">
-                                <div class="form-outline me-4" style="width:200px">
-                                    <label class="mb-3" asp-for="@Model.Count" style="font-size:large">Count:</label>
-                                    <input asp-for="@Model.Count" type="number" class="form-control" />
-                                    <span asp-validation-for="@Model.Count" class="text-danger"></span>
-                                </div>
-                                @*CONTROLLER AND ACTION*@
-                                <button type="submit" class="btn btn-small btn-danger" style="margin-right:10px; width:150px" asp-route-id="@Model.Dish.Id" class="btn btn-secondary">Add to cart</button>
+        <div class="row">
+            <div class="col-10 offset-1">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-6">
+                            <img src="@("https://localhost:5001/" + @Model.Dish.DishImageUrl)" alt="@Model.Dish.Name" class="card-img">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h2 class="card-title text-center mb-4">@Model.Dish.Name</h2>
+                                <h3 class="card-text mb-3"><b>Category: </b>@Model.Dish.DishCategory</h3>
+                                <h3 class="card-text mb-3"><b>Price: </b>@Model.Dish.Price euro</h3>
+                                @if (this.SignInManager.IsSignedIn(this.User) && this.User.IsInRole(GlobalConstants.GuestRoleName))
+                                {
+                                    <br />
+                                    <br />
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <div class="d-flex justify-content-center mb-4">
+                                        <div class="form-outline me-4" style="width:200px">
+                                            <label class="mb-3" asp-for="@Model.Count" style="font-size:large">Count:</label>
+                                            <input asp-for="@Model.Count" type="number" class="form-control" />
+                                            <span asp-validation-for="@Model.Count" class="text-danger"></span>
+                                        </div>
+                                        @*CONTROLLER AND ACTION*@
+                                        <button type="submit" class="btn btn-small btn-danger" style="margin-right:10px; width:150px" asp-route-id="@Model.Dish.Id" class="btn btn-secondary">Add to cart</button>
+                                    </div>
+                                }
                             </div>
-                        }
+                        </div>
                     </div>
                 </div>
             </div>
