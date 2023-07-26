@@ -1,5 +1,6 @@
 ﻿namespace MyHotelWebsite.Web.Areas.Guest.Controllers
 {
+    using System;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
@@ -17,12 +18,17 @@
     {
         private readonly IDishesService dishesService;
         private readonly IShoppingCartsService shoppingCartsService;
+        private readonly IOrdersService ordersService;
 
-        public ShoppingCartsController(IDishesService dishesService, IShoppingCartsService shoppingCartsService)
+        public ShoppingCartsController(IDishesService dishesService, IShoppingCartsService shoppingCartsService, IOrdersService ordersService)
         {
             this.dishesService = dishesService;
             this.shoppingCartsService = shoppingCartsService;
+            this.ordersService = ordersService;
         }
+
+        [BindProperty]
+        public AllShoppingCartsOfOneUserViewModel AllShoppingCartModel { get; set; }
 
         public async Task<IActionResult> Buy(string id)
         {
@@ -59,15 +65,41 @@
 
         public async Task<IActionResult> Index()
         {
-            var model = new AllShoppingCartsOfOneUserViewModel();
+            this.AllShoppingCartModel = new();
             string applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!string.IsNullOrEmpty(applicationUserId))
             {
-                model.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
-                model.TotalPrice = await this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(model.ShoppingCartsList);
+                this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
+                this.AllShoppingCartModel.TotalPrice = await this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
             }
 
-            return this.View(model);
+            return this.View(this.AllShoppingCartModel);
+        }
+
+        [HttpPost]
+        [ActionName("Index")]
+        public async Task<IActionResult> IndexPost()
+        {
+            var applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!string.IsNullOrEmpty(applicationUserId))
+            {
+                this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
+                this.AllShoppingCartModel.TotalPrice = await this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
+            }
+
+            try
+            {
+                await this.ordersService.AddOrderAsync(this.AllShoppingCartModel, applicationUserId);
+            }
+            catch (Exception)
+            {
+                this.ModelState.AddModelError(string.Empty, "Something went wrong. You can not place an order");
+                return this.View(this.AllShoppingCartModel);
+            }
+
+            return this.RedirectToAction("All", "Dishes", new { area = string.Empty });
+
+            // return this.RedirectToAction("MyOrders", "Orders");
         }
 
         public async Task<IActionResult> Minus(int shoppingCartId)

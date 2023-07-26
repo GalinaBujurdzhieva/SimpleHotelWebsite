@@ -18,32 +18,33 @@
     <link rel="stylesheet" type="text/css" href="~/css/shoppingCart.css" asp-append-version="true" />
 </head>
 <body>
-<div class="container px-3 my-5 clearfix">
-    <!-- Shopping cart table -->
-    <div class="card mt-3">
-            <div class="card-header text-danger text-center pt-3 mb-3" style="color:#d9534f">
-                <h2><b>Shopping Cart</b></h2>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered m-0">
-                    <thead>
-                        <tr>
-                            <!-- Set columns width -->
-                            <th class="text-center py-3 px-4" style="min-width:300px;font-size:24px">Product Name &amp; Details</th>
-                                <th class="text-right py-3 px-4" style="width:80px;font-size:18px">Price (euro)</th>
-                                <th class="text-center py-3 px-4" style="width:50px;font-size:18px">Quantity</th>
-                                <th class="text-center py-3 px-4" style="width:80px;font-size:18px">Add / Subtract</th>
-                                <th class="text-center py-3 px-4" style="width:80px;font-size:18px">Total (euro)</th>
-                                <th class="text-center align-middle py-3 px-0" style="width:80px;font-size:18px">Remove</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach (var singleShoppingCart in Model.ShoppingCartsList)
-                            {
+<form method="post">
+        <div class="container px-3 my-5 clearfix">
+            <!-- Shopping cart table -->
+            <div class="card mt-3">
+                <div class="card-header text-danger text-center pt-3 mb-3" style="color:#d9534f">
+                    <h2><b>Shopping Cart</b></h2>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered m-0">
+                            <thead>
                                 <tr>
-                                    <td id="name-and-category-div">
+                                    <!-- Set columns width -->
+                                    <th class="text-center py-3 px-4" style="min-width:300px;font-size:24px">Product Name &amp; Details</th>
+                                    <th class="text-right py-3 px-4" style="width:80px;font-size:18px">Price (euro)</th>
+                                    <th class="text-center py-3 px-4" style="width:50px;font-size:18px">Quantity</th>
+                                    <th class="text-center py-3 px-4" style="width:80px;font-size:18px">Add / Subtract</th>
+                                    <th class="text-center py-3 px-4" style="width:80px;font-size:18px">Total (euro)</th>
+                                    <th class="text-center align-middle py-3 px-0" style="width:80px;font-size:18px">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var singleShoppingCart in Model.ShoppingCartsList)
+                                {
+                                    <tr>
+                                        <td id="name-and-category-div">
                                             <img src="@("https://localhost:5001/" + singleShoppingCart.Dish.DishImageUrl)" alt="@singleShoppingCart.Dish.Name">
                                             <div id="divs-heading">
                                                 <h3 id="h3" class="text-danger"><b>@singleShoppingCart.Dish.Name</b></h3>
@@ -53,32 +54,34 @@
                                                     </b> @singleShoppingCart.Dish.DishCategory
                                                 </h4>
                                             </div>
-                                    </td>
-                                    <td class="text-right font-weight-semibold align-middle p-4" style="font-size:18px">@singleShoppingCart.Dish.Price</td>
-                                    <td class="text-center align-middle px-0" style="font-size:18px">@singleShoppingCart.Count</td>
-                                    <td class="text-center font-weight-semibold align-middle p-4" style="font-size:18px"><a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Plus" asp-route-shoppingCartId="@singleShoppingCart.Id"><i id="plus" class="fa fa-plus-square" aria-hidden="true"></i></a> <a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Minus" asp-route-shoppingCartId="@singleShoppingCart.Id"><i id="minus" class="fa fa-minus-square" aria-hidden="true"></i></a></td>
-                                    <td class="text-center align-middle px-0" style="font-size:16px">@((singleShoppingCart.Dish.Price * singleShoppingCart.Count).ToString("F2"))</td>
-                                    <td class="text-center align-middle p-4"><a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Remove" asp-route-shoppingCartId="@singleShoppingCart.Id"><i id="remove" class="fa fa-times fa-2x" aria-hidden="true"></i></a></td>
-                                </tr>
-                            }
-                    </tbody>
-                </table>
-            </div>
-            <!-- / Shopping cart table -->
-                <div class="d-flex">
-                    <div class="text-right mt-4">
-                        <span style="font-size:22px"><strong>Total price: @Model.TotalPrice.ToString("F2") </strong>euro</span>
+                                        </td>
+                                        <td class="text-right font-weight-semibold align-middle p-4" style="font-size:18px">@singleShoppingCart.Dish.Price</td>
+                                        <td class="text-center align-middle px-0" style="font-size:18px">@singleShoppingCart.Count</td>
+                                        <td class="text-center font-weight-semibold align-middle p-4" style="font-size:18px"><a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Plus" asp-route-shoppingCartId="@singleShoppingCart.Id"><i id="plus" class="fa fa-plus-square" aria-hidden="true"></i></a> <a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Minus" asp-route-shoppingCartId="@singleShoppingCart.Id"><i id="minus" class="fa fa-minus-square" aria-hidden="true"></i></a></td>
+                                        <td class="text-center align-middle px-0" style="font-size:16px">@((singleShoppingCart.Dish.Price * singleShoppingCart.Count).ToString("F2"))</td>
+                                        <td class="text-center align-middle p-4"><a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Remove" asp-route-shoppingCartId="@singleShoppingCart.Id"><i id="remove" class="fa fa-times fa-2x" aria-hidden="true"></i></a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
+                    <!-- / Shopping cart table -->
+                    <div class="d-flex">
+                        <div class="text-right mt-4">
+                            <span style="font-size:22px"><strong>Total price: @Model.TotalPrice.ToString("F2") </strong>euro</span>
+                        </div>
+                    </div>
+                    <div class="btn-group mb-5" role="group">
+                        <a asp-area="" asp-controller="Dishes" asp-action="All" type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Back to shopping</a>
+                        <button type="submit" class="btn btn-lg btn-danger mt-2">Finish the order</button>
+                    </div>
+
                 </div>
-            <div class="btn-group mb-5" role="group">
-                <a asp-area="" asp-controller="Dishes" asp-action="All" type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Back to shopping</a>
-                <button type="button" class="btn btn-lg btn-danger mt-2">Summary</button>
+                <br />
             </div>
-            
         </div>
-            <br />
-    </div>
-</div>
+</form>
+
     <script src="http://code.jquery.com/jquery-1.11.0.min.js" asp-append-version="true"></script>
     <script src="~/js/bootstrap.min.js" asp-append-version="true"></script>
 </body>

@@ -446,6 +446,7 @@ namespace MyHotelWebsite.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ApplicationUserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedOn")
@@ -486,6 +487,7 @@ namespace MyHotelWebsite.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ApplicationUserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Comment")
@@ -853,7 +855,9 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId");
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("MyHotelWebsite.Data.Models.Dish", "Dish")
                         .WithMany("DishOrders")
@@ -878,7 +882,9 @@ namespace MyHotelWebsite.Data.Migrations
                 {
                     b.HasOne("MyHotelWebsite.Data.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Orders")
-                        .HasForeignKey("ApplicationUserId");
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("ApplicationUser");
                 });

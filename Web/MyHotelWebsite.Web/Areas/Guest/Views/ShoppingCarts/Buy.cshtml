@@ -35,7 +35,6 @@
                                             <input asp-for="@Model.Count" type="number" class="form-control" />
                                             <span asp-validation-for="@Model.Count" class="text-danger"></span>
                                         </div>
-                                        @*CONTROLLER AND ACTION*@
                                         <button type="submit" class="btn btn-small btn-danger" style="margin-right:10px; width:150px" asp-route-id="@Model.Dish.Id" class="btn btn-secondary">Add to cart</button>
                                     </div>
                                 }
