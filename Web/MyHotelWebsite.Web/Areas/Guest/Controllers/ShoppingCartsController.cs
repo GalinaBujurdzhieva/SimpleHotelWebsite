@@ -63,10 +63,29 @@
             string applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!string.IsNullOrEmpty(applicationUserId))
             {
-                model.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser<SingleShoppingCartViewModel>(applicationUserId);
+                model.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
+                model.TotalPrice = await this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(model.ShoppingCartsList);
             }
 
             return this.View(model);
+        }
+
+        public async Task<IActionResult> Minus(int shoppingCartId)
+        {
+            await this.shoppingCartsService.DecreaseQuantityOfTheDishInTheShoppingCart(shoppingCartId);
+            return this.RedirectToAction(nameof(this.Index));
+        }
+
+        public async Task<IActionResult> Plus(int shoppingCartId)
+        {
+            await this.shoppingCartsService.IncreaseQuantityOfTheDishInTheShoppingCart(shoppingCartId);
+            return this.RedirectToAction(nameof(this.Index));
+        }
+
+        public async Task<IActionResult> Remove(int shoppingCartId)
+        {
+            await this.shoppingCartsService.RemoveDishFromTheShoppingCart(shoppingCartId);
+            return this.RedirectToAction(nameof(this.Index));
         }
     }
 }

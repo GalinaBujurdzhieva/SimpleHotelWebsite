@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Mapping;
@@ -25,8 +24,5 @@
         public string DishId { get; set; }
 
         public virtual SingleDishViewModel Dish { get; set; }
-
-        [NotMapped]
-        public decimal Price { get; set; }
     }
 }

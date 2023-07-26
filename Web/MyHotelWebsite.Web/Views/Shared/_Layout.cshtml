@@ -96,7 +96,7 @@
                             </nav>
                         </div>
                         <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
-                            <div class="me-5"><a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Index"><span><i class="fa fa-cart-plus fa-3x" aria-hidden="true"></i></span></a></div>
+                            <div class="me-5"><a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Index"><span><i class="fa fa-cart-plus fa-3x" aria-hidden="true"></i></span></a> <vc:shopping-cart-items-count title="count" /></div>
                             <div class="btn-group ms-3 mt-2" role="group" aria-label="First group">
                                 <form method="post" asp-area="" asp-controller="User" asp-action="Logout">
                                     <div class="text-center"><button type="submit" class="book-now-btn">Logout</button></div>

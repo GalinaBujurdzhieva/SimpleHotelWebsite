@@ -1171,7 +1171,7 @@
             // 1
             dishes.Add(new Dish
             {
-                Name = "Banana_pudding",
+                Name = "Banana pudding",
                 Price = 24.00M,
                 DishCategory = DishCategory.Desserts,
                 QuantityInStock = 34,

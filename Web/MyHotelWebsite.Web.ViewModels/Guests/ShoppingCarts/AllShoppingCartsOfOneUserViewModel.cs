@@ -4,8 +4,10 @@
 
     public class AllShoppingCartsOfOneUserViewModel
     {
-        public IEnumerable<SingleShoppingCartViewModel> ShoppingCartsList { get; set; } = new List<SingleShoppingCartViewModel>();
+        public List<SingleShoppingCartViewModel> ShoppingCartsList { get; set; } = new List<SingleShoppingCartViewModel>();
 
         public decimal TotalPrice { get; set; }
+
+        public int Count => this.ShoppingCartsList.Count;
     }
 }

@@ -93,6 +93,7 @@
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddHangfireServer();
             services.AddSingleton(configuration);
+            services.AddHttpContextAccessor();
 
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));

@@ -44,7 +44,6 @@
                             {
                                 <tr>
                                     <td id="name-and-category-div">
-                                        
                                             <img src="@("https://localhost:5001/" + singleShoppingCart.Dish.DishImageUrl)" alt="@singleShoppingCart.Dish.Name">
                                             <div id="divs-heading">
                                                 <h3 id="h3" class="text-danger"><b>@singleShoppingCart.Dish.Name</b></h3>
@@ -54,13 +53,12 @@
                                                     </b> @singleShoppingCart.Dish.DishCategory
                                                 </h4>
                                             </div>
-                                        
                                     </td>
                                     <td class="text-right font-weight-semibold align-middle p-4" style="font-size:18px">@singleShoppingCart.Dish.Price</td>
                                     <td class="text-center align-middle px-0" style="font-size:18px">@singleShoppingCart.Count</td>
-                                    <td class="text-center font-weight-semibold align-middle p-4" style="font-size:18px"><a><i id="plus" class="fa fa-plus-square" aria-hidden="true"></i></a> <a><i id="minus" class="fa fa-minus-square" aria-hidden="true"></i></a></td>
+                                    <td class="text-center font-weight-semibold align-middle p-4" style="font-size:18px"><a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Plus" asp-route-shoppingCartId="@singleShoppingCart.Id"><i id="plus" class="fa fa-plus-square" aria-hidden="true"></i></a> <a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Minus" asp-route-shoppingCartId="@singleShoppingCart.Id"><i id="minus" class="fa fa-minus-square" aria-hidden="true"></i></a></td>
                                     <td class="text-center align-middle px-0" style="font-size:16px">@((singleShoppingCart.Dish.Price * singleShoppingCart.Count).ToString("F2"))</td>
-                                    <td class="text-center align-middle p-4"><a><i id="remove" class="fa fa-times fa-2x" aria-hidden="true"></i></a></td>
+                                    <td class="text-center align-middle p-4"><a asp-area="Guest" asp-controller="ShoppingCarts" asp-action="Remove" asp-route-shoppingCartId="@singleShoppingCart.Id"><i id="remove" class="fa fa-times fa-2x" aria-hidden="true"></i></a></td>
                                 </tr>
                             }
                     </tbody>
@@ -69,7 +67,7 @@
             <!-- / Shopping cart table -->
                 <div class="d-flex">
                     <div class="text-right mt-4">
-                        <span style="font-size:22px"><strong>Total price: 1164.65 </strong>euro</span>
+                        <span style="font-size:22px"><strong>Total price: @Model.TotalPrice.ToString("F2") </strong>euro</span>
                     </div>
                 </div>
             <div class="btn-group mb-5" role="group">
