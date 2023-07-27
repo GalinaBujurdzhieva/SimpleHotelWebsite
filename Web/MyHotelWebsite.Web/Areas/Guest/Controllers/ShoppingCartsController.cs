@@ -97,9 +97,7 @@
                 return this.View(this.AllShoppingCartModel);
             }
 
-            return this.RedirectToAction("All", "Dishes", new { area = string.Empty });
-
-            // return this.RedirectToAction("MyOrders", "Orders");
+            return this.RedirectToAction("MyOrders", "Orders");
         }
 
         public async Task<IActionResult> Minus(int shoppingCartId)

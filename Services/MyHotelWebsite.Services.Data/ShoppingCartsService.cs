@@ -48,6 +48,7 @@
                 {
                     currentShoppingCart.Count -= 1;
                 }
+
                 await this.shoppingCartsRepo.SaveChangesAsync();
             }
         }

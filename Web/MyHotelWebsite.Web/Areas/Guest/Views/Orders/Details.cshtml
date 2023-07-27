@@ -1,0 +1,53 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Guests.Orders;
+
+@model AllDishesInOneOrderViewModel
+
+<div class="container px-3 my-5 clearfix">
+    <div class="card mt-3">
+        <div class="card-header text-danger text-center pt-3 mb-3" style="color:#d9534f">
+            <h2><b>Order Details</b></h2>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered m-0">
+                    <thead>
+                        <tr>
+                            <th class="text-center py-3 px-4" style="min-width:300px;font-size:24px">Dish Name &amp; Details</th>
+                            <th class="text-right py-3 px-4" style="width:80px;font-size:18px">Price (euro)</th>
+                            <th class="text-center py-3 px-4" style="width:50px;font-size:18px">Quantity</th>
+                            <th class="text-center py-3 px-4" style="width:80px;font-size:18px">Total (euro)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var singleDish in Model.Dishes)
+                        {
+                            <tr>
+                                <td id="name-and-category-div">
+                                    <img src="@("https://localhost:5001/" + singleDish.Dish.DishImageUrl)" alt="@singleDish.Dish.Name">
+                                    <div id="divs-heading">
+                                        <h3 id="h3" class="text-danger"><b>@singleDish.Dish.Name</b></h3>
+                                        <h4 id="h4" class="text-danger">
+                                            <b>
+                                                Category:
+                                            </b> @singleDish.Dish.DishCategory
+                                        </h4>
+                                    </div>
+                                </td>
+                                <td class="text-right font-weight-semibold align-middle p-4" style="font-size:18px">@singleDish.Dish.Price</td>
+                                <td class="text-center align-middle px-0" style="font-size:18px">@singleDish.DishQuantity</td>
+                                <td class="text-center align-middle px-0" style="font-size:16px">@((singleDish.Dish.Price * singleDish.DishQuantity).ToString("F2"))</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex">
+                <div class="text-right mt-4">
+                    <span style="font-size:22px"><strong>Total price: @Model.TotalPrice.ToString("F2") </strong>euro</span>
+                </div>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>

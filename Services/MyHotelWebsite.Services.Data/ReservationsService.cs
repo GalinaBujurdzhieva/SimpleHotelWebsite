@@ -207,6 +207,11 @@
             return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ApplicationUserId == applicationUserId).CountAsync();
         }
 
+        public async Task<int> GetCountOfUpcomingReservationsAsync()
+        {
+            return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ReleaseDate.CompareTo(DateTime.UtcNow) >= 0).CountAsync();
+        }
+
         public async Task<string> GetGuestEmail(int reservationId)
         {
             var currentReservation = await this.reservationsRepo.AllAsNoTracking().Where(r => r.Id == reservationId).FirstOrDefaultAsync();

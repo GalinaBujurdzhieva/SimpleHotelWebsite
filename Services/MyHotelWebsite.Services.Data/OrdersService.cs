@@ -1,11 +1,15 @@
 ﻿namespace MyHotelWebsite.Services.Data
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Microsoft.EntityFrameworkCore;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
+    using MyHotelWebsite.Services.Mapping;
+    using MyHotelWebsite.Web.ViewModels.Guests.Orders;
     using MyHotelWebsite.Web.ViewModels.Guests.ShoppingCarts;
 
     public class OrdersService : IOrdersService
@@ -48,9 +52,55 @@
             }
         }
 
+        public async Task<bool> DoesOrderExistsAsync(int id)
+        {
+            return await this.ordersRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
+        }
+
         public async Task<int> GetCountAsync()
         {
-            return await this.ordersRepo.AllAsNoTracking().CountAsync();
+            return await this.ordersRepo.AllAsNoTracking().Where(o => o.OrderStatus == OrderStatus.New).CountAsync();
+        }
+
+        public async Task<int> GetCountOfMyOrdersAsync(string applicationUserId)
+        {
+            return await this.ordersRepo.AllAsNoTracking().Where(r => r.ApplicationUserId == applicationUserId).CountAsync();
+        }
+
+        public async Task<IEnumerable<T>> GetMyOrdersAsync<T>(string applicationUserId, int page, int itemsPerPage = 4)
+        {
+            var orders = await this.ordersRepo.AllAsNoTracking()
+                .Include(o => o.ApplicationUser)
+             .Where(o => o.ApplicationUserId == applicationUserId)
+             .OrderBy(o => o.CreatedOn)
+             .ThenBy(o => o.OrderStatus)
+             .Skip((page - 1) * itemsPerPage)
+             .Take(itemsPerPage).To<T>().ToListAsync();
+            return orders;
+        }
+
+        public async Task<IEnumerable<T>> GetOrderDetailsAsync<T>(int id)
+        {
+            var currentOrderDishes = await this.dishOrdersRepo.AllAsNoTracking()
+                .Include(o => o.Dish)
+                .ThenInclude(d => d.DishImage)
+                .Include(o => o.ApplicationUser)
+                .Where(o => o.Order.Id == id)
+                .To<T>()
+                .ToListAsync();
+
+            return currentOrderDishes;
+        }
+
+        public decimal GetOrderTotalAsync(IEnumerable<SingleDishOrderViewModel> dishesList)
+        {
+            decimal orderTotal = 0m;
+            foreach (var dish in dishesList)
+            {
+                orderTotal += dish.TotalPrice;
+            }
+
+            return orderTotal;
         }
     }
 }

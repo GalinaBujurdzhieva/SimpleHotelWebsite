@@ -1,0 +1,11 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Guests.Orders;
+
+@model AllOrderViewModel
+
+<body>
+    <div id="page">
+        <div class="clearfix"></div>
+        <partial name="_SingleOrderPartial" />
+        <partial name="_PagingMyOrdersPartial" model="@Model" />
+    </div>
+</body>

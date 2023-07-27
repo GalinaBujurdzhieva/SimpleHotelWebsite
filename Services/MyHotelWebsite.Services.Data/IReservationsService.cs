@@ -25,6 +25,8 @@
 
         Task<int> GetCountOfMyReservationsAsync(string applicationUserId);
 
+        Task<int> GetCountOfUpcomingReservationsAsync();
+
         Task<string> GetGuestEmail(int reservationId);
 
         Task<string> GetGuestPhoneNumber(int reservationId);
