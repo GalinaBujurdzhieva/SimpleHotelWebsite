@@ -33,5 +33,8 @@
         public const decimal ApartmentAdultsPricePerBed = 200;
 
         public const decimal ApartmentChildrenPricePerBed = 120;
+
+        // SHOPPING CART
+        public const string SessionCart = "SessionShoppingCart";
     }
 }

@@ -10,6 +10,8 @@
     {
         Task AddOrderAsync(AllShoppingCartsOfOneUserViewModel model, string applicationUserId);
 
+        Task DeleteOrderAsync(int id);
+
         Task<bool> DoesOrderExistsAsync(int id);
 
         Task<int> GetCountAsync();
@@ -21,5 +23,7 @@
         Task<IEnumerable<T>> GetOrderDetailsAsync<T>(int id);
 
         decimal GetOrderTotalAsync(IEnumerable<SingleDishOrderViewModel> dishesList);
+
+        Task<IEnumerable<T>> HotelAdministrationGetAllOrdersAsync<T>(int page, int itemsPerPage = 4);
     }
 }

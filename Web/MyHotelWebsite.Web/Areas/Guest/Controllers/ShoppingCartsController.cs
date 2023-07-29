@@ -1,10 +1,12 @@
 ﻿namespace MyHotelWebsite.Web.Areas.Guest.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Common;
     using MyHotelWebsite.Services.Data;
@@ -51,6 +53,8 @@
         public async Task<IActionResult> Buy(SingleShoppingCartViewModel shoppingCart)
         {
             bool dishAlreadyIsInTheShoppingCart = await this.shoppingCartsService.IsDishAlreadyInTheShoppingCartOfThatUserAsync(shoppingCart.DishId, shoppingCart.ApplicationUserId);
+            List<SingleShoppingCartViewModel> itemsInTheShoppingCart;
+
             if (!dishAlreadyIsInTheShoppingCart)
             {
                 await this.shoppingCartsService.AddDishInTheShoppingCartAsync(shoppingCart);
@@ -60,6 +64,8 @@
                 await this.shoppingCartsService.UpdateDishCountInTheShoppingCartAsync(shoppingCart.DishId, shoppingCart.ApplicationUserId, shoppingCart.Count);
             }
 
+            itemsInTheShoppingCart = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(shoppingCart.ApplicationUserId);
+            this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, itemsInTheShoppingCart.Count);
             return this.RedirectToAction("All", "Dishes", new { area = string.Empty });
         }
 
@@ -70,7 +76,8 @@
             if (!string.IsNullOrEmpty(applicationUserId))
             {
                 this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
-                this.AllShoppingCartModel.TotalPrice = await this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
+                this.AllShoppingCartModel.TotalPrice = this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
+                this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, this.AllShoppingCartModel.ShoppingCartsList.Count);
             }
 
             return this.View(this.AllShoppingCartModel);
@@ -84,7 +91,7 @@
             if (!string.IsNullOrEmpty(applicationUserId))
             {
                 this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
-                this.AllShoppingCartModel.TotalPrice = await this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
+                this.AllShoppingCartModel.TotalPrice = this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
             }
 
             try

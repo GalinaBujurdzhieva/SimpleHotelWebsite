@@ -52,6 +52,22 @@
             }
         }
 
+        public async Task DeleteOrderAsync(int id)
+        {
+            var currentOrder = await this.ordersRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            var currentOrderDishes = await this.dishOrdersRepo.All()
+               .Where(o => o.Order.Id == id)
+               .ToListAsync();
+            foreach (var orderDish in currentOrderDishes)
+            {
+                this.dishOrdersRepo.Delete(orderDish);
+                await this.dishOrdersRepo.SaveChangesAsync();
+            }
+
+            this.ordersRepo.Delete(currentOrder);
+            await this.ordersRepo.SaveChangesAsync();
+        }
+
         public async Task<bool> DoesOrderExistsAsync(int id)
         {
             return await this.ordersRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
@@ -70,7 +86,7 @@
         public async Task<IEnumerable<T>> GetMyOrdersAsync<T>(string applicationUserId, int page, int itemsPerPage = 4)
         {
             var orders = await this.ordersRepo.AllAsNoTracking()
-                .Include(o => o.ApplicationUser)
+              .Include(o => o.ApplicationUser)
              .Where(o => o.ApplicationUserId == applicationUserId)
              .OrderBy(o => o.CreatedOn)
              .ThenBy(o => o.OrderStatus)
@@ -101,6 +117,19 @@
             }
 
             return orderTotal;
+        }
+
+        public async Task<IEnumerable<T>> HotelAdministrationGetAllOrdersAsync<T>(int page, int itemsPerPage = 4)
+        {
+            var orders = await this.ordersRepo.AllAsNoTracking()
+            .Include(o => o.ApplicationUser)
+            .OrderBy(o => o.CreatedOn)
+            .ThenBy(o => o.OrderStatus)
+            .ThenBy(o => o.ApplicationUser.FirstName)
+            .ThenBy(o => o.ApplicationUser.LastName)
+            .Skip((page - 1) * itemsPerPage)
+            .Take(itemsPerPage).To<T>().ToListAsync();
+            return orders;
         }
     }
 }

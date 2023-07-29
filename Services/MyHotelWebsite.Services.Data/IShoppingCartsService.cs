@@ -13,7 +13,7 @@
 
      Task<List<SingleShoppingCartViewModel>> GetAllSingleShoppingCartsOfTheUser(string applicationUserId);
 
-     Task<decimal> GetOrderTotalOfShoppingCartsOfTheUser(IEnumerable<SingleShoppingCartViewModel> shoppingCartsList);
+     decimal GetOrderTotalOfShoppingCartsOfTheUser(IEnumerable<SingleShoppingCartViewModel> shoppingCartsList);
 
      Task IncreaseQuantityOfTheDishInTheShoppingCart(int shoppingCartId);
 

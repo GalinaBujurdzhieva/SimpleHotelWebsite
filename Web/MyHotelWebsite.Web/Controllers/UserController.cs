@@ -111,6 +111,7 @@
         public async Task<IActionResult> Logout()
         {
             await this.signInManager.SignOutAsync();
+            this.HttpContext.Session.Clear();
             return this.RedirectToAction("Index", "Home");
         }
     }

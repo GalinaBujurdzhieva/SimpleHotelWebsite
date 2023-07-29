@@ -208,7 +208,7 @@
             stream.Position = 0;
             doc.Close(true);
             string contentType = "application/pdf";
-            string fileName = "Reservation.pdf";
+            string fileName = $"Reservation {id}.pdf";
             return this.File(stream, contentType, fileName);
         }
 

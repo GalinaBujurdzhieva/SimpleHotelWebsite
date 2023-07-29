@@ -59,14 +59,14 @@
                 .Include(c => c.Dish)
                 .ThenInclude(d => d.DishImage)
                 .Include(c => c.ApplicationUser)
-                .Where(c => c.ApplicationUserId == applicationUserId && c.CreatedOn.AddMinutes(15).CompareTo(DateTime.UtcNow) >= 0)
+                .Where(c => c.ApplicationUserId == applicationUserId)
                 .OrderBy(c => c.Dish.Name)
                 .To<SingleShoppingCartViewModel>()
                 .ToListAsync();
             return allShoppingCartsOfTheCurrentUser;
         }
 
-        public async Task<decimal> GetOrderTotalOfShoppingCartsOfTheUser(IEnumerable<SingleShoppingCartViewModel> shoppingCartsList)
+        public decimal GetOrderTotalOfShoppingCartsOfTheUser(IEnumerable<SingleShoppingCartViewModel> shoppingCartsList)
         {
             decimal orderTotal = 0m;
 
@@ -96,7 +96,7 @@
             return await this.shoppingCartsRepo.AllAsNoTracking()
                 .Include(c => c.Dish)
                 .Include(c => c.ApplicationUser)
-                .AnyAsync(c => c.DishId == dishId && c.ApplicationUserId == applicationUserId && c.CreatedOn.AddMinutes(15).CompareTo(DateTime.UtcNow) >= 0);
+                .AnyAsync(c => c.DishId == dishId && c.ApplicationUserId == applicationUserId);
         }
 
         public async Task RemoveDishFromTheShoppingCart(int shoppingCartId)
@@ -117,7 +117,7 @@
             var currentShoppingCart = await this.shoppingCartsRepo.All()
                 .Include(c => c.Dish)
                 .Include(c => c.ApplicationUser)
-                .FirstOrDefaultAsync(c => c.DishId == dishId && c.ApplicationUserId == applicationUserId && c.CreatedOn.AddMinutes(15).CompareTo(DateTime.UtcNow) >= 0);
+                .FirstOrDefaultAsync(c => c.DishId == dishId && c.ApplicationUserId == applicationUserId);
 
             if (currentShoppingCart != null)
             {
