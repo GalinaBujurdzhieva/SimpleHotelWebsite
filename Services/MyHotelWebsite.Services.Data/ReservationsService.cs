@@ -13,7 +13,12 @@
     using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Web.ViewModels.Administration.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
+    using MyHotelWebsite.Web.ViewModels.Guests.Orders;
     using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
+    using Syncfusion.Drawing;
+    using Syncfusion.Pdf;
+    using Syncfusion.Pdf.Graphics;
+    using Syncfusion.Pdf.Grid;
 
     public class ReservationsService : IReservationsService
     {
@@ -165,7 +170,50 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
-        public async Task<List<object>> FillPdf(int id)
+        public async Task<PdfDocument> FillPdfReservationAsync(int id)
+        {
+            PdfDocument document = new PdfDocument();
+            document.PageSettings.Orientation = PdfPageOrientation.Landscape;
+            document.PageSettings.Margins.All = 50;
+            PdfPage page = document.Pages.Add();
+            PdfLayoutResult result = new PdfLayoutResult(page, new RectangleF(0, 0, page.Graphics.ClientSize.Width / 2, 95));
+            PdfGraphics g = page.Graphics;
+            g.DrawRectangle(new PdfSolidBrush(new PdfColor(255, 65, 87)), new RectangleF(0, result.Bounds.Bottom + 40, g.ClientSize.Width, 30));
+            IEnumerable<object> reservationDetails = await this.FillPdfTableWithDetails(id);
+            PdfGrid grid = new PdfGrid();
+            grid.DataSource = reservationDetails;
+            PdfGridCellStyle cellStyle = new PdfGridCellStyle();
+            cellStyle.Borders.All = PdfPens.White;
+            PdfGridRow header = grid.Headers[0];
+            PdfGridCellStyle headerStyle = new PdfGridCellStyle();
+            headerStyle.Borders.All = new PdfPen(new PdfColor(255, 65, 87));
+            headerStyle.BackgroundBrush = new PdfSolidBrush(new PdfColor(255, 65, 87));
+            headerStyle.TextBrush = PdfBrushes.White;
+            headerStyle.Font = new PdfStandardFont(PdfFontFamily.TimesRoman, 14f, PdfFontStyle.Regular);
+
+            for (int i = 0; i < header.Cells.Count; i++)
+            {
+                if (i == 0 || i == 1)
+                {
+                    header.Cells[i].StringFormat = new PdfStringFormat(PdfTextAlignment.Left, PdfVerticalAlignment.Middle);
+                }
+                else
+                {
+                    header.Cells[i].StringFormat = new PdfStringFormat(PdfTextAlignment.Right, PdfVerticalAlignment.Middle);
+                }
+            }
+
+            header.ApplyStyle(headerStyle);
+            cellStyle.Borders.Bottom = new PdfPen(new PdfColor(217, 217, 217), 0.70f);
+            cellStyle.Font = new PdfStandardFont(PdfFontFamily.TimesRoman, 12f);
+            cellStyle.TextBrush = new PdfSolidBrush(new PdfColor(131, 130, 136));
+            PdfGridLayoutFormat layoutFormat = new PdfGridLayoutFormat();
+            layoutFormat.Layout = PdfLayoutType.Paginate;
+            PdfGridLayoutResult gridResult = grid.Draw(page, new RectangleF(new PointF(0, result.Bounds.Bottom + 40), new SizeF(g.ClientSize.Width, g.ClientSize.Height - 100)), layoutFormat);
+            return document;
+        }
+
+        public async Task<List<object>> FillPdfTableWithDetails(int id)
         {
             var currentReservation = await this.reservationsRepo.All()
                .Include(r => r.RoomReservations)

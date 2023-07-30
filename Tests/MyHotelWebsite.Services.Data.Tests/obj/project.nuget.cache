@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wg/VoKM5Q2LLbIfdDz1JL7LFJSjZkNA0B+VGLtxoTf4rFL/kBzVAG46qleOvZ9ChNMb/Lcf6d7pcyr+EIXqB+g==",
+  "dgSpecHash": "xzqgByFO1KwCE2N94Xmp31b1oHvSGnydmdrDB4EJHh1CBA7Z0ds1EHf6Rw1YwKVrulGPiz5e3rtpHq7TS4oBqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj",
   "expectedPackageFiles": [
@@ -81,6 +81,9 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\syncfusion.compression.net.core\\22.1.37\\syncfusion.compression.net.core.22.1.37.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\syncfusion.licensing\\22.1.37\\syncfusion.licensing.22.1.37.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\syncfusion.pdf.net.core\\22.1.37\\syncfusion.pdf.net.core.22.1.37.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

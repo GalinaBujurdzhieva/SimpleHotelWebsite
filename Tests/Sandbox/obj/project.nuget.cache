@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "N9tiMD/12XcF6m5/Joj8MQrD2+j6Xa1KYV3xtKRM9qUtO77NR4uYCzbuDjvAsY6tox48IURIGrAL8CkEN/O0Gg==",
+  "dgSpecHash": "XIhku5zD5p4LFKdWHpA+gSkDnv3VhRMaOPIv0SsgPAKM14jGGTSJFZw9dpxUiH1RFooTRh1KP6/MtPx1q7x4AQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Tests\\Sandbox\\Sandbox.csproj",
   "expectedPackageFiles": [
@@ -64,6 +64,9 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\starkbank-ecdsa\\1.3.3\\starkbank-ecdsa.1.3.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\syncfusion.compression.net.core\\22.1.37\\syncfusion.compression.net.core.22.1.37.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\syncfusion.licensing\\22.1.37\\syncfusion.licensing.22.1.37.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\syncfusion.pdf.net.core\\22.1.37\\syncfusion.pdf.net.core.22.1.37.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",

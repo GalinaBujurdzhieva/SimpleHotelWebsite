@@ -11,6 +11,10 @@
     using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Web.ViewModels.Guests.Orders;
     using MyHotelWebsite.Web.ViewModels.Guests.ShoppingCarts;
+    using Syncfusion.Drawing;
+    using Syncfusion.Pdf;
+    using Syncfusion.Pdf.Graphics;
+    using Syncfusion.Pdf.Grid;
 
     public class OrdersService : IOrdersService
     {
@@ -71,6 +75,108 @@
         public async Task<bool> DoesOrderExistsAsync(int id)
         {
             return await this.ordersRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
+        }
+
+        public async Task<PdfDocument> FillPdfOrderAsync(int id)
+        {
+            var currentOrder = await this.ordersRepo.All()
+                .Include(o => o.ApplicationUser)
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            PdfDocument document = new PdfDocument();
+            document.PageSettings.Orientation = PdfPageOrientation.Landscape;
+            document.PageSettings.Margins.All = 50;
+            PdfPage page = document.Pages.Add();
+            PdfLayoutResult result = new PdfLayoutResult(page, new RectangleF(0, 0, page.Graphics.ClientSize.Width / 2, 95));
+            PdfFont subHeadingFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 14);
+            PdfGraphics g = page.Graphics;
+            g.DrawRectangle(new PdfSolidBrush(new PdfColor(255, 65, 87)), new RectangleF(0, result.Bounds.Bottom + 40, g.ClientSize.Width, 30));
+
+            IEnumerable<SingleDishOrderViewModel> currentOrderDishes = await this.GetOrderDetailsAsync<SingleDishOrderViewModel>(id);
+            decimal currentOrderTotal = this.GetOrderTotalAsync(currentOrderDishes);
+
+            var element = new PdfTextElement($"ORDER #" + id + ", STATUS: " + currentOrder.OrderStatus.ToString() + ", TOTAL: " + currentOrderTotal + " euro", subHeadingFont);
+            element.Brush = PdfBrushes.White;
+            result = element.Draw(page, new PointF(10, result.Bounds.Bottom + 48));
+            string currentDate = $"DATE " + currentOrder.CreatedOn.ToShortDateString();
+            SizeF textSize = subHeadingFont.MeasureString(currentDate);
+            g.DrawString(currentDate, subHeadingFont, element.Brush, new PointF(g.ClientSize.Width - textSize.Width - 10, result.Bounds.Y));
+
+            element = new PdfTextElement("GUEST: ", new PdfStandardFont(PdfFontFamily.TimesRoman, 10));
+            element.Brush = new PdfSolidBrush(new PdfColor(255, 65, 87));
+            result = element.Draw(page, new PointF(10, result.Bounds.Bottom + 25));
+            string userName = currentOrder.ApplicationUser.FirstName + " " + currentOrder.ApplicationUser.LastName;
+            string userPhoneNumber = currentOrder.ApplicationUser.PhoneNumber;
+            string comment = currentOrder.Comment;
+            if (string.IsNullOrEmpty(comment))
+            {
+                comment = "No comments";
+            }
+
+            element = new PdfTextElement(string.Format("{0}, {1}, {2}", userName, $"\n{userPhoneNumber}", comment), new PdfStandardFont(PdfFontFamily.TimesRoman, 10));
+            element.Brush = new PdfSolidBrush(new PdfColor(89, 89, 93));
+            result = element.Draw(page, new RectangleF(10, result.Bounds.Bottom + 3, g.ClientSize.Width / 2, 100));
+            g.DrawLine(new PdfPen(new PdfColor(255, 65, 87), 0.70f), new PointF(0, result.Bounds.Bottom + 3), new PointF(g.ClientSize.Width, result.Bounds.Bottom + 3));
+
+            IEnumerable<object> orderDetails = await this.FillPdfTableWithDishes(id);
+            PdfGrid grid = new PdfGrid();
+            grid.DataSource = orderDetails;
+            PdfGridCellStyle cellStyle = new PdfGridCellStyle();
+            cellStyle.Borders.All = PdfPens.White;
+            PdfGridRow header = grid.Headers[0];
+            PdfGridCellStyle headerStyle = new PdfGridCellStyle();
+            headerStyle.Borders.All = new PdfPen(new PdfColor(255, 65, 87));
+            headerStyle.BackgroundBrush = new PdfSolidBrush(new PdfColor(255, 65, 87));
+            headerStyle.TextBrush = PdfBrushes.White;
+            headerStyle.Font = new PdfStandardFont(PdfFontFamily.TimesRoman, 14f, PdfFontStyle.Regular);
+
+            for (int i = 0; i < header.Cells.Count; i++)
+            {
+                if (i == 0 || i == 1)
+                {
+                    header.Cells[i].StringFormat = new PdfStringFormat(PdfTextAlignment.Left, PdfVerticalAlignment.Middle);
+                }
+                else
+                {
+                    header.Cells[i].StringFormat = new PdfStringFormat(PdfTextAlignment.Right, PdfVerticalAlignment.Middle);
+                }
+            }
+
+            header.ApplyStyle(headerStyle);
+            cellStyle.Borders.Bottom = new PdfPen(new PdfColor(217, 217, 217), 0.70f);
+            cellStyle.Font = new PdfStandardFont(PdfFontFamily.TimesRoman, 12f);
+            cellStyle.TextBrush = new PdfSolidBrush(new PdfColor(131, 130, 136));
+            PdfGridLayoutFormat layoutFormat = new PdfGridLayoutFormat();
+            layoutFormat.Layout = PdfLayoutType.Paginate;
+            PdfGridLayoutResult gridResult = grid.Draw(page, new RectangleF(new PointF(0, result.Bounds.Bottom + 40), new SizeF(g.ClientSize.Width, g.ClientSize.Height - 100)), layoutFormat);
+            return document;
+        }
+
+        public async Task<List<object>> FillPdfTableWithDishes(int id)
+        {
+            IEnumerable<SingleDishOrderViewModel> currentOrderDishes = await this.GetOrderDetailsAsync<SingleDishOrderViewModel>(id);
+            List<object> data = new List<object>();
+
+            foreach (var dishOrder in currentOrderDishes)
+            {
+                object row1 = new { ID = "Dish Name", Name = dishOrder.Dish.Name };
+                object row2 = new { ID = "Dish Category", Name = dishOrder.Dish.DishCategory };
+                object row3 = new { ID = "Is Dish Ready", Name = dishOrder.Dish.IsReady ? "Yes" : "No" };
+                object row4 = new { ID = "Price (euro)", Name = dishOrder.Dish.Price.ToString("F2") };
+                object row5 = new { ID = "Quantity", Name = dishOrder.DishQuantity };
+                object row6 = new { ID = "Total (euro)", Name = dishOrder.Dish.Price * dishOrder.DishQuantity };
+                object row7 = new { ID = string.Empty, Name = string.Empty };
+
+                data.Add(row1);
+                data.Add(row2);
+                data.Add(row3);
+                data.Add(row4);
+                data.Add(row5);
+                data.Add(row6);
+                data.Add(row7);
+            }
+
+            return data;
         }
 
         public async Task<int> GetCountAsync()

@@ -13,7 +13,8 @@
           "MyHotelWebsite.Data.Models": "1.0.0",
           "MyHotelWebsite.Services.Mapping": "1.0.0",
           "MyHotelWebsite.Web.ViewModels": "1.0.0",
-          "StyleCop.Analyzers": "1.2.0-beta.435"
+          "StyleCop.Analyzers": "1.2.0-beta.435",
+          "Syncfusion.Pdf.Net.Core": "22.1.37"
         },
         "runtime": {
           "MyHotelWebsite.Services.Data.dll": {}
@@ -337,12 +338,42 @@
           }
         }
       },
+      "Microsoft.NETCore.Platforms/2.0.0": {},
       "StyleCop.Analyzers/1.2.0-beta.435": {
         "dependencies": {
           "StyleCop.Analyzers.Unstable": "1.2.0.435"
         }
       },
       "StyleCop.Analyzers.Unstable/1.2.0.435": {},
+      "Syncfusion.Compression.Net.Core/22.1.37": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Compression.Portable.dll": {
+            "assemblyVersion": "22.1.37.0",
+            "fileVersion": "22.1.37.0"
+          }
+        }
+      },
+      "Syncfusion.Licensing/22.1.37": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "22.1.37.0",
+            "fileVersion": "22.1.37.0"
+          }
+        }
+      },
+      "Syncfusion.Pdf.Net.Core/22.1.37": {
+        "dependencies": {
+          "Syncfusion.Compression.Net.Core": "22.1.37",
+          "Syncfusion.Licensing": "22.1.37",
+          "System.Text.Encoding.CodePages": "4.4.0"
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Pdf.Portable.dll": {
+            "assemblyVersion": "22.1.37.0",
+            "fileVersion": "22.1.37.0"
+          }
+        }
+      },
       "System.Buffers/4.5.0": {},
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
@@ -356,6 +387,11 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "System.Text.Encoding.CodePages/4.4.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
+        }
+      },
       "System.Text.Encodings.Web/4.5.0": {},
       "MyHotelWebsite.Common/1.0.0": {
         "dependencies": {
@@ -613,6 +649,13 @@
       "path": "microsoft.net.http.headers/2.2.0",
       "hashPath": "microsoft.net.http.headers.2.2.0.nupkg.sha512"
     },
+    "Microsoft.NETCore.Platforms/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "path": "microsoft.netcore.platforms/2.0.0",
+      "hashPath": "microsoft.netcore.platforms.2.0.0.nupkg.sha512"
+    },
     "StyleCop.Analyzers/1.2.0-beta.435": {
       "type": "package",
       "serviceable": true,
@@ -626,6 +669,27 @@
       "sha512": "sha512-ouwPWZxbOV3SmCZxIRqHvljkSzkCyi1tDoMzQtDb/bRP8ctASV/iRJr+A2Gdj0QLaLmWnqTWDrH82/iP+X80Lg==",
       "path": "stylecop.analyzers.unstable/1.2.0.435",
       "hashPath": "stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Net.Core/22.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fwIUffKg7CtU/7R76zvesuqX0smjxfsL5Wcb4ut+PXOYuI0CKTtBNmn7qqi6JrdgrCs0vVfKlEVCqXuooWjPAQ==",
+      "path": "syncfusion.compression.net.core/22.1.37",
+      "hashPath": "syncfusion.compression.net.core.22.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/22.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HP5qCjGBp/HUUuSBjD7Wrxq5MhCjws8RSia3SQiw49D/kEAhVmXVVZjY8zQYuDjqhyz32WlZb8eBi/9z+7bkNA==",
+      "path": "syncfusion.licensing/22.1.37",
+      "hashPath": "syncfusion.licensing.22.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Net.Core/22.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O5CU1biskfqFKWKFV5D6rXKSr4OIOeAztvEhO3xnmpa+4YXl2HqO+uOKnh+Tmh3CVOZdtFkfyS43v6i2CaQItA==",
+      "path": "syncfusion.pdf.net.core/22.1.37",
+      "hashPath": "syncfusion.pdf.net.core.22.1.37.nupkg.sha512"
     },
     "System.Buffers/4.5.0": {
       "type": "package",
@@ -661,6 +725,13 @@
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6JX7ZdaceBiLKLkYt8zJcp4xTJd1uYyXXEkPw6mnlUIjh1gZPIVKPtRXPmY5kLf6DwZmf5YLwR3QUrRonl7l0A==",
+      "path": "system.text.encoding.codepages/4.4.0",
+      "hashPath": "system.text.encoding.codepages.4.4.0.nupkg.sha512"
     },
     "System.Text.Encodings.Web/4.5.0": {
       "type": "package",

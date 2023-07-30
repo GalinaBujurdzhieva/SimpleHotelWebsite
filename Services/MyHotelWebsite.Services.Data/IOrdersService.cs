@@ -5,6 +5,7 @@
 
     using MyHotelWebsite.Web.ViewModels.Guests.Orders;
     using MyHotelWebsite.Web.ViewModels.Guests.ShoppingCarts;
+    using Syncfusion.Pdf;
 
     public interface IOrdersService
     {
@@ -13,6 +14,10 @@
         Task DeleteOrderAsync(int id);
 
         Task<bool> DoesOrderExistsAsync(int id);
+
+        Task<PdfDocument> FillPdfOrderAsync(int id);
+
+        Task<List<object>> FillPdfTableWithDishes(int id);
 
         Task<int> GetCountAsync();
 

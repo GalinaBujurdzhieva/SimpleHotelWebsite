@@ -14,7 +14,9 @@
     using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.Administration.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
+    using Syncfusion.Drawing;
     using Syncfusion.Pdf;
+    using Syncfusion.Pdf.Graphics;
     using Syncfusion.Pdf.Grid;
 
     [Authorize(Roles = GlobalConstants.HotelManagerRoleName + ", " + GlobalConstants.ReceptionistRoleName)]
@@ -197,12 +199,7 @@
 
         public async Task<IActionResult> CreatePdfDocument(int id)
         {
-            PdfDocument doc = new PdfDocument();
-            PdfPage page = doc.Pages.Add();
-            PdfGrid pdfGrid = new PdfGrid();
-            IEnumerable<object> dataTable = await this.reservationsService.FillPdf(id);
-            pdfGrid.DataSource = dataTable;
-            pdfGrid.Draw(page, new Syncfusion.Drawing.PointF(10, 10));
+            PdfDocument doc = await this.reservationsService.FillPdfReservationAsync(id);
             MemoryStream stream = new MemoryStream();
             doc.Save(stream);
             stream.Position = 0;

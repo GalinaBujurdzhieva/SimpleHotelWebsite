@@ -8,6 +8,7 @@
     using MyHotelWebsite.Web.ViewModels.Administration.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
     using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
+    using Syncfusion.Pdf;
 
     public interface IReservationsService
     {
@@ -19,7 +20,9 @@
 
         Task EditReservationAsync(EditReservationViewModel model, int id, string applicationUserId);
 
-        Task<List<object>> FillPdf(int id);
+        Task<PdfDocument> FillPdfReservationAsync(int id);
+
+        Task<List<object>> FillPdfTableWithDetails(int id);
 
         Task<int> GetCountAsync();
 
