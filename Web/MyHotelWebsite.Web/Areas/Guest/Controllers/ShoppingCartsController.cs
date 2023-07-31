@@ -52,20 +52,31 @@
         [HttpPost]
         public async Task<IActionResult> Buy(SingleShoppingCartViewModel shoppingCart)
         {
-            bool dishAlreadyIsInTheShoppingCart = await this.shoppingCartsService.IsDishAlreadyInTheShoppingCartOfThatUserAsync(shoppingCart.DishId, shoppingCart.ApplicationUserId);
-            List<SingleShoppingCartViewModel> itemsInTheShoppingCart;
-
-            if (!dishAlreadyIsInTheShoppingCart)
+            int currentDishQuantity = await this.dishesService.DishQuantityInStockAsync(shoppingCart.DishId);
+            if (currentDishQuantity < 1)
             {
-                await this.shoppingCartsService.AddDishInTheShoppingCartAsync(shoppingCart);
+                // this.ModelState.AddModelError(string.Empty, "This dish is not in stock. Please choose another one.");
+                this.TempData["Error"] = "This dish is not in stock. Please choose another one.";
             }
             else
             {
-                await this.shoppingCartsService.UpdateDishCountInTheShoppingCartAsync(shoppingCart.DishId, shoppingCart.ApplicationUserId, shoppingCart.Count);
+                bool dishAlreadyIsInTheShoppingCart = await this.shoppingCartsService.IsDishAlreadyInTheShoppingCartOfThatUserAsync(shoppingCart.DishId, shoppingCart.ApplicationUserId);
+                List<SingleShoppingCartViewModel> itemsInTheShoppingCart;
+
+                if (!dishAlreadyIsInTheShoppingCart)
+                {
+                    await this.shoppingCartsService.AddDishInTheShoppingCartAsync(shoppingCart);
+                    this.TempData["Message"] = "Dish added successfully to shopping cart";
+                }
+                else
+                {
+                    await this.shoppingCartsService.UpdateDishCountInTheShoppingCartAsync(shoppingCart.DishId, shoppingCart.ApplicationUserId, shoppingCart.Count);
+                }
+
+                itemsInTheShoppingCart = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(shoppingCart.ApplicationUserId);
+                this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, itemsInTheShoppingCart.Count);
             }
 
-            itemsInTheShoppingCart = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(shoppingCart.ApplicationUserId);
-            this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, itemsInTheShoppingCart.Count);
             return this.RedirectToAction("All", "Dishes", new { area = string.Empty });
         }
 
@@ -78,6 +89,7 @@
                 this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
                 this.AllShoppingCartModel.TotalPrice = this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
                 this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, this.AllShoppingCartModel.ShoppingCartsList.Count);
+                this.HttpContext.Session.Clear();
             }
 
             return this.View(this.AllShoppingCartModel);
@@ -97,10 +109,11 @@
             try
             {
                 await this.ordersService.AddOrderAsync(this.AllShoppingCartModel, applicationUserId);
+                this.TempData["Message"] = "Order placed successfully";
             }
             catch (Exception)
             {
-                this.ModelState.AddModelError(string.Empty, "Something went wrong. You can not place an order");
+                this.ModelState.AddModelError(string.Empty, "You can not place an order without dishes");
                 return this.View(this.AllShoppingCartModel);
             }
 

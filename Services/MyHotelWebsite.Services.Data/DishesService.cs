@@ -72,6 +72,12 @@
             return currentDish;
         }
 
+        public async Task<int> DishQuantityInStockAsync(string id)
+        {
+            Dish currentDish = await this.dishesRepo.AllAsNoTracking().FirstOrDefaultAsync(d => d.Id == id);
+            return currentDish.QuantityInStock;
+        }
+
         public async Task<bool> DoesDishExistsAsync(string id)
         {
             return await this.dishesRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);

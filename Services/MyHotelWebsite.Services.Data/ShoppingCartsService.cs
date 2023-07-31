@@ -13,22 +13,28 @@
     public class ShoppingCartsService : IShoppingCartsService
     {
         private readonly IDeletableEntityRepository<ShoppingCart> shoppingCartsRepo;
+        private readonly IDeletableEntityRepository<Dish> dishesRepo;
 
-        public ShoppingCartsService(IDeletableEntityRepository<ShoppingCart> shoppingCartsRepo)
+        public ShoppingCartsService(IDeletableEntityRepository<ShoppingCart> shoppingCartsRepo, IDeletableEntityRepository<Dish> dishesRepo)
         {
                 this.shoppingCartsRepo = shoppingCartsRepo;
+                this.dishesRepo = dishesRepo;
         }
 
         public async Task AddDishInTheShoppingCartAsync(SingleShoppingCartViewModel shoppingCart)
         {
-            ShoppingCart newShoppingCart = new ShoppingCart
-            {
-                DishId = shoppingCart.DishId,
-                ApplicationUserId = shoppingCart.ApplicationUserId,
-                Count = shoppingCart.Count,
-            };
-            await this.shoppingCartsRepo.AddAsync(newShoppingCart);
-            await this.shoppingCartsRepo.SaveChangesAsync();
+            Dish currentDish = await this.dishesRepo.AllAsNoTracking().FirstOrDefaultAsync(d => d.Id == shoppingCart.DishId);
+            if (currentDish != null && currentDish.QuantityInStock > 0)
+                {
+                    ShoppingCart newShoppingCart = new ShoppingCart
+                    {
+                        DishId = shoppingCart.DishId,
+                        ApplicationUserId = shoppingCart.ApplicationUserId,
+                        Count = shoppingCart.Count,
+                    };
+                    await this.shoppingCartsRepo.AddAsync(newShoppingCart);
+                    await this.shoppingCartsRepo.SaveChangesAsync();
+            }
         }
 
         public async Task DecreaseQuantityOfTheDishInTheShoppingCart(int shoppingCartId)

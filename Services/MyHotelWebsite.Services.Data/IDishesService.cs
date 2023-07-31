@@ -16,6 +16,8 @@
 
         Task<T> DishDetailsByIdAsync<T>(string id);
 
+        Task<int> DishQuantityInStockAsync(string id);
+
         Task<bool> DoesDishExistsAsync(string id);
 
         Task EditDishAsync(EditDishViewModel model, string id, string applicationUserId, string imagePath, IFormFile? file);

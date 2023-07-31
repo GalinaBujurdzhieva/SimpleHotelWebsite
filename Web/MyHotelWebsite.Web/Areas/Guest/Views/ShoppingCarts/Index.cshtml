@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/font-awesome/css/font-awesome.min.css" asp-append-version="true" />
     <link rel="stylesheet" type="text/css" href="~/css/shoppingCart.css" asp-append-version="true" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" asp-append-version="true" />
 </head>
 <body>
 <form method="post">
@@ -23,8 +24,10 @@
             <!-- Shopping cart table -->
             <div class="card mt-3">
                 <div class="card-header text-danger text-center pt-3 mb-3" style="color:#d9534f">
+                    <partial name="_Notification" />
                     <h2><b>Shopping Cart</b></h2>
                 </div>
+                <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered m-0">
@@ -81,6 +84,9 @@
             </div>
         </div>
 </form>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
 
     <script src="http://code.jquery.com/jquery-1.11.0.min.js" asp-append-version="true"></script>
     <script src="~/js/bootstrap.min.js" asp-append-version="true"></script>

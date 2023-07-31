@@ -722,3 +722,6 @@ C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\MyHotelWebsite
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\MyHotelWebsite.Services.Data.Tests\obj\Debug\net6.0\MyHotelWebsite.Services.Data.Tests.pdb
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\MyHotelWebsite.Services.Data.Tests\obj\Debug\net6.0\MyHotelWebsite.Services.Data.Tests.genruntimeconfig.cache
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\MyHotelWebsite.Services.Data.Tests\obj\Debug\net6.0\ref\MyHotelWebsite.Services.Data.Tests.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\Syncfusion.Compression.Portable.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\Syncfusion.Licensing.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\Syncfusion.Pdf.Portable.dll

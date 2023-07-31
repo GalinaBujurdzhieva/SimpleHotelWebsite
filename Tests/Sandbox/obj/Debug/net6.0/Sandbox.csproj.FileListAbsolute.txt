@@ -326,3 +326,6 @@ C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\Sandbox\obj\De
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\Sandbox\obj\Debug\net6.0\Sandbox.pdb
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\Sandbox\obj\Debug\net6.0\Sandbox.genruntimeconfig.cache
 C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\Sandbox\obj\Debug\net6.0\ref\Sandbox.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\Sandbox\bin\Debug\net6.0\Syncfusion.Compression.Portable.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\Sandbox\bin\Debug\net6.0\Syncfusion.Licensing.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new-07.2023\Tests\Sandbox\bin\Debug\net6.0\Syncfusion.Pdf.Portable.dll

@@ -1,11 +1,12 @@
 ﻿namespace MyHotelWebsite.Web.Controllers
 {
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using MyHotelWebsite.Common;
     using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Services.Data;
     using MyHotelWebsite.Web.ViewModels.User;
 
     public class UserController : BaseController
@@ -13,12 +14,14 @@
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<ApplicationRole> roleManager;
+        private readonly IShoppingCartsService shoppingCartsService;
 
-        public UserController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
+        public UserController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager, IShoppingCartsService shoppingCartsService)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
             this.roleManager = roleManager;
+            this.shoppingCartsService = shoppingCartsService;
         }
 
         [HttpGet]
@@ -99,6 +102,8 @@
                     }
                     else
                     {
+                        var itemsInTheShoppingCart = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(user.Id);
+                        this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, itemsInTheShoppingCart.Count);
                         return this.RedirectToAction("Index", "Home");
                     }
                 }

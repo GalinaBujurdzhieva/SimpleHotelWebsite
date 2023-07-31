@@ -3735,7 +3735,8 @@
           "MyHotelWebsite.Data.Common": "1.0.0",
           "MyHotelWebsite.Data.Models": "1.0.0",
           "MyHotelWebsite.Services.Mapping": "1.0.0",
-          "MyHotelWebsite.Web.ViewModels": "1.0.0"
+          "MyHotelWebsite.Web.ViewModels": "1.0.0",
+          "Syncfusion.Pdf.Net.Core": "22.1.37"
         },
         "runtime": {
           "MyHotelWebsite.Services.Data.dll": {}

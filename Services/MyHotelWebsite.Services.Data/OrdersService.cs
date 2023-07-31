@@ -29,7 +29,7 @@
 
         public async Task AddOrderAsync(AllShoppingCartsOfOneUserViewModel model, string applicationUserId)
         {
-            try
+            if (model.ShoppingCartsList.Count > 0)
             {
                 Order newOrder = new Order
                 {
@@ -50,7 +50,7 @@
                 await this.ordersRepo.AddAsync(newOrder);
                 await this.ordersRepo.SaveChangesAsync();
             }
-            catch (System.Exception)
+            else
             {
                 throw new System.Exception();
             }
