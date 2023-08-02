@@ -17,7 +17,7 @@
                 <div class="card mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-6">
-                            <img src="@("https://localhost:5001/" + @Model.Dish.DishImageUrl)" alt="@Model.Dish.Name" class="card-img">
+                            <img src="@(this.TempData["Domain"] + @Model.Dish.DishImageUrl)" alt="@Model.Dish.Name" class="card-img">
                         </div>
                         <div class="col-md-6">
                             <div class="card-body">

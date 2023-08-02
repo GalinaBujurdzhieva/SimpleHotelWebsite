@@ -9,7 +9,8 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
-    using MyHotelWebsite.Web.ViewModels.Guests.Orders;
+	using MyHotelWebsite.Web.ViewModels.Administration.Orders;
+	using MyHotelWebsite.Web.ViewModels.Guests.Orders;
     using MyHotelWebsite.Web.ViewModels.Guests.ShoppingCarts;
     using Syncfusion.Drawing;
     using Syncfusion.Pdf;
@@ -212,6 +213,17 @@
                 .ToListAsync();
 
             return currentOrderDishes;
+        }
+
+        public async Task<HotelAdministrationAddCommentToOrderViewModel> GetOrderDetailsToAddCommentAsync(int id)
+        {
+            HotelAdministrationAddCommentToOrderViewModel currentOrder = await this.ordersRepo.AllAsNoTracking()
+                .Include(o => o.ApplicationUser)
+                .Where(o => o.Id == id)
+                .To<HotelAdministrationAddCommentToOrderViewModel>()
+                .FirstOrDefaultAsync();
+
+            return currentOrder;
         }
 
         public decimal GetOrderTotalAsync(IEnumerable<SingleDishOrderViewModel> dishesList)

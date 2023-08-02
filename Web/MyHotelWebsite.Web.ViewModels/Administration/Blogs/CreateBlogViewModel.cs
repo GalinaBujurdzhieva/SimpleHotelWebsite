@@ -4,8 +4,6 @@
 
     using Microsoft.AspNetCore.Http;
     using MyHotelWebsite.Common.CustomValidationAttributes;
-    using MyHotelWebsite.Data.Models;
-    using MyHotelWebsite.Services.Mapping;
 
     public class CreateBlogViewModel
     {

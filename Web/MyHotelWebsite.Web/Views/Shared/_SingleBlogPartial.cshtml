@@ -19,7 +19,7 @@
                 <div class="view-set-block">
                     <div class="col-md-5 col-sm-5 col-xs-12">
                         <div class="event-blog-image">
-                                <img alt="@blog.Title" class="img-responsive" src="@("https://localhost:5001/" + @blog.BlogImageUrl)">
+                                <img alt="@blog.Title" class="img-responsive" src="@(this.TempData["Domain"] + @blog.BlogImageUrl)">
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12 side-in-image">

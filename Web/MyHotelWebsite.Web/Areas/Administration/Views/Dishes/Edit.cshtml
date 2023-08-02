@@ -14,6 +14,7 @@
         </div>
         <div asp-validation-summary="All" class="text-danger"></div>
         <input type="hidden" asp-for="@Model.Id" />
+            <input type="hidden" asp-for="@Model.DishImageUrl" />
         <div class="text-center mb-3">
             <label asp-for="Name"></label>
             <input asp-for="Name" class="form-control" />
@@ -46,7 +47,7 @@
     </form>
     </div>
 <div class="col-2 mt-auto mb-auto">
-    <img alt="@Model.Name" class="img-responsive" src="@("https://localhost:5001/" + @Model.DishImageUrl)">
+        <img alt="@Model.Name" class="img-responsive" src="@(this.TempData["Domain"] + @Model.DishImageUrl)">
 </div>
 </div>
 

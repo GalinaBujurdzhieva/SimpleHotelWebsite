@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
-    using MyHotelWebsite.Web.ViewModels.Guests.Orders;
+	using MyHotelWebsite.Web.ViewModels.Administration.Orders;
+	using MyHotelWebsite.Web.ViewModels.Guests.Orders;
     using MyHotelWebsite.Web.ViewModels.Guests.ShoppingCarts;
     using Syncfusion.Pdf;
 
@@ -26,6 +26,8 @@
         Task<IEnumerable<T>> GetMyOrdersAsync<T>(string applicationUserId, int page, int itemsPerPage = 4);
 
         Task<IEnumerable<T>> GetOrderDetailsAsync<T>(int id);
+
+        Task<HotelAdministrationAddCommentToOrderViewModel> GetOrderDetailsToAddCommentAsync(int id);
 
         decimal GetOrderTotalAsync(IEnumerable<SingleDishOrderViewModel> dishesList);
 

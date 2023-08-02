@@ -40,6 +40,7 @@
                 Blogs = await this.blogService.GetAllBlogsAsync<SingleBlogViewModel>(id, BlogsPerPage),
                 PageNumber = id,
             };
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
 
@@ -91,6 +92,7 @@
             }
 
             var model = await this.blogService.BlogDetailsByIdAsync<SingleBlogViewModel>(id);
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
 
@@ -102,6 +104,7 @@
             }
 
             var model = await this.blogService.BlogDetailsByIdAsync<EditBlogViewModel>(id);
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
 

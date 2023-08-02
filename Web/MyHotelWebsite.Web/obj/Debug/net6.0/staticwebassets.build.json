@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HVz/0lDSPJYEvMU/gF/9hRgKuseN5sTDT/EDZdj22hQ=",
+  "Hash": "ntZsExMVL2y6/onmOOpKTVYLQUsfzEd9Rpgk5/biglo=",
   "Source": "MyHotelWebsite.Web",
   "BasePath": "_content/MyHotelWebsite.Web",
   "Mode": "Default",
@@ -2822,6 +2822,23 @@
       "OriginalItemSpec": "wwwroot\\images\\dishes\\desserts\\4bcea067-e983-4daa-a603-b94a7d27ec81.jpg"
     },
     {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\78e4d801-3134-447f-98b4-9503c9f04887.jpg",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/dishes/desserts/78e4d801-3134-447f-98b4-9503c9f04887.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\desserts\\78e4d801-3134-447f-98b4-9503c9f04887.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Banana_pudding.png",
       "SourceId": "MyHotelWebsite.Web",
       "SourceType": "Discovered",
@@ -3466,6 +3483,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\dishes\\hotDrinks\\06f9e9a2-c507-4742-b394-311d0a90648d.png"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\25a596a8-5e54-4947-a2e8-0f8ac25bc324.png",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/dishes/hotDrinks/25a596a8-5e54-4947-a2e8-0f8ac25bc324.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\hotDrinks\\25a596a8-5e54-4947-a2e8-0f8ac25bc324.png"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\hotDrinks\\Cappucino.png",

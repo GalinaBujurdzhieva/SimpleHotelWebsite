@@ -28,6 +28,7 @@
                 Dishes = await this.ordersService.GetOrderDetailsAsync<SingleDishOrderViewModel>(id),
             };
             model.TotalPrice = this.ordersService.GetOrderTotalAsync(model.Dishes);
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
 

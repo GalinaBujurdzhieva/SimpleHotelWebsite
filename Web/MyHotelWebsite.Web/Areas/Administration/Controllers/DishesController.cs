@@ -44,6 +44,7 @@
                 Dishes = await this.dishesService.GetAllDishesAsync<SingleDishViewModel>(id, DishesPerPage),
                 PageNumber = id,
             };
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
 
@@ -95,6 +96,7 @@
             }
 
             var model = await this.dishesService.DishDetailsByIdAsync<EditDishViewModel>(id);
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
 
@@ -116,6 +118,7 @@
             catch (Exception)
             {
                 this.ModelState.AddModelError(string.Empty, "Could not edit this dish");
+                this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
                 return this.View(model);
             }
 
@@ -143,6 +146,7 @@
                 IsInStock = isInStock,
                 Sorting = sorting,
             };
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
 

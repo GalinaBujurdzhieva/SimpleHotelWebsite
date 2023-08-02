@@ -1,0 +1,73 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Orders;
+
+@model HotelAdministrationAddCommentToOrderViewModel
+
+@{
+	this.ViewData["Title"] = "Add comment";
+}
+
+<form method="post" class="col-md-6 offset-md-3">
+	<div class="text-center mb-3">
+		<h1>@this.ViewData["Title"]</h1>
+		<br />
+	</div>
+	<br />
+	<div asp-validation-summary="All" class="text-danger"></div>
+	<input type="hidden" asp-for="@Model.Id" />
+	<div class="text-center mb-3">
+		<label asp-for="@Model.ApplicationUser.FirstName">Guest First Name</label>
+		<input disabled asp-for="@Model.ApplicationUser.FirstName" class="form-control" />
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="@Model.ApplicationUser.LastName">Guest Last Name</label>
+		<input disabled asp-for="@Model.ApplicationUser.LastName" class="form-control" />
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="@Model.CreatedOn">Date created</label>
+		<input disabled asp-for="@Model.CreatedOn" class="form-control" />
+	</div>
+	@*<div class="text-center mb-3">
+		<label asp-for="ReservationPhone">Guest Phone number</label>
+		<input asp-for="ReservationPhone" class="form-control" />
+		<span asp-validation-for="ReservationPhone" class="text-danger"></span>
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="AccommodationDate"></label>
+		<input asp-for="AccommodationDate" class="date form-control" type="date" />
+		<span asp-validation-for="AccommodationDate" class="text-danger"></span>
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="ReleaseDate"></label>
+		<input asp-for="ReleaseDate" class="date form-control" type="date" />
+		<span asp-validation-for="ReleaseDate" class="text-danger"></span>
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="AdultsCount"></label>
+		<input asp-for="AdultsCount" type="number" class="form-control" />
+		<span asp-validation-for="AdultsCount" class="text-danger"></span>
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="ChildrenCount"></label>
+		<input asp-for="ChildrenCount" type="number" class="form-control" />
+		<span asp-validation-for="ChildrenCount" class="text-danger"></span>
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="RoomType"></label>
+		<select class="form-select" asp-for="RoomType" asp-items="@Html.GetEnumSelectList<RoomType>()" style="font-size:medium">
+			<option disabled selected class="text-danger">Please, select Room type from the list below:</option>
+		</select>
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="Catering"></label>
+		<select class="form-select" asp-for="Catering" asp-items="@Html.GetEnumSelectList<Catering>()" style="font-size:medium">
+			<option disabled selected class="text-danger">Please, select type of Catering from the list below:</option>
+		</select>
+	</div>*@
+	<div class="text-center mb-3">
+		<input type="submit" class="btn btn-danger" value="Add comment" />
+	</div>
+</form>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}

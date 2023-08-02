@@ -21,6 +21,17 @@
                 this.ordersService = ordersService;
         }
 
+        public async Task<IActionResult> AddComment(int id)
+        {
+            if (!await this.ordersService.DoesOrderExistsAsync(id))
+            {
+                return this.RedirectToAction(nameof(this.All));
+            }
+
+            HotelAdministrationAddCommentToOrderViewModel model = await this.ordersService.GetOrderDetailsToAddCommentAsync(id);
+            return this.View(model);
+        }
+
         public async Task<IActionResult> All(int id = 1)
         {
             if (id < 1)

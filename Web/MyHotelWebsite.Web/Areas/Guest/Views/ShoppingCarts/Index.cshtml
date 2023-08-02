@@ -48,7 +48,7 @@
                                 {
                                     <tr>
                                         <td id="name-and-category-div">
-                                            <img src="@("https://localhost:5001/" + singleShoppingCart.Dish.DishImageUrl)" alt="@singleShoppingCart.Dish.Name">
+                                            <img src="@( this.TempData["Domain"] + singleShoppingCart.Dish.DishImageUrl)" alt="@singleShoppingCart.Dish.Name">
                                             <div id="divs-heading">
                                                 <h3 id="h3" class="text-danger"><b>@singleShoppingCart.Dish.Name</b></h3>
                                                 <h4 id="h4" class="text-danger">

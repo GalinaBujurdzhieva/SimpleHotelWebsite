@@ -36,6 +36,7 @@
                 Dishes = await this.dishesService.GetAllDishesAsync<SingleDishViewModel>(id, DishesPerPage),
                 PageNumber = id,
             };
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
 
@@ -57,6 +58,7 @@
                 PageNumber = id,
                 DishCategory = dishCategory.ToString(),
             };
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
     }

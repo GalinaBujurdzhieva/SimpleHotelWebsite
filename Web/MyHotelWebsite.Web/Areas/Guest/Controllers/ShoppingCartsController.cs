@@ -46,6 +46,7 @@
                 Count = 1,
                 ApplicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier),
             };
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(model);
         }
 
@@ -89,9 +90,11 @@
                 this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
                 this.AllShoppingCartModel.TotalPrice = this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
                 this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, this.AllShoppingCartModel.ShoppingCartsList.Count);
-                this.HttpContext.Session.Clear();
+
+                // this.HttpContext.Session.Clear();
             }
 
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             return this.View(this.AllShoppingCartModel);
         }
 

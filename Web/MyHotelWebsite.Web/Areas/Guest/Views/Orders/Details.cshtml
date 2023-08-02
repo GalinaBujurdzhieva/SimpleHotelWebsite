@@ -26,7 +26,7 @@
                         {
                             <tr>
                                 <td>
-                                    <img src="@("https://localhost:5001/" + singleDish.Dish.DishImageUrl)" alt="@singleDish.Dish.Name">
+                                    <img src="@(this.TempData["Domain"] + singleDish.Dish.DishImageUrl)" alt="@singleDish.Dish.Name">
                                 </td>
                                 <td class="text-center align-middle px-0" style="font-size:18px"><h3 class="text-danger"><b>@singleDish.Dish.Name</b></h3></td>
                                 <td class="text-center align-middle px-0" style="font-size:18px">
