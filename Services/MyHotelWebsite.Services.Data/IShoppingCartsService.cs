@@ -7,20 +7,20 @@
 
     public interface IShoppingCartsService
     {
-     Task AddDishInTheShoppingCartAsync(SingleShoppingCartViewModel shoppingCart);
+        Task AddDishInTheShoppingCartAsync(SingleShoppingCartViewModel shoppingCart);
 
-     Task DecreaseQuantityOfTheDishInTheShoppingCart(int shoppingCartId);
+        Task DecreaseQuantityOfTheDishInTheShoppingCart(int shoppingCartId);
 
-     Task<List<SingleShoppingCartViewModel>> GetAllSingleShoppingCartsOfTheUser(string applicationUserId);
+        Task<List<SingleShoppingCartViewModel>> GetAllSingleShoppingCartsOfTheUser(string applicationUserId);
 
-     decimal GetOrderTotalOfShoppingCartsOfTheUser(IEnumerable<SingleShoppingCartViewModel> shoppingCartsList);
+        decimal GetOrderTotalOfShoppingCartsOfTheUser(IEnumerable<SingleShoppingCartViewModel> shoppingCartsList);
 
-     Task IncreaseQuantityOfTheDishInTheShoppingCart(int shoppingCartId);
+        Task IncreaseQuantityOfTheDishInTheShoppingCart(int shoppingCartId);
 
-     Task<bool> IsDishAlreadyInTheShoppingCartOfThatUserAsync(string dishId, string applicationUserId);
+        Task<bool> IsDishAlreadyInTheShoppingCartOfThatUserAsync(string dishId, string applicationUserId);
 
-     Task RemoveDishFromTheShoppingCart(int shoppingCartId);
+        Task RemoveDishFromTheShoppingCart(int shoppingCartId);
 
-     Task UpdateDishCountInTheShoppingCartAsync(string dishId, string applicationUserId, int count);
+        Task UpdateDishCountInTheShoppingCartAsync(string dishId, string applicationUserId, int count);
     }
 }

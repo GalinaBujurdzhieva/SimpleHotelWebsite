@@ -21,11 +21,13 @@
     {
         private readonly IDeletableEntityRepository<Order> ordersRepo;
         private readonly IDeletableEntityRepository<DishOrder> dishOrdersRepo;
+        private readonly IDeletableEntityRepository<ShoppingCart> shoppingCartsRepo;
 
-        public OrdersService(IDeletableEntityRepository<Order> ordersRepo, IDeletableEntityRepository<DishOrder> dishOrdersRepo)
+        public OrdersService(IDeletableEntityRepository<Order> ordersRepo, IDeletableEntityRepository<DishOrder> dishOrdersRepo, IDeletableEntityRepository<ShoppingCart> shoppingCartsRepo)
         {
             this.ordersRepo = ordersRepo;
             this.dishOrdersRepo = dishOrdersRepo;
+            this.shoppingCartsRepo = shoppingCartsRepo;
         }
 
         public async Task AddCommentToOrderAsync(int id, string comment)
@@ -53,6 +55,8 @@
                         DishId = singleShoppingCart.DishId,
                         DishQuantity = singleShoppingCart.Count,
                     });
+                    var currentShoppingCart = await this.shoppingCartsRepo.All().FirstOrDefaultAsync(sh => sh.Id == singleShoppingCart.Id);
+                    currentShoppingCart.IsShoppingCartAddedToAFinalOrder = true;
                 }
 
                 await this.ordersRepo.AddAsync(newOrder);

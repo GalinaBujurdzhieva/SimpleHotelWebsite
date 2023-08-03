@@ -18,5 +18,7 @@
         public string DishId { get; set; }
 
         public virtual Dish Dish { get; set; }
+
+        public bool IsShoppingCartAddedToAFinalOrder { get; set; } = false;
     }
 }

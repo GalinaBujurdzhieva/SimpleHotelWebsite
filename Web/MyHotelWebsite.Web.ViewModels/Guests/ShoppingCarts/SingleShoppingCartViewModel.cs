@@ -24,5 +24,7 @@
         public string DishId { get; set; }
 
         public virtual SingleDishViewModel Dish { get; set; }
+
+        public bool IsShoppingCartAddedToAFinalOrder { get; set; }
     }
 }

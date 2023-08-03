@@ -56,8 +56,8 @@
             int currentDishQuantity = await this.dishesService.DishQuantityInStockAsync(shoppingCart.DishId);
             if (currentDishQuantity < 1)
             {
-                // this.ModelState.AddModelError(string.Empty, "This dish is not in stock. Please choose another one.");
                 this.TempData["Error"] = "This dish is not in stock. Please choose another one.";
+                return this.RedirectToAction("All", "Dishes", new { area = string.Empty });
             }
             else
             {
@@ -90,8 +90,6 @@
                 this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
                 this.AllShoppingCartModel.TotalPrice = this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
                 this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, this.AllShoppingCartModel.ShoppingCartsList.Count);
-
-                // this.HttpContext.Session.Clear();
             }
 
             this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
@@ -112,6 +110,7 @@
             try
             {
                 await this.ordersService.AddOrderAsync(this.AllShoppingCartModel, applicationUserId);
+                this.HttpContext.Session.Clear();
                 this.TempData["Message"] = "Order placed successfully";
             }
             catch (Exception)

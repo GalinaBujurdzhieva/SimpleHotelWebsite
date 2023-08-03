@@ -64,7 +64,7 @@
                 .Include(c => c.Dish)
                 .ThenInclude(d => d.DishImage)
                 .Include(c => c.ApplicationUser)
-                .Where(c => c.ApplicationUserId == applicationUserId)
+                .Where(c => c.ApplicationUserId == applicationUserId && c.IsShoppingCartAddedToAFinalOrder == false)
                 .OrderBy(c => c.Dish.Name)
                 .To<SingleShoppingCartViewModel>()
                 .ToListAsync();
