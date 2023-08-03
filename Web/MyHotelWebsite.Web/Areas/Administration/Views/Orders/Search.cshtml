@@ -1,0 +1,38 @@
+﻿@using MyHotelWebsite.Data.Models.Enums;
+@using MyHotelWebsite.Web.ViewModels.Administration.Orders
+
+@model HotelAdministrationSingleOrderViewModel
+
+<body>
+    <div class="container">
+        <div class="row pt-1 pb-1">
+            <div class="col-lg-12 text-center">
+                <h4 class="text-center">Find order</h4>
+            </div>
+        </div>
+    </div>
+    <partial name="_SearchCarouselPartial" />
+    <br />
+    <section class="search-sec">
+        <div class="container">
+            <form asp-action="ByOrderStatus" method="get" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 col-md-3 col-sm-12 pl-1">
+                                <br />
+                                <select class="form-control search-slt" asp-items="Html.GetEnumSelectList<OrderStatus>()" name="orderStatus">
+                                    <option disabled selected>Select Order Status</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                <br />
+                                <input type="submit" value="Search" name="Search" class="btn btn-danger wrn-btn" style="margin-left:10px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>

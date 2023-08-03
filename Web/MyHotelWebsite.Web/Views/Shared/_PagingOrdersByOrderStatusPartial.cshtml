@@ -1,0 +1,42 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Pagination;
+
+@model PagingOrdersByOrderStatus
+
+<section>
+    <div class="d-flex justify-content-center">
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li class="page-item @if (!Model.HasPreviousPage) {
+                <text>disabled</text>
+ }">
+                    <a class="page-link" asp-action="ByOrderStatus" asp-route-id="@Model.PreviousPageNumber" asp-route-orderStatus="@Model.OrderStatus">«</a>
+                </li>
+                @for (int i = Model.PageNumber - 2; i < Model.PageNumber; i++)
+                {
+                    if (i > 0)
+                    {
+                        <li class="page-item"><a class="page-link" asp-action="ByOrderStatus" asp-route-id="@i" asp-route-orderStatus="@Model.OrderStatus">@i</a> </li>
+                    }
+                }
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link">
+                        @Model.PageNumber
+                        <span class="sr-only">(current)</span>
+                    </span>
+                </li>
+                @for (int i = Model.PageNumber + 1; i <= Model.PageNumber + 2; i++)
+                {
+                    if (i <= Model.TotalPagesCount)
+                    {
+                        <li class="page-item"><a class="page-link" asp-action="ByOrderStatus" asp-route-id="@i" asp-route-orderStatus="@Model.OrderStatus">@i</a></li>
+                    }
+                }
+                <li class="page-item> @if (!Model.HasNextPage) {
+                <text>disabled</text>
+ }">
+                    <a class="page-link" asp-action="ByOrderStatus" asp-route-id="@Model.NextPageNumber" asp-route-orderStatus="@Model.OrderStatus">»</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>

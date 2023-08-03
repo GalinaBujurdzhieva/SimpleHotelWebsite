@@ -1,0 +1,48 @@
+﻿@using MyHotelWebsite.Data.Models.Enums;
+@using MyHotelWebsite.Web.ViewModels.Administration.Orders;
+
+@model HotelAdministrationAddCommentToOrderViewModel
+
+@{
+	this.ViewData["Title"] = "Add comment";
+	string guestFullName = Model.ApplicationUser.FirstName + " " + Model.ApplicationUser.LastName;
+	string dateOfCreation = Model.CreatedOn.ToShortDateString();
+}
+
+<form method="post" class="col-md-6 offset-md-3">
+	<div class="text-center mb-3">
+		<h1>@this.ViewData["Title"]</h1>
+		<br />
+	</div>
+	<br />
+	<div asp-validation-summary="All" class="text-danger"></div>
+	<input type="hidden" asp-for="@Model.Id" />
+	<div class="text-center mb-3">
+		<label>Guest Full Name</label>
+		<input disabled value="@guestFullName" class="form-control" />
+	</div>
+	<div class="text-center mb-3">
+		<label>Date created</label>
+		<input disabled value="@dateOfCreation" class="form-control" />
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="OrderStatus">Order Status</label>
+		<select class="form-select" asp-for="OrderStatus" asp-items="@Html.GetEnumSelectList<OrderStatus>()" style="font-size:medium">
+		</select>
+		<option disabled selected class="text-danger">Please, select Order Status from the list:</option>
+	</div>
+	<div class="text-center mb-3">
+		<label asp-for="Comment">Add comment</label>
+		<textarea disabled rows="4" cols="50" asp-for="Comment" class="form-control">
+			</textarea>
+	</div>
+
+	<div class="text-center mb-3">
+		<input type="submit" class="btn btn-danger" value="Add comment" />
+	</div>
+</form>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
+

@@ -9,8 +9,8 @@
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Services.Mapping;
-	using MyHotelWebsite.Web.ViewModels.Administration.Orders;
-	using MyHotelWebsite.Web.ViewModels.Guests.Orders;
+    using MyHotelWebsite.Web.ViewModels.Administration.Orders;
+    using MyHotelWebsite.Web.ViewModels.Guests.Orders;
     using MyHotelWebsite.Web.ViewModels.Guests.ShoppingCarts;
     using Syncfusion.Drawing;
     using Syncfusion.Pdf;
@@ -26,6 +26,13 @@
         {
             this.ordersRepo = ordersRepo;
             this.dishOrdersRepo = dishOrdersRepo;
+        }
+
+        public async Task AddCommentToOrderAsync(int id, string comment)
+        {
+            var currentOrder = await this.ordersRepo.All().FirstOrDefaultAsync(o => o.Id == id);
+            currentOrder.Comment = comment;
+            await this.ordersRepo.SaveChangesAsync();
         }
 
         public async Task AddOrderAsync(AllShoppingCartsOfOneUserViewModel model, string applicationUserId)
@@ -55,6 +62,13 @@
             {
                 throw new System.Exception();
             }
+        }
+
+        public async Task ChangeStatusOfOrderAsync(int id, OrderStatus orderStatus)
+        {
+            var currentOrder = await this.ordersRepo.All().FirstOrDefaultAsync(o => o.Id == id);
+            currentOrder.OrderStatus = orderStatus;
+            await this.ordersRepo.SaveChangesAsync();
         }
 
         public async Task DeleteOrderAsync(int id)
@@ -190,6 +204,18 @@
             return await this.ordersRepo.AllAsNoTracking().Where(r => r.ApplicationUserId == applicationUserId).CountAsync();
         }
 
+        public async Task<int> GetCountOfOrdersByOrderStatusAsync(OrderStatus orderStatus)
+        {
+            var searchOrdersList = this.ordersRepo.All().AsQueryable();
+            if (orderStatus != 0)
+            {
+                searchOrdersList = searchOrdersList
+                    .Where(x => x.OrderStatus == orderStatus);
+            }
+
+            return await searchOrdersList.CountAsync();
+        }
+
         public async Task<IEnumerable<T>> GetMyOrdersAsync<T>(string applicationUserId, int page, int itemsPerPage = 4)
         {
             var orders = await this.ordersRepo.AllAsNoTracking()
@@ -248,6 +274,19 @@
             .Skip((page - 1) * itemsPerPage)
             .Take(itemsPerPage).To<T>().ToListAsync();
             return orders;
+        }
+
+        public async Task<IEnumerable<T>> HotelAdministrationGetOrdersByOrderStatusAsync<T>(int page, OrderStatus orderStatus, int itemsPerPage = 4)
+        {
+            var ordersByOrderStatus = this.ordersRepo.AllAsNoTracking().AsQueryable();
+
+            if (orderStatus != 0)
+            {
+                ordersByOrderStatus = ordersByOrderStatus
+                    .Where(x => x.OrderStatus == orderStatus);
+            }
+
+            return await ordersByOrderStatus.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<T>().ToListAsync();
         }
     }
 }

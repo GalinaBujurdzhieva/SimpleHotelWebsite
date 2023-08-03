@@ -15,6 +15,7 @@
                 <th scope="col">Guest Phone Number</th>
                 <th scope="col">Date Created</th>
                 <th scope="col">Order Status</th>
+                <th scope="col">Comment</th>
                 <th scope="col">See details</th>
                 <th scope="col">Add Comment</th>
                 <th scope="col">Change Status</th>
@@ -35,6 +36,7 @@
                     <td>@order.ApplicationUser.PhoneNumber</td>
                     <td>@order.CreatedOn.ToShortDateString()</td>
                     <td>@order.OrderStatus.ToString()</td>
+                    <td>@order.Comment</td>
                     <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Orders" asp-action="Details" asp-route-id="@order.Id" class="btn btn-secondary"><i class="fa fa-info" aria-hidden="true"></i></a></td>
                     <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Orders" asp-action="AddComment" asp-route-id="@order.Id" class="btn btn-secondary"><i class="fa fa-comment" aria-hidden="true"></i></a></td>
                     <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Orders" asp-action="ChangeStatus" asp-route-id="@order.Id" class="btn btn-secondary"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
