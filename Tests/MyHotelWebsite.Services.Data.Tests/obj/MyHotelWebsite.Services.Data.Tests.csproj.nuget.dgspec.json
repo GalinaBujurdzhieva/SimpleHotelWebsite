@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj": {}
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj",
         "projectName": "MyHotelWebsite.Data.Common",
-        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\obj\\",
         "projectStyle": "PackageReference",
@@ -71,14 +71,14 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj",
         "projectName": "MyHotelWebsite.Data.Models",
-        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -95,8 +95,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj"
               }
             }
           }
@@ -142,14 +142,14 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj",
         "projectName": "MyHotelWebsite.Data",
-        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -166,14 +166,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj"
               },
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj"
               },
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj"
               }
             }
           }
@@ -239,12 +239,12 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj",
         "projectName": "MyHotelWebsite.Common",
-        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\obj\\",
         "projectStyle": "PackageReference",
@@ -310,14 +310,14 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj",
         "projectName": "MyHotelWebsite.Services.Data",
-        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -334,20 +334,20 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj"
               },
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj"
               },
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj"
               },
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj"
               },
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj"
               }
             }
           }
@@ -397,12 +397,12 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj",
         "projectName": "MyHotelWebsite.Services.Mapping",
-        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\obj\\",
         "projectStyle": "PackageReference",
@@ -464,14 +464,14 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj",
         "projectName": "MyHotelWebsite.Services.Data.Tests",
-        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -488,11 +488,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj"
               },
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Data\\MyHotelWebsite.Services.Data.csproj"
               }
             }
           }
@@ -556,14 +556,14 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj": {
+    "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj",
         "projectName": "MyHotelWebsite.Web.ViewModels",
-        "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -580,14 +580,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj"
               },
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\MyHotelWebsite.Common\\MyHotelWebsite.Common.csproj"
               },
-              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj"
+              "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj"
               }
             }
           }

@@ -6,8 +6,6 @@
 
     public class SingleStaffViewModel : SingleGuestViewModel, IMapFrom<ApplicationUser>
     {
-        public string Id { get; set; }
-
         public string UserName { get; set; }
 
         public string Role { get; set; }

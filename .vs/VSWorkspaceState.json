@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Web",
+    "\\Web\\MyHotelWebsite.Web",
+    "\\Web\\MyHotelWebsite.Web\\Areas",
+    "\\Web\\MyHotelWebsite.Web\\Areas\\Administration",
+    "\\Web\\MyHotelWebsite.Web\\Areas\\Administration\\Controllers",
+    "\\Web\\MyHotelWebsite.Web\\Areas\\Administration\\Views",
+    "\\Web\\MyHotelWebsite.Web\\Areas\\Administration\\Views\\Staff",
+    "\\Web\\MyHotelWebsite.Web\\Views",
+    "\\Web\\MyHotelWebsite.Web\\Views\\Shared"
   ],
-  "SelectedNode": "\\MyHotelWebsite.sln",
+  "SelectedNode": "\\Web\\MyHotelWebsite.Web\\Views\\Shared\\_SingleStaffPartial.cshtml",
   "PreviewInSolutionExplorer": false
 }

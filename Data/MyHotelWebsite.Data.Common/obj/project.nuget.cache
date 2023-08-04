@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LLVzWHzbWYexyTaw13j+NlWjufaS/kR82m33fJrDnQDIfyGqGNFneHJ+jJ1Hp7DAteJ7WLmDtrTjeMVlprghYQ==",
+  "dgSpecHash": "Wxs8bAouAQBwLEbAx+vKypPerfpO1PyB6pYWxKe/eZilTT4eaaJFhQfu+ZE1vLkE2AeLOu1avuVO3ZaliL6Mmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Common\\MyHotelWebsite.Data.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",

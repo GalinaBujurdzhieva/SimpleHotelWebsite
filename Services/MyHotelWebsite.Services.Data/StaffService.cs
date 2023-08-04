@@ -11,7 +11,6 @@
     using MyHotelWebsite.Data;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
-    using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Web.ViewModels.Administration.Staff;
 
     public class StaffService : IStaffService
@@ -49,6 +48,7 @@
                .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage).Select(u => new SingleStaffViewModel
                 {
+                    Id = u.Id,
                     FirstName = u.FirstName,
                     LastName = u.LastName,
                     UserName = u.UserName,
@@ -70,6 +70,40 @@
             var manager = await this.userManager.GetUsersInRoleAsync(GlobalConstants.HotelManagerRoleName);
 
             return webAdministrators.Count() + receptionists.Count() + chefs.Count() + maids.Count() + waiters.Count() + manager.Count;
+        }
+
+        public async Task LockUser(string id)
+        {
+            ApplicationUser userToBeLocked = await this.userManager.FindByIdAsync(id);
+            if (userToBeLocked != null)
+            {
+                if (userToBeLocked.LockoutEnd == null || userToBeLocked.LockoutEnd < DateTime.UtcNow)
+                {
+                    userToBeLocked.LockoutEnd = DateTime.UtcNow.AddYears(1000);
+                    await this.staffRepo.SaveChangesAsync();
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+        }
+
+        public async Task UnlockUser(string id)
+        {
+            ApplicationUser userToBeLocked = await this.userManager.FindByIdAsync(id);
+            if (userToBeLocked != null)
+            {
+                if (userToBeLocked.LockoutEnd > DateTime.UtcNow)
+                {
+                    userToBeLocked.LockoutEnd = DateTime.UtcNow;
+                    await this.staffRepo.SaveChangesAsync();
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
         }
     }
 }

@@ -10,5 +10,9 @@
         Task<IEnumerable<SingleStaffViewModel>> GetAllEmployeesAsync(int page, int itemsPerPage = 4);
 
         Task<int> GetCountAsync();
+
+        Task LockUser(string id);
+
+        Task UnlockUser(string id);
     }
 }

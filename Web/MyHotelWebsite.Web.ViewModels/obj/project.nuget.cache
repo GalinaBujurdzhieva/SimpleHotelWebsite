@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HhgL4A92ppXiNImUEldTT/cSYaNdqQT7o80FNeBOYbN1tpE0tsz+8QQw2YbxCuwj96tS5o1Mdl09FeAZIGhvAg==",
+  "dgSpecHash": "pOwQS14qqq+0OdIsduOR/DJmV1EDTVgS9R6JjTcttpD42lzLNQT7ZuLESUdcqtQDnYNxSt6gKvzshK2KWCgL3w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

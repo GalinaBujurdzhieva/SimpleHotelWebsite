@@ -46,14 +46,33 @@
             return this.View(model);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Fire(string id)
+        public async Task<IActionResult> Lock(string id)
         {
+            try
+            {
+                await this.staffService.LockUser(id);
+                this.TempData["Message"] = "Successfully lock this employee.";
+            }
+            catch (System.Exception)
+            {
+                this.TempData["Error"] = "Employee already locked.";
+            }
+
             return this.RedirectToAction(nameof(this.All));
         }
 
-        public async Task<IActionResult> Hire(string id)
+        public async Task<IActionResult> Unlock(string id)
         {
+            try
+            {
+                await this.staffService.UnlockUser(id);
+                this.TempData["Message"] = "Successfully unlock this employee.";
+            }
+            catch (System.Exception)
+            {
+                this.TempData["Error"] = "Employee is not locked";
+            }
+
             return this.RedirectToAction(nameof(this.All));
         }
 
