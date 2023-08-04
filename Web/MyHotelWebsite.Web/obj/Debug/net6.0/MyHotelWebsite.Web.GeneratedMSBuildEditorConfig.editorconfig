@@ -128,6 +128,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcUm9vbXNcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lenovo/Source/Repos/SimpleHotelWebsite-new 04.08/Web/MyHotelWebsite.Web/Areas/Administration/Views/Staff/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcU3RhZmZcQWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Source/Repos/SimpleHotelWebsite-new 04.08/Web/MyHotelWebsite.Web/Areas/Administration/Views/Staff/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcU3RhZmZcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/Source/Repos/SimpleHotelWebsite-new 04.08/Web/MyHotelWebsite.Web/Areas/Administration/Views/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRpb25cVmlld3NcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -374,6 +382,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Lenovo/Source/Repos/SimpleHotelWebsite-new 04.08/Web/MyHotelWebsite.Web/Views/Shared/_SingleRoomPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaW5nbGVSb29tUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/Source/Repos/SimpleHotelWebsite-new 04.08/Web/MyHotelWebsite.Web/Views/Shared/_SingleStaffPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaW5nbGVTdGFmZlBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/Source/Repos/SimpleHotelWebsite-new 04.08/Web/MyHotelWebsite.Web/Views/Shared/_UserLayout.cshtml]

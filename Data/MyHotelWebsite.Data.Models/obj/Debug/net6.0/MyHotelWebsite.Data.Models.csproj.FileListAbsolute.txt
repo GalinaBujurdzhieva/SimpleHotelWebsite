@@ -58,3 +58,18 @@ C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new-07.2023\Data\MyHotelWebsite.
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new-07.2023\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\refint\MyHotelWebsite.Data.Models.dll
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new-07.2023\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\MyHotelWebsite.Data.Models.pdb
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new-07.2023\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\ref\MyHotelWebsite.Data.Models.dll
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\bin\Debug\net6.0\MyHotelWebsite.Data.Models.deps.json
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\bin\Debug\net6.0\MyHotelWebsite.Data.Models.dll
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\bin\Debug\net6.0\MyHotelWebsite.Data.Models.pdb
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\bin\Debug\net6.0\MyHotelWebsite.Data.Common.dll
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\bin\Debug\net6.0\MyHotelWebsite.Data.Common.pdb
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\MyHotelWebsite.Data.Models.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\MyHotelWebsite.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\MyHotelWebsite.Data.Models.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\MyHotelWebsite.Data.Models.AssemblyInfo.cs
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\MyHotelWebsite.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\MyHotelWebsite.Data.Models.csproj.CopyComplete
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\MyHotelWebsite.Data.Models.dll
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\refint\MyHotelWebsite.Data.Models.dll
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\MyHotelWebsite.Data.Models.pdb
+C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Data\MyHotelWebsite.Data.Models\obj\Debug\net6.0\ref\MyHotelWebsite.Data.Models.dll

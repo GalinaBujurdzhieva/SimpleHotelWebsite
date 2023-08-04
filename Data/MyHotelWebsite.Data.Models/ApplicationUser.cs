@@ -56,6 +56,9 @@ namespace MyHotelWebsite.Data.Models
         [NotMapped]
         public ICollection<string> ReservationPhones { get; set; }
 
+        [NotMapped]
+        public string Role { get; set; }
+
         public virtual ICollection<Order> Orders { get; set; }
 
         public virtual ICollection<Reservation> Reservations { get; set; }

@@ -115,6 +115,7 @@
             services.AddTransient<IOrdersService, OrdersService>();
             services.AddTransient<IRoomsService, RoomsService>();
             services.AddTransient<IGuestsService, GuestsService>();
+            services.AddTransient<IStaffService, StaffService>();
             services.AddTransient<IReservationsService, ReservationsService>();
             services.AddTransient<IShoppingCartsService, ShoppingCartsService>();
         }

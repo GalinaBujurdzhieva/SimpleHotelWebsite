@@ -7,10 +7,10 @@
 
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
+    using MyHotelWebsite.Common;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Services.Mapping;
-    using MyHotelWebsite.Web.ViewModels.Administration.Guests;
 
     public class GuestsService : IGuestsService
     {
@@ -36,7 +36,7 @@
 
         public async Task<int> GetCountAsync()
         {
-            var guests = await this.userManager.GetUsersInRoleAsync("Guest");
+            var guests = await this.userManager.GetUsersInRoleAsync(GlobalConstants.GuestRoleName);
             return guests.Count();
         }
 

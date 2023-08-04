@@ -1,0 +1,11 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Staff;
+
+@model AllStaffViewModel
+
+<body>
+    <div id="page">
+        <div class="clearfix"></div>
+        <partial name="_SingleStaffPartial" />
+        <partial name="_PagingPartial" model="@Model" />
+    </div>
+</body>

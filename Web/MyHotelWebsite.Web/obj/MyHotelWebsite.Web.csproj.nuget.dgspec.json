@@ -340,6 +340,9 @@
               "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj": {
                 "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data.Models\\MyHotelWebsite.Data.Models.csproj"
               },
+              "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Data\\MyHotelWebsite.Data\\MyHotelWebsite.Data.csproj"
+              },
               "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services.Mapping\\MyHotelWebsite.Services.Mapping.csproj"
               },
@@ -701,6 +704,10 @@
           "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
