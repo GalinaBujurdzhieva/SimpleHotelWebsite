@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xzqgByFO1KwCE2N94Xmp31b1oHvSGnydmdrDB4EJHh1CBA7Z0ds1EHf6Rw1YwKVrulGPiz5e3rtpHq7TS4oBqA==",
+  "dgSpecHash": "n5ZR2wLCJOphgXAcpnMAM7A98+y1JABBLhSZ3tg536HgW2zefCRL9DQodKSC7gRsO29/1kmoi7at+6DQ+c0M0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\castle.core\\5.0.0\\castle.core.5.0.0.nupkg.sha512",

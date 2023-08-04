@@ -65,11 +65,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new-07.2023\\Services\\MyHotelWebsite.Services\\MyHotelWebsite.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services\\MyHotelWebsite.Services.csproj",
       "projectName": "MyHotelWebsite.Services",
-      "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new-07.2023\\Services\\MyHotelWebsite.Services\\MyHotelWebsite.Services.csproj",
+      "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services\\MyHotelWebsite.Services.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new-07.2023\\Services\\MyHotelWebsite.Services\\obj\\",
+      "outputPath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Services\\MyHotelWebsite.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",

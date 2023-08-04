@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NuTWcVPh/Yck17QbYE86z8k1C4oeVyqXkFq+ovBDAChJ+LEbhJBkltOxj4D4ajv58ItrsV4Cnprpp3OAmKs46A==",
+  "dgSpecHash": "g4AWR+Ym/1sDUH7opInp/BxNu3Eucp7li/cAxZLhkdeskOOJ3brtf0tkeUyCZn92JuMxRWzix+MxIiB8hMTDdA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new-07.2023\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\Source\\Repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web.ViewModels\\MyHotelWebsite.Web.ViewModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.5\\microsoft.aspnetcore.cryptography.internal.6.0.5.nupkg.sha512",
