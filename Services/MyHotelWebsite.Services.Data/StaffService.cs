@@ -11,6 +11,7 @@
     using MyHotelWebsite.Data;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Data.Models.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Staff;
 
     public class StaffService : IStaffService
@@ -37,8 +38,7 @@
             foreach (var employee in users)
             {
                 var roleId = userRoles.FirstOrDefault(ur => ur.UserId == employee.Id).RoleId;
-                var role = roles.FirstOrDefault(r => r.Id == roleId).Name;
-                employee.Role = role;
+                employee.Role = roles.FirstOrDefault(r => r.Id == roleId).Name;
             }
 
             var allStaffList = users
@@ -70,6 +70,57 @@
             var manager = await this.userManager.GetUsersInRoleAsync(GlobalConstants.HotelManagerRoleName);
 
             return webAdministrators.Count() + receptionists.Count() + chefs.Count() + maids.Count() + waiters.Count() + manager.Count;
+        }
+
+        public async Task<int> GetCountOfEmployeesByRoleAsync(string role)
+        {
+            var roles = await this.roleManager.Roles.ToListAsync();
+            var userRoles = await this.dbContext.UserRoles.ToListAsync();
+            var users = await this.userManager.Users.ToListAsync();
+
+            foreach (var employee in users)
+            {
+                var roleId = userRoles.FirstOrDefault(ur => ur.UserId == employee.Id).RoleId;
+                employee.Role = roles.FirstOrDefault(r => r.Id == roleId).Name;
+            }
+
+            if (!string.IsNullOrEmpty(role))
+            {
+                users = users
+                    .Where(x => x.Role == role).ToList();
+            }
+
+            return users.Count();
+        }
+
+        public async Task<IEnumerable<SingleStaffViewModel>> GetEmployeesByRoleAsync(int page, string role, int itemsPerPage = 4)
+        {
+            var roles = await this.roleManager.Roles.ToListAsync();
+            var userRoles = await this.dbContext.UserRoles.ToListAsync();
+            var users = await this.userManager.Users.ToListAsync();
+
+            foreach (var employee in users)
+            {
+                var roleId = userRoles.FirstOrDefault(ur => ur.UserId == employee.Id).RoleId;
+                employee.Role = roles.FirstOrDefault(r => r.Id == roleId).Name;
+            }
+
+            if (!string.IsNullOrEmpty(role))
+            {
+                users = users
+                    .Where(x => x.Role == role).ToList();
+            }
+
+            return users.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).Select(u => new SingleStaffViewModel
+            {
+                Id = u.Id,
+                FirstName = u.FirstName,
+                LastName = u.LastName,
+                UserName = u.UserName,
+                Role = u.Role,
+                Email = u.Email,
+                PhoneNumber = u.PhoneNumber,
+            }).ToList();
         }
 
         public async Task LockUser(string id)

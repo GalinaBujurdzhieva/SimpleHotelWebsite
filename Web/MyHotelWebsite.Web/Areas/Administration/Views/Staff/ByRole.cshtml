@@ -1,0 +1,24 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Staff;
+
+@model StaffByRoleViewModel
+
+<body>
+    <div id="page">
+        <div class="clearfix"></div>
+        <div class="row">
+            @if (!Model.Staff.Any())
+            {
+                <div class="col-12 text-center">
+                    <h2>Nothing found</h2>
+                    <br />
+                </div>
+            }
+            <form class="mb-2 mt-4" method="post" asp-area="Administration" asp-controller="Staff" asp-action="Search">
+                <div class="text-center"><button type="submit" class="btn btn-danger wrn-btn">Search Again</button></div>
+            </form>
+            <partial name="_SingleStaffByRolePartial" />
+            <br />
+            <partial name="_PagingStaffByRolePartial" model="@Model" />
+        </div>
+    </div>
+</body>

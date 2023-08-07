@@ -4,7 +4,7 @@
 
     using MyHotelWebsite.Web.ViewModels.Pagination;
 
-    public class HotelAdministrationOrderByOrderStatusViewModel : PagingOrdersByOrderStatus
+    public class HotelAdministrationOrderByOrderStatusViewModel : PagingOrdersByOrderStatusViewModel
     {
         public IEnumerable<HotelAdministrationSingleOrderViewModel> Orders { get; set; } = new List<HotelAdministrationSingleOrderViewModel>();
     }

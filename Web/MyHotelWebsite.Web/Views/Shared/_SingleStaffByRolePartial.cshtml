@@ -1,0 +1,45 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Staff;
+
+@model StaffByRoleViewModel
+
+@{
+    int i = 1;
+}
+
+<body>
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">UserName</th>
+                <th scope="col">Role</th>
+                <th scope="col">Allow Access</th>
+                <th scope="col">Deny Access</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.PageNumber != 1)
+            {
+                i = (Model.PageNumber) * 10 - 9;
+            }
+            @foreach (var employee in Model.Staff)
+            {
+                <tr>
+                    <td><i class="fa fa-user-secret" aria-hidden="true"></i> @(i++)</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Email</td>
+                    <td>@employee.PhoneNumber</td>
+                    <td>@employee.UserName</td>
+                    <td>@employee.Role</td>
+                    <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Staff" asp-action="Unlock" asp-route-id="@employee.Id" class="btn btn-secondary"><i class="fa fa-unlock" aria-hidden="true"></i></a></td>
+                    <td><a class="btn btn-default" style="margin-left:5px" asp-area="Administration" asp-controller="Staff" asp-action="Lock" asp-route-id="@employee.Id" class="btn btn-secondary"><i class="fa fa-lock" aria-hidden="true"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
