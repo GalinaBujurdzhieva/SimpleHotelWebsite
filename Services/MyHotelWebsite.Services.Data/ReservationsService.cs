@@ -13,7 +13,6 @@
     using MyHotelWebsite.Services.Mapping;
     using MyHotelWebsite.Web.ViewModels.Administration.Enums;
     using MyHotelWebsite.Web.ViewModels.Administration.Reservations;
-    using MyHotelWebsite.Web.ViewModels.Guests.Orders;
     using MyHotelWebsite.Web.ViewModels.Guests.Reservations;
     using Syncfusion.Drawing;
     using Syncfusion.Pdf;
@@ -250,14 +249,24 @@
             return await this.reservationsRepo.AllAsNoTracking().CountAsync();
         }
 
+        public async Task<int> GetCountOfAllCurrentReservationsAsync()
+        {
+            return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ReleaseDate.CompareTo(DateTime.UtcNow) > 0 && r.AccommodationDate.CompareTo(DateTime.UtcNow) <= 0).CountAsync();
+        }
+
+        public async Task<int> GetCountOfAllPastReservationsAsync()
+        {
+            return await this.reservationsRepo.AllAsNoTracking().Where(r => r.AccommodationDate.CompareTo(DateTime.UtcNow) < 0).CountAsync();
+        }
+
+        public async Task<int> GetCountOfAllUpcomingReservationsAsync()
+        {
+            return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ReleaseDate.CompareTo(DateTime.UtcNow) > 0).CountAsync();
+        }
+
         public async Task<int> GetCountOfMyReservationsAsync(string applicationUserId)
         {
             return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ApplicationUserId == applicationUserId).CountAsync();
-        }
-
-        public async Task<int> GetCountOfUpcomingReservationsAsync()
-        {
-            return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ReleaseDate.CompareTo(DateTime.UtcNow) >= 0).CountAsync();
         }
 
         public async Task<string> GetGuestEmail(int reservationId)
@@ -378,6 +387,28 @@
             await this.reservationsRepo.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<T>> HotelAdministrationGetAllCurrentReservationsAsync<T>(int page, int itemsPerPage = 4)
+        {
+            var currentReservations = await this.reservationsRepo.AllAsNoTracking()
+             .Where(r => r.ReleaseDate.CompareTo(DateTime.UtcNow) > 0 && r.AccommodationDate.CompareTo(DateTime.UtcNow) <= 0)
+             .OrderByDescending(r => r.AccommodationDate)
+             .ThenByDescending(r => r.ReleaseDate)
+             .Skip((page - 1) * itemsPerPage)
+             .Take(itemsPerPage).To<T>().ToListAsync();
+            return currentReservations;
+        }
+
+        public async Task<IEnumerable<T>> HotelAdministrationGetAllPastReservationsAsync<T>(int page, int itemsPerPage = 4)
+        {
+            var pastReservations = await this.reservationsRepo.AllAsNoTracking()
+             .Where(r => r.ReleaseDate.CompareTo(DateTime.UtcNow) < 0)
+             .OrderByDescending(r => r.AccommodationDate)
+             .ThenByDescending(r => r.ReleaseDate)
+             .Skip((page - 1) * itemsPerPage)
+             .Take(itemsPerPage).To<T>().ToListAsync();
+            return pastReservations;
+        }
+
         public async Task<IEnumerable<T>> HotelAdministrationGetAllReservationsAsync<T>(int page, int itemsPerPage = 4)
         {
             var reservations = await this.reservationsRepo.AllAsNoTracking()
@@ -386,6 +417,17 @@
              .Skip((page - 1) * itemsPerPage)
              .Take(itemsPerPage).To<T>().ToListAsync();
             return reservations;
+        }
+
+        public async Task<IEnumerable<T>> HotelAdministrationGetAllUpcomingReservationsAsync<T>(int page, int itemsPerPage = 4)
+        {
+            var upcomingReservations = await this.reservationsRepo.AllAsNoTracking()
+             .Where(r => r.AccommodationDate.CompareTo(DateTime.UtcNow) > 0)
+             .OrderByDescending(r => r.AccommodationDate)
+             .ThenByDescending(r => r.ReleaseDate)
+             .Skip((page - 1) * itemsPerPage)
+             .Take(itemsPerPage).To<T>().ToListAsync();
+            return upcomingReservations;
         }
 
         public async Task<int> HotelAdministrationGetCountOfReservationsByFiveCriteriaAsync(string reservationEmail = null, string reservationPhone = null, Catering catering = 0, RoomType roomType = 0, ReservationSorting sorting = ReservationSorting.AccommodationDate)

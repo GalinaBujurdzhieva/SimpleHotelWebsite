@@ -20,7 +20,6 @@
             this.roomsRepo = roomsRepo;
         }
 
-        // USED
         public async Task CleanRoomAsync(int id, string applicationUserId)
         {
             var currentRoom = await this.roomsRepo.All().FirstOrDefaultAsync(x => x.Id == id);
@@ -37,13 +36,11 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
-        // USED
         public async Task<bool> DoesRoomExistAsync(int id)
         {
             return await this.roomsRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
         }
 
-        // USED
         public async Task<int> GetAdultsCountAsync(int id)
         {
             RoomType roomType = await this.GetRoomTypeByIdAsync(id);
@@ -66,7 +63,6 @@
             }
         }
 
-        // USED
         public async Task<IEnumerable<T>> GetAllFreeRoomsAtTheMomentAsync<T>()
         {
             var freeRoomsNow = await this.roomsRepo.AllAsNoTracking()
@@ -81,7 +77,6 @@
             return freeRoomsNow;
         }
 
-        // USED
         public async Task<IEnumerable<T>> GetAllFreeRoomsForACertainPeriodOfTimeAsync<T>(DateTime accommodationDate, DateTime releaseDate)
         {
             var freeRoomsForACertainPeriodOfTime = await this.roomsRepo.AllAsNoTracking()
@@ -96,7 +91,6 @@
             return freeRoomsForACertainPeriodOfTime;
         }
 
-        // USED
         public async Task<IEnumerable<T>> GetAllRoomsAsync<T>(int page, int itemsPerPage = 4)
         {
             var rooms = await this.roomsRepo.AllAsNoTracking()
@@ -128,13 +122,11 @@
             return roomsByRoomType;
         }
 
-        // USED
         public async Task<int> GetCountAsync()
         {
             return await this.roomsRepo.AllAsNoTracking().CountAsync();
         }
 
-        // USED
         public async Task<int> GetCountOfRoomsByFourCriteriaAsync(bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0)
         {
             var searchRoomsList = this.roomsRepo.AllAsNoTracking().AsQueryable();
@@ -162,7 +154,6 @@
             return await searchRoomsList.CountAsync();
         }
 
-        // USED
         public async Task<RoomType> GetRoomTypeByIdAsync(int id)
         {
             var roomById = await this.roomsRepo.All().AsNoTracking().FirstOrDefaultAsync(r => r.Id == id);
@@ -174,7 +165,6 @@
             return roomById.RoomType;
         }
 
-        // USED
         public async Task LeaveOccupiedRoomsAsync()
         {
             var roomsToBeLeft = await this.roomsRepo.All()
@@ -191,7 +181,6 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
-        // USED
         public async Task OccupyRoomsAsync()
         {
             var roomsToBeOccupied = await this.roomsRepo.All()
@@ -207,7 +196,6 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
-        // USED
         public async Task RemoveIsReservedPropertyOfNotReservedRooms()
         {
             var notReservedRooms = await this.roomsRepo.All()
@@ -223,7 +211,6 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
-        // USED
         public async Task<int> ReserveRoomAsync(RoomType roomType, DateTime accommodationDate, DateTime releaseDate)
         {
             var roomsThanCanBeReserved = await this.roomsRepo.All()
@@ -283,7 +270,6 @@
             }
         }
 
-        // USED
         public async Task<IEnumerable<T>> SearchRoomsByFourCriteriaAsync<T>(int page, bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0, int itemsPerPage = 4)
         {
             var searchRoomsList = this.roomsRepo.AllAsNoTracking().AsQueryable();

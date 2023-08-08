@@ -1,0 +1,12 @@
+﻿@using MyHotelWebsite.Web.ViewModels.Administration.Reservations
+
+@model HotelAdministrationAllReservationViewModel
+
+<body>
+    <h1 class="text-center">Current Reservations List</h1>
+    <div id="page">
+        <div class="clearfix"></div>
+        <partial name="_SingleReservationHotelManagementPartial" />
+        <partial name="_PagingReservations-CurrentPartial" model="@Model" />
+    </div>
+</body>

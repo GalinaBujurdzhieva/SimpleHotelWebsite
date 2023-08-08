@@ -26,9 +26,13 @@
 
         Task<int> GetCountAsync();
 
-        Task<int> GetCountOfMyReservationsAsync(string applicationUserId);
+        Task<int> GetCountOfAllCurrentReservationsAsync();
 
-        Task<int> GetCountOfUpcomingReservationsAsync();
+        Task<int> GetCountOfAllPastReservationsAsync();
+
+        Task<int> GetCountOfAllUpcomingReservationsAsync();
+
+        Task<int> GetCountOfMyReservationsAsync(string applicationUserId);
 
         Task<string> GetGuestEmail(int reservationId);
 
@@ -43,6 +47,12 @@
         Task HotelAdministrationEditReservationAsync(HotelAdministrationEditReservationViewModel model, int id);
 
         Task<IEnumerable<T>> HotelAdministrationGetAllReservationsAsync<T>(int page, int itemsPerPage = 4);
+
+        Task<IEnumerable<T>> HotelAdministrationGetAllCurrentReservationsAsync<T>(int page, int itemsPerPage = 4);
+
+        Task<IEnumerable<T>> HotelAdministrationGetAllPastReservationsAsync<T>(int page, int itemsPerPage = 4);
+
+        Task<IEnumerable<T>> HotelAdministrationGetAllUpcomingReservationsAsync<T>(int page, int itemsPerPage = 4);
 
         Task<int> HotelAdministrationGetCountOfReservationsByFiveCriteriaAsync(string reservationEmail = null, string reservationPhone = null, Catering catering = 0, RoomType roomType = 0, ReservationSorting sorting = ReservationSorting.AccommodationDate);
 

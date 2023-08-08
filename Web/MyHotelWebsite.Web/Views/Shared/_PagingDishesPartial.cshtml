@@ -5,8 +5,10 @@
     <div class="d-flex justify-content-center">
         <nav>
             <ul class="pagination justify-content-center">
-                        <li class="page-item @if (!Model.HasPreviousPage) { <text>disabled</text> }">
-                    <a class="page-link" asp-action="ByCategory" asp-route-id="@Model.PreviousPageNumber" asp-route-dishCategory="@Model.DishCategory" asp-route-isReady="@Model.IsReady" asp-route-isInStock="@Model.IsInStock">«</a>
+                        <li class="page-item @if (!Model.HasPreviousPage) { 
+<text>disabled</text> 
+}">
+                    <a class="page-link" asp-action="ByCategory" asp-route-id="@Model.PreviousPageNumber" asp-route-dishCategory="@Model.DishCategory" asp-route-isReady="@Model.IsReady" asp-route-isInStock="@Model.IsInStock">&laquo;</a>
                 </li>
                 @for (int i = Model.PageNumber - 2; i < Model.PageNumber; i++)
                 {
@@ -28,8 +30,10 @@
                         <li class="page-item"><a class="page-link" asp-action="ByCategory" asp-route-id="@i" asp-route-dishCategory="@Model.DishCategory" asp-route-isReady="@Model.IsReady" asp-route-isInStock="@Model.IsInStock">@i</a></li>
                     }
                 }
-                <li class="page-item> @if (!Model.HasNextPage) { <text>disabled</text> }">
-                    <a class="page-link" asp-action="ByCategory" asp-route-id="@Model.NextPageNumber" asp-route-dishCategory="@Model.DishCategory" asp-route-isReady="@Model.IsReady" asp-route-isInStock="@Model.IsInStock">»</a>
+                <li class="page-item @if (!Model.HasNextPage) { 
+<text>disabled</text> 
+}">
+                    <a class="page-link" asp-action="ByCategory" asp-route-id="@Model.NextPageNumber" asp-route-dishCategory="@Model.DishCategory" asp-route-isReady="@Model.IsReady" asp-route-isInStock="@Model.IsInStock">&raquo;</a>
                 </li>
             </ul>
         </nav>

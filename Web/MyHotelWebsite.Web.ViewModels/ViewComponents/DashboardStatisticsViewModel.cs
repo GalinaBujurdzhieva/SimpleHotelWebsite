@@ -10,7 +10,7 @@
 
         public int OccupiedRoomsCount { get; set; }
 
-        public int GuestsCount { get; set; }
+        public int RegisteredUsersCount { get; set; }
 
         public int ReservationsCount { get; set; }
     }

@@ -49,18 +49,7 @@
                 Reservations = await this.reservationsService.HotelAdministrationGetAllReservationsAsync<HotelAdministrationSingleReservationViewModel>(id, ReservationsPerPage),
                 PageNumber = id,
             };
-            foreach (var singleModel in model.Reservations)
-            {
-                if (singleModel.ReservationEmail == null)
-                {
-                    singleModel.ReservationEmail = await this.reservationsService.GetGuestEmail(singleModel.Id);
-                }
-
-                if (singleModel.ReservationPhone == null)
-                {
-                    singleModel.ReservationPhone = await this.reservationsService.GetGuestPhoneNumber(singleModel.Id);
-                }
-            }
+            await this.FillReservationEmailAndReservationPhone(model);
 
             return this.View(model);
         }
@@ -119,6 +108,27 @@
             }
 
             return this.RedirectToAction(nameof(this.All));
+        }
+
+        public async Task<IActionResult> Current(int id = 1)
+        {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int ReservationsPerPage = 10;
+
+            var model = new HotelAdministrationAllReservationViewModel
+            {
+                ItemsPerPage = ReservationsPerPage,
+                AllEntitiesCount = await this.reservationsService.GetCountOfAllCurrentReservationsAsync(),
+                Reservations = await this.reservationsService.HotelAdministrationGetAllCurrentReservationsAsync<HotelAdministrationSingleReservationViewModel>(id, ReservationsPerPage),
+                PageNumber = id,
+            };
+            await this.FillReservationEmailAndReservationPhone(model);
+
+            return this.View(model);
         }
 
         public async Task<IActionResult> Delete(int id)
@@ -209,6 +219,27 @@
             return this.File(stream, contentType, fileName);
         }
 
+        public async Task<IActionResult> Past(int id = 1)
+        {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int ReservationsPerPage = 10;
+
+            var model = new HotelAdministrationAllReservationViewModel
+            {
+                ItemsPerPage = ReservationsPerPage,
+                AllEntitiesCount = await this.reservationsService.GetCountOfAllPastReservationsAsync(),
+                Reservations = await this.reservationsService.HotelAdministrationGetAllPastReservationsAsync<HotelAdministrationSingleReservationViewModel>(id, ReservationsPerPage),
+                PageNumber = id,
+            };
+            await this.FillReservationEmailAndReservationPhone(model);
+
+            return this.View(model);
+        }
+
         public async Task<IActionResult> ReserveRoom(int id)
         {
             var model = new HotelAdministrationReserveRoomViewModel()
@@ -249,6 +280,43 @@
         public IActionResult Search()
         {
             return this.View();
+        }
+
+        public async Task<IActionResult> Upcoming(int id = 1)
+        {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int ReservationsPerPage = 10;
+
+            var model = new HotelAdministrationAllReservationViewModel
+            {
+                ItemsPerPage = ReservationsPerPage,
+                AllEntitiesCount = await this.reservationsService.GetCountOfAllUpcomingReservationsAsync(),
+                Reservations = await this.reservationsService.HotelAdministrationGetAllUpcomingReservationsAsync<HotelAdministrationSingleReservationViewModel>(id, ReservationsPerPage),
+                PageNumber = id,
+            };
+            await this.FillReservationEmailAndReservationPhone(model);
+
+            return this.View(model);
+        }
+
+        private async Task FillReservationEmailAndReservationPhone(HotelAdministrationAllReservationViewModel model)
+        {
+            foreach (var singleModel in model.Reservations)
+            {
+                if (singleModel.ReservationEmail == null)
+                {
+                    singleModel.ReservationEmail = await this.reservationsService.GetGuestEmail(singleModel.Id);
+                }
+
+                if (singleModel.ReservationPhone == null)
+                {
+                    singleModel.ReservationPhone = await this.reservationsService.GetGuestPhoneNumber(singleModel.Id);
+                }
+            }
         }
     }
 }

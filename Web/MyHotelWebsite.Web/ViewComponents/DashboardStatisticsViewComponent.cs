@@ -38,8 +38,8 @@
                 DishesCount = await this.dishesService.GetCountAsync(),
                 OrdersCount = await this.ordersService.GetCountAsync(),
                 OccupiedRoomsCount = allRoomsCount - freeRooms.Count(),
-                ReservationsCount = await this.reservationsService.GetCountOfUpcomingReservationsAsync(),
-                GuestsCount = await this.guestsService.GetCountAsync(),
+                ReservationsCount = await this.reservationsService.GetCountOfAllUpcomingReservationsAsync(),
+                RegisteredUsersCount = await this.guestsService.GetCountAsync(),
             };
             return this.View(viewModel);
         }

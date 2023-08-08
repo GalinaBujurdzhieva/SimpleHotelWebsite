@@ -6,8 +6,10 @@
     <div class="d-flex justify-content-center">
         <nav>
             <ul class="pagination justify-content-center">
-                <li class="page-item"" @if (!Model.HasPreviousPage) { <text>disabled</text> }">
-                    <a class="page-link" asp-action="MyReservations" asp-route-id="@Model.PreviousPageNumber">«</a>
+                <li class="page-item @if (!Model.HasPreviousPage) { 
+<text>disabled</text> 
+}">
+                    <a class="page-link" asp-action="MyReservations" asp-route-id="@Model.PreviousPageNumber">&laquo;</a>
                 </li>
                 @for (int i = Model.PageNumber - 2; i < Model.PageNumber; i++)
                 {
@@ -29,8 +31,10 @@
                         <li class="page-item"><a class="page-link" asp-action="MyReservations" asp-route-id="@i">@i</a></li>
                     }
                 }
-                <li class="page-item> @if (!Model.HasNextPage) { <text>disabled</text> }">
-                    <a class="page-link" asp-action="MyReservations" asp-route-id="@Model.NextPageNumber">»</a>
+                <li class="page-item @if (!Model.HasNextPage) { 
+<text>disabled</text> 
+}">
+                    <a class="page-link" asp-action="MyReservations" asp-route-id="@Model.NextPageNumber">&raquo;</a>
                 </li>
             </ul>
         </nav>

@@ -225,7 +225,7 @@
             var orders = await this.ordersRepo.AllAsNoTracking()
               .Include(o => o.ApplicationUser)
              .Where(o => o.ApplicationUserId == applicationUserId)
-             .OrderBy(o => o.CreatedOn)
+             .OrderByDescending(o => o.CreatedOn)
              .ThenBy(o => o.OrderStatus)
              .Skip((page - 1) * itemsPerPage)
              .Take(itemsPerPage).To<T>().ToListAsync();
@@ -271,7 +271,7 @@
         {
             var orders = await this.ordersRepo.AllAsNoTracking()
             .Include(o => o.ApplicationUser)
-            .OrderBy(o => o.CreatedOn)
+            .OrderByDescending(o => o.CreatedOn)
             .ThenBy(o => o.OrderStatus)
             .ThenBy(o => o.ApplicationUser.FirstName)
             .ThenBy(o => o.ApplicationUser.LastName)

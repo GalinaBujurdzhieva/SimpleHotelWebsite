@@ -3,9 +3,13 @@
 @model HotelAdministrationAllOrderViewModel
 
 <body>
+    <h1 class="text-center mb-4">All Orders</h1>
     <div id="page">
         <div class="clearfix"></div>
         <partial name="_SingleOrderHotelManagementPartial" />
+        <div class="text-center">
+        <a type="button" class="btn btn-small btn-danger" style="margin-right:10px; width:200px" asp-area="Administration" asp-controller="Orders" asp-action="Search" class="btn btn-secondary">Filter Orders</a>
+        </div>
         <partial name="_PagingPartial" model="@Model" />
     </div>
 </body>
