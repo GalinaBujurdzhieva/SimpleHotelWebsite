@@ -48,6 +48,31 @@
             return this.View(model);
         }
 
+        public async Task<IActionResult> ByCategory(DishCategory dishCategory, bool isReady, bool? isInStock, DishSorting sorting, int id = 1)
+        {
+            if (id < 1)
+            {
+                return this.BadRequest();
+            }
+
+            const int DishesPerPage = 12;
+
+            var dishesWithFilter = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, sorting, isInStock, isReady, DishesPerPage);
+            var model = new DishByCategoryViewModel
+            {
+                ItemsPerPage = DishesPerPage,
+                AllEntitiesCount = await this.dishesService.GetCountOfDishesByCategoryAsync(isInStock, isReady, dishCategory, sorting),
+                Dishes = dishesWithFilter,
+                PageNumber = id,
+                DishCategory = dishCategory.ToString(),
+                IsReady = isReady,
+                IsInStock = isInStock,
+                Sorting = sorting,
+            };
+            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
+            return this.View(model);
+        }
+
         public IActionResult Create()
         {
             var model = new CreateDishViewModel();
@@ -125,29 +150,20 @@
             return this.RedirectToAction(nameof(this.All));
         }
 
-        public async Task<IActionResult> ByCategory(DishCategory dishCategory, bool isReady, bool? isInStock, DishSorting sorting, int id = 1)
+        public async Task<IActionResult> Prepare(string id)
         {
-            if (id < 1)
+            try
             {
-                return this.BadRequest();
+                await this.dishesService.PrepareDishAsync(id);
+                this.TempData["Message"] = "Dish prepared successfully.";
+            }
+            catch (Exception)
+            {
+                this.TempData["Error"] = "Could not prepare this dish";
+                this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
             }
 
-            const int DishesPerPage = 12;
-
-            var dishesWithFilter = await this.dishesService.GetDishesByDishCategoryAsync<SingleDishViewModel>(id, dishCategory, sorting, isInStock, isReady, DishesPerPage);
-            var model = new DishByCategoryViewModel
-            {
-                ItemsPerPage = DishesPerPage,
-                AllEntitiesCount = await this.dishesService.GetCountOfDishesByCategoryAsync(isInStock, isReady, dishCategory, sorting),
-                Dishes = dishesWithFilter,
-                PageNumber = id,
-                DishCategory = dishCategory.ToString(),
-                IsReady = isReady,
-                IsInStock = isInStock,
-                Sorting = sorting,
-            };
-            this.TempData["Domain"] = this.Request.Scheme + "://" + this.Request.Host.Value + "/";
-            return this.View(model);
+            return this.RedirectToAction(nameof(this.All));
         }
 
         public IActionResult Search()

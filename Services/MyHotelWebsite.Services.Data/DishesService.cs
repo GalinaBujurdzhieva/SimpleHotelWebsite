@@ -237,6 +237,24 @@
             return await dishesByCategory.Skip((page - 1) * itemsPerPage).Take(itemsPerPage).To<T>().ToListAsync();
         }
 
+        public async Task PrepareDishAsync(string id)
+        {
+            var currentDish = await this.dishesRepo.All()
+                .Include(d => d.DishImage)
+                 .Where(x => x.Id == id)
+                 .FirstOrDefaultAsync();
+            if (currentDish != null && currentDish.IsReady == false)
+            {
+                currentDish.IsReady = true;
+            }
+            else
+            {
+                throw new System.Exception();
+            }
+
+            await this.dishesRepo.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<T>> SearchDishesByNameAndCategoryAsync<T>(int page, string name = null, DishCategory dishCategory = 0, int itemsPerPage = 4)
         {
             var searchDishesList = this.dishesRepo.All().AsQueryable();

@@ -149,6 +149,7 @@
             RecurringJob.AddOrUpdate<IRoomsService>("is-occupied-turned-true", service => service.OccupyRoomsAsync(), Cron.Daily);
             RecurringJob.AddOrUpdate<IRoomsService>("is-occupied-turned-false", service => service.LeaveOccupiedRoomsAsync(), Cron.Daily);
             RecurringJob.AddOrUpdate<IRoomsService>("is-reserved-turned-false", service => service.RemoveIsReservedPropertyOfNotReservedRooms(), Cron.Daily);
+            RecurringJob.AddOrUpdate<IOrdersService>("order-is-ready-turned-true", service => service.ChangeOrderStatusWhenAllDishesAreReady(), Cron.Minutely);
             app.UseCookiePolicy();
 
             app.UseRouting();

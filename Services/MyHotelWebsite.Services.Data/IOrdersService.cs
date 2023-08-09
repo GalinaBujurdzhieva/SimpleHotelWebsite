@@ -17,6 +17,8 @@
 
         Task ChangeStatusOfOrderAsync(int id, OrderStatus orderStatus);
 
+        Task ChangeOrderStatusWhenAllDishesAreReady();
+
         Task DeleteOrderAsync(int id);
 
         Task<bool> DoesOrderExistsAsync(int id);

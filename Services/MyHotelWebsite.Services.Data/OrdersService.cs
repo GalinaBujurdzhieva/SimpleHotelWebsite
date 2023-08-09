@@ -68,25 +68,87 @@
             }
         }
 
+        public async Task ChangeOrderStatusWhenAllDishesAreReady()
+        {
+             var newOrders = await this.ordersRepo.All()
+                .Include(o => o.DishOrders)
+                .ThenInclude(o => o.Dish)
+                .Where(o => o.OrderStatus == OrderStatus.New || o.OrderStatus == OrderStatus.InProgress)
+                .ToListAsync();
+             foreach (var newOrder in newOrders)
+            {
+                var dishOrders = newOrder.DishOrders.ToList();
+                bool orderIsReady = dishOrders.All(d => d.Dish.IsReady == true);
+                if (orderIsReady)
+                {
+                    newOrder.OrderStatus = OrderStatus.Ready;
+                    foreach (var dishOrder in dishOrders)
+                    {
+                        dishOrder.Dish.QuantityInStock = dishOrder.Dish.QuantityInStock -= dishOrder.DishQuantity;
+                        if (dishOrder.Dish.QuantityInStock <= 0)
+                        {
+                            dishOrder.Dish.QuantityInStock = 0;
+                        }
+
+                        await this.dishOrdersRepo.SaveChangesAsync();
+                    }
+                }
+                else
+                {
+                    newOrder.OrderStatus = OrderStatus.InProgress;
+                }
+
+                await this.ordersRepo.SaveChangesAsync();
+            }
+        }
+
         public async Task ChangeStatusOfOrderAsync(int id, OrderStatus orderStatus)
         {
-            var currentOrder = await this.ordersRepo.All().FirstOrDefaultAsync(o => o.Id == id);
+            var currentOrder = await this.ordersRepo.All()
+                .Include(d => d.DishOrders)
+                .ThenInclude(d => d.Dish)
+                .FirstOrDefaultAsync(o => o.Id == id);
             currentOrder.OrderStatus = orderStatus;
+            if (orderStatus == OrderStatus.TakenToTheGuest)
+            {
+                var currentOrderDishes = await this.dishOrdersRepo.All()
+               .Include(o => o.Dish)
+               .Where(o => o.Order.Id == id)
+               .ToListAsync();
+                foreach (var dishOrder in currentOrderDishes)
+                {
+                    dishOrder.Dish.IsReady = false;
+                }
+            }
+
+            await this.dishOrdersRepo.SaveChangesAsync();
             await this.ordersRepo.SaveChangesAsync();
         }
 
         public async Task DeleteOrderAsync(int id)
         {
-            var currentOrder = await this.ordersRepo.All().FirstOrDefaultAsync(x => x.Id == id);
+            var currentOrder = await this.ordersRepo.All()
+                .Include(d => d.DishOrders)
+                .ThenInclude(d => d.Dish)
+                .FirstOrDefaultAsync(d => d.Id == id);
             var currentOrderDishes = await this.dishOrdersRepo.All()
+               .Include(o => o.Dish)
                .Where(o => o.Order.Id == id)
                .ToListAsync();
+            foreach (var dishOrder in currentOrderDishes)
+            {
+                if (dishOrder.Dish.IsReady == true)
+                {
+                    dishOrder.Dish.QuantityInStock += dishOrder.DishQuantity;
+                }
+            }
+
             foreach (var orderDish in currentOrderDishes)
             {
                 this.dishOrdersRepo.Delete(orderDish);
-                await this.dishOrdersRepo.SaveChangesAsync();
             }
 
+            await this.dishOrdersRepo.SaveChangesAsync();
             this.ordersRepo.Delete(currentOrder);
             await this.ordersRepo.SaveChangesAsync();
         }

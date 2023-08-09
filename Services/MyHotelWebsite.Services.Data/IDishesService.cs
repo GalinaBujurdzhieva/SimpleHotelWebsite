@@ -32,6 +32,8 @@
 
         Task<IEnumerable<T>> GetDishesByDishCategoryAsync<T>(int page, DishCategory dishCategory, DishSorting sorting, bool? isInStock = null, bool isReady = false, int itemsPerPage = 4);
 
+        Task PrepareDishAsync(string id);
+
         Task<IEnumerable<T>> SearchDishesByNameAndCategoryAsync<T>(int page, string name = null, DishCategory dishCategory = 0, int itemsPerPage = 4);
     }
 }
