@@ -13,12 +13,15 @@
                     <br />
                 </div>
             }
+            else
+            {
+                <partial name="_SingleStaffByRolePartial" />
+                <br />
+                <partial name="_PagingStaffByRolePartial" model="@Model" />
+            }
             <form class="mb-2 mt-4" method="post" asp-area="Administration" asp-controller="Staff" asp-action="Search">
                 <div class="text-center"><button type="submit" class="btn btn-danger wrn-btn">Search Again</button></div>
             </form>
-            <partial name="_SingleStaffByRolePartial" />
-            <br />
-            <partial name="_PagingStaffByRolePartial" model="@Model" />
         </div>
     </div>
 </body>

@@ -6,7 +6,19 @@
     <h1 class="text-center">Current Reservations List</h1>
     <div id="page">
         <div class="clearfix"></div>
-        <partial name="_SingleReservationHotelManagementPartial" />
-        <partial name="_PagingReservations-CurrentPartial" model="@Model" />
+        <div class="row">
+            @if (!Model.Reservations.Any())
+            {
+                <div class="col-12 text-center">
+                    <h2>Nothing found</h2>
+                    <br />
+                </div>
+            }
+            else
+            {
+                <partial name="_SingleReservationHotelManagementPartial" />
+                <partial name="_PagingReservations-CurrentPartial" model="@Model" />
+            }
+        </div>
     </div>
 </body>
