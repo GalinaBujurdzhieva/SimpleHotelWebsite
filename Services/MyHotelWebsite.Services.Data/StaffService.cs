@@ -34,6 +34,7 @@
             var roles = await this.roleManager.Roles.ToListAsync();
             var userRoles = await this.dbContext.UserRoles.ToListAsync();
             var users = await this.userManager.Users.ToListAsync();
+            var guestRoleId = roles.Where(r => r.Name == GlobalConstants.GuestRoleName).FirstOrDefault().Id;
 
             foreach (var employee in users)
             {
@@ -42,7 +43,7 @@
             }
 
             var allStaffList = users
-               .Where(u => u.Roles.Any(r => !(r.RoleId == "529f0271-23d7-431e-a2cc-726d552d2406")))
+               .Where(u => u.Roles.Any(r => !(r.RoleId == guestRoleId)))
                .OrderBy(u => u.FirstName)
                .ThenBy(u => u.LastName)
                .Skip((page - 1) * itemsPerPage)

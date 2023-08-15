@@ -28,7 +28,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.Without,
-                    ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                    ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
                 });
 
             // 2
@@ -40,7 +40,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.Without,
-                    ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                    ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
                 });
 
             // 3
@@ -52,7 +52,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.Breakfast,
-                    ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                    ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
                 });
 
             // 4
@@ -64,7 +64,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.Breakfast,
-                    ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                    ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
                 });
 
             // 5
@@ -76,7 +76,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.AllInclusive,
-                    ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                    ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
                 });
 
             // 6
@@ -88,7 +88,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.AllInclusive,
-                    ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                    ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
                 });
 
             // 7
@@ -100,7 +100,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.Dinner,
-                    ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                    ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
                 });
 
             // 8
@@ -112,7 +112,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.Dinner,
-                    ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                    ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
                 });
 
             // 9
@@ -124,7 +124,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.BreakfastAndDinner,
-                    ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                    ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
                 });
 
             // 10
@@ -136,7 +136,7 @@
                     AdultsCount = 1,
                     RoomType = RoomType.SingleRoom,
                     Catering = Catering.BreakfastAndDinner,
-                    ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                    ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
                 });
 
             await dbContext.Reservations.AddRangeAsync(reservations);

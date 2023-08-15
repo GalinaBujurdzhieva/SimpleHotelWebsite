@@ -23,7 +23,7 @@
             {
                 ReservationId = 1,
                 RoomId = 1,
-                ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
             });
 
             // 2
@@ -31,7 +31,7 @@
             {
                 ReservationId = 2,
                 RoomId = 11,
-                ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
             });
 
             // 3
@@ -39,7 +39,7 @@
             {
                 ReservationId = 3,
                 RoomId = 12,
-                ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
             });
 
             // 4
@@ -47,7 +47,7 @@
             {
                 ReservationId = 4,
                 RoomId = 13,
-                ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
             });
 
             // 5
@@ -55,7 +55,7 @@
             {
                 ReservationId = 5,
                 RoomId = 21,
-                ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
             });
 
             // 6
@@ -63,7 +63,7 @@
             {
                 ReservationId = 6,
                 RoomId = 22,
-                ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
             });
 
             // 7
@@ -71,7 +71,7 @@
             {
                 ReservationId = 7,
                 RoomId = 23,
-                ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
             });
 
             // 8
@@ -79,7 +79,7 @@
             {
                 ReservationId = 8,
                 RoomId = 31,
-                ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
             });
 
             // 9
@@ -87,7 +87,7 @@
             {
                 ReservationId = 9,
                 RoomId = 41,
-                ApplicationUserId = "f01486c4-0444-4471-9c6d-8ec3b1dbad5b",
+                ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
             });
 
             // 10
@@ -95,7 +95,7 @@
             {
                 ReservationId = 10,
                 RoomId = 51,
-                ApplicationUserId = "32878df0-57cb-43e0-8da5-40ceb2c040a6",
+                ApplicationUserId = "3b537985-aa76-43b3-ae99-2ce17f4fab96",
             });
 
             await dbContext.RoomsReservations.AddRangeAsync(roomsReservations);

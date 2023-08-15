@@ -16,18 +16,23 @@
     {
         private readonly IDeletableEntityRepository<ApplicationUser> guestsRepo;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<ApplicationRole> roleManager;
 
-        public GuestsService(IDeletableEntityRepository<ApplicationUser> guestsRepo, UserManager<ApplicationUser> userManager)
+        public GuestsService(IDeletableEntityRepository<ApplicationUser> guestsRepo, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
         {
             this.guestsRepo = guestsRepo;
             this.userManager = userManager;
+            this.roleManager = roleManager;
         }
 
         public async Task<IEnumerable<T>> GetAllGuestsAsync<T>(int page, int itemsPerPage = 4)
         {
+            var roles = await this.roleManager.Roles.ToListAsync();
+            var guestRoleId = roles.Where(r => r.Name == GlobalConstants.GuestRoleName).FirstOrDefault().Id;
+
             var allGuestsList = await this.guestsRepo.AllAsNoTracking()
                 .Include(g => g.Roles)
-                .Where(g => g.Roles.Any(r => r.RoleId == "529f0271-23d7-431e-a2cc-726d552d2406"))
+                .Where(g => g.Roles.Any(r => r.RoleId == guestRoleId))
                 .Skip((page - 1) * itemsPerPage)
                 .Take(itemsPerPage).To<T>()
                 .ToListAsync();
