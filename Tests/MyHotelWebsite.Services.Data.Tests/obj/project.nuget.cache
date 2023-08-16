@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tMxIvy38vu+1BQvToScL9pH3OSUYGRYoKfUWU7ESJD6a9Rc9Zcrz0FGH30x7H/pdhmUxCCwDMMTCJgPcxMKGWg==",
+  "dgSpecHash": "si26tkMDMD6iDj3LWjcHortqLj87SCtcuxSL3qcsurWzTRB/Fv4uihnje0AwDpZ/n3+l/OxJd6LsXtPN4NATzQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Tests\\MyHotelWebsite.Services.Data.Tests\\MyHotelWebsite.Services.Data.Tests.csproj",
   "expectedPackageFiles": [
@@ -84,6 +84,9 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\mockqueryable.core\\6.0.1\\mockqueryable.core.6.0.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\mockqueryable.entityframeworkcore\\6.0.1\\mockqueryable.entityframeworkcore.6.0.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\mockqueryable.moq\\6.0.1\\mockqueryable.moq.6.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\moq\\4.18.1\\moq.4.18.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",

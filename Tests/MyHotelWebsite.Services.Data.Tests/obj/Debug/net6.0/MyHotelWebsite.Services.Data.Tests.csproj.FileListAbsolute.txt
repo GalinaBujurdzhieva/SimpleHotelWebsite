@@ -938,3 +938,6 @@ C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Tests\MyHotelWebsite.S
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Tests\MyHotelWebsite.Services.Data.Tests\obj\Debug\net6.0\MyHotelWebsite.Services.Data.Tests.pdb
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Tests\MyHotelWebsite.Services.Data.Tests\obj\Debug\net6.0\MyHotelWebsite.Services.Data.Tests.genruntimeconfig.cache
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Tests\MyHotelWebsite.Services.Data.Tests\obj\Debug\net6.0\ref\MyHotelWebsite.Services.Data.Tests.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new 04.08\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\MockQueryable.Core.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new 04.08\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\MockQueryable.EntityFrameworkCore.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new 04.08\Tests\MyHotelWebsite.Services.Data.Tests\bin\Debug\net6.0\MockQueryable.Moq.dll

@@ -4,15 +4,12 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Microsoft.EntityFrameworkCore;
+    using Moq;
     using MyHotelWebsite.Data;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Repositories;
-
-    using Microsoft.EntityFrameworkCore;
-
-    using Moq;
-
     using Xunit;
 
     public class SettingsServiceTests
