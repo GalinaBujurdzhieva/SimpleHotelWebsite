@@ -30,7 +30,7 @@
                               new BlogsSeeder(),
                               new BlogImagesSeeder(),
                               new AdminSeeder(),
-                              new UserSeeder(),
+                              new UsersSeeder(),
                               new DishesSeeder(),
                               new DishImagesSeeder(),
                               new RoomsSeeder(),
