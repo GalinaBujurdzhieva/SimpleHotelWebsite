@@ -328,7 +328,7 @@
         public async Task AddDishAsyncShouldWorkCorrectly()
         {
             DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("TestShoppingCartDb");
+                .UseInMemoryDatabase("TestDishesDb");
             ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
             dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();
@@ -367,7 +367,7 @@
         public async Task DeleteDishAsyncShouldWorkCorrectly()
         {
             DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("TestShoppingCartDb");
+                .UseInMemoryDatabase("TestDishesDb");
             ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
             dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();
@@ -402,10 +402,75 @@
         }
 
         [Fact]
+        public async Task EditDishAsyncShouldWorkCorrectly()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestDishesDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Dish> dishesRepoDB = new EfDeletableEntityRepository<Dish>(dbContext);
+            EfDeletableEntityRepository<DishImage> dishImagesRepoDB = new EfDeletableEntityRepository<DishImage>(dbContext);
+            await dishesRepoDB.AddAsync(
+                new Dish
+                {
+                    Id = "5ea80afe-706a-4628-8ebb-ef7523da6e8f",
+                    Name = "Dish Test 1",
+                    Price = 2.00M,
+                    DishCategory = DishCategory.HotDrinks,
+                    QuantityInStock = 50,
+                    DishImageUrl = "images/dishes/hotDrinks/dish_test_1.png",
+                });
+            await dishesRepoDB.AddAsync(
+                new Dish
+                {
+                    Id = "45a2a9c8-c7fd-4a33-9c25-fb9e9cd8acfd",
+                    Name = "Dish Test 2",
+                    Price = 3.00M,
+                    DishCategory = DishCategory.HotDrinks,
+                    QuantityInStock = 100,
+                    DishImageUrl = "images/dishes/hotDrinks/dish_test_2.png",
+                });
+            await dishesRepoDB.AddAsync(
+                new Dish
+                {
+                    Id = "21a80b4d-2cab-4e5f-9d95-0ef209bb7e02",
+                    Name = "Dish Test 3",
+                    Price = 4.00M,
+                    DishCategory = DishCategory.ColdDrinks,
+                    QuantityInStock = 150,
+                    DishImageUrl = "images/dishes/coldDrinks/dish_test_3.png",
+                });
+            await dishesRepoDB.SaveChangesAsync();
+            DishesService dishesService = new DishesService(dishesRepoDB, dishImagesRepoDB);
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            var bytes2 = Encoding.UTF8.GetBytes("This is the second dummy file");
+            IFormFile file2 = new FormFile(new MemoryStream(bytes2), 0, bytes2.Length, "Data", "dummy.txt");
+            EditDishViewModel model = new EditDishViewModel
+            {
+                Id = "21a80b4d-2cab-4e5f-9d95-0ef209bb7e02",
+                Name = "Dish Test 3 - EDITED",
+                Price = 10.00M,
+                DishCategory = DishCategory.Salads,
+                QuantityInStock = 100,
+                DishImageUrl = "images/dishes/salads/dish_test_3-edited.png",
+            };
+            await dishesService.EditDishAsync(model, "21a80b4d-2cab-4e5f-9d95-0ef209bb7e02", "b65d8626-ae18-4116-ab72-bd99cb99247c", "images", null);
+            var editedDish = await dishesRepoDB.AllAsNoTracking().FirstOrDefaultAsync(x => x.Id == "21a80b4d-2cab-4e5f-9d95-0ef209bb7e02");
+            Assert.Equal("Dish Test 3 - EDITED", editedDish.Name);
+            Assert.Equal(10, editedDish.Price);
+            Assert.Equal(DishCategory.Salads, editedDish.DishCategory);
+            Assert.Equal(100, editedDish.QuantityInStock);
+            Assert.Equal("images/dishes/salads/dish_test_3-edited.png", editedDish.DishImageUrl);
+            Assert.Equal("b65d8626-ae18-4116-ab72-bd99cb99247c", editedDish.ApplicationUserId);
+            dbContext.Dispose();
+        }
+
+        [Fact]
         public async Task GetCountOfDishesByCategoryAndNameAsyncShouldReturnCorrectNumber()
         {
             DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("TestShoppingCartDb");
+                .UseInMemoryDatabase("TestDishesDb");
             ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
             dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();
@@ -455,7 +520,7 @@
         public async Task PrepareDishShouldWorkCorrectly()
         {
             DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("TestShoppingCartDb");
+                .UseInMemoryDatabase("TestDishesDb");
             ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
             dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();
@@ -497,7 +562,7 @@
         public async Task SearchDishesByCategoryAndNameShouldWorkCorrect()
         {
             DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("TestShoppingCartDb");
+                .UseInMemoryDatabase("TestDishesDb");
             ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
             dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();

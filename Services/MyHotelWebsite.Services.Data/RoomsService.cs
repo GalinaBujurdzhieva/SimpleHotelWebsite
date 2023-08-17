@@ -36,7 +36,7 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
-        public async Task<bool> DoesRoomExistAsync(int id)
+        public async Task<bool> DoesRoomExistsAsync(int id)
         {
             return await this.roomsRepo.AllAsNoTracking().AnyAsync(x => x.Id == id);
         }
@@ -100,26 +100,6 @@
                 .Take(itemsPerPage).To<T>()
                 .ToListAsync();
             return rooms;
-        }
-
-        // NO
-        public async Task<IEnumerable<T>> GetAllRoomsByCapacityAsync<T>(int capacity)
-        {
-            var roomsByCapacity = await this.roomsRepo.AllAsNoTracking()
-                .Where(x => x.Capacity == capacity)
-                .To<T>()
-                .ToListAsync();
-            return roomsByCapacity;
-        }
-
-        // NO
-        public async Task<IEnumerable<T>> GetAllFreeRoomsByRoomTypeAsync<T>(RoomType roomType)
-        {
-            var roomsByRoomType = await this.roomsRepo.AllAsNoTracking()
-                .Where(x => x.RoomType == roomType && x.IsOccupied == false)
-                .To<T>()
-                .ToListAsync();
-            return roomsByRoomType;
         }
 
         public async Task<int> GetCountAsync()

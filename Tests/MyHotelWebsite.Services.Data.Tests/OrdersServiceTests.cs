@@ -1,21 +1,26 @@
-﻿using MockQueryable.Moq;
-using Moq;
-using MyHotelWebsite.Data.Common.Repositories;
-using MyHotelWebsite.Data.Models;
-using MyHotelWebsite.Data.Models.Enums;
-using MyHotelWebsite.Services.Mapping;
-using MyHotelWebsite.Web.ViewModels.Administration.Orders;
-using MyHotelWebsite.Web.ViewModels.Guests.Orders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace MyHotelWebsite.Services.Data.Tests
+﻿namespace MyHotelWebsite.Services.Data.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using Microsoft.EntityFrameworkCore;
+    using MockQueryable.Moq;
+    using Moq;
+    using MyHotelWebsite.Data;
+    using MyHotelWebsite.Data.Common.Repositories;
+    using MyHotelWebsite.Data.Models;
+    using MyHotelWebsite.Data.Models.Enums;
+    using MyHotelWebsite.Data.Repositories;
+    using MyHotelWebsite.Services.Mapping;
+    using MyHotelWebsite.Web.ViewModels.Administration.Orders;
+    using MyHotelWebsite.Web.ViewModels.Guests.Orders;
+    using MyHotelWebsite.Web.ViewModels.Guests.ShoppingCarts;
+    using Xunit;
+
     public class OrdersServiceTests
     {
         private readonly Mock<IDeletableEntityRepository<Order>> ordersRepo;
@@ -681,5 +686,90 @@ namespace MyHotelWebsite.Services.Data.Tests
             Assert.Single(ordersWithOrderStatusReady);
         }
 
+        // TESTS WITH IN-MEMORY DB
+        [Fact]
+        public async Task AddCommentToOrderAsyncShouldWorkCorrectly()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestOrdersDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Order> ordersRepoDB = new EfDeletableEntityRepository<Order>(dbContext);
+            EfDeletableEntityRepository<DishOrder> dishOrdersRepoDB = new EfDeletableEntityRepository<DishOrder>(dbContext);
+            EfDeletableEntityRepository<ShoppingCart> shoppingCartsRepoDB = new EfDeletableEntityRepository<ShoppingCart>(dbContext);
+            await ordersRepoDB.AddAsync(
+            new Order()
+            {
+                Id = 1,
+                Comment = "This is my first order",
+                OrderStatus = OrderStatus.New,
+                ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+            });
+            await ordersRepoDB.AddAsync(
+                new Order()
+                {
+                    Id = 2,
+                    Comment = string.Empty,
+                    OrderStatus = OrderStatus.Ready,
+                    ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+                });
+            await ordersRepoDB.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            OrdersService ordersService = new OrdersService(ordersRepoDB, dishOrdersRepoDB, shoppingCartsRepoDB);
+            await ordersService.AddCommentToOrderAsync(2, "This is comment to order 2.");
+            Order orderWithComment = ordersRepoDB.AllAsNoTracking().FirstOrDefault(x => x.Id == 2);
+            Assert.Equal("This is comment to order 2.", orderWithComment.Comment);
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task AddOrderAsyncShouldWorkCorrectly()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestOrdersDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Order> ordersRepoDB = new EfDeletableEntityRepository<Order>(dbContext);
+            EfDeletableEntityRepository<DishOrder> dishOrdersRepoDB = new EfDeletableEntityRepository<DishOrder>(dbContext);
+            EfDeletableEntityRepository<ShoppingCart> shoppingCartsRepoDB = new EfDeletableEntityRepository<ShoppingCart>(dbContext);
+            await ordersRepoDB.AddAsync(
+           new Order()
+           {
+               Id = 1,
+               Comment = "This is my first order",
+               OrderStatus = OrderStatus.New,
+               ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+           });
+            await ordersRepoDB.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            OrdersService ordersService = new OrdersService(ordersRepoDB, dishOrdersRepoDB, shoppingCartsRepoDB);
+            List<SingleShoppingCartViewModel> shoppingCartsList = new List<SingleShoppingCartViewModel>()
+            {
+                new SingleShoppingCartViewModel
+                {
+                    Id = 1,
+                    ApplicationUserId = "94d46c80-202e-46f0-b762-0f2087b29b41",
+                    Count = 2,
+                    DishId = "63c0b400-555c-4d61-bbd9-ca88e5cbd08e",
+                },
+                new SingleShoppingCartViewModel
+                {
+                    Id = 2,
+                    ApplicationUserId = "94d46c80-202e-46f0-b762-0f2087b29b41",
+                    Count = 3,
+                    DishId = "3f140ff9-6165-4421-ad2b-93160b025829",
+                },
+            };
+            AllShoppingCartsOfOneUserViewModel model = new AllShoppingCartsOfOneUserViewModel()
+            {
+                ShoppingCartsList = shoppingCartsList,
+            };
+            await ordersService.AddOrderAsync(model, "94d46c80-202e-46f0-b762-0f2087b29b41");
+            int count = await ordersService.GetCountAsync();
+            Assert.Equal(2, count);
+            dbContext.Dispose();
+        }
     }
 }

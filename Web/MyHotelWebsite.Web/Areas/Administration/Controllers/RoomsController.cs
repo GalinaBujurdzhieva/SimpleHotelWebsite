@@ -44,7 +44,7 @@
 
         public async Task<IActionResult> Clean(int id)
         {
-            if (!await this.roomsService.DoesRoomExistAsync(id))
+            if (!await this.roomsService.DoesRoomExistsAsync(id))
             {
                 return this.RedirectToAction(nameof(this.All));
             }

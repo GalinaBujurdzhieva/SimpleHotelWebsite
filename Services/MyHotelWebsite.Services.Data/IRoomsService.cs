@@ -12,7 +12,7 @@
     {
         Task CleanRoomAsync(int id, string applicationUserId);
 
-        Task<bool> DoesRoomExistAsync(int id);
+        Task<bool> DoesRoomExistsAsync(int id);
 
         Task<int> GetAdultsCountAsync(int id);
 
@@ -21,10 +21,6 @@
         Task<IEnumerable<T>> GetAllFreeRoomsForACertainPeriodOfTimeAsync<T>(DateTime accommodationDate, DateTime releaseDate);
 
         Task<IEnumerable<T>> GetAllRoomsAsync<T>(int page, int itemsPerPage = 4);
-
-        Task<IEnumerable<T>> GetAllRoomsByCapacityAsync<T>(int capacity);
-
-        Task<IEnumerable<T>> GetAllFreeRoomsByRoomTypeAsync<T>(RoomType roomType);
 
         Task<int> GetCountAsync();
 

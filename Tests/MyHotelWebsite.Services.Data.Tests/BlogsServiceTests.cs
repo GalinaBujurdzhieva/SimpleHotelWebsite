@@ -208,19 +208,11 @@
         }
 
         // TESTS WITH IN-MEMORY DB
-        //public ApplicationDbContext GetDbContext()
-        //{
-        //    DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-        //        .UseInMemoryDatabase("TestShoppingCartDb");
-        //    ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
-        //    return dbContext;
-        //}
-
         [Fact]
         public async Task DeleteBlogAsyncShouldWorkCorrectly()
         {
             DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("TestShoppingCartDb");
+                .UseInMemoryDatabase("TestBlogsDb");
             ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
             dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();
@@ -246,7 +238,7 @@
         public async Task AddBlogAsyncShouldWorkCorrectly()
         {
             DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("TestShoppingCartDb");
+                .UseInMemoryDatabase("TestBlogsDb");
             ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
             dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();
@@ -283,7 +275,7 @@
         public async Task EditBlogAsyncShouldWorkCorrectly()
         {
             DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("TestShoppingCartDb");
+                .UseInMemoryDatabase("TestBlogsDb");
             ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
             dbContext.Database.EnsureDeleted();
             dbContext.Database.EnsureCreated();
@@ -323,7 +315,6 @@
             IFormFile file2 = new FormFile(new MemoryStream(bytes2), 0, bytes2.Length, "Data", "dummy.txt");
             EditBlogViewModel model2 = new EditBlogViewModel()
             {
-                //Id = 2,
                 Title = "Test Title 2 - EDITED",
                 Content = "Test Content 2 - EDITED",
                 BlogImageUrl = "images/blogs/test-2.png",
