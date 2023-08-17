@@ -32,4 +32,8 @@
     <ProjectReference Include="..\..\Services\MyHotelWebsite.Services.Data\MyHotelWebsite.Services.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

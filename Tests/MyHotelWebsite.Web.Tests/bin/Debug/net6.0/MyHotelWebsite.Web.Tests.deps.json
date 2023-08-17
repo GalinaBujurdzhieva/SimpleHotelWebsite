@@ -36,6 +36,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Testing": "6.0.5",
           "Microsoft.NET.Test.Sdk": "17.2.0",
+          "MockQueryable.Moq": "6.0.1",
           "MyHotelWebsite.Web": "1.0.0",
           "StyleCop.Analyzers": "1.2.0-beta.435",
           "xunit": "2.4.1",
@@ -178,14 +179,14 @@
           "System.Collections.Concurrent.Reference": "6.0.0.0",
           "System.Collections.Reference": "6.0.0.0",
           "System.Collections.Immutable.Reference": "6.0.0.0",
-          "System.Collections.NonGeneric": "6.0.0.0",
-          "System.Collections.Specialized": "6.0.0.0",
+          "System.Collections.NonGeneric.Reference": "6.0.0.0",
+          "System.Collections.Specialized.Reference": "6.0.0.0",
           "System.ComponentModel.Annotations.Reference": "6.0.0.0",
           "System.ComponentModel.DataAnnotations": "4.0.0.0",
-          "System.ComponentModel": "6.0.0.0",
+          "System.ComponentModel.Reference": "6.0.0.0",
           "System.ComponentModel.EventBasedAsync": "6.0.0.0",
-          "System.ComponentModel.Primitives": "6.0.0.0",
-          "System.ComponentModel.TypeConverter": "6.0.0.0",
+          "System.ComponentModel.Primitives.Reference": "6.0.0.0",
+          "System.ComponentModel.TypeConverter.Reference": "6.0.0.0",
           "System.Configuration": "4.0.0.0",
           "System.Console.Reference": "6.0.0.0",
           "System.Core": "4.0.0.0",
@@ -201,12 +202,12 @@
           "System.Diagnostics.StackTrace": "6.0.0.0",
           "System.Diagnostics.TextWriterTraceListener": "6.0.0.0",
           "System.Diagnostics.Tools.Reference": "6.0.0.0",
-          "System.Diagnostics.TraceSource": "6.0.0.0",
+          "System.Diagnostics.TraceSource.Reference": "6.0.0.0",
           "System.Diagnostics.Tracing.Reference": "6.0.0.0",
           "System": "4.0.0.0",
           "System.Drawing": "4.0.0.0",
           "System.Drawing.Primitives": "6.0.0.0",
-          "System.Dynamic.Runtime": "6.0.0.0",
+          "System.Dynamic.Runtime.Reference": "6.0.0.0",
           "System.Formats.Asn1.Reference": "6.0.0.0",
           "System.Globalization.Calendars.Reference": "6.0.0.0",
           "System.Globalization.Reference": "6.0.0.0",
@@ -230,7 +231,7 @@
           "System.Linq.Reference": "6.0.0.0",
           "System.Linq.Expressions.Reference": "6.0.0.0",
           "System.Linq.Parallel": "6.0.0.0",
-          "System.Linq.Queryable": "6.0.0.0",
+          "System.Linq.Queryable.Reference": "6.0.0.0",
           "System.Memory.Reference": "6.0.0.0",
           "System.Net": "4.0.0.0",
           "System.Net.Http.Reference": "6.0.0.0",
@@ -323,7 +324,7 @@
           "System.Xml.ReaderWriter.Reference": "6.0.0.0",
           "System.Xml.Serialization": "4.0.0.0",
           "System.Xml.XDocument.Reference": "6.0.0.0",
-          "System.Xml.XmlDocument": "6.0.0.0",
+          "System.Xml.XmlDocument.Reference": "6.0.0.0",
           "System.Xml.XmlSerializer": "6.0.0.0",
           "System.Xml.XPath": "6.0.0.0",
           "System.Xml.XPath.XDocument": "6.0.0.0",
@@ -351,6 +352,29 @@
         }
       },
       "BuildBundlerMinifier/3.2.449": {},
+      "Castle.Core/4.2.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.TraceSource": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit": "4.6.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Xml.XmlDocument": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Castle.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.2.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/Castle.Core.dll": {}
+        }
+      },
       "Hangfire.AspNetCore/1.8.2": {
         "dependencies": {
           "Hangfire.NetCore": "1.8.2"
@@ -2630,6 +2654,65 @@
           "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
         }
       },
+      "MockQueryable.Core/6.0.1": {
+        "runtime": {
+          "lib/netstandard2.1/MockQueryable.Core.dll": {
+            "assemblyVersion": "6.0.0.1",
+            "fileVersion": "6.0.0.1"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/MockQueryable.Core.dll": {}
+        }
+      },
+      "MockQueryable.EntityFrameworkCore/6.0.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.10",
+          "MockQueryable.Core": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/MockQueryable.EntityFrameworkCore.dll": {
+            "assemblyVersion": "6.0.0.1",
+            "fileVersion": "6.0.0.1"
+          }
+        },
+        "compile": {
+          "lib/net6.0/MockQueryable.EntityFrameworkCore.dll": {}
+        }
+      },
+      "MockQueryable.Moq/6.0.1": {
+        "dependencies": {
+          "MockQueryable.EntityFrameworkCore": "6.0.1",
+          "Moq": "4.8.0"
+        },
+        "runtime": {
+          "lib/net6.0/MockQueryable.Moq.dll": {
+            "assemblyVersion": "6.0.0.1",
+            "fileVersion": "6.0.0.1"
+          }
+        },
+        "compile": {
+          "lib/net6.0/MockQueryable.Moq.dll": {}
+        }
+      },
+      "Moq/4.8.0": {
+        "dependencies": {
+          "Castle.Core": "4.2.1",
+          "NETStandard.Library": "1.6.1",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Moq.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/Moq.dll": {}
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -2981,7 +3064,59 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         }
       },
+      "System.Collections.NonGeneric/4.3.0": {
+        "dependencies": {
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
+      "System.Collections.Specialized/4.3.0": {
+        "dependencies": {
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
+      "System.ComponentModel/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
       "System.ComponentModel.Annotations/5.0.0": {},
+      "System.ComponentModel.Primitives/4.3.0": {
+        "dependencies": {
+          "System.ComponentModel": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.ComponentModel.Primitives": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -3149,6 +3284,19 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Diagnostics.TraceSource/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        }
+      },
       "System.Diagnostics.Tracing/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -3182,6 +3330,24 @@
         },
         "compile": {
           "lib/net6.0/System.Drawing.Common.dll": {}
+        }
+      },
+      "System.Dynamic.Runtime/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.ObjectModel": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit": "4.6.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         }
       },
       "System.Formats.Asn1/5.0.0": {},
@@ -3319,6 +3485,18 @@
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0"
+        }
+      },
+      "System.Linq.Queryable/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0"
         }
       },
       "System.Memory/4.5.4": {},
@@ -3781,6 +3959,20 @@
           "System.Globalization": "4.3.0",
           "System.IO": "4.3.0",
           "System.Reflection": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Xml.ReaderWriter": "4.3.0"
+        }
+      },
+      "System.Xml.XmlDocument/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -4838,13 +5030,13 @@
         },
         "compileOnly": true
       },
-      "System.Collections.NonGeneric/6.0.0.0": {
+      "System.Collections.NonGeneric.Reference/6.0.0.0": {
         "compile": {
           "System.Collections.NonGeneric.dll": {}
         },
         "compileOnly": true
       },
-      "System.Collections.Specialized/6.0.0.0": {
+      "System.Collections.Specialized.Reference/6.0.0.0": {
         "compile": {
           "System.Collections.Specialized.dll": {}
         },
@@ -4862,7 +5054,7 @@
         },
         "compileOnly": true
       },
-      "System.ComponentModel/6.0.0.0": {
+      "System.ComponentModel.Reference/6.0.0.0": {
         "compile": {
           "System.ComponentModel.dll": {}
         },
@@ -4874,13 +5066,13 @@
         },
         "compileOnly": true
       },
-      "System.ComponentModel.Primitives/6.0.0.0": {
+      "System.ComponentModel.Primitives.Reference/6.0.0.0": {
         "compile": {
           "System.ComponentModel.Primitives.dll": {}
         },
         "compileOnly": true
       },
-      "System.ComponentModel.TypeConverter/6.0.0.0": {
+      "System.ComponentModel.TypeConverter.Reference/6.0.0.0": {
         "compile": {
           "System.ComponentModel.TypeConverter.dll": {}
         },
@@ -4976,7 +5168,7 @@
         },
         "compileOnly": true
       },
-      "System.Diagnostics.TraceSource/6.0.0.0": {
+      "System.Diagnostics.TraceSource.Reference/6.0.0.0": {
         "compile": {
           "System.Diagnostics.TraceSource.dll": {}
         },
@@ -5006,7 +5198,7 @@
         },
         "compileOnly": true
       },
-      "System.Dynamic.Runtime/6.0.0.0": {
+      "System.Dynamic.Runtime.Reference/6.0.0.0": {
         "compile": {
           "System.Dynamic.Runtime.dll": {}
         },
@@ -5150,7 +5342,7 @@
         },
         "compileOnly": true
       },
-      "System.Linq.Queryable/6.0.0.0": {
+      "System.Linq.Queryable.Reference/6.0.0.0": {
         "compile": {
           "System.Linq.Queryable.dll": {}
         },
@@ -5708,7 +5900,7 @@
         },
         "compileOnly": true
       },
-      "System.Xml.XmlDocument/6.0.0.0": {
+      "System.Xml.XmlDocument.Reference/6.0.0.0": {
         "compile": {
           "System.Xml.XmlDocument.dll": {}
         },
@@ -5759,6 +5951,13 @@
       "sha512": "sha512-uA9sYDy4VepL3xwzBTLcP2LyuVYMt0ZIT3gaSiXvGoX15Ob+rOP+hGydhevlSVd+rFo+Y+VQFEHDuWU8HBW+XA==",
       "path": "buildbundlerminifier/3.2.449",
       "hashPath": "buildbundlerminifier.3.2.449.nupkg.sha512"
+    },
+    "Castle.Core/4.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XSNA0Gc1Zu33L+8+/3Tqt+aFu8QWS8UenVHZ7RenIP5wJfhoLrA4PnNscpxReeo5aBq8PDoGnV8rNaOzIOUo/w==",
+      "path": "castle.core/4.2.1",
+      "hashPath": "castle.core.4.2.1.nupkg.sha512"
     },
     "Hangfire.AspNetCore/1.8.2": {
       "type": "package",
@@ -6684,6 +6883,34 @@
       "path": "microsoft.win32.systemevents/6.0.0",
       "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
     },
+    "MockQueryable.Core/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FUKgAeMBt5aN1PDjxDYYw22pGUxPGxa8SIrgDMgmqL5T8sjTBTyv6i7qGuOeOdu6eYYzyv3GMKWDkawx9bVjbg==",
+      "path": "mockqueryable.core/6.0.1",
+      "hashPath": "mockqueryable.core.6.0.1.nupkg.sha512"
+    },
+    "MockQueryable.EntityFrameworkCore/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fvgJ1fEi+BP5elx+rM/ZE8M8VUjy12RkLQs9H93SSR4BtkhkfAd1kTBQ4m9mcigQBxl7StN1uVJ91OwEQX8+0g==",
+      "path": "mockqueryable.entityframeworkcore/6.0.1",
+      "hashPath": "mockqueryable.entityframeworkcore.6.0.1.nupkg.sha512"
+    },
+    "MockQueryable.Moq/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u314CWM2ZU/HQJXBmLs1AbaoDmsDiwOGevWGT83Jq6cgjXCIVJaTbEw5ACV4zfjl2KGF8T4b/QHOrFRt7nbmBg==",
+      "path": "mockqueryable.moq/6.0.1",
+      "hashPath": "mockqueryable.moq.6.0.1.nupkg.sha512"
+    },
+    "Moq/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VuChZExXSmTs24aW72Fy3IeQvgD0GgZlr4wFBnXDWj1CHlz4kAYEegIU3dXmJNYMhcJU/L0QAU9CF5Or5eVlwA==",
+      "path": "moq/4.8.0",
+      "hashPath": "moq.4.8.0.nupkg.sha512"
+    },
     "NETStandard.Library/1.6.1": {
       "type": "package",
       "serviceable": true,
@@ -6964,12 +7191,47 @@
       "path": "system.collections.immutable/6.0.0",
       "hashPath": "system.collections.immutable.6.0.0.nupkg.sha512"
     },
+    "System.Collections.NonGeneric/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
+      "path": "system.collections.nongeneric/4.3.0",
+      "hashPath": "system.collections.nongeneric.4.3.0.nupkg.sha512"
+    },
+    "System.Collections.Specialized/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Epx8PoVZR0iuOnJJDzp7pWvdfMMOAvpUo95pC4ScH2mJuXkKA2Y4aR3cG9qt2klHgSons1WFh4kcGW7cSXvrxg==",
+      "path": "system.collections.specialized/4.3.0",
+      "hashPath": "system.collections.specialized.4.3.0.nupkg.sha512"
+    },
+    "System.ComponentModel/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "path": "system.componentmodel/4.3.0",
+      "hashPath": "system.componentmodel.4.3.0.nupkg.sha512"
+    },
     "System.ComponentModel.Annotations/5.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
       "path": "system.componentmodel.annotations/5.0.0",
       "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Primitives/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "path": "system.componentmodel.primitives/4.3.0",
+      "hashPath": "system.componentmodel.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.ComponentModel.TypeConverter/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "path": "system.componentmodel.typeconverter/4.3.0",
+      "hashPath": "system.componentmodel.typeconverter.4.3.0.nupkg.sha512"
     },
     "System.Composition/1.0.31": {
       "type": "package",
@@ -7055,6 +7317,13 @@
       "path": "system.diagnostics.tools/4.3.0",
       "hashPath": "system.diagnostics.tools.4.3.0.nupkg.sha512"
     },
+    "System.Diagnostics.TraceSource/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VnYp1NxGx8Ww731y2LJ1vpfb/DKVNKEZ8Jsh5SgQTZREL/YpWRArgh9pI8CDLmgHspZmLL697CaLvH85qQpRiw==",
+      "path": "system.diagnostics.tracesource/4.3.0",
+      "hashPath": "system.diagnostics.tracesource.4.3.0.nupkg.sha512"
+    },
     "System.Diagnostics.Tracing/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -7068,6 +7337,13 @@
       "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
       "path": "system.drawing.common/6.0.0",
       "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
+    },
+    "System.Dynamic.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SNVi1E/vfWUAs/WYKhE9+qlS6KqK0YVhnlT0HQtr8pMIA8YX3lwy3uPMownDwdYISBdmAF/2holEIldVp85Wag==",
+      "path": "system.dynamic.runtime/4.3.0",
+      "hashPath": "system.dynamic.runtime.4.3.0.nupkg.sha512"
     },
     "System.Formats.Asn1/5.0.0": {
       "type": "package",
@@ -7159,6 +7435,13 @@
       "sha512": "sha512-PGKkrd2khG4CnlyJwxwwaWWiSiWFNBGlgXvJpeO0xCXrZ89ODrQ6tjEWS/kOqZ8GwEOUATtKtzp1eRgmYNfclg==",
       "path": "system.linq.expressions/4.3.0",
       "hashPath": "system.linq.expressions.4.3.0.nupkg.sha512"
+    },
+    "System.Linq.Queryable/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-In1Bmmvl/j52yPu3xgakQSI0YIckPUr870w4K5+Lak3JCCa8hl+my65lABOuKfYs4ugmZy25ScFerC4nz8+b6g==",
+      "path": "system.linq.queryable/4.3.0",
+      "hashPath": "system.linq.queryable.4.3.0.nupkg.sha512"
     },
     "System.Memory/4.5.4": {
       "type": "package",
@@ -7516,6 +7799,13 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "System.Xml.XmlDocument/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
+      "path": "system.xml.xmldocument/4.3.0",
+      "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
     },
     "xunit/2.4.1": {
       "type": "package",
@@ -8318,12 +8608,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Collections.NonGeneric/6.0.0.0": {
+    "System.Collections.NonGeneric.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-    "System.Collections.Specialized/6.0.0.0": {
+    "System.Collections.Specialized.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -8338,7 +8628,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.ComponentModel/6.0.0.0": {
+    "System.ComponentModel.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -8348,12 +8638,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.ComponentModel.Primitives/6.0.0.0": {
+    "System.ComponentModel.Primitives.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-    "System.ComponentModel.TypeConverter/6.0.0.0": {
+    "System.ComponentModel.TypeConverter.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -8433,7 +8723,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Diagnostics.TraceSource/6.0.0.0": {
+    "System.Diagnostics.TraceSource.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -8458,7 +8748,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Dynamic.Runtime/6.0.0.0": {
+    "System.Dynamic.Runtime.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -8578,7 +8868,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Linq.Queryable/6.0.0.0": {
+    "System.Linq.Queryable.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -9043,7 +9333,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Xml.XmlDocument/6.0.0.0": {
+    "System.Xml.XmlDocument.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

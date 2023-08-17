@@ -418,3 +418,8 @@ C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Tests\Sandbox\obj\Debu
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Tests\Sandbox\obj\Debug\net6.0\Sandbox.pdb
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Tests\Sandbox\obj\Debug\net6.0\Sandbox.genruntimeconfig.cache
 C:\Users\Lenovo\Source\Repos\SimpleHotelWebsite-new 04.08\Tests\Sandbox\obj\Debug\net6.0\ref\Sandbox.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new 04.08\Tests\Sandbox\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new 04.08\Tests\Sandbox\bin\Debug\net6.0\MockQueryable.Core.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new 04.08\Tests\Sandbox\bin\Debug\net6.0\MockQueryable.EntityFrameworkCore.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new 04.08\Tests\Sandbox\bin\Debug\net6.0\MockQueryable.Moq.dll
+C:\Users\Lenovo\source\repos\SimpleHotelWebsite-new 04.08\Tests\Sandbox\bin\Debug\net6.0\Moq.dll

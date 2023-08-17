@@ -272,7 +272,7 @@
 
         public async Task<int> GetCountOfOrdersByOrderStatusAsync(OrderStatus orderStatus)
         {
-            var searchOrdersList = this.ordersRepo.All().AsQueryable();
+            var searchOrdersList = this.ordersRepo.AllAsNoTracking().AsQueryable();
             if (orderStatus != 0)
             {
                 searchOrdersList = searchOrdersList
@@ -335,8 +335,6 @@
             .Include(o => o.ApplicationUser)
             .OrderByDescending(o => o.CreatedOn)
             .ThenBy(o => o.OrderStatus)
-            .ThenBy(o => o.ApplicationUser.FirstName)
-            .ThenBy(o => o.ApplicationUser.LastName)
             .Skip((page - 1) * itemsPerPage)
             .Take(itemsPerPage).To<T>().ToListAsync();
             return orders;

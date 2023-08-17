@@ -185,7 +185,7 @@
 
         public async Task<int> GetCountOfDishesByNameAndCategoryAsync(string name = null, DishCategory dishCategory = 0)
         {
-            var searchDishesList = this.dishesRepo.All().AsQueryable();
+            var searchDishesList = this.dishesRepo.AllAsNoTracking().AsQueryable();
             if (dishCategory != 0)
             {
                 searchDishesList = searchDishesList
