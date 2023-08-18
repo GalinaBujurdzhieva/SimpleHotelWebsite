@@ -23,7 +23,7 @@
     {
         private readonly IDeletableEntityRepository<Reservation> reservationsRepo;
         private readonly IDeletableEntityRepository<Room> roomsRepo;
-        private readonly IDeletableEntityRepository<RoomReservation> roomReservationRepo; // NOT USED
+        private readonly IDeletableEntityRepository<RoomReservation> roomReservationRepo;
         private readonly IRoomsService roomsService;
         private readonly UserManager<ApplicationUser> userManager;
 
@@ -256,12 +256,12 @@
 
         public async Task<int> GetCountOfAllPastReservationsAsync()
         {
-            return await this.reservationsRepo.AllAsNoTracking().Where(r => r.AccommodationDate.CompareTo(DateTime.UtcNow) < 0).CountAsync();
+            return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ReleaseDate.CompareTo(DateTime.UtcNow) < 0).CountAsync();
         }
 
         public async Task<int> GetCountOfAllUpcomingReservationsAsync()
         {
-            return await this.reservationsRepo.AllAsNoTracking().Where(r => r.ReleaseDate.CompareTo(DateTime.UtcNow) > 0).CountAsync();
+            return await this.reservationsRepo.AllAsNoTracking().Where(r => r.AccommodationDate.CompareTo(DateTime.UtcNow) > 0).CountAsync();
         }
 
         public async Task<int> GetCountOfMyReservationsAsync(string applicationUserId)

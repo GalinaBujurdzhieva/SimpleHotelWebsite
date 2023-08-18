@@ -61,6 +61,7 @@
 
                 await this.ordersRepo.AddAsync(newOrder);
                 await this.ordersRepo.SaveChangesAsync();
+                await this.dishOrdersRepo.SaveChangesAsync();
             }
             else
             {

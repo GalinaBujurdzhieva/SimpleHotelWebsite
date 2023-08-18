@@ -1,42 +1,23 @@
 ﻿namespace MyHotelWebsite.Services.Data.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using MockQueryable.Moq;
     using Moq;
-    using MyHotelWebsite.Common;
     using MyHotelWebsite.Data;
     using MyHotelWebsite.Data.Common.Repositories;
     using MyHotelWebsite.Data.Models;
     using MyHotelWebsite.Data.Repositories;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
     using Xunit;
 
     public class GuestsServiceTests
     {
-        //private Mock<UserManager<ApplicationUser>> mockUserManager;
-        //private Mock<RoleManager<ApplicationRole>> mockRoleManager;
-
-        //public ApplicationDbContext GetDbContext()
-        //{
-        //    DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-        //        .UseInMemoryDatabase("TestGuest");
-        //    ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
-        //    return dbContext;
-        //}
-
-        //public GuestsService GetGuestsService()
-        //{
-        //    this.mockUserManager = new Mock<UserManager<ApplicationUser>>(
-        //        Mock.Of<IUserStore<ApplicationUser>>(), null, null, null, null, null, null, null, null);
-        //    this.mockRoleManager = new Mock<RoleManager<ApplicationRole>>(Mock.Of<IRoleStore<ApplicationRole>>(), null, null, null, null);
-        //    EfDeletableEntityRepository<ApplicationUser> usersRepo = new EfDeletableEntityRepository<ApplicationUser>(this.GetDbContext());
-        //    GuestsService guestsService = new GuestsService(usersRepo, this.mockUserManager.Object, this.mockRoleManager.Object);
-        //    return guestsService;
-        //}
-
         [Fact]
         public async Task GetCountAsyncShouldReturnAllGuestsCount()
         {
@@ -45,7 +26,7 @@
             Mock<RoleManager<ApplicationRole>> mockRoleManager = new Mock<RoleManager<ApplicationRole>>(Mock.Of<IRoleStore<ApplicationRole>>(), null, null, null, null);
             Mock<IDeletableEntityRepository<ApplicationUser>> usersRepo = new Mock<IDeletableEntityRepository<ApplicationUser>>();
 
-            var guests = new List<ApplicationUser>
+            IList<ApplicationUser> guests = new List<ApplicationUser>
             {
                 new ApplicationUser
                 {
@@ -73,23 +54,46 @@
             usersRepo.Setup(u => u.AllAsNoTracking()).Returns(mock);
             var guestService = new GuestsService(usersRepo.Object, mockUserManager.Object, mockRoleManager.Object);
 
-            mockUserManager.Setup(x => x.CreateAsync(It.IsAny<ApplicationUser>())).ReturnsAsync(IdentityResult.Success);
-            mockUserManager.Setup(x => x.AddToRoleAsync(
-                It.IsAny<ApplicationUser>(),
-                It.IsAny<string>())).ReturnsAsync((ApplicationUser user, string role) =>
-                {
-                    role = GlobalConstants.GuestRoleName.ToString();
-                    return IdentityResult.Success;
-                });
-            mockUserManager.Setup(x => x.IsInRoleAsync(
-                It.IsAny<ApplicationUser>(),
-                It.IsAny<string>())).ReturnsAsync((ApplicationUser user, string role) =>
-                {
-                    role = GlobalConstants.GuestRoleName.ToString();
-                    return true;
-                });
+            mockUserManager.Setup(x => x.GetUsersInRoleAsync(It.IsAny<string>())).Returns(Task.FromResult(guests));
             int guestsCount = await guestService.GetCountAsync();
             Assert.Equal(2, guestsCount);
+        }
+
+        [Fact]
+        public async Task GetGuestEmailAndPhoneNumberShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+               .UseInMemoryDatabase("TestDishesDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            Mock<UserManager<ApplicationUser>> mockUserManager = new Mock<UserManager<ApplicationUser>>(
+               Mock.Of<IUserStore<ApplicationUser>>(), null, null, null, null, null, null, null, null);
+            Mock<RoleManager<ApplicationRole>> mockRoleManager = new Mock<RoleManager<ApplicationRole>>(Mock.Of<IRoleStore<ApplicationRole>>(), null, null, null, null);
+            EfDeletableEntityRepository<ApplicationUser> usersRepoDB = new EfDeletableEntityRepository<ApplicationUser>(dbContext);
+            ApplicationUser appUser = new ApplicationUser()
+            {
+                // Id = "9fabc808-d07d-44d5-9b23-6454705ddd48",
+                UserName = "TestUser1",
+                PasswordHash = Guid.NewGuid().ToString(),
+                Email = "testUser1@gmail.com",
+                FirstName = "Goshko",
+                LastName = "Goshev",
+                PhoneNumber = "00359777777777",
+                EmailConfirmed = true,
+            };
+            await usersRepoDB.AddAsync(appUser);
+            await usersRepoDB.SaveChangesAsync();
+
+            var guestService = new GuestsService(usersRepoDB, mockUserManager.Object, mockRoleManager.Object);
+            var user = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, "9fabc808-d07d-44d5-9b23-6454705ddd48"),
+            }));
+            mockUserManager.Setup(_ => _.GetUserAsync(user)).ReturnsAsync(appUser);
+            Assert.Equal("testUser1@gmail.com", await guestService.GetGuestEmailAsync(user));
+            Assert.Equal("00359777777777", await guestService.GetGuestPhoneNumberAsync(user));
+            dbContext.Dispose();
         }
     }
 }
