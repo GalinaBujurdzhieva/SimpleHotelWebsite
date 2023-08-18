@@ -369,6 +369,283 @@
         }
 
         [Fact]
+        public async Task GelAllFreeRoomsAtTheMomentAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestRoomsDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                    RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 1,
+                            ReservationId = 1,
+                            Reservation = new Reservation()
+                            {
+                                Id = 1,
+                                AccommodationDate = DateTime.UtcNow.AddDays(2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
+                            },
+                        },
+                    },
+                });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 2,
+                   RoomNumber = 2,
+                   Capacity = 1,
+                   Floor = 0,
+                   RoomType = RoomType.SingleRoom,
+                   AdultPrice = GlobalConstants.SingleRoomPrice,
+                   ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                   IsCleaned = true,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 2,
+                            ReservationId = 2,
+                            Reservation = new Reservation()
+                            {
+                                Id = 2,
+                                AccommodationDate = DateTime.UtcNow.AddDays(10),
+                                ReleaseDate = DateTime.UtcNow.AddDays(15),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a02a70f4-b8f7-4787-b6c2-40209fdf1aab",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 3,
+                   RoomNumber = 3,
+                   Capacity = 3,
+                   Floor = 0,
+                   RoomType = RoomType.Studio,
+                   AdultPrice = GlobalConstants.StudioAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.StudioChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 3,
+                            ReservationId = 3,
+                            Reservation = new Reservation()
+                            {
+                                Id = 3,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(3),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a82bcfe3-fdf4-4ffb-ab42-719e4c7cbec9",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 4,
+                   RoomNumber = 4,
+                   Capacity = 4,
+                   Floor = 0,
+                   RoomType = RoomType.Apartment,
+                   AdultPrice = GlobalConstants.ApartmentAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.ApartmentChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 4,
+                            ReservationId = 4,
+                            Reservation = new Reservation()
+                            {
+                                Id = 4,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-3),
+                                ReleaseDate = DateTime.UtcNow.AddDays(4),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "424a2f5f-4bbe-43eb-82dc-4363b46d3a0c",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            RoomsService roomsService = new RoomsService(roomsRepoDB);
+            IEnumerable<SingleRoomViewModel> freeRoomsAtTheMoment = await roomsService.GetAllFreeRoomsAtTheMomentAsync<SingleRoomViewModel>();
+            Assert.NotNull(freeRoomsAtTheMoment);
+            Assert.Equal(2, freeRoomsAtTheMoment.Count());
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task GelAllFreeRoomsForACertainPeriodOfTimeAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestRoomsDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                    RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 1,
+                            ReservationId = 1,
+                            Reservation = new Reservation()
+                            {
+                                Id = 1,
+                                AccommodationDate = DateTime.UtcNow.AddDays(2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
+                            },
+                        },
+                    },
+                });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 2,
+                   RoomNumber = 2,
+                   Capacity = 1,
+                   Floor = 0,
+                   RoomType = RoomType.SingleRoom,
+                   AdultPrice = GlobalConstants.SingleRoomPrice,
+                   ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                   IsCleaned = true,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 2,
+                            ReservationId = 2,
+                            Reservation = new Reservation()
+                            {
+                                Id = 2,
+                                AccommodationDate = DateTime.UtcNow.AddDays(4),
+                                ReleaseDate = DateTime.UtcNow.AddDays(10),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a02a70f4-b8f7-4787-b6c2-40209fdf1aab",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 3,
+                   RoomNumber = 3,
+                   Capacity = 3,
+                   Floor = 0,
+                   RoomType = RoomType.Studio,
+                   AdultPrice = GlobalConstants.StudioAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.StudioChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 3,
+                            ReservationId = 3,
+                            Reservation = new Reservation()
+                            {
+                                Id = 3,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(3),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a82bcfe3-fdf4-4ffb-ab42-719e4c7cbec9",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 4,
+                   RoomNumber = 4,
+                   Capacity = 4,
+                   Floor = 0,
+                   RoomType = RoomType.Apartment,
+                   AdultPrice = GlobalConstants.ApartmentAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.ApartmentChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 4,
+                            ReservationId = 4,
+                            Reservation = new Reservation()
+                            {
+                                Id = 4,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-3),
+                                ReleaseDate = DateTime.UtcNow.AddDays(4),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "424a2f5f-4bbe-43eb-82dc-4363b46d3a0c",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            RoomsService roomsService = new RoomsService(roomsRepoDB);
+            IEnumerable<SingleRoomViewModel> freeRoomsForACertainPeriodOfTime = await roomsService.GetAllFreeRoomsForACertainPeriodOfTimeAsync<SingleRoomViewModel>(DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddDays(3));
+            IEnumerable<SingleRoomViewModel> freeRoomsForAnotherPeriodOfTime = await roomsService.GetAllFreeRoomsForACertainPeriodOfTimeAsync<SingleRoomViewModel>(DateTime.UtcNow.AddDays(5), DateTime.UtcNow.AddDays(8));
+            Assert.NotNull(freeRoomsForACertainPeriodOfTime);
+            Assert.Single(freeRoomsForACertainPeriodOfTime);
+            Assert.NotNull(freeRoomsForAnotherPeriodOfTime);
+            Assert.Equal(2, freeRoomsForAnotherPeriodOfTime.Count());
+            dbContext.Dispose();
+        }
+
+        [Fact]
         public async Task GetRoomTypeByIdAsyncShouldWorkCorrectly()
         {
             DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
@@ -405,6 +682,716 @@
             Assert.Equal(RoomType.SingleRoom, await roomsService.GetRoomTypeByIdAsync(1));
             Assert.Equal(RoomType.DoubleRoom, await roomsService.GetRoomTypeByIdAsync(2));
             await Assert.ThrowsAsync<Exception>(async () => await roomsService.GetRoomTypeByIdAsync(12));
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task LeaveOccupiedRoomsAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestRoomsDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    IsOccupied = true,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                    RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 1,
+                            ReservationId = 1,
+                            Reservation = new Reservation()
+                            {
+                                Id = 1,
+                                AccommodationDate = DateTime.UtcNow.AddDays(2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
+                            },
+                        },
+                    },
+                });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 2,
+                   RoomNumber = 2,
+                   Capacity = 1,
+                   Floor = 0,
+                   RoomType = RoomType.SingleRoom,
+                   IsOccupied = true,
+                   AdultPrice = GlobalConstants.SingleRoomPrice,
+                   ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                   IsCleaned = true,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 2,
+                            ReservationId = 2,
+                            Reservation = new Reservation()
+                            {
+                                Id = 2,
+                                AccommodationDate = DateTime.UtcNow.AddDays(4),
+                                ReleaseDate = DateTime.UtcNow.AddDays(10),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a02a70f4-b8f7-4787-b6c2-40209fdf1aab",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 3,
+                   RoomNumber = 3,
+                   Capacity = 3,
+                   Floor = 0,
+                   RoomType = RoomType.Studio,
+                   IsOccupied = true,
+                   AdultPrice = GlobalConstants.StudioAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.StudioChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 3,
+                            ReservationId = 3,
+                            Reservation = new Reservation()
+                            {
+                                Id = 3,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(3),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a82bcfe3-fdf4-4ffb-ab42-719e4c7cbec9",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 4,
+                   RoomNumber = 4,
+                   Capacity = 4,
+                   Floor = 0,
+                   RoomType = RoomType.Apartment,
+                   IsOccupied = true,
+                   AdultPrice = GlobalConstants.ApartmentAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.ApartmentChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 4,
+                            ReservationId = 4,
+                            Reservation = new Reservation()
+                            {
+                                Id = 4,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-3),
+                                ReleaseDate = DateTime.UtcNow.AddDays(4),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "424a2f5f-4bbe-43eb-82dc-4363b46d3a0c",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            RoomsService roomsService = new RoomsService(roomsRepoDB);
+            var occupiedRooms = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsOccupied).ToListAsync();
+            Assert.NotNull(occupiedRooms);
+            Assert.Equal(4, occupiedRooms.Count());
+            await roomsService.LeaveOccupiedRoomsAsync();
+            var occupiedRoomsNow = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsOccupied).ToListAsync();
+            Assert.Equal(2, occupiedRoomsNow.Count());
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task OccupyRoomsAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestRoomsDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                    RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 1,
+                            ReservationId = 1,
+                            Reservation = new Reservation()
+                            {
+                                Id = 1,
+                                AccommodationDate = DateTime.UtcNow.AddDays(2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
+                            },
+                        },
+                    },
+                });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 2,
+                   RoomNumber = 2,
+                   Capacity = 1,
+                   Floor = 0,
+                   RoomType = RoomType.SingleRoom,
+                   AdultPrice = GlobalConstants.SingleRoomPrice,
+                   ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                   IsCleaned = true,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 2,
+                            ReservationId = 2,
+                            Reservation = new Reservation()
+                            {
+                                Id = 2,
+                                AccommodationDate = DateTime.UtcNow.AddDays(4),
+                                ReleaseDate = DateTime.UtcNow.AddDays(10),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a02a70f4-b8f7-4787-b6c2-40209fdf1aab",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 3,
+                   RoomNumber = 3,
+                   Capacity = 3,
+                   Floor = 0,
+                   RoomType = RoomType.Studio,
+                   AdultPrice = GlobalConstants.StudioAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.StudioChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 3,
+                            ReservationId = 3,
+                            Reservation = new Reservation()
+                            {
+                                Id = 3,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(3),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a82bcfe3-fdf4-4ffb-ab42-719e4c7cbec9",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 4,
+                   RoomNumber = 4,
+                   Capacity = 4,
+                   Floor = 0,
+                   RoomType = RoomType.Apartment,
+                   AdultPrice = GlobalConstants.ApartmentAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.ApartmentChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 4,
+                            ReservationId = 4,
+                            Reservation = new Reservation()
+                            {
+                                Id = 4,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-3),
+                                ReleaseDate = DateTime.UtcNow.AddDays(4),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "424a2f5f-4bbe-43eb-82dc-4363b46d3a0c",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            RoomsService roomsService = new RoomsService(roomsRepoDB);
+            var notOccupiedRooms = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsOccupied == false).ToListAsync();
+            Assert.NotNull(notOccupiedRooms);
+            Assert.Equal(4, notOccupiedRooms.Count());
+            await roomsService.OccupyRoomsAsync();
+            var occupiedRoomsNow = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsOccupied).ToListAsync();
+            Assert.Equal(2, occupiedRoomsNow.Count());
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task RemoveIsReservedPropertyOfNotReservedRoomsShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestRoomsDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    IsReserved = true,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                    RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 1,
+                            ReservationId = 1,
+                            Reservation = new Reservation()
+                            {
+                                Id = 1,
+                                AccommodationDate = DateTime.UtcNow.AddDays(2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
+                            },
+                        },
+                    },
+                });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 2,
+                   RoomNumber = 2,
+                   Capacity = 1,
+                   Floor = 0,
+                   RoomType = RoomType.SingleRoom,
+                   IsReserved = true,
+                   AdultPrice = GlobalConstants.SingleRoomPrice,
+                   ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                   IsCleaned = true,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 2,
+                            ReservationId = 2,
+                            Reservation = new Reservation()
+                            {
+                                Id = 2,
+                                AccommodationDate = DateTime.UtcNow.AddDays(4),
+                                ReleaseDate = DateTime.UtcNow.AddDays(10),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a02a70f4-b8f7-4787-b6c2-40209fdf1aab",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 3,
+                   RoomNumber = 3,
+                   Capacity = 3,
+                   Floor = 0,
+                   RoomType = RoomType.Studio,
+                   IsReserved = true,
+                   AdultPrice = GlobalConstants.StudioAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.StudioChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 3,
+                            ReservationId = 3,
+                            Reservation = new Reservation()
+                            {
+                                Id = 3,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(3),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a82bcfe3-fdf4-4ffb-ab42-719e4c7cbec9",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 4,
+                   RoomNumber = 4,
+                   Capacity = 4,
+                   Floor = 0,
+                   RoomType = RoomType.Apartment,
+                   IsReserved = true,
+                   AdultPrice = GlobalConstants.ApartmentAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.ApartmentChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 4,
+                            ReservationId = 4,
+                            Reservation = new Reservation()
+                            {
+                                Id = 4,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-3),
+                                ReleaseDate = DateTime.UtcNow.AddDays(-1),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "424a2f5f-4bbe-43eb-82dc-4363b46d3a0c",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            RoomsService roomsService = new RoomsService(roomsRepoDB);
+            var reservedRooms = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsReserved).ToListAsync();
+            Assert.NotNull(reservedRooms);
+            Assert.Equal(4, reservedRooms.Count());
+            await roomsService.RemoveIsReservedPropertyOfNotReservedRooms();
+            var reservedRoomsNow = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsReserved).ToListAsync();
+            Assert.Equal(3, reservedRoomsNow.Count());
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task ReserveRoomAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestRoomsDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                    RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 1,
+                            ReservationId = 1,
+                            Reservation = new Reservation()
+                            {
+                                Id = 1,
+                                AccommodationDate = DateTime.UtcNow.AddDays(2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
+                            },
+                        },
+                    },
+                });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 2,
+                   RoomNumber = 2,
+                   Capacity = 1,
+                   Floor = 0,
+                   RoomType = RoomType.SingleRoom,
+                   AdultPrice = GlobalConstants.SingleRoomPrice,
+                   ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                   IsCleaned = true,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 2,
+                            ReservationId = 2,
+                            Reservation = new Reservation()
+                            {
+                                Id = 2,
+                                AccommodationDate = DateTime.UtcNow.AddDays(4),
+                                ReleaseDate = DateTime.UtcNow.AddDays(10),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a02a70f4-b8f7-4787-b6c2-40209fdf1aab",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 3,
+                   RoomNumber = 3,
+                   Capacity = 3,
+                   Floor = 0,
+                   RoomType = RoomType.Studio,
+                   AdultPrice = GlobalConstants.StudioAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.StudioChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 3,
+                            ReservationId = 3,
+                            Reservation = new Reservation()
+                            {
+                                Id = 3,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(3),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a82bcfe3-fdf4-4ffb-ab42-719e4c7cbec9",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 4,
+                   RoomNumber = 4,
+                   Capacity = 4,
+                   Floor = 0,
+                   RoomType = RoomType.Apartment,
+                   AdultPrice = GlobalConstants.ApartmentAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.ApartmentChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 4,
+                            ReservationId = 4,
+                            Reservation = new Reservation()
+                            {
+                                Id = 4,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-3),
+                                ReleaseDate = DateTime.UtcNow.AddDays(-1),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "424a2f5f-4bbe-43eb-82dc-4363b46d3a0c",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            RoomsService roomsService = new RoomsService(roomsRepoDB);
+            var notReservedRooms = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsReserved == false).ToListAsync();
+            Assert.NotNull(notReservedRooms);
+            Assert.Equal(4, notReservedRooms.Count());
+            await roomsService.ReserveRoomAsync(RoomType.Studio, DateTime.UtcNow.AddDays(5), DateTime.UtcNow.AddDays(8));
+            var reservedRoomsNow = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsReserved).ToListAsync();
+            Assert.Single(reservedRoomsNow);
+            await Assert.ThrowsAsync<Exception>(() => roomsService.ReserveRoomAsync(RoomType.DoubleRoom, DateTime.UtcNow.AddDays(5), DateTime.UtcNow.AddDays(8)));
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task ReserveRoomByIdAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestRoomsDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                    RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 1,
+                            ReservationId = 1,
+                            Reservation = new Reservation()
+                            {
+                                Id = 1,
+                                AccommodationDate = DateTime.UtcNow.AddDays(2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
+                            },
+                        },
+                    },
+                });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 2,
+                   RoomNumber = 2,
+                   Capacity = 1,
+                   Floor = 0,
+                   RoomType = RoomType.SingleRoom,
+                   AdultPrice = GlobalConstants.SingleRoomPrice,
+                   ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                   IsCleaned = true,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 2,
+                            ReservationId = 2,
+                            Reservation = new Reservation()
+                            {
+                                Id = 2,
+                                AccommodationDate = DateTime.UtcNow.AddDays(4),
+                                ReleaseDate = DateTime.UtcNow.AddDays(10),
+                                AdultsCount = 1,
+                                RoomType = RoomType.SingleRoom,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a02a70f4-b8f7-4787-b6c2-40209fdf1aab",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 3,
+                   RoomNumber = 3,
+                   Capacity = 3,
+                   Floor = 0,
+                   RoomType = RoomType.Studio,
+                   AdultPrice = GlobalConstants.StudioAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.StudioChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 3,
+                            ReservationId = 3,
+                            Reservation = new Reservation()
+                            {
+                                Id = 3,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-2),
+                                ReleaseDate = DateTime.UtcNow.AddDays(3),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "a82bcfe3-fdf4-4ffb-ab42-719e4c7cbec9",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.AddAsync(
+               new Room
+               {
+                   Id = 4,
+                   RoomNumber = 4,
+                   Capacity = 4,
+                   Floor = 0,
+                   RoomType = RoomType.Apartment,
+                   AdultPrice = GlobalConstants.ApartmentAdultsPricePerBed,
+                   ChildrenPrice = GlobalConstants.ApartmentChildrenPricePerBed,
+                   RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 4,
+                            ReservationId = 4,
+                            Reservation = new Reservation()
+                            {
+                                Id = 4,
+                                AccommodationDate = DateTime.UtcNow.AddDays(-3),
+                                ReleaseDate = DateTime.UtcNow.AddDays(-1),
+                                AdultsCount = 2,
+                                ChildrenCount = 1,
+                                RoomType = RoomType.Studio,
+                                Catering = Catering.Without,
+                                ApplicationUserId = "424a2f5f-4bbe-43eb-82dc-4363b46d3a0c",
+                            },
+                        },
+                    },
+               });
+            await roomsRepoDB.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            RoomsService roomsService = new RoomsService(roomsRepoDB);
+            var notReservedRooms = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsReserved == false).ToListAsync();
+            Assert.NotNull(notReservedRooms);
+            Assert.Equal(4, notReservedRooms.Count());
+            await roomsService.ReserveRoomByIdAsync(3, DateTime.UtcNow.AddDays(5), DateTime.UtcNow.AddDays(8));
+            var reservedRoomsNow = await roomsRepoDB.AllAsNoTracking().Where(x => x.IsReserved).ToListAsync();
+            Assert.Single(reservedRoomsNow);
+            await Assert.ThrowsAsync<Exception>(() => roomsService.ReserveRoomByIdAsync(8, DateTime.UtcNow.AddDays(5), DateTime.UtcNow.AddDays(8)));
             dbContext.Dispose();
         }
     }

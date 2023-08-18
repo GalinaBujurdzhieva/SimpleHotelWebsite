@@ -82,8 +82,8 @@
             var freeRoomsForACertainPeriodOfTime = await this.roomsRepo.AllAsNoTracking()
                 .Include(x => x.RoomReservations)
                 .ThenInclude(x => x.Reservation)
-                .Where(x => !x.RoomReservations.Any(r => r.Reservation.AccommodationDate <= accommodationDate &&
-                r.Reservation.ReleaseDate >= releaseDate))
+                .Where(x => !x.RoomReservations.Any(r => r.Reservation.ReleaseDate.CompareTo(accommodationDate) >= 0 &&
+                r.Reservation.ReleaseDate.CompareTo(releaseDate) > 0))
                 .OrderBy(x => x.RoomType)
                 .ThenBy(x => x.Floor)
                 .To<T>()
