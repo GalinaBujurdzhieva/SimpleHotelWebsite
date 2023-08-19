@@ -15,19 +15,21 @@
     public class GuestsService : IGuestsService
     {
         private readonly IDeletableEntityRepository<ApplicationUser> guestsRepo;
+        private readonly IDeletableEntityRepository<ApplicationRole> rolesRepo;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<ApplicationRole> roleManager;
 
-        public GuestsService(IDeletableEntityRepository<ApplicationUser> guestsRepo, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
+        public GuestsService(IDeletableEntityRepository<ApplicationUser> guestsRepo, IDeletableEntityRepository<ApplicationRole> rolesRepo, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
         {
             this.guestsRepo = guestsRepo;
             this.userManager = userManager;
             this.roleManager = roleManager;
+            this.rolesRepo = rolesRepo;
         }
 
         public async Task<IEnumerable<T>> GetAllGuestsAsync<T>(int page, int itemsPerPage = 4)
         {
-            var roles = await this.roleManager.Roles.ToListAsync();
+            var roles = await this.rolesRepo.AllAsNoTracking().ToListAsync();
             var guestRoleId = roles.Where(r => r.Name == GlobalConstants.GuestRoleName).FirstOrDefault().Id;
 
             var allGuestsList = await this.guestsRepo.AllAsNoTracking()
