@@ -139,6 +139,10 @@
                     throw new Exception();
                 }
             }
+            else
+            {
+                throw new Exception();
+            }
         }
 
         public async Task UnlockUser(string id)
@@ -155,6 +159,10 @@
                 {
                     throw new Exception();
                 }
+            }
+            else
+            {
+                throw new Exception();
             }
         }
     }

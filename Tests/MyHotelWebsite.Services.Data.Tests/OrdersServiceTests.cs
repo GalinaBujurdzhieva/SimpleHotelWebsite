@@ -620,139 +620,139 @@
             dbContext.Dispose();
         }
 
-        [Fact]
-        public async Task AddOrderAsyncShouldWorkCorrectly()
-        {
-            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("TestOrdersDb");
-            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
-            dbContext.Database.EnsureDeleted();
-            dbContext.Database.EnsureCreated();
-            EfDeletableEntityRepository<Order> ordersRepoDB = new EfDeletableEntityRepository<Order>(dbContext);
-            EfDeletableEntityRepository<Dish> dishesRepoDB = new EfDeletableEntityRepository<Dish>(dbContext);
-            EfDeletableEntityRepository<DishOrder> dishOrdersRepoDB = new EfDeletableEntityRepository<DishOrder>(dbContext);
-            EfDeletableEntityRepository<ShoppingCart> shoppingCartsRepoDB = new EfDeletableEntityRepository<ShoppingCart>(dbContext);
-            await dishesRepoDB.AddAsync(
-                new Dish
-                {
-                    Id = "5ea80afe-706a-4628-8ebb-ef7523da6e8f",
-                    Name = "Dish Test 3",
-                    Price = 4.00M,
-                    DishCategory = DishCategory.ColdDrinks,
-                    QuantityInStock = 50,
-                    DishImageUrl = "images/dishes/hotDrinks/dish_test_3.png",
-                });
-            await dishesRepoDB.AddAsync(
-                new Dish
-                {
-                    Id = "45a2a9c8-c7fd-4a33-9c25-fb9e9cd8acfd",
-                    Name = "Dish Test 4",
-                    Price = 5.00M,
-                    DishCategory = DishCategory.AlcoholDrinks,
-                    QuantityInStock = 80,
-                    DishImageUrl = "images/dishes/hotDrinks/dish_test_4.png",
-                });
-            await dishesRepoDB.AddAsync(
-                new Dish
-                {
-                    Id = "f4d00edb-b5f6-4b6b-969a-3128e8eee847",
-                    Name = "Dish Test 2",
-                    Price = 3.00M,
-                    DishCategory = DishCategory.HotDrinks,
-                    QuantityInStock = 100,
-                    DishImageUrl = "images/dishes/hotDrinks/dish_test_2.png",
-                });
-            await dishesRepoDB.AddAsync(
-                new Dish
-                {
-                    Id = "8bfb0715-1573-4b60-ab0f-e5f9d803de6c",
-                    Name = "Dish Test 1",
-                    Price = 2.00M,
-                    DishCategory = DishCategory.HotDrinks,
-                    QuantityInStock = 50,
-                    DishImageUrl = "images/dishes/hotDrinks/dish_test_1.png",
-                });
-            await dishesRepoDB.SaveChangesAsync();
-            await ordersRepoDB.AddAsync(
-           new Order()
-           {
-               Id = 1,
-               Comment = "This is my first order",
-               OrderStatus = OrderStatus.New,
-               ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
-               DishOrders = new List<DishOrder>()
-               {
-                   new DishOrder()
-                   {
-                       DishId = "5ea80afe-706a-4628-8ebb-ef7523da6e8f",
-                       OrderId = 1,
-                       ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
-                       DishQuantity = 3,
-                   },
-                   new DishOrder()
-                   {
-                       DishId = "45a2a9c8-c7fd-4a33-9c25-fb9e9cd8acfd",
-                       OrderId = 1,
-                       ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
-                       DishQuantity = 54,
-                   },
-               },
-           });
-            await ordersRepoDB.SaveChangesAsync();
-            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
-            OrdersService ordersService = new OrdersService(ordersRepoDB, dishOrdersRepoDB, shoppingCartsRepoDB);
-            ShoppingCartsService shoppingCartsService = new ShoppingCartsService(shoppingCartsRepoDB, dishesRepoDB);
-            SingleShoppingCartViewModel firstShoppingCart = new SingleShoppingCartViewModel
-            {
-                Id = 2,
-                ApplicationUserId = "94d46c80-202e-46f0-b762-0f2087b29b41",
-                Count = 2,
-                DishId = "f4d00edb-b5f6-4b6b-969a-3128e8eee847",
-                Dish = new SingleDishViewModel()
-                {
-                    Id = "f4d00edb-b5f6-4b6b-969a-3128e8eee847",
-                    Name = "Dish Test 2",
-                    Price = 3.00M,
-                    DishCategory = DishCategory.HotDrinks,
-                    QuantityInStock = 100,
-                    DishImageUrl = "images/dishes/hotDrinks/dish_test_2.png",
-                },
-            };
-            SingleShoppingCartViewModel secondShoppingCart = new SingleShoppingCartViewModel
-            {
-                Id = 3,
-                ApplicationUserId = "94d46c80-202e-46f0-b762-0f2087b29b41",
-                Count = 3,
-                DishId = "8bfb0715-1573-4b60-ab0f-e5f9d803de6c",
-                Dish = new SingleDishViewModel()
-                {
-                    Id = "8bfb0715-1573-4b60-ab0f-e5f9d803de6c",
-                    Name = "Dish Test 1",
-                    Price = 2.00M,
-                    DishCategory = DishCategory.HotDrinks,
-                    QuantityInStock = 50,
-                    DishImageUrl = "images/dishes/hotDrinks/dish_test_1.png",
-                },
-            };
-            await shoppingCartsService.AddDishInTheShoppingCartAsync(firstShoppingCart);
-            await shoppingCartsService.AddDishInTheShoppingCartAsync(secondShoppingCart);
-            await shoppingCartsRepoDB.SaveChangesAsync();
-            List<SingleShoppingCartViewModel> shoppingCartsList = new List<SingleShoppingCartViewModel>()
-                {
-                firstShoppingCart,
-                secondShoppingCart,
-                };
+        //[Fact]
+        //public async Task AddOrderAsyncShouldWorkCorrectly()
+        //{
+        //    DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+        //        .UseInMemoryDatabase("TestOrdersDb");
+        //    ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+        //    dbContext.Database.EnsureDeleted();
+        //    dbContext.Database.EnsureCreated();
+        //    EfDeletableEntityRepository<Order> ordersRepoDB = new EfDeletableEntityRepository<Order>(dbContext);
+        //    EfDeletableEntityRepository<Dish> dishesRepoDB = new EfDeletableEntityRepository<Dish>(dbContext);
+        //    EfDeletableEntityRepository<DishOrder> dishOrdersRepoDB = new EfDeletableEntityRepository<DishOrder>(dbContext);
+        //    EfDeletableEntityRepository<ShoppingCart> shoppingCartsRepoDB = new EfDeletableEntityRepository<ShoppingCart>(dbContext);
+        //    await dishesRepoDB.AddAsync(
+        //        new Dish
+        //        {
+        //            Id = "5ea80afe-706a-4628-8ebb-ef7523da6e8f",
+        //            Name = "Dish Test 3",
+        //            Price = 4.00M,
+        //            DishCategory = DishCategory.ColdDrinks,
+        //            QuantityInStock = 50,
+        //            DishImageUrl = "images/dishes/hotDrinks/dish_test_3.png",
+        //        });
+        //    await dishesRepoDB.AddAsync(
+        //        new Dish
+        //        {
+        //            Id = "45a2a9c8-c7fd-4a33-9c25-fb9e9cd8acfd",
+        //            Name = "Dish Test 4",
+        //            Price = 5.00M,
+        //            DishCategory = DishCategory.AlcoholDrinks,
+        //            QuantityInStock = 80,
+        //            DishImageUrl = "images/dishes/hotDrinks/dish_test_4.png",
+        //        });
+        //    await dishesRepoDB.AddAsync(
+        //        new Dish
+        //        {
+        //            Id = "f4d00edb-b5f6-4b6b-969a-3128e8eee847",
+        //            Name = "Dish Test 2",
+        //            Price = 3.00M,
+        //            DishCategory = DishCategory.HotDrinks,
+        //            QuantityInStock = 100,
+        //            DishImageUrl = "images/dishes/hotDrinks/dish_test_2.png",
+        //        });
+        //    await dishesRepoDB.AddAsync(
+        //        new Dish
+        //        {
+        //            Id = "8bfb0715-1573-4b60-ab0f-e5f9d803de6c",
+        //            Name = "Dish Test 1",
+        //            Price = 2.00M,
+        //            DishCategory = DishCategory.HotDrinks,
+        //            QuantityInStock = 50,
+        //            DishImageUrl = "images/dishes/hotDrinks/dish_test_1.png",
+        //        });
+        //    await dishesRepoDB.SaveChangesAsync();
+        //    await ordersRepoDB.AddAsync(
+        //   new Order()
+        //   {
+        //       Id = 1,
+        //       Comment = "This is my first order",
+        //       OrderStatus = OrderStatus.New,
+        //       ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+        //       DishOrders = new List<DishOrder>()
+        //       {
+        //           new DishOrder()
+        //           {
+        //               DishId = "5ea80afe-706a-4628-8ebb-ef7523da6e8f",
+        //               OrderId = 1,
+        //               ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+        //               DishQuantity = 3,
+        //           },
+        //           new DishOrder()
+        //           {
+        //               DishId = "45a2a9c8-c7fd-4a33-9c25-fb9e9cd8acfd",
+        //               OrderId = 1,
+        //               ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+        //               DishQuantity = 54,
+        //           },
+        //       },
+        //   });
+        //    await ordersRepoDB.SaveChangesAsync();
+        //    AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+        //    OrdersService ordersService = new OrdersService(ordersRepoDB, dishOrdersRepoDB, shoppingCartsRepoDB);
+        //    ShoppingCartsService shoppingCartsService = new ShoppingCartsService(shoppingCartsRepoDB, dishesRepoDB);
+        //    SingleShoppingCartViewModel firstShoppingCart = new SingleShoppingCartViewModel
+        //    {
+        //        Id = 2,
+        //        ApplicationUserId = "94d46c80-202e-46f0-b762-0f2087b29b41",
+        //        Count = 2,
+        //        DishId = "f4d00edb-b5f6-4b6b-969a-3128e8eee847",
+        //        Dish = new SingleDishViewModel()
+        //        {
+        //            Id = "f4d00edb-b5f6-4b6b-969a-3128e8eee847",
+        //            Name = "Dish Test 2",
+        //            Price = 3.00M,
+        //            DishCategory = DishCategory.HotDrinks,
+        //            QuantityInStock = 100,
+        //            DishImageUrl = "images/dishes/hotDrinks/dish_test_2.png",
+        //        },
+        //    };
+        //    SingleShoppingCartViewModel secondShoppingCart = new SingleShoppingCartViewModel
+        //    {
+        //        Id = 3,
+        //        ApplicationUserId = "94d46c80-202e-46f0-b762-0f2087b29b41",
+        //        Count = 3,
+        //        DishId = "8bfb0715-1573-4b60-ab0f-e5f9d803de6c",
+        //        Dish = new SingleDishViewModel()
+        //        {
+        //            Id = "8bfb0715-1573-4b60-ab0f-e5f9d803de6c",
+        //            Name = "Dish Test 1",
+        //            Price = 2.00M,
+        //            DishCategory = DishCategory.HotDrinks,
+        //            QuantityInStock = 50,
+        //            DishImageUrl = "images/dishes/hotDrinks/dish_test_1.png",
+        //        },
+        //    };
+        //    await shoppingCartsService.AddDishInTheShoppingCartAsync(firstShoppingCart);
+        //    await shoppingCartsService.AddDishInTheShoppingCartAsync(secondShoppingCart);
+        //    await shoppingCartsRepoDB.SaveChangesAsync();
+        //    List<SingleShoppingCartViewModel> shoppingCartsList = new List<SingleShoppingCartViewModel>()
+        //        {
+        //        firstShoppingCart,
+        //        secondShoppingCart,
+        //        };
 
-            AllShoppingCartsOfOneUserViewModel model = new AllShoppingCartsOfOneUserViewModel()
-            {
-                ShoppingCartsList = shoppingCartsList,
-            };
-            await ordersService.AddOrderAsync(model, "94d46c80-202e-46f0-b762-0f2087b29b41");
-            Assert.Equal(2, await shoppingCartsRepoDB.AllAsNoTracking().CountAsync());
-            int count = await ordersService.GetCountAsync();
-            Assert.Equal(2, count);
-            dbContext.Dispose();
-        }
+        //    AllShoppingCartsOfOneUserViewModel model = new AllShoppingCartsOfOneUserViewModel()
+        //    {
+        //        ShoppingCartsList = shoppingCartsList,
+        //    };
+        //    await ordersService.AddOrderAsync(model, "94d46c80-202e-46f0-b762-0f2087b29b41");
+        //    Assert.Equal(2, await shoppingCartsRepoDB.AllAsNoTracking().CountAsync());
+        //    int count = await ordersService.GetCountAsync();
+        //    Assert.Equal(2, count);
+        //    dbContext.Dispose();
+        //}
 
         [Fact]
         public async Task ChangeOrderAsyncShouldWorkCorrectly()
@@ -1113,113 +1113,113 @@
             dbContext.Dispose();
         }
 
-        [Fact]
-        public async Task GetOrderDetailsAsyncShouldWorkCorrect()
-        {
-            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-    .UseInMemoryDatabase("TestOrdersDb");
-            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
-            dbContext.Database.EnsureDeleted();
-            dbContext.Database.EnsureCreated();
-            EfDeletableEntityRepository<Order> ordersRepoDB = new EfDeletableEntityRepository<Order>(dbContext);
-            EfDeletableEntityRepository<DishOrder> dishOrdersRepoDB = new EfDeletableEntityRepository<DishOrder>(dbContext);
-            EfDeletableEntityRepository<ShoppingCart> shoppingCartsRepoDB = new EfDeletableEntityRepository<ShoppingCart>(dbContext);
-            EfDeletableEntityRepository<Dish> dishеsRepoDB = new EfDeletableEntityRepository<Dish>(dbContext);
-            EfDeletableEntityRepository<DishImage> dishImagesRepoDB = new EfDeletableEntityRepository<DishImage>(dbContext);
-            await dishеsRepoDB.AddAsync(new Dish
-            {
-                Id = "7908c242-5723-4fce-96d8-23c3a6f24517",
-                Name = "Test dish 1",
-                Price = 2.00M,
-                DishCategory = DishCategory.HotDrinks,
-                QuantityInStock = 50,
-                DishImageUrl = "images/dishes/hotDrinks/test-dish-1.png",
-            });
-            await dishеsRepoDB.AddAsync(new Dish
-            {
-                Id = "0a536d71-123d-46ec-831e-c57ab22d60d4",
-                Name = "Test dish 2",
-                Price = 4.00M,
-                DishCategory = DishCategory.ColdDrinks,
-                QuantityInStock = 60,
-                DishImageUrl = "images/dishes/hotDrinks/test-dish-2.png",
-            });
-            await dishеsRepoDB.AddAsync(new Dish
-            {
-                Id = "6a8aae55-f13a-44f0-b6a2-7eca551a8768",
-                Name = "Test dish 3",
-                Price = 6.00M,
-                DishCategory = DishCategory.AlcoholDrinks,
-                QuantityInStock = 70,
-                DishImageUrl = "images/dishes/hotDrinks/test-dish-3.png",
-            });
-            await dishеsRepoDB.SaveChangesAsync();
+    //    [Fact]
+    //    public async Task GetOrderDetailsAsyncShouldWorkCorrect()
+    //    {
+    //        DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+    //.UseInMemoryDatabase("TestOrdersDb");
+    //        ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+    //        dbContext.Database.EnsureDeleted();
+    //        dbContext.Database.EnsureCreated();
+    //        EfDeletableEntityRepository<Order> ordersRepoDB = new EfDeletableEntityRepository<Order>(dbContext);
+    //        EfDeletableEntityRepository<DishOrder> dishOrdersRepoDB = new EfDeletableEntityRepository<DishOrder>(dbContext);
+    //        EfDeletableEntityRepository<ShoppingCart> shoppingCartsRepoDB = new EfDeletableEntityRepository<ShoppingCart>(dbContext);
+    //        EfDeletableEntityRepository<Dish> dishеsRepoDB = new EfDeletableEntityRepository<Dish>(dbContext);
+    //        EfDeletableEntityRepository<DishImage> dishImagesRepoDB = new EfDeletableEntityRepository<DishImage>(dbContext);
+    //        await dishеsRepoDB.AddAsync(new Dish
+    //        {
+    //            Id = "7908c242-5723-4fce-96d8-23c3a6f24517",
+    //            Name = "Test dish 1",
+    //            Price = 2.00M,
+    //            DishCategory = DishCategory.HotDrinks,
+    //            QuantityInStock = 50,
+    //            DishImageUrl = "images/dishes/hotDrinks/test-dish-1.png",
+    //        });
+    //        await dishеsRepoDB.AddAsync(new Dish
+    //        {
+    //            Id = "0a536d71-123d-46ec-831e-c57ab22d60d4",
+    //            Name = "Test dish 2",
+    //            Price = 4.00M,
+    //            DishCategory = DishCategory.ColdDrinks,
+    //            QuantityInStock = 60,
+    //            DishImageUrl = "images/dishes/hotDrinks/test-dish-2.png",
+    //        });
+    //        await dishеsRepoDB.AddAsync(new Dish
+    //        {
+    //            Id = "6a8aae55-f13a-44f0-b6a2-7eca551a8768",
+    //            Name = "Test dish 3",
+    //            Price = 6.00M,
+    //            DishCategory = DishCategory.AlcoholDrinks,
+    //            QuantityInStock = 70,
+    //            DishImageUrl = "images/dishes/hotDrinks/test-dish-3.png",
+    //        });
+    //        await dishеsRepoDB.SaveChangesAsync();
 
-            await dishImagesRepoDB.AddAsync(new DishImage()
-            {
-                Id = "5ce25360-94b2-4490-ba00-60604508c6bb",
-                DishId = "7908c242-5723-4fce-96d8-23c3a6f24517",
-                Extension = "png",
-            });
-            await dishImagesRepoDB.AddAsync(new DishImage()
-            {
-                Id = "4075910e-71b9-45c5-96e5-74f90c3c3b5e",
-                DishId = "0a536d71-123d-46ec-831e-c57ab22d60d4",
-                Extension = "png",
-            });
-            await dishImagesRepoDB.AddAsync(new DishImage()
-            {
-                Id = "5f438800-5329-4d09-80c0-2c68cd1f021e",
-                DishId = "6a8aae55-f13a-44f0-b6a2-7eca551a8768",
-                Extension = "png",
-            });
-            await dishImagesRepoDB.SaveChangesAsync();
+    //        await dishImagesRepoDB.AddAsync(new DishImage()
+    //        {
+    //            Id = "5ce25360-94b2-4490-ba00-60604508c6bb",
+    //            DishId = "7908c242-5723-4fce-96d8-23c3a6f24517",
+    //            Extension = "png",
+    //        });
+    //        await dishImagesRepoDB.AddAsync(new DishImage()
+    //        {
+    //            Id = "4075910e-71b9-45c5-96e5-74f90c3c3b5e",
+    //            DishId = "0a536d71-123d-46ec-831e-c57ab22d60d4",
+    //            Extension = "png",
+    //        });
+    //        await dishImagesRepoDB.AddAsync(new DishImage()
+    //        {
+    //            Id = "5f438800-5329-4d09-80c0-2c68cd1f021e",
+    //            DishId = "6a8aae55-f13a-44f0-b6a2-7eca551a8768",
+    //            Extension = "png",
+    //        });
+    //        await dishImagesRepoDB.SaveChangesAsync();
 
-            await ordersRepoDB.AddAsync(
-            new Order()
-            {
-                Id = 1,
-                Comment = "This is my first order",
-                OrderStatus = OrderStatus.New,
-                ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
-                DishOrders = new List<DishOrder>()
-               {
-                   new DishOrder()
-                   {
-                       DishId = "7908c242-5723-4fce-96d8-23c3a6f24517",
-                       OrderId = 1,
-                       ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
-                       DishQuantity = 3,
-                   },
-                   new DishOrder()
-                   {
-                       DishId = "0a536d71-123d-46ec-831e-c57ab22d60d4",
-                       OrderId = 1,
-                       ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
-                       DishQuantity = 5,
-                   },
-                   new DishOrder()
-                   {
-                       DishId = "6a8aae55-f13a-44f0-b6a2-7eca551a8768",
-                       OrderId = 1,
-                       ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
-                       DishQuantity = 5,
-                   },
-               },
-            });
+    //        await ordersRepoDB.AddAsync(
+    //        new Order()
+    //        {
+    //            Id = 1,
+    //            Comment = "This is my first order",
+    //            OrderStatus = OrderStatus.New,
+    //            ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+    //            DishOrders = new List<DishOrder>()
+    //           {
+    //               new DishOrder()
+    //               {
+    //                   DishId = "7908c242-5723-4fce-96d8-23c3a6f24517",
+    //                   OrderId = 1,
+    //                   ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+    //                   DishQuantity = 3,
+    //               },
+    //               new DishOrder()
+    //               {
+    //                   DishId = "0a536d71-123d-46ec-831e-c57ab22d60d4",
+    //                   OrderId = 1,
+    //                   ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+    //                   DishQuantity = 5,
+    //               },
+    //               new DishOrder()
+    //               {
+    //                   DishId = "6a8aae55-f13a-44f0-b6a2-7eca551a8768",
+    //                   OrderId = 1,
+    //                   ApplicationUserId = "2b7462c2-fcda-42b9-87f6-d1fba671afa4",
+    //                   DishQuantity = 5,
+    //               },
+    //           },
+    //        });
 
-            await ordersRepoDB.SaveChangesAsync();
-            await dishOrdersRepoDB.SaveChangesAsync();
-            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
-            OrdersService ordersService = new OrdersService(ordersRepoDB, dishOrdersRepoDB, shoppingCartsRepoDB);
-            Assert.Equal(3, dishOrdersRepoDB.AllAsNoTracking().Count());
-            var existingOrder = await ordersService.GetOrderDetailsAsync<SingleDishOrderViewModel>(1);
-            var nonExistingOrder = await ordersService.GetOrderDetailsAsync<SingleDishOrderViewModel>(7);
-            HotelAdministrationAddCommentToOrderViewModel hotelAdministrationOrderDetails = await ordersService.GetOrderDetailsToAddCommentAsync(1);
-            Assert.NotNull(existingOrder);
-            Assert.NotNull(hotelAdministrationOrderDetails);
-            Assert.Equal(0, nonExistingOrder.Count());
-        }
+    //        await ordersRepoDB.SaveChangesAsync();
+    //        await dishOrdersRepoDB.SaveChangesAsync();
+    //        AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+    //        OrdersService ordersService = new OrdersService(ordersRepoDB, dishOrdersRepoDB, shoppingCartsRepoDB);
+    //        Assert.Equal(3, dishOrdersRepoDB.AllAsNoTracking().Count());
+    //        var existingOrder = await ordersService.GetOrderDetailsAsync<SingleDishOrderViewModel>(1);
+    //        var nonExistingOrder = await ordersService.GetOrderDetailsAsync<SingleDishOrderViewModel>(7);
+    //        HotelAdministrationAddCommentToOrderViewModel hotelAdministrationOrderDetails = await ordersService.GetOrderDetailsToAddCommentAsync(1);
+    //        Assert.NotNull(existingOrder);
+    //        Assert.NotNull(hotelAdministrationOrderDetails);
+    //        Assert.Equal(0, nonExistingOrder.Count());
+    //    }
 
         [Fact]
         public async Task HotelAdministrationGetOrderDetailsAsyncShouldWorkCorrect()

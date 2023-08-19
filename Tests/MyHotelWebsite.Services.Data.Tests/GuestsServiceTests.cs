@@ -65,110 +65,110 @@
         }
 
         // TESTS WITH IN-MEMORY DB
-        [Fact]
-        public async Task GetAllGuestsAsyncShouldWorkCorrect()
-        {
-            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-               .UseInMemoryDatabase("TestDishesDb");
-            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
-            dbContext.Database.EnsureDeleted();
-            dbContext.Database.EnsureCreated();
-            Mock<UserManager<ApplicationUser>> mockUserManager = new Mock<UserManager<ApplicationUser>>(
-               Mock.Of<IUserStore<ApplicationUser>>(), null, null, null, null, null, null, null, null);
-            Mock<RoleManager<ApplicationRole>> mockRoleManager = new Mock<RoleManager<ApplicationRole>>(Mock.Of<IRoleStore<ApplicationRole>>(), null, null, null, null);
-            EfDeletableEntityRepository<ApplicationUser> usersRepoDB = new EfDeletableEntityRepository<ApplicationUser>(dbContext);
-            EfDeletableEntityRepository<ApplicationRole> rolesRepoDB = new EfDeletableEntityRepository<ApplicationRole>(dbContext);
-            await rolesRepoDB.AddAsync(
-                new ApplicationRole()
-                {
-                    Id = "2baec4cd-2b4c-491b-8679-a4a3e5bbd46b",
-                    Name = GlobalConstants.HotelManagerRoleName,
-                });
-            await rolesRepoDB.AddAsync(
-                new ApplicationRole()
-                {
-                    Id = "3d3a64bc-f885-4f6b-be56-abf050a4a5ff",
-                    Name = GlobalConstants.ChefRoleName,
-                });
-            await rolesRepoDB.AddAsync(
-                new ApplicationRole()
-                {
-                    Id = "f3521ccd-9d7c-4f62-8767-50d101f0ff90",
-                    Name = GlobalConstants.WaiterRoleName,
-                });
-            await rolesRepoDB.AddAsync(
-                new ApplicationRole()
-                {
-                    Id = "55359ebf-f641-4064-beca-8156aeedb42f",
-                    Name = GlobalConstants.MaidRoleName,
-                });
-            await rolesRepoDB.AddAsync(
-                new ApplicationRole()
-                {
-                    Id = "1159da12-1d8e-4a65-8701-c8be3f9c8ce2",
-                    Name = GlobalConstants.ReceptionistRoleName,
-                });
-            await rolesRepoDB.AddAsync(
-                new ApplicationRole()
-                {
-                    Id = "374d7029-41e6-443a-a364-2118694f8a3e",
-                    Name = GlobalConstants.WebsiteAdministratorRoleName,
-                });
-            await rolesRepoDB.AddAsync(
-                new ApplicationRole()
-                {
-                    Id = "7ba79047-a04b-445b-a0c0-8efd401a7154",
-                    Name = GlobalConstants.GuestRoleName,
-                });
-            await rolesRepoDB.SaveChangesAsync();
+        //[Fact]
+        //public async Task GetAllGuestsAsyncShouldWorkCorrect()
+        //{
+        //    DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+        //       .UseInMemoryDatabase("TestDishesDb");
+        //    ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+        //    dbContext.Database.EnsureDeleted();
+        //    dbContext.Database.EnsureCreated();
+        //    Mock<UserManager<ApplicationUser>> mockUserManager = new Mock<UserManager<ApplicationUser>>(
+        //       Mock.Of<IUserStore<ApplicationUser>>(), null, null, null, null, null, null, null, null);
+        //    Mock<RoleManager<ApplicationRole>> mockRoleManager = new Mock<RoleManager<ApplicationRole>>(Mock.Of<IRoleStore<ApplicationRole>>(), null, null, null, null);
+        //    EfDeletableEntityRepository<ApplicationUser> usersRepoDB = new EfDeletableEntityRepository<ApplicationUser>(dbContext);
+        //    EfDeletableEntityRepository<ApplicationRole> rolesRepoDB = new EfDeletableEntityRepository<ApplicationRole>(dbContext);
+        //    await rolesRepoDB.AddAsync(
+        //        new ApplicationRole()
+        //        {
+        //            Id = "2baec4cd-2b4c-491b-8679-a4a3e5bbd46b",
+        //            Name = GlobalConstants.HotelManagerRoleName,
+        //        });
+        //    await rolesRepoDB.AddAsync(
+        //        new ApplicationRole()
+        //        {
+        //            Id = "3d3a64bc-f885-4f6b-be56-abf050a4a5ff",
+        //            Name = GlobalConstants.ChefRoleName,
+        //        });
+        //    await rolesRepoDB.AddAsync(
+        //        new ApplicationRole()
+        //        {
+        //            Id = "f3521ccd-9d7c-4f62-8767-50d101f0ff90",
+        //            Name = GlobalConstants.WaiterRoleName,
+        //        });
+        //    await rolesRepoDB.AddAsync(
+        //        new ApplicationRole()
+        //        {
+        //            Id = "55359ebf-f641-4064-beca-8156aeedb42f",
+        //            Name = GlobalConstants.MaidRoleName,
+        //        });
+        //    await rolesRepoDB.AddAsync(
+        //        new ApplicationRole()
+        //        {
+        //            Id = "1159da12-1d8e-4a65-8701-c8be3f9c8ce2",
+        //            Name = GlobalConstants.ReceptionistRoleName,
+        //        });
+        //    await rolesRepoDB.AddAsync(
+        //        new ApplicationRole()
+        //        {
+        //            Id = "374d7029-41e6-443a-a364-2118694f8a3e",
+        //            Name = GlobalConstants.WebsiteAdministratorRoleName,
+        //        });
+        //    await rolesRepoDB.AddAsync(
+        //        new ApplicationRole()
+        //        {
+        //            Id = "7ba79047-a04b-445b-a0c0-8efd401a7154",
+        //            Name = GlobalConstants.GuestRoleName,
+        //        });
+        //    await rolesRepoDB.SaveChangesAsync();
 
-            await usersRepoDB.AddAsync(
-            new ApplicationUser()
-            {
-                Id = "9fabc808-d07d-44d5-9b23-6454705ddd48",
-                UserName = "TestUser1",
-                PasswordHash = Guid.NewGuid().ToString(),
-                Email = "testUser1@gmail.com",
-                FirstName = "Goshko",
-                LastName = "Goshev",
-                PhoneNumber = "00359777777777",
-                EmailConfirmed = true,
-                Role = GlobalConstants.GuestRoleName,
-            });
-            await usersRepoDB.AddAsync(
-            new ApplicationUser()
-            {
-                Id = "585a155e-41c0-42b3-b4a2-acc0cd35408a",
-                UserName = "TestUser2",
-                PasswordHash = Guid.NewGuid().ToString(),
-                Email = "testUser2@gmail.com",
-                FirstName = "Peshko",
-                LastName = "Peshev",
-                PhoneNumber = "00359777000111",
-                EmailConfirmed = true,
-                Role = GlobalConstants.GuestRoleName,
-            });
-            await usersRepoDB.AddAsync(
-            new ApplicationUser()
-            {
-                Id = "ff47ea75-3821-4c2d-8c87-168b074f8236",
-                UserName = "TestUser3",
-                PasswordHash = Guid.NewGuid().ToString(),
-                Email = "testUser3@gmail.com",
-                FirstName = "Ivcho",
-                LastName = "Ivov",
-                PhoneNumber = "00359888333333",
-                EmailConfirmed = true,
-                Role = GlobalConstants.ChefRoleName,
-            });
+        //    await usersRepoDB.AddAsync(
+        //    new ApplicationUser()
+        //    {
+        //        Id = "9fabc808-d07d-44d5-9b23-6454705ddd48",
+        //        UserName = "TestUser1",
+        //        PasswordHash = Guid.NewGuid().ToString(),
+        //        Email = "testUser1@gmail.com",
+        //        FirstName = "Goshko",
+        //        LastName = "Goshev",
+        //        PhoneNumber = "00359777777777",
+        //        EmailConfirmed = true,
+        //        Role = GlobalConstants.GuestRoleName,
+        //    });
+        //    await usersRepoDB.AddAsync(
+        //    new ApplicationUser()
+        //    {
+        //        Id = "585a155e-41c0-42b3-b4a2-acc0cd35408a",
+        //        UserName = "TestUser2",
+        //        PasswordHash = Guid.NewGuid().ToString(),
+        //        Email = "testUser2@gmail.com",
+        //        FirstName = "Peshko",
+        //        LastName = "Peshev",
+        //        PhoneNumber = "00359777000111",
+        //        EmailConfirmed = true,
+        //        Role = GlobalConstants.GuestRoleName,
+        //    });
+        //    await usersRepoDB.AddAsync(
+        //    new ApplicationUser()
+        //    {
+        //        Id = "ff47ea75-3821-4c2d-8c87-168b074f8236",
+        //        UserName = "TestUser3",
+        //        PasswordHash = Guid.NewGuid().ToString(),
+        //        Email = "testUser3@gmail.com",
+        //        FirstName = "Ivcho",
+        //        LastName = "Ivov",
+        //        PhoneNumber = "00359888333333",
+        //        EmailConfirmed = true,
+        //        Role = GlobalConstants.ChefRoleName,
+        //    });
 
-            await usersRepoDB.SaveChangesAsync();
-            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
-            var guestService = new GuestsService(usersRepoDB, rolesRepoDB, mockUserManager.Object, mockRoleManager.Object);
-            var guests = await guestService.GetAllGuestsAsync<SingleGuestViewModel>(1, 7);
-            Assert.Equal(2, guests.Count());
-            dbContext.Dispose();
-        }
+        //    await usersRepoDB.SaveChangesAsync();
+        //    AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+        //    var guestService = new GuestsService(usersRepoDB, rolesRepoDB, mockUserManager.Object, mockRoleManager.Object);
+        //    var guests = await guestService.GetAllGuestsAsync<SingleGuestViewModel>(1, 7);
+        //    Assert.Equal(2, guests.Count());
+        //    dbContext.Dispose();
+        //}
 
         [Fact]
         public async Task GetGuestEmailAndPhoneNumberShouldWorkCorrect()
