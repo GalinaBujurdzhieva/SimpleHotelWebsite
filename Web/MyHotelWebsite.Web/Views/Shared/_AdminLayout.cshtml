@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using MyHotelWebsite.Common;
 @using MyHotelWebsite.Data.Models
 
 @inject UserManager<ApplicationUser> UserManager
@@ -34,71 +35,89 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Administration" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Blogs
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Blogs" asp-action="All">All Blogs</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Blogs" asp-action="Create">Create New Blog</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dishes
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Dishes" asp-action="All">All Dishes</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Dishes" asp-action="Create">Add New Dish</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Dishes" asp-action="Search">Search</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Orders
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Orders" asp-action="All">All Orders</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Orders" asp-action="Search">Search</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Rooms
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Rooms" asp-action="All">All Rooms</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Rooms" asp-action="Search">Search</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Reservations
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="All">All Reservations</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="Create">Add New Reservation</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="Search">Search</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Guests
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Guests" asp-action="All">All Guests List</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Staff
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Staff" asp-action="All">All Employees</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Staff" asp-action="Register">Register New Employee</a></li>
-                                <li><a class="dropdown-item" asp-area="Administration" asp-controller="Staff" asp-action="Search">Search</a></li>
-                            </ul>
-                        </li>
+                        @if (User.IsInRole(GlobalConstants.HotelManagerRoleName) || User.IsInRole(GlobalConstants.WebsiteAdministratorRoleName))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Blogs
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Blogs" asp-action="All">All Blogs</a></li>
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Blogs" asp-action="Create">Create New Blog</a></li>
+                                </ul>
+                            </li>
+                        }
+                        @if (User.IsInRole(GlobalConstants.HotelManagerRoleName) || User.IsInRole(GlobalConstants.ChefRoleName))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dishes
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Dishes" asp-action="All">All Dishes</a></li>
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Dishes" asp-action="Create">Add New Dish</a></li>
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Dishes" asp-action="Search">Search</a></li>
+                                </ul>
+                            </li>
+                        }
+                        @if (User.IsInRole(GlobalConstants.HotelManagerRoleName) || User.IsInRole(GlobalConstants.WaiterRoleName))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Orders
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Orders" asp-action="All">All Orders</a></li>
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Orders" asp-action="Search">Search</a></li>
+                                </ul>
+                            </li>
+                        }
+                        @if (User.IsInRole(GlobalConstants.HotelManagerRoleName) || User.IsInRole(GlobalConstants.MaidRoleName))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Rooms
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Rooms" asp-action="All">All Rooms</a></li>
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Rooms" asp-action="Search">Search</a></li>
+                                </ul>
+                            </li>
+                        }
+                        @if (User.IsInRole(GlobalConstants.HotelManagerRoleName) || User.IsInRole(GlobalConstants.ReceptionistRoleName))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Reservations
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="All">All Reservations</a></li>
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="Create">Add New Reservation</a></li>
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Reservations" asp-action="Search">Search</a></li>
+                                </ul>
+                            </li>
+                        }
+                        @if (User.IsInRole(GlobalConstants.HotelManagerRoleName))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Guests
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Guests" asp-action="All">All Guests List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Staff
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="background-color: #ff4157;">
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Staff" asp-action="All">All Employees</a></li>
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Staff" asp-action="Register">Register New Employee</a></li>
+                                    <li><a class="dropdown-item" asp-area="Administration" asp-controller="Staff" asp-action="Search">Search</a></li>
+                                </ul>
+                            </li>
+                        }  
                     </ul>
                 </div>
             </div>

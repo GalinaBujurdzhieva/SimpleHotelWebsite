@@ -206,6 +206,146 @@
             Assert.Equal(2, allUpcommingReservations.Count());
         }
 
+        [Fact]
+        public async Task GetReservationDetailsShouldWorkCorrect()
+        {
+            IRoomsService roomsService = new RoomsService(this.roomsRepo.Object);
+            var reservations = new List<Reservation>
+            {
+                new Reservation()
+                {
+                    Id = 1,
+                    AccommodationDate = DateTime.UtcNow.AddDays(2),
+                    ReleaseDate = DateTime.UtcNow.AddDays(5),
+                    AdultsCount = 1,
+                    RoomType = RoomType.SingleRoom,
+                    Catering = Catering.Without,
+                    ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
+                },
+                new Reservation()
+                {
+                    Id = 2,
+                    AccommodationDate = DateTime.UtcNow.AddDays(10),
+                    ReleaseDate = DateTime.UtcNow.AddDays(12),
+                    AdultsCount = 1,
+                    RoomType = RoomType.SingleRoom,
+                    Catering = Catering.Without,
+                    ApplicationUserId = "bfb3ea75-a62c-4247-b20e-3e453ec8313d",
+                },
+                new Reservation()
+                {
+                    Id = 3,
+                    AccommodationDate = DateTime.UtcNow.AddDays(-10),
+                    ReleaseDate = DateTime.UtcNow.AddDays(-6),
+                    AdultsCount = 1,
+                    ChildrenCount = 2,
+                    RoomType = RoomType.Studio,
+                    Catering = Catering.BreakfastAndDinner,
+                    ApplicationUserId = "c0a57191-00d7-4e3b-9599-d4f9b5aa1ec9",
+                },
+                new Reservation()
+                {
+                    Id = 4,
+                    AccommodationDate = DateTime.UtcNow.AddDays(-2),
+                    ReleaseDate = DateTime.UtcNow.AddDays(2),
+                    AdultsCount = 2,
+                    ChildrenCount = 2,
+                    RoomType = RoomType.Apartment,
+                    Catering = Catering.AllInclusive,
+                    ApplicationUserId = "c0a57191-00d7-4e3b-9599-d4f9b5aa1ec9",
+                },
+            };
+            var mock = reservations.AsQueryable().BuildMock();
+
+            this.reservationsRepo.Setup(x => x.AllAsNoTracking()).Returns(mock);
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            var reservationsService = new ReservationsService(this.reservationsRepo.Object, this.roomReservationsRepo.Object, roomsService, this.roomsRepo.Object, this.mockUserManager.Object);
+
+            HotelAdministrationSingleReservationViewModel reservationModel = await reservationsService.HotelAdministrationReservationDetailsByIdAsync<HotelAdministrationSingleReservationViewModel>(4);
+            Assert.NotNull(reservationModel);
+            Assert.Equal(DateTime.UtcNow.AddDays(-2).Date, reservationModel.AccommodationDate.Date);
+            Assert.Equal(DateTime.UtcNow.AddDays(2).Date, reservationModel.ReleaseDate.Date);
+            Assert.Equal(2, reservationModel.AdultsCount);
+            Assert.Equal(2, reservationModel.ChildrenCount);
+            Assert.Equal(RoomType.Apartment, reservationModel.RoomType);
+            Assert.Equal(Catering.AllInclusive, reservationModel.Catering);
+        }
+
+        [Fact]
+        public async Task GetReservationDetailsWithApplicationUserShouldWorkCorrect()
+        {
+            IRoomsService roomsService = new RoomsService(this.roomsRepo.Object);
+            var reservations = new List<Reservation>
+            {
+                new Reservation()
+                {
+                    Id = 1,
+                    AccommodationDate = DateTime.UtcNow.AddDays(2),
+                    ReleaseDate = DateTime.UtcNow.AddDays(5),
+                    AdultsCount = 1,
+                    RoomType = RoomType.SingleRoom,
+                    Catering = Catering.Without,
+                    ApplicationUserId = "e7522d06-694d-403b-86c7-175020363add",
+                },
+                new Reservation()
+                {
+                    Id = 2,
+                    AccommodationDate = DateTime.UtcNow.AddDays(10),
+                    ReleaseDate = DateTime.UtcNow.AddDays(12),
+                    AdultsCount = 1,
+                    RoomType = RoomType.SingleRoom,
+                    Catering = Catering.Without,
+                    ApplicationUserId = "bfb3ea75-a62c-4247-b20e-3e453ec8313d",
+                },
+                new Reservation()
+                {
+                    Id = 3,
+                    AccommodationDate = DateTime.UtcNow.AddDays(-10),
+                    ReleaseDate = DateTime.UtcNow.AddDays(-6),
+                    AdultsCount = 1,
+                    ChildrenCount = 2,
+                    RoomType = RoomType.Studio,
+                    Catering = Catering.BreakfastAndDinner,
+                    ApplicationUserId = "c0a57191-00d7-4e3b-9599-d4f9b5aa1ec9",
+                },
+                new Reservation()
+                {
+                    Id = 4,
+                    AccommodationDate = DateTime.UtcNow.AddDays(-2),
+                    ReleaseDate = DateTime.UtcNow.AddDays(2),
+                    AdultsCount = 2,
+                    ChildrenCount = 2,
+                    RoomType = RoomType.Apartment,
+                    Catering = Catering.AllInclusive,
+                    ApplicationUserId = "c0a57191-00d7-4e3b-9599-d4f9b5aa1ec9",
+                    ApplicationUser = new ApplicationUser()
+                    {
+                         UserName = "TestUser1",
+                         PasswordHash = Guid.NewGuid().ToString(),
+                         Email = "testUser1@gmail.com",
+                         FirstName = "Goshko",
+                         LastName = "Goshev",
+                         PhoneNumber = "00359777777777",
+                         EmailConfirmed = true,
+                    },
+                },
+            };
+            var mock = reservations.AsQueryable().BuildMock();
+
+            this.reservationsRepo.Setup(x => x.AllAsNoTracking()).Returns(mock);
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            var reservationsService = new ReservationsService(this.reservationsRepo.Object, this.roomReservationsRepo.Object, roomsService, this.roomsRepo.Object, this.mockUserManager.Object);
+
+            EditReservationViewModel reservationModel = await reservationsService.ReservationDetailsByIdAsync<EditReservationViewModel>(4);
+            Assert.NotNull(reservationModel);
+            Assert.Equal(DateTime.UtcNow.AddDays(-2).Date, reservationModel.AccommodationDate.Date);
+            Assert.Equal(DateTime.UtcNow.AddDays(2).Date, reservationModel.ReleaseDate.Date);
+            Assert.Equal(2, reservationModel.AdultsCount);
+            Assert.Equal(2, reservationModel.ChildrenCount);
+            Assert.Equal(RoomType.Apartment, reservationModel.RoomType);
+            Assert.Equal(Catering.AllInclusive, reservationModel.Catering);
+        }
+
         // TESTS WITH IN-MEMORY DB
         [Fact]
         public async Task AddReservationAsyncShouldWorkCorrectWithDifferentEmailAndPhoneNumber()
@@ -1048,6 +1188,199 @@
             Assert.NotNull(listWithReservationsByPhoneNumber);
             Assert.Equal(2, listWithReservationsByPhoneNumber.Count());
             Assert.Empty(listWithNoReservations);
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task HotelAdministrationCreateReservationAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestDishesDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            IRoomsService roomsService = new RoomsService(roomsRepoDB);
+            EfDeletableEntityRepository<Reservation> reservationsRepoDB = new EfDeletableEntityRepository<Reservation>(dbContext);
+            EfDeletableEntityRepository<RoomReservation> roomReservationsRepoDB = new EfDeletableEntityRepository<RoomReservation>(dbContext);
+            EfDeletableEntityRepository<ApplicationUser> usersRepoDB = new EfDeletableEntityRepository<ApplicationUser>(dbContext);
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            var reservationsService = new ReservationsService(reservationsRepoDB, roomReservationsRepoDB, roomsService, roomsRepoDB, this.mockUserManager.Object);
+
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                });
+            await roomsRepoDB.SaveChangesAsync();
+
+            HotelAdministrationAddReservationViewModel model = new HotelAdministrationAddReservationViewModel()
+            {
+                ReservationEmail = "testUser1@gmail.com",
+                ReservationPhone = "00359777777777",
+                AccommodationDate = DateTime.UtcNow.AddDays(10),
+                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                AdultsCount = 1,
+                RoomType = RoomType.SingleRoom,
+                Catering = Catering.Without,
+            };
+            await reservationsService.HotelAdministrationCreateReservationAsync(model);
+            int count = await reservationsService.GetCountAsync();
+            Assert.Equal(1, count);
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task HotelAdministrationEditReservationAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestDishesDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            IRoomsService roomsService = new RoomsService(roomsRepoDB);
+            EfDeletableEntityRepository<Reservation> reservationsRepoDB = new EfDeletableEntityRepository<Reservation>(dbContext);
+            EfDeletableEntityRepository<RoomReservation> roomReservationsRepoDB = new EfDeletableEntityRepository<RoomReservation>(dbContext);
+            EfDeletableEntityRepository<ApplicationUser> usersRepoDB = new EfDeletableEntityRepository<ApplicationUser>(dbContext);
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            var reservationsService = new ReservationsService(reservationsRepoDB, roomReservationsRepoDB, roomsService, roomsRepoDB, this.mockUserManager.Object);
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                });
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 2,
+                    RoomNumber = 2,
+                    Capacity = 2,
+                    Floor = 0,
+                    RoomType = RoomType.DoubleRoom,
+                    AdultPrice = GlobalConstants.DoubleRoomAdultsPricePerBed,
+                    ChildrenPrice = GlobalConstants.DoubleRoomChildrenPricePerBed,
+                });
+            await roomsRepoDB.SaveChangesAsync();
+            await reservationsRepoDB.AddAsync(
+                new Reservation
+                {
+                    Id = 1,
+                    AccommodationDate = DateTime.UtcNow.AddDays(2),
+                    ReleaseDate = DateTime.UtcNow.AddDays(5),
+                    AdultsCount = 1,
+                    RoomType = RoomType.SingleRoom,
+                    Catering = Catering.Without,
+                    ApplicationUserId = "9fabc808-d07d-44d5-9b23-6454705ddd48",
+                    RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 1,
+                            ReservationId = 1,
+                            ApplicationUserId = "9fabc808-d07d-44d5-9b23-6454705ddd48",
+                        },
+                    },
+                });
+            await reservationsRepoDB.AddAsync(
+                new Reservation
+                {
+                    Id = 2,
+                    AccommodationDate = DateTime.UtcNow.AddDays(10),
+                    ReleaseDate = DateTime.UtcNow.AddDays(15),
+                    AdultsCount = 2,
+                    RoomType = RoomType.DoubleRoom,
+                    Catering = Catering.AllInclusive,
+                    ApplicationUserId = "9fabc808-d07d-44d5-9b23-6454705ddd48",
+                    RoomReservations = new List<RoomReservation>()
+                    {
+                        new RoomReservation
+                        {
+                            RoomId = 2,
+                            ReservationId = 2,
+                            ApplicationUserId = "9fabc808-d07d-44d5-9b23-6454705ddd48",
+                        },
+                    },
+                });
+            await reservationsRepoDB.SaveChangesAsync();
+
+            HotelAdministrationEditReservationViewModel model = new HotelAdministrationEditReservationViewModel()
+            {
+                Id = 2,
+                ReservationEmail = "testUser1@gmail.com",
+                ReservationPhone = "00359777777777",
+                AccommodationDate = DateTime.UtcNow.AddDays(13),
+                ReleaseDate = DateTime.UtcNow.AddDays(20),
+                AdultsCount = 1,
+                RoomType = RoomType.SingleRoom,
+                Catering = Catering.BreakfastAndDinner,
+            };
+            await reservationsService.HotelAdministrationEditReservationAsync(model, 2);
+            Reservation changedReservation = await reservationsRepoDB.AllAsNoTracking().FirstOrDefaultAsync(x => x.Id == 2);
+            Assert.Equal("testUser1@gmail.com", changedReservation.ReservationEmail);
+            Assert.Equal("00359777777777", changedReservation.ReservationPhone);
+            Assert.Equal(DateTime.UtcNow.AddDays(13).Date, changedReservation.AccommodationDate.Date);
+            Assert.Equal(DateTime.UtcNow.AddDays(20).Date, changedReservation.ReleaseDate.Date);
+            Assert.Equal(1, changedReservation.AdultsCount);
+            Assert.Equal(RoomType.SingleRoom, changedReservation.RoomType);
+            Assert.Equal(Catering.BreakfastAndDinner, changedReservation.Catering);
+            dbContext.Dispose();
+        }
+
+        [Fact]
+        public async Task HotelAdministrationReserveRoomAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestDishesDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            IRoomsService roomsService = new RoomsService(roomsRepoDB);
+            EfDeletableEntityRepository<Reservation> reservationsRepoDB = new EfDeletableEntityRepository<Reservation>(dbContext);
+            EfDeletableEntityRepository<RoomReservation> roomReservationsRepoDB = new EfDeletableEntityRepository<RoomReservation>(dbContext);
+            EfDeletableEntityRepository<ApplicationUser> usersRepoDB = new EfDeletableEntityRepository<ApplicationUser>(dbContext);
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            var reservationsService = new ReservationsService(reservationsRepoDB, roomReservationsRepoDB, roomsService, roomsRepoDB, this.mockUserManager.Object);
+
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                });
+            await roomsRepoDB.SaveChangesAsync();
+
+            HotelAdministrationReserveRoomViewModel model = new HotelAdministrationReserveRoomViewModel()
+            {
+                ReservationEmail = "testUser1@gmail.com",
+                ReservationPhone = "00359777777777",
+                AccommodationDate = DateTime.UtcNow.AddDays(10),
+                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                AdultsCount = 1,
+                RoomType = RoomType.SingleRoom,
+                Catering = Catering.Without,
+            };
+            Room reservedRoom = await roomsRepoDB.AllAsNoTracking().FirstOrDefaultAsync(x => x.Id == 1);
+            await reservationsService.HotelAdministrationReserveRoomAsync(model, 1);
+            Assert.True(reservedRoom.IsReserved);
             dbContext.Dispose();
         }
     }

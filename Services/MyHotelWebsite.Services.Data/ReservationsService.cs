@@ -546,27 +546,6 @@
                 await this.reservationsRepo.AddAsync(currentReservation);
                 await this.reservationsRepo.SaveChangesAsync();
             }
-
-            if (currentReservation.RoomType != model.RoomType)
-            {
-                var roomReservationToBeRemoved = currentReservation.RoomReservations.FirstOrDefault(r => r.ReservationId == id);
-                var roomToBeFreed = roomReservationToBeRemoved.Room;
-                if (this.roomReservationRepo.All().Where(r => r.RoomId == roomToBeFreed.Id).Count() == 1)
-                {
-                    roomToBeFreed.IsReserved = false;
-                }
-
-                currentReservation.RoomReservations.Remove(roomReservationToBeRemoved);
-                currentReservation.RoomReservations.Add(new RoomReservation()
-                {
-                    ReservationId = currentReservation.Id,
-                    RoomId = await this.roomsService.ReserveRoomAsync(model.RoomType, model.AccommodationDate, model.ReleaseDate),
-                });
-                currentReservation.RoomType = model.RoomType;
-            }
-
-            currentReservation.TotalPrice = await this.GetReservationTotalPrice(model.RoomType, model.AccommodationDate, model.ReleaseDate, model.AdultsCount, model.ChildrenCount);
-            await this.reservationsRepo.SaveChangesAsync();
         }
 
         public async Task<bool> IsReservationActiveAtTheMoment(int id)
