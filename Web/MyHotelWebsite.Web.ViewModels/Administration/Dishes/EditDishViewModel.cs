@@ -29,6 +29,7 @@
         [Range(0, int.MaxValue)]
         public int QuantityInStock { get; set; }
 
+        [Display(Name = "Dish Image")]
         public string DishImageUrl { get; set; }
     }
 }

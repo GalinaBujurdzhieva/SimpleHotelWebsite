@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0YEyp8cXp+DH3Y+knREK7F+6o1UTDqN+DSJwy4J/5+c=",
+  "Hash": "3sQ5Dv3rgrMZg2Ij0gMPPlMypGLSpBgOAwz59fIXCvE=",
   "Source": "MyHotelWebsite.Web",
   "BasePath": "_content/MyHotelWebsite.Web",
   "Mode": "Default",
@@ -2837,6 +2837,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\dishes\\desserts\\78e4d801-3134-447f-98b4-9503c9f04887.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\8cbf0f4c-0908-4231-86e6-ac75320cb6dd.jpg",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/dishes/desserts/8cbf0f4c-0908-4231-86e6-ac75320cb6dd.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\desserts\\8cbf0f4c-0908-4231-86e6-ac75320cb6dd.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\9a2c4be2-a235-4ec5-a607-5dafff969f9d.jpg",
+      "SourceId": "MyHotelWebsite.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web\\wwwroot\\",
+      "BasePath": "_content/MyHotelWebsite.Web",
+      "RelativePath": "images/dishes/desserts/9a2c4be2-a235-4ec5-a607-5dafff969f9d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\dishes\\desserts\\9a2c4be2-a235-4ec5-a607-5dafff969f9d.jpg"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\SimpleHotelWebsite-new 04.08\\Web\\MyHotelWebsite.Web\\wwwroot\\images\\dishes\\desserts\\Banana_pudding.png",

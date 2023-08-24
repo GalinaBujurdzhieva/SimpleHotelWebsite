@@ -39,5 +39,7 @@
         Task<bool> ReserveRoomByIdAsync(int roomId, DateTime accommodationDate, DateTime releaseDate);
 
         Task<IEnumerable<T>> SearchRoomsByFourCriteriaAsync<T>(int page, bool isReserved = false, bool isOccupied = false, bool isCleaned = false, RoomType roomType = 0, int itemsPerPage = 4);
+
+        Task TurnTrueIsReservedPropertyOfReservedRooms();
     }
 }

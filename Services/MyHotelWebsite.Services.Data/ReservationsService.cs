@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using System.Xml.Serialization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using MyHotelWebsite.Data.Common.Repositories;

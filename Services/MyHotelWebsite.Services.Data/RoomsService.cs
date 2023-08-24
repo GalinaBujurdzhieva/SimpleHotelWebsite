@@ -191,6 +191,21 @@
             await this.roomsRepo.SaveChangesAsync();
         }
 
+        public async Task TurnTrueIsReservedPropertyOfReservedRooms()
+        {
+            var reservedRooms = await this.roomsRepo.All()
+                .Include(x => x.RoomReservations)
+                .ThenInclude(x => x.Reservation)
+                .Where(x => x.RoomReservations.Any(r => r.Reservation.ReleaseDate.CompareTo(DateTime.UtcNow.Date) > 0))
+                .ToListAsync();
+            foreach (var room in reservedRooms)
+            {
+                room.IsReserved = true;
+            }
+
+            await this.roomsRepo.SaveChangesAsync();
+        }
+
         public async Task<int> ReserveRoomAsync(RoomType roomType, DateTime accommodationDate, DateTime releaseDate)
         {
             var roomsThanCanBeReserved = await this.roomsRepo.All()

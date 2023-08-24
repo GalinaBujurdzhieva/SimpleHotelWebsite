@@ -184,9 +184,15 @@
             await dbContext.SaveChangesAsync();
             AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
             var guestService = new GuestsService(usersRepoDB, rolesRepoDB, mockUserManager.Object, mockRoleManager.Object);
-            var guests = await guestService.GetAllGuestsAsync<SingleGuestViewModel>(1, 7);
+            IEnumerable<SingleGuestViewModel> guests = await guestService.GetAllGuestsAsync<SingleGuestViewModel>(1, 7);
+            SingleGuestViewModel singleGuest = guests.FirstOrDefault(g => g.Id == "585a155e-41c0-42b3-b4a2-acc0cd35408a");
             Assert.NotEmpty(guests);
             Assert.Equal(2, guests.Count());
+            Assert.NotNull(singleGuest);
+            Assert.Equal("Peshko", singleGuest.FirstName);
+            Assert.Equal("Peshev", singleGuest.LastName);
+            Assert.Equal("testUser2@gmail.com", singleGuest.Email);
+            Assert.Equal("00359777000111", singleGuest.PhoneNumber);
             dbContext.Dispose();
         }
 

@@ -48,6 +48,7 @@
                 };
                 foreach (var singleShoppingCart in model.ShoppingCartsList)
                 {
+                    ShoppingCart currentShoppingCart = null;
                     newOrder.DishOrders.Add(new DishOrder()
                     {
                         OrderId = newOrder.Id,
@@ -55,7 +56,7 @@
                         DishId = singleShoppingCart.DishId,
                         DishQuantity = singleShoppingCart.Count,
                     });
-                    var currentShoppingCart = await this.shoppingCartsRepo.All().FirstOrDefaultAsync(sh => sh.Id == singleShoppingCart.Id);
+                    currentShoppingCart = await this.shoppingCartsRepo.All().FirstOrDefaultAsync(sh => sh.Id == singleShoppingCart.Id);
                     currentShoppingCart.IsShoppingCartAddedToAFinalOrder = true;
                 }
 

@@ -326,5 +326,63 @@
             Assert.Equal("b65d8626-ae18-4116-ab72-bd99cb99247c", secondBlog.ApplicationUserId);
             dbContext.Dispose();
         }
+
+        [Fact]
+        public async Task EditBlogAsyncShouldWorkCorrectlyWithNewFile()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestBlogsDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+
+            EfDeletableEntityRepository<Blog> blogsRepo = new EfDeletableEntityRepository<Blog>(dbContext);
+            EfDeletableEntityRepository<BlogImage> blogImagesRepo = new EfDeletableEntityRepository<BlogImage>(dbContext);
+            await blogsRepo.AddAsync(
+                new Blog()
+                {
+                    Id = 1,
+                    Title = "Test Title 1",
+                    Content = "Test Content 1",
+                    BlogImageUrl = "images/blogs/1.png",
+                    BlogImage = new BlogImage()
+                    {
+                        BlogId = 1,
+                        Extension = "png",
+                    },
+                });
+            await blogsRepo.AddAsync(
+                new Blog()
+                {
+                    Id = 2,
+                    Title = "Test Title 2",
+                    Content = "Test Content 2",
+                    BlogImageUrl = "images/blogs/2.png",
+                    BlogImage = new BlogImage()
+                    {
+                        BlogId = 2,
+                        Extension = "png",
+                    },
+                });
+            await blogsRepo.SaveChangesAsync();
+            await blogImagesRepo.SaveChangesAsync();
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            BlogsService blogsService = new BlogsService(blogsRepo, blogImagesRepo);
+            var bytes2 = Encoding.UTF8.GetBytes("This is the second dummy file");
+            IFormFile file2 = new FormFile(new MemoryStream(bytes2), 0, bytes2.Length, "Data", "dummy.txt");
+            EditBlogViewModel model2 = new EditBlogViewModel()
+            {
+                Title = "Test Title 2 - EDITED",
+                Content = "Test Content 2 - EDITED",
+                BlogImageUrl = "images/blogs/test-2.png",
+            };
+
+            await blogsService.EditBlogAsync(model2, 2, "b65d8626-ae18-4116-ab72-bd99cb99247c", "dummyImagePath2", file2);
+            var secondBlog = await blogsRepo.AllAsNoTracking().FirstOrDefaultAsync(x => x.Id == 2);
+            Assert.Equal("Test Title 2 - EDITED", secondBlog.Title);
+            Assert.Equal("Test Content 2 - EDITED", secondBlog.Content);
+            Assert.Equal("b65d8626-ae18-4116-ab72-bd99cb99247c", secondBlog.ApplicationUserId);
+            dbContext.Dispose();
+        }
     }
 }
