@@ -25,7 +25,7 @@
             var applicationUserId = this.httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!string.IsNullOrEmpty(applicationUserId))
             {
-                model.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
+                model.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUserAsync(applicationUserId);
             }
 
             return this.View(model);

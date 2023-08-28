@@ -103,7 +103,7 @@
                     }
                     else
                     {
-                        var itemsInTheShoppingCart = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(user.Id);
+                        var itemsInTheShoppingCart = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUserAsync(user.Id);
                         this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, itemsInTheShoppingCart.Count);
                         return this.RedirectToAction("Index", "Home");
                     }

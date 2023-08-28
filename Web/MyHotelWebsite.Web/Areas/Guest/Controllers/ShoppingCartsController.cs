@@ -74,7 +74,7 @@
                     await this.shoppingCartsService.UpdateDishCountInTheShoppingCartAsync(shoppingCart.DishId, shoppingCart.ApplicationUserId, shoppingCart.Count);
                 }
 
-                itemsInTheShoppingCart = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(shoppingCart.ApplicationUserId);
+                itemsInTheShoppingCart = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUserAsync(shoppingCart.ApplicationUserId);
                 this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, itemsInTheShoppingCart.Count);
             }
 
@@ -87,7 +87,7 @@
             string applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!string.IsNullOrEmpty(applicationUserId))
             {
-                this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
+                this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUserAsync(applicationUserId);
                 this.AllShoppingCartModel.TotalPrice = this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
                 this.HttpContext.Session.SetInt32(GlobalConstants.SessionCart, this.AllShoppingCartModel.ShoppingCartsList.Count);
             }
@@ -103,7 +103,7 @@
             var applicationUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!string.IsNullOrEmpty(applicationUserId))
             {
-                this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUser(applicationUserId);
+                this.AllShoppingCartModel.ShoppingCartsList = await this.shoppingCartsService.GetAllSingleShoppingCartsOfTheUserAsync(applicationUserId);
                 this.AllShoppingCartModel.TotalPrice = this.shoppingCartsService.GetOrderTotalOfShoppingCartsOfTheUser(this.AllShoppingCartModel.ShoppingCartsList);
             }
 

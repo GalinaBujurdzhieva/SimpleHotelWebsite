@@ -1339,49 +1339,50 @@
             dbContext.Dispose();
         }
 
-        //[Fact]
-        //public async Task HotelAdministrationReserveRoomAsyncShouldWorkCorrect()
-        //{
-        //    DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
-        //        .UseInMemoryDatabase("TestDishesDb");
-        //    ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
-        //    dbContext.Database.EnsureDeleted();
-        //    dbContext.Database.EnsureCreated();
-        //    EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
-        //    IRoomsService roomsService = new RoomsService(roomsRepoDB);
-        //    EfDeletableEntityRepository<Reservation> reservationsRepoDB = new EfDeletableEntityRepository<Reservation>(dbContext);
-        //    EfDeletableEntityRepository<RoomReservation> roomReservationsRepoDB = new EfDeletableEntityRepository<RoomReservation>(dbContext);
-        //    EfDeletableEntityRepository<ApplicationUser> usersRepoDB = new EfDeletableEntityRepository<ApplicationUser>(dbContext);
-        //    AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
-        //    var reservationsService = new ReservationsService(reservationsRepoDB, roomReservationsRepoDB, roomsService, roomsRepoDB, this.mockUserManager.Object);
+        [Fact]
+        public async Task HotelAdministrationReserveRoomAsyncShouldWorkCorrect()
+        {
+            DbContextOptionsBuilder<ApplicationDbContext> optionBuilder = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("TestDishesDb");
+            ApplicationDbContext dbContext = new ApplicationDbContext(optionBuilder.Options);
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            EfDeletableEntityRepository<Room> roomsRepoDB = new EfDeletableEntityRepository<Room>(dbContext);
+            IRoomsService roomsService = new RoomsService(roomsRepoDB);
+            EfDeletableEntityRepository<Reservation> reservationsRepoDB = new EfDeletableEntityRepository<Reservation>(dbContext);
+            EfDeletableEntityRepository<RoomReservation> roomReservationsRepoDB = new EfDeletableEntityRepository<RoomReservation>(dbContext);
+            EfDeletableEntityRepository<ApplicationUser> usersRepoDB = new EfDeletableEntityRepository<ApplicationUser>(dbContext);
+            AutoMapperConfig.RegisterMappings(Assembly.Load("MyHotelWebsite.Web.ViewModels"));
+            var reservationsService = new ReservationsService(reservationsRepoDB, roomReservationsRepoDB, roomsService, roomsRepoDB, this.mockUserManager.Object);
 
-        //    await roomsRepoDB.AddAsync(
-        //        new Room
-        //        {
-        //            Id = 1,
-        //            RoomNumber = 1,
-        //            Capacity = 1,
-        //            Floor = 0,
-        //            RoomType = RoomType.SingleRoom,
-        //            AdultPrice = GlobalConstants.SingleRoomPrice,
-        //            ChildrenPrice = GlobalConstants.SingleRoomPrice,
-        //        });
-        //    await roomsRepoDB.SaveChangesAsync();
+            await roomsRepoDB.AddAsync(
+                new Room
+                {
+                    Id = 1,
+                    RoomNumber = 1,
+                    Capacity = 1,
+                    Floor = 0,
+                    RoomType = RoomType.SingleRoom,
+                    AdultPrice = GlobalConstants.SingleRoomPrice,
+                    ChildrenPrice = GlobalConstants.SingleRoomPrice,
+                });
+            await roomsRepoDB.SaveChangesAsync();
 
-        //    HotelAdministrationReserveRoomViewModel model = new HotelAdministrationReserveRoomViewModel()
-        //    {
-        //        ReservationEmail = "testUser1@gmail.com",
-        //        ReservationPhone = "00359777777777",
-        //        AccommodationDate = DateTime.UtcNow.AddDays(10),
-        //        ReleaseDate = DateTime.UtcNow.AddDays(12),
-        //        AdultsCount = 1,
-        //        RoomType = RoomType.SingleRoom,
-        //        Catering = Catering.Without,
-        //    };
-        //    Room reservedRoom = await roomsRepoDB.AllAsNoTracking().FirstOrDefaultAsync(x => x.Id == 1);
-        //    await reservationsService.HotelAdministrationReserveRoomAsync(model, 1);
-        //    Assert.True(reservedRoom.IsReserved);
-        //    dbContext.Dispose();
-        //}
-    }
+            HotelAdministrationReserveRoomViewModel model = new HotelAdministrationReserveRoomViewModel()
+            {
+                ReservationEmail = "testUser1@gmail.com",
+                ReservationPhone = "00359777777777",
+                AccommodationDate = DateTime.UtcNow.AddDays(10),
+                ReleaseDate = DateTime.UtcNow.AddDays(12),
+                AdultsCount = 1,
+                RoomType = RoomType.SingleRoom,
+                Catering = Catering.Without,
+            };
+            await reservationsService.HotelAdministrationReserveRoomAsync(model, 1);
+            Room reservedRoom = await roomsRepoDB.AllAsNoTracking().FirstOrDefaultAsync(x => x.Id == 1);
+            Assert.True(reservedRoom.IsReserved);
+            await Assert.ThrowsAnyAsync<Exception>(() => reservationsService.HotelAdministrationReserveRoomAsync(model, 1));
+            dbContext.Dispose();
+            }
+        }
 }

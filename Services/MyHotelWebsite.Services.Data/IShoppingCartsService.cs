@@ -11,7 +11,7 @@
 
         Task DecreaseQuantityOfTheDishInTheShoppingCart(int shoppingCartId);
 
-        Task<List<SingleShoppingCartViewModel>> GetAllSingleShoppingCartsOfTheUser(string applicationUserId);
+        Task<List<SingleShoppingCartViewModel>> GetAllSingleShoppingCartsOfTheUserAsync(string applicationUserId);
 
         decimal GetOrderTotalOfShoppingCartsOfTheUser(IEnumerable<SingleShoppingCartViewModel> shoppingCartsList);
 

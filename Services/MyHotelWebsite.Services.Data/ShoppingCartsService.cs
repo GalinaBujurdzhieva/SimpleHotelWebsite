@@ -58,7 +58,7 @@
             }
         }
 
-        public async Task<List<SingleShoppingCartViewModel>> GetAllSingleShoppingCartsOfTheUser(string applicationUserId)
+        public async Task<List<SingleShoppingCartViewModel>> GetAllSingleShoppingCartsOfTheUserAsync(string applicationUserId)
         {
             var allShoppingCartsOfTheCurrentUser = await this.shoppingCartsRepo.AllAsNoTracking()
                 .Include(c => c.Dish)
